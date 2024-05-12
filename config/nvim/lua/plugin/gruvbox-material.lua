@@ -9,7 +9,7 @@ vim.g.gruvbox_material_enable_bold = 1
 vim.g.gruvbox_material_enable_italic = 1
 vim.g.gruvbox_material_cursor = 'red'
 vim.g.gruvbox_material_background = 'hard'
-vim.g.gruvbox_material_transparent_background = 1
+vim.g.gruvbox_material_transparent_background = 0
 
 -- Note: the configuration options should be placed before
 vim.cmd 'colorscheme gruvbox-material'
