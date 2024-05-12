@@ -1,0 +1,35 @@
+
+[window]
+    opacity = 0.5
+    dynamic_title = true
+
+[font]
+    normal = { family = "hack", style = "Regular" }
+    # normal = { family = "sourcecodepro", style = "Regular" }
+    size = 11
+
+[colors.primary]
+    background = "#000000"
+
+[colors.vi_mode_cursor]
+    cursor = "#DCA561"
+    text = "CellBackground"
+
+[mouse]
+    hide_when_typing = true
+
+[[keyboard.bindings]]
+    action = "ToggleViMode"
+    key = "Escape"
+    mods = "Control"
+
+# [[keyboard.bindings]]
+# action = "Paste"
+# key = "P"
+# mods = "Control"
+
+# [[keyboard.bindings]]
+# action = "Copy"
+# key = "Y"
+# mods = "Control"
+

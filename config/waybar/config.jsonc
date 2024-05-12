@@ -1,0 +1,246 @@
+// -*- mode: jsonc -*-
+{
+    // "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    // "height": 16, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    // "spacing": 8, // Gaps between modules (4px)
+
+    // Modules order ---------------------------------------------------------
+    "modules-left": [
+        "custom/diary",
+        "custom/book",
+        "custom/calculator",
+        "custom/english",
+        "hyprland/workspaces"
+        // "hyprland/mode",
+        // "hyprland/scratchpad",
+        // "custom/media"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "hyprland/language",
+        "pulseaudio",
+        "network",
+        "cpu",
+        "memory",
+        "disk",
+        "temperature"
+        // "power-profiles-daemon",
+        // "keyboard-state",
+        // "mpd",
+    ],
+    // Modules configuration -------------------------------------------------
+    "custom/diary": {
+      "format": " ",
+      "on-click": "alacritty -T diary -e nvim ~/ya/diary",
+      "tooltip": false
+    },
+    "custom/book": {
+      "format": " ",
+      "on-click": "fbreader",
+      "tooltip": false
+    },
+    "custom/english": {
+      "format": "󱙼 ",
+      "on-click": "alacritty -T english -e nvim ~/ya/english.md ",
+      "tooltip": false
+    },
+    "custom/calculator": {
+      "format": " ",
+      "on-click": "speedcrunch",
+      "tooltip": false
+    },
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "format": "{icon}",
+        "format-icons": {
+            "1": "avin",
+            "2": "sh",
+            "3": "web",
+            "4": "dev",
+            "5": "edit",
+            "6": "read",
+            "7": "file",
+            "8": "dir",
+            "9": "xmind",
+            "10": "telegram",
+            "11": "pinta",
+            "12": "inkscape",
+            "13": "calc",
+            "14": "v",
+            "15": "b",
+            "urgent": " ",
+            "focused": " ",
+            "default": ""
+        }
+    },
+    "clock": {
+        "interval": 1,
+        // "timezone": "America/New_York",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": " {:%H:%M   %a %e %B}",
+        "format-alt": "  {:%H:%M:%S   %Y-%m-%d %a}"
+    },
+    "hyprland/language": {
+        "format": "[{short}]"
+    },
+    "pulseaudio": {
+        "scroll-step": 10,
+        "format": "  {volume}",
+        "format-muted": " mute",
+        "on-click": "mute"
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        // "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "  80",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "format-disconnected": "󰖪 Disconnected",
+        "format-linked": "{ifname} (No IP)",
+        "tooltip-format": "{ifname} via {gwaddr}"
+    },
+    "cpu": {
+        "format": " {usage}%",
+        "tooltip": false
+    },
+    "memory": {
+        "format": " {used} GB"
+    },
+    "disk": {
+        "interval": 30,
+        "format": " {specific_used:0.2f} GB",
+        "unit": "GB",
+        "tooltip-format": "used: {used} free: {free} total: {total}"
+    },
+    "temperature": {
+        "critical-threshold": 80,
+        "format": "{icon} {temperatureC}°C",
+        "format-critical": "{icon} {temperatureC}°C critical!",
+        "format-icons": ["", "", ""]
+    }
+}
+
+//-------------------------------------------------------------------
+    // "custom/media": {
+    //     "format": "{icon} {}",
+    //     "return-type": "json",
+    //     "max-length": 40,
+    //     "format-icons": {
+    //         "spotify": "",
+    //         "default": "🎜"
+    //     },
+    //     "escape": true,
+    //     "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+    //     // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    // },
+    // "tray": {
+    //     // "icon-size": 21,
+    //     "spacing": 10
+    // },
+    // "backlight": {
+    //     // "device": "acpi_video1",
+    //     "format": "{percent}% {icon}",
+    //     "format-icons": ["", "", "", "", "", "", "", "", ""]
+    // },
+    // "power-profiles-daemon": {
+    //   "format": "{icon}",
+    //   "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    //   "tooltip": true,
+    //   "format-icons": {
+    //     "default": "",
+    //     "performance": "",
+    //     "balanced": "",
+    //     "power-saver": ""
+    //   }
+    // },
+    // "hyprland/mode": {
+    //     "format": "<span style=\"italic\">{}</span>"
+    // },
+    // "hyprland/scratchpad": {
+    //     "format": "{icon} {count}",
+    //     "show-empty": false,
+    //     "format-icons": ["", ""],
+    //     "tooltip": true,
+    //     "tooltip-format": "{app}: {title}"
+    // },
+    // "mpd": {
+    //     "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
+    //     "format-disconnected": "Disconnected ",
+    //     "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+    //     "unknown-tag": "N/A",
+    //     "interval": 5,
+    //     "consume-icons": {
+    //         "on": " "
+    //     },
+    //     "random-icons": {
+    //         "off": "<span color=\"#f53c3c\"></span> ",
+    //         "on": " "
+    //     },
+    //     "repeat-icons": {
+    //         "on": " "
+    //     },
+    //     "single-icons": {
+    //         "on": "1 "
+    //     },
+    //     "state-icons": {
+    //         "paused": "",
+    //         "playing": ""
+    //     },
+    //     "tooltip-format": "MPD (connected)",
+    //     "tooltip-format-disconnected": "MPD (disconnected)"
+    // }
+    // "pulseaudio": {
+    //     "scroll-step": 10,
+    //     "format": "  {volume}",
+    //     "format-muted": " mute",
+    //     "on-click": "mute"
+    //     "on-click": "pavucontrol"
+    //     "format-source": "{volume}% ",
+    //     "format-source-muted": "",
+    //     "format-icons": {
+    //         "headphone": "",
+    //         "default": ["", " ", ""]
+    //     },
+    //     "format-bluetooth": "{volume}% {icon} {format_source}",
+    //     "format-bluetooth-muted": " {icon} {format_source}",
+    //     "phone": "",
+    //     "portable": "",
+    //     "car": "",
+    //     "hands-free": "",
+    //     "headset": "",
+    // },
+    // "hyprland/workspaces": {
+        // "disable-scroll": true,
+        // "all-outputs": true,
+        // "warp-on-scroll": false,
+        // "format": "{name}"
+        // "format": "{name} {icon}",
+        // "format-icons": {
+        //     "1": "",
+        //     "2": "",
+        //     "3": "",
+        //     "4": "",
+        //     "5": "",
+        //     "6": "",
+        //     "7": "",
+        //     "8": "",
+        //     "9": "",
+        //     "urgent": "",
+        //     "focused": "",
+        //     "default": ""
+        // }
+    // },
+    // "keyboard-state": {
+    //     "numlock": true,
+    //     "capslock": true,
+    //     "format": "{name}"
+    //     "format-icons": {
+    //         "locked": "",
+    //         "unlocked": ""
+    //     }
+    // },

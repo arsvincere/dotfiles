@@ -1,0 +1,170 @@
+# i3 config file (v4)
+# Please see https://i3wm.org/docs/userguide.html for a complete reference!
+
+set $mod Mod1
+floating_modifier $mod
+tiling_drag modifier titlebar
+# Убрать рамки и строку заголовка окон
+new_window pixel 0
+
+# General bindings ------------------------------------------------------------
+# use 'xmodmap -pke' for show all key codes
+
+# start a terminal
+bindsym $mod+space exec i3-sensible-terminal
+
+# start rofi menu
+# run in terminal 'rofi-theme-selector' for choose theme
+bindsym $mod+Tab exec --no-startup-id rofi -show run
+
+# betterlockscreen
+# https://github.com/betterlockscreen/betterlockscreen
+# yay -S betterlockscreen
+exec --no-startup-id betterlockscreen -w blur 
+bindsym Shift+Ctrl+l exec betterlockscreen -l blur
+
+# Screenshoot (yay -S flameshot)
+bindsym Print exec --no-startup-id flameshot full
+bindsym Ctrl+Print exec --no-startup-id flameshot gui
+
+# Toggle keylayot
+# exec --no-startup-id setxkbmap -model pc105 -layout us,ru -option grp:caps_toggle,grp_led:caps,grp:switch
+# exec --no-startup-id setxkbmap -model pc105 -layout us,ru -option grp:win_space_toggle
+exec --no-startup-id setxkbmap -model pc105 -layout us,ru -option grp:alt_shift_toggle
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Ctrl+u restart
+
+# kill focused window
+bindsym $mod+Escape kill
+
+# exit i3 (logs you out of your X session)
+bindsym $mod+Ctrl+Escape exec "i3-msg exit"
+
+# lxappearange 
+# Тема для thunar - меняется утилитой lxappearance
+# ~ yay -S lxappearance 
+# ~ lxappearance
+
+# # Gaps
+# gaps outer|horizontal|vertical|top|left|bottom|right 8[px]
+# gaps left 10px
+# gaps inner 10px
+# # Overwrite gaps to 0, I need all the space I can get on workspace 3.
+# workspace 0 gaps left 0
+# workspace 0 gaps inner 0
+
+# Auto start -----------------------------------------------------------------
+
+# start polybar
+exec_always --no-startup-id ~/.config/polybar/launch.sh
+
+# Wallpaper
+# yay -S nitrogen
+# run in terminal 'nitrogen' for choose image
+exec "--no-startup-id nitrogen --restore &"
+
+# Transparent and other visual effect
+# yay -S picom
+exec --no-startup-id nitrogen --restore; sleep 1; compton -b
+
+# Start XDG autostart .desktop files using dex. See also
+# https://wiki.archlinux.org/index.php/XDG_Autostart
+exec --no-startup-id dex --autostart --environment i3
+
+# autostart nvim
+# exec "i3-msg 'workspace vim; exec alacritty -e nvim'"
+
+# Switch ---------------------------------------------------------------------
+
+# Define names for default workspaces for key bindings later
+set $ws1 "zsh"
+set $ws2 "vim"
+set $ws3 "web"
+set $ws4 "file"
+set $ws5 "git"
+set $ws7 "avin"
+set $ws8 "obsidian"
+set $ws9 "q"
+set $ws10 "e"
+set $ws11 "zsh"
+set $ws12 "x"
+set $ws13 "c"
+set $ws14 "b"
+set $ws15 "r"
+# switch to workspace
+bindsym $mod+q      workspace "zsh"
+bindsym $mod+w      workspace "web"
+bindsym $mod+e      workspace "vim"
+bindsym $mod+r      workspace "obsidian"
+bindsym $mod+t      workspace "thunar"
+bindsym $mod+a      workspace "avin"
+bindsym $mod+s      workspace "s"
+bindsym $mod+d      workspace "d"
+bindsym $mod+f      workspace "file"
+bindsym $mod+g      workspace "git"
+bindsym $mod+z      workspace "z"
+bindsym $mod+x      workspace "x"
+bindsym $mod+c      workspace "c"
+bindsym $mod+v      workspace "v"
+bindsym $mod+b      workspace "b"
+bindsym $mod+less   workspace prev
+bindsym $mod+greater  workspace next
+
+# Bind program ---------------------------------------------------------------
+
+bindsym $mod+Ctrl+c exec "i3-msg 'exec mate-calc'"
+bindsym $mod+Ctrl+slash exec "i3-msg 'exec gnome-system-monitor'"
+
+bindsym $mod+Ctrl+q exec "i3-msg 'workspace zsh; exec alacritty'"
+bindsym $mod+Ctrl+w exec "i3-msg 'workspace web; exec yandex-browser-stable'"
+bindsym $mod+Ctrl+e exec "i3-msg 'workspace vim; exec alacritty -e nvim'"
+bindsym $mod+Ctrl+r exec "i3-msg 'workspace obsidian; exec obsidian'"
+bindsym $mod+Ctrl+t exec "i3-msg 'workspace thunar; exec thunar'"
+
+bindsym $mod+Ctrl+a exec "i3-msg 'workspace avin; exec ya/avin-dev/main.py'"
+bindsym $mod+Ctrl+f exec "i3-msg 'workspace file; exec alacritty -e vifm'"
+bindsym $mod+Ctrl+g exec "i3-msg 'workspace git; exec github-desktop'"
+
+# Split ----------------------------------------------------------------------
+
+bindsym $mod+slash split h
+bindsym $mod+m split v
+bindsym $mod+y layout stacking
+bindsym $mod+u layout tabbed
+bindsym $mod+i layout toggle split
+bindsym $mod+o floating toggle
+bindsym $mod+p focus mode_toggle
+bindsym $mod+braceleft mode "resize"
+mode "resize" {
+        bindsym h resize shrink width 1 px or 1 ppt
+        bindsym j resize shrink height 1 px or 1 ppt
+        bindsym k resize grow height 1 px or 1 ppt
+        bindsym l resize grow width 1 px or 1 ppt
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+# Focus ----------------------------------------------------------------------
+
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+bindsym $mod+Ctrl+h move left
+bindsym $mod+Ctrl+j move down
+bindsym $mod+Ctrl+k move up
+bindsym $mod+Ctrl+l move right
+bindsym $mod+Ctrl+o focus parent
+bindsym $mod+Ctrl+i focus child
+
+# Sound ----------------------------------------------------------------------
+
+# Use pactl to adjust volume in PulseAudio.
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
