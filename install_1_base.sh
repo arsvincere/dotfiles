@@ -27,7 +27,7 @@ swapon /dev/sda1
 # Установка основных пакетов
 pacman -Syy
 pacman -Sy archlinux-keyring
-pacstrap /mnt base base-devel linux linux-firmware netctl dhcpcd neovim networkmanager 
+pacstrap /mnt base base-devel linux linux-firmware netctl dhcpcd neovim networkmanager
 
 # Генерируем fstab
 genfstab -pU /mnt >> /mnt/etc/fstab

@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "== Backup start"
 
-DIR=~/ya/dotfiles
+DIR=~/ya/dotfiles/config
 
 # home
 echo ":: copy home cfg"
@@ -19,19 +19,30 @@ echo ":: copy system cfg"
 mkdir -p "$DIR/grub"
 cp /boot/grub/grub.cfg                          "$DIR/grub/grub.cfg"
 
+# cfg
+echo ":: rsync dotfiles"
+rsync -a ~/.config/SpeedCrunch                  "$DIR" 
+rsync -a ~/.config/Thunar                       "$DIR" 
+rsync -a ~/.config/autostart                    "$DIR" 
+rsync -a ~/.config/btop                         "$DIR" 
+rsync -a ~/.config/alacritty                    "$DIR"
+rsync -a ~/.config/hypr                         "$DIR" 
+rsync -a ~/.config/mako                         "$DIR" 
+rsync -a ~/.config/nvim                         "$DIR" --exclude .git
+rsync -a ~/.config/vifm                         "$DIR" 
+rsync -a ~/.config/waybar                       "$DIR" 
+
+rsync -a ~/.config/i3                           "$DIR" 
+rsync -a ~/.config/polybar                      "$DIR" 
+rsync -a ~/.config/rofi                         "$DIR" 
+rsync -a ~/.config/picom                        "$DIR" 
+
 # yandex
 echo ":: copy yandex-disk config"
 mkdir -p "$CFG/yandex-disk"
 cp ~/.config/yandex-disk/config.cfg             "$CFG/yandex-disk/config.cfg"
 
-# cfg
-CFG="$DIR/config"
-echo ":: rsync dotfiles"
-rsync -a ~/.config/alacritty                    "$CFG"
-rsync -a ~/.config/hypr                         "$CFG" 
-rsync -a ~/.config/nvim                         "$CFG" --exclude .git
-rsync -a ~/.config/vifm                         "$CFG" 
-rsync -a ~/.config/waybar                       "$CFG" 
+
 
 # git commit & push
 echo ":: git add"

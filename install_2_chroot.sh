@@ -31,7 +31,7 @@ pacman -S grub
 grub-install /dev/sda
 
 # Копируем конфиг grub
-cp grub/grub.cfg /boot/grub/grub.cfg
+cp config/grub/grub.cfg /boot/grub/grub.cfg
 
 echo "-----------------------------------------------------------------------"
 echo ">>>---> Continue:"

@@ -1,16 +1,16 @@
 #!/bin/bash
 echo "== Restore start"
 
-echo ":: restore .bashrc"
-cp bash/.bashrc                     ~/.bashrc
+# echo ":: restore .bashrc"
+# cp bash/.bashrc                     ~/.bashrc
 
-echo ":: restore .xinitrc"
-cp xinit/.xinitrc                   ~/.xinitrc
+# echo ":: restore .xinitrc"
+# cp xinit/.xinitrc                   ~/.xinitrc
 
 echo ":: restore zsh"
-cp zsh/.zshrc                       ~/.zshrc
-cp zsh/.zprofile                    ~/.zprofile
-cp zsh/jovial.zsh-theme             ~/.oh-my-zsh/custom/themes/jovial.zsh-theme  
+cp config/zsh/.zshrc                ~/.zshrc
+cp config/zsh/.zprofile             ~/.zprofile
+cp config/zsh/jovial.zsh-theme      ~/.oh-my-zsh/custom/themes/jovial.zsh-theme  
 
 echo ":: restore yandex-disk"
 mkdir -p ~/.config/yandex-disk
@@ -20,16 +20,22 @@ echo ":: restore grub.cfg"
 sudo cp grub/grub.cfg                   /boot/grub/grub.cfg
 
 echo ":: restore .config files"
+rsync -a config/SpeedCrunch        ~/.config
+rsync -a config/Thunar             ~/.config
+rsync -a config/autostart          ~/.config
+rsync -a config/btop               ~/.config
 rsync -a config/alacritty          ~/.config
-rsync -a config/awesome            ~/.config
-rsync -a config/i3                 ~/.config
-rsync -a config/nitrogen           ~/.config
+rsync -a config/hypr               ~/.config
+rsync -a config/mako               ~/.config
 rsync -a config/nvim               ~/.config
-rsync -a config/rofi               ~/.config
-rsync -a config/picom              ~/.config
-rsync -a config/polybar            ~/.config
-rsync -a config/wifm                ~/.config
-chmod +x ~/.config/polybar/launch.sh
+rsync -a config/wifm               ~/.config
+rsync -a config/waybar             ~/.config
+
+# rsync -a config/i3                 ~/.config
+# rsync -a config/polybar            ~/.config
+# rsync -a config/rofi               ~/.config
+# rsync -a config/picom              ~/.config
+# chmod +x ~/.config/polybar/launch.sh
 
 echo "== Restore complete!"
 exit 0
