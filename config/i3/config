@@ -1,7 +1,9 @@
 # i3 config file (v4)
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
+# Mod4 - Super
+# Mod1 - Alt
+set $mod Mod4
 floating_modifier $mod
 tiling_drag modifier titlebar
 # Убрать рамки и строку заголовка окон
@@ -21,22 +23,22 @@ bindsym $mod+Tab exec --no-startup-id rofi -show run
 # https://github.com/betterlockscreen/betterlockscreen
 # yay -S betterlockscreen
 exec --no-startup-id betterlockscreen -w blur 
-bindsym Shift+Ctrl+l exec betterlockscreen -l blur
+bindsym $mod+Alt+l exec betterlockscreen -l blur
 
 # Screenshoot (yay -S flameshot)
 bindsym Print exec --no-startup-id flameshot full
-bindsym Ctrl+Print exec --no-startup-id flameshot gui
+bindsym Shift+Print exec --no-startup-id flameshot gui
 
 # Toggle keylayot
 # exec --no-startup-id setxkbmap -model pc105 -layout us,ru -option grp:caps_toggle,grp_led:caps,grp:switch
 # exec --no-startup-id setxkbmap -model pc105 -layout us,ru -option grp:win_space_toggle
 exec --no-startup-id setxkbmap -model pc105 -layout us,ru -option grp:alt_shift_toggle
 
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Ctrl+u restart
-
 # kill focused window
 bindsym $mod+Escape kill
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Ctrl+u restart
 
 # exit i3 (logs you out of your X session)
 bindsym $mod+Ctrl+Escape exec "i3-msg exit"
@@ -66,7 +68,7 @@ exec "--no-startup-id nitrogen --restore &"
 
 # Transparent and other visual effect
 # yay -S picom
-exec --no-startup-id nitrogen --restore; sleep 1; compton -b
+# exec --no-startup-id nitrogen --restore; sleep 1; compton -b
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -78,34 +80,35 @@ exec --no-startup-id dex --autostart --environment i3
 # Switch ---------------------------------------------------------------------
 
 # Define names for default workspaces for key bindings later
-set $ws1 "zsh"
-set $ws2 "vim"
+set $ws1 "avin"
+set $ws2 "sh"
 set $ws3 "web"
-set $ws4 "file"
-set $ws5 "git"
-set $ws7 "avin"
-set $ws8 "obsidian"
-set $ws9 "q"
-set $ws10 "e"
-set $ws11 "zsh"
-set $ws12 "x"
-set $ws13 "c"
-set $ws14 "b"
-set $ws15 "r"
+set $ws4 "dev"
+set $ws5 "file"
+set $ws6 "dir"
+set $ws7 "write"
+set $ws8 "read"
+set $ws9 "xmind"
+set $ws10 "telegram"
+set $ws11 "pinta"
+set $ws12 "inkscape"
+set $ws13 "calc"
+set $ws14 "v"
+set $ws15 "b"
 # switch to workspace
-bindsym $mod+q      workspace "zsh"
+bindsym $mod+q      workspace "xmind"
 bindsym $mod+w      workspace "web"
-bindsym $mod+e      workspace "vim"
-bindsym $mod+r      workspace "obsidian"
-bindsym $mod+t      workspace "thunar"
+bindsym $mod+e      workspace "write"
+bindsym $mod+r      workspace "read"
+bindsym $mod+t      workspace "telegram"
 bindsym $mod+a      workspace "avin"
-bindsym $mod+s      workspace "s"
-bindsym $mod+d      workspace "d"
+bindsym $mod+s      workspace "sh"
+bindsym $mod+d      workspace "dev"
 bindsym $mod+f      workspace "file"
-bindsym $mod+g      workspace "git"
-bindsym $mod+z      workspace "z"
-bindsym $mod+x      workspace "x"
-bindsym $mod+c      workspace "c"
+bindsym $mod+g      workspace "dir"
+bindsym $mod+z      workspace "pinta"
+bindsym $mod+x      workspace "inkscape"
+bindsym $mod+c      workspace "calc"
 bindsym $mod+v      workspace "v"
 bindsym $mod+b      workspace "b"
 bindsym $mod+less   workspace prev
@@ -113,18 +116,39 @@ bindsym $mod+greater  workspace next
 
 # Bind program ---------------------------------------------------------------
 
-bindsym $mod+Ctrl+c exec "i3-msg 'exec mate-calc'"
-bindsym $mod+Ctrl+slash exec "i3-msg 'exec gnome-system-monitor'"
+bindsym $mod+Shift+q exec "i3-msg 'exec xmind'"
+bindsym $mod+Shift+w exec "i3-msg 'exec google-chrome-stable'"
+bindsym $mod+Shift+e exec "i3-msg 'exec obsidian'"
+bindsym $mod+Shift+r exec "i3-msg 'exec evince'"
+bindsym $mod+Shift+t exec "i3-msg 'exec telegram-desktop'"
 
-bindsym $mod+Ctrl+q exec "i3-msg 'workspace zsh; exec alacritty'"
-bindsym $mod+Ctrl+w exec "i3-msg 'workspace web; exec yandex-browser-stable'"
-bindsym $mod+Ctrl+e exec "i3-msg 'workspace vim; exec alacritty -e nvim'"
-bindsym $mod+Ctrl+r exec "i3-msg 'workspace obsidian; exec obsidian'"
-bindsym $mod+Ctrl+t exec "i3-msg 'workspace thunar; exec thunar'"
+bindsym $mod+Shift+a exec "i3-msg 'exec ya/avin-dev/main.py'"
+bindsym $mod+Shift+s exec "i3-msg 'exec alacritty'"
+bindsym $mod+Shift+d exec "i3-msg 'exec alacritty -e nvim'"
+bindsym $mod+Shift+f exec "i3-msg 'exec alacritty -e vifm'"
+bindsym $mod+Shift+g exec "i3-msg 'exec thunar'"
 
-bindsym $mod+Ctrl+a exec "i3-msg 'workspace avin; exec ya/avin-dev/main.py'"
-bindsym $mod+Ctrl+f exec "i3-msg 'workspace file; exec alacritty -e vifm'"
-bindsym $mod+Ctrl+g exec "i3-msg 'workspace git; exec github-desktop'"
+bindsym $mod+Shift+z exec "i3-msg 'exec pinta'"
+bindsym $mod+Shift+x exec "i3-msg 'exec inkscape'"
+bindsym $mod+Shift+c exec "i3-msg 'exec mate-calc'"
+
+bindsym $mod+Alt+q exec "i3-msg 'workspace xmind; exec xmind'"
+bindsym $mod+Alt+w exec "i3-msg 'workspace web; exec google-chrome-stable'"
+bindsym $mod+Alt+e exec "i3-msg 'workspace write; exec obsidian'"
+bindsym $mod+Alt+r exec "i3-msg 'workspace read; exec evince'"
+bindsym $mod+Alt+t exec "i3-msg 'workspace telegram; exec telegram-desktop'"
+
+bindsym $mod+Alt+a exec "i3-msg 'workspace avin; exec ya/avin-dev/main.py'"
+bindsym $mod+Alt+s exec "i3-msg 'workspace sh; exec alacritty'"
+bindsym $mod+Alt+d exec "i3-msg 'workspace dev; exec alacritty -e nvim'"
+bindsym $mod+Alt+f exec "i3-msg 'workspace file; exec alacritty -e vifm'"
+bindsym $mod+Alt+g exec "i3-msg 'workspace thunar; exec thunar'"
+
+bindsym $mod+Alt+z exec "i3-msg 'workspace pinta; exec pinta'"
+bindsym $mod+Alt+x exec "i3-msg 'workspace inkscape; exec inkscape'"
+bindsym $mod+Alt+c exec "i3-msg 'exec mate-calc'"
+# bindsym $mod+Shift+v exec "i3-msg 'workspace inkscape; exec inkscape'"
+# bindsym $mod+Shift+b exec "i3-msg 'workspace inkscape; exec inkscape'"
 
 # Split ----------------------------------------------------------------------
 

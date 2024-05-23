@@ -64,9 +64,12 @@ map('v', '$', 'g$', opts)
 map('v', '^', 'g^', opts)
 
 -- Fast activate macro
-map('n', '<esc>j', '@j', opts)
-map('n', '<esc>k', '@k', opts)
 map('n', '<esc>r', '@r', opts)
+map('n', '<esc>s', '@s', opts)
+map('n', '<esc>d', '@d', opts)
+map('n', '<esc>f', '@f', opts)
+map('n', '<esc>c', '@c', opts)
+map('n', '<esc>m', '@m', opts)
 
 -- <F1> .. <F12> -------------------------------------------------------------
 
@@ -98,9 +101,9 @@ map('n', '<F12>', '\
 
 -- Ars Vincere session -------------------------------------------------------
 map('n', '<PageUp>',
-    ':source /home/alex/ya/avin-dev/dev/Session_avin.vim<CR>\
+    ':source /home/alex/ya/arsvincere/dev/Session_avin.vim<CR>\
     :NvimTreeRefresh<CR>:NvimTreeToggle<CR>\
-    <C-w><C-l><C-w><C-l>icd ya/avin-dev<CR><C-\\><C-n>\
+    <C-w><C-l><C-w><C-l>icd ya/arsvincere<CR><C-\\><C-n>\
     :set nonu<CR><C-w><C-h>\
     ', opts)
     -- source ~/ve/bin/activate<CR>\

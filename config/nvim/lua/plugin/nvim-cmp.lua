@@ -9,7 +9,11 @@ cmp.setup({
     mapping = {
         ['<Tab>'] = cmp.mapping(cmp.mapping.select_next_item(
             { behavior = cmp.SelectBehavior.Insert }), {'i'}),
+        ['<Down>'] = cmp.mapping(cmp.mapping.select_next_item(
+            { behavior = cmp.SelectBehavior.Insert }), {'i'}),
         ['<S-Tab>'] = cmp.mapping(cmp.mapping.select_prev_item(
+            { behavior = cmp.SelectBehavior.Insert }), {'i'}),
+        ['<Up>'] = cmp.mapping(cmp.mapping.select_prev_item(
             { behavior = cmp.SelectBehavior.Insert }), {'i'}),
         ['<C-k>'] = cmp.mapping.scroll_docs(-1),
         ['<C-j>'] = cmp.mapping.scroll_docs(1),
