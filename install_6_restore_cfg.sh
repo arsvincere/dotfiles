@@ -29,7 +29,7 @@ rsync -a config/alacritty          ~/.config
 rsync -a config/hypr               ~/.config
 rsync -a config/mako               ~/.config
 rsync -a config/nvim               ~/.config
-rsync -a config/wifm               ~/.config
+rsync -a config/vifm               ~/.config
 rsync -a config/waybar             ~/.config
 
 # rsync -a config/i3                 ~/.config
