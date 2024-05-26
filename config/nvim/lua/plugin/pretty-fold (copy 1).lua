@@ -50,9 +50,6 @@ require('pretty-fold').setup(
 -- Patch ---------------------------------------------------------------------
 -- for error with 'curwin_col_off'
 
--- File
--- /home/alex/.local/share/nvim/plugged/pretty-fold.nvim/lua/pretty-fold/init.lua
-
 -- diff --git a/lua/pretty-fold/init.lua b/lua/pretty-fold/init.lua
 -- index b0b3788..09776ae 100644
 -- --- a/lua/pretty-fold/init.lua

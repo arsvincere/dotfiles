@@ -103,7 +103,8 @@ map('n', '<F12>', '\
 map('n', '<PageUp>',
     ':source /home/alex/ya/arsvincere/dev/Session_avin.vim<CR>\
     :NvimTreeRefresh<CR>:NvimTreeToggle<CR>\
-    <C-w><C-l><C-w><C-l>icd ya/arsvincere<CR><C-\\><C-n>\
+    <C-w><C-l><C-w><C-l>icd ya/arsvincere<CR>\
+    source ~/env/bin/activate<CR><C-\\><C-n>\
     :set nonu<CR><C-w><C-h>\
     ', opts)
     -- source ~/ve/bin/activate<CR>\
