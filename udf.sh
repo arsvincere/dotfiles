@@ -46,12 +46,11 @@ cp ~/.config/yandex-disk/config.cfg             "$CFG/yandex-disk/config.cfg"
 # git commit & push
 echo ":: git add"
 cd $DIR && git add .
-echo ":: git commit -a"
-cd $DIR && git commit -m "$1"
+echo ":: git commit "
+cd $DIR && git commit -a -m "$1"
 echo ":: git push"
 cd $DIR && git push
 
 echo "== Backup complete!"
 exit 0
-
 
