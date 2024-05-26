@@ -3,12 +3,13 @@ echo "== Backup start"
 
 DIR=~/ya/dotfiles/config/
 
-# home
-echo ":: copy home cfg"
-mkdir -p "$DIR/bash"
-cp ~/.bashrc                                    "$DIR/bash/.bashrc"
+# echo ":: copy bashrc"
+# mkdir -p "$DIR/bash"
+# cp ~/.bashrc                                    "$DIR/bash/.bashrc"
+# echo ":: copy xinitrc"
 # mkdir -p "$DIR/xinit"
 # cp ~/.xinitrc                                   "$DIR/xinit/.xinitrc"
+echo ":: copy zsh"
 mkdir -p "$DIR/zsh"
 cp ~/.zshrc                                     "$DIR/zsh/.zshrc"
 cp ~/.zprofile                                  "$DIR/zsh/.zprofile"
