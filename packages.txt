@@ -33,6 +33,7 @@ ttf-hack-nerd
 ttf-sourcecodepro-nerd
 vifm
 waybar
+wl-clipboard
 wl-clip-persist
 wofi
 yandex-disk

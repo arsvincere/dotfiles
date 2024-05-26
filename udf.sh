@@ -21,6 +21,7 @@ cp /boot/grub/grub.cfg                          "$DIR/grub/grub.cfg"
 
 # cfg
 echo ":: rsync dotfiles"
+rsync -a ~/.config/Mousepad                     "$DIR" 
 rsync -a ~/.config/SpeedCrunch                  "$DIR" 
 rsync -a ~/.config/Thunar                       "$DIR" 
 rsync -a ~/.config/autostart                    "$DIR" 
@@ -32,10 +33,10 @@ rsync -a ~/.config/nvim                         "$DIR" --exclude .git
 rsync -a ~/.config/vifm                         "$DIR" 
 rsync -a ~/.config/waybar                       "$DIR" 
 
-rsync -a ~/.config/i3                           "$DIR" 
-rsync -a ~/.config/polybar                      "$DIR" 
-rsync -a ~/.config/rofi                         "$DIR" 
-rsync -a ~/.config/picom                        "$DIR" 
+# rsync -a ~/.config/i3                           "$DIR" 
+# rsync -a ~/.config/polybar                      "$DIR" 
+# rsync -a ~/.config/rofi                         "$DIR" 
+# rsync -a ~/.config/picom                        "$DIR" 
 
 # yandex
 echo ":: copy yandex-disk config"

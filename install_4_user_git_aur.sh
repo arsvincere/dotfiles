@@ -22,8 +22,6 @@ sudo echo "%wheel ALL=(ALL:ALL) NOPASSWD: /usr/bin/pacman" >> /etc/sudoers
 
 # Установка Git
 pacman -S git
-git config --global user.name "arsvincere"
-git config --global user.email "mr.alexavin@gmail.com"
 
 # Установка AUR
 # pacman -Syu

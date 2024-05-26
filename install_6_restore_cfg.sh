@@ -20,6 +20,7 @@ echo ":: restore grub.cfg"
 sudo cp grub/grub.cfg                   /boot/grub/grub.cfg
 
 echo ":: restore .config files"
+rsync -a config/Mousepad           ~/.config
 rsync -a config/SpeedCrunch        ~/.config
 rsync -a config/Thunar             ~/.config
 rsync -a config/autostart          ~/.config
@@ -36,6 +37,10 @@ rsync -a config/waybar             ~/.config
 # rsync -a config/rofi               ~/.config
 # rsync -a config/picom              ~/.config
 # chmod +x ~/.config/polybar/launch.sh
+
+# Git
+git config --global user.name "arsvincere"
+git config --global user.email "mr.alexavin@gmail.com"
 
 echo "== Restore complete!"
 exit 0
