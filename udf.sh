@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "== Backup start"
 
-DIR=~/ya/dotfiles/config
+DIR=~/ya/dotfiles/config/
 
 # home
 echo ":: copy home cfg"
