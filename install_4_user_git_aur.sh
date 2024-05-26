@@ -24,16 +24,17 @@ sudo echo "%wheel ALL=(ALL:ALL) NOPASSWD: /usr/bin/pacman" >> /etc/sudoers
 pacman -S git
 
 # Установка AUR
-# pacman -Syu
-# git clone https://aur.archlinux.org/yay.git
-# cd yay && makepkg -sir --needed --noconfirm --skippgpcheck
-# rm -rf yay
+pacman -Syu
+cd /tmp
+git clone https://aur.archlinux.org/yay.git
+cd yay && makepkg -sir --needed --noconfirm --skippgpcheck
+cd ..
+rm -rf yay
 
 # Установка пакетов, которые решают большинство проблем, с которыми вы можете столкнуться
-# SSD support
-sudo pacman -S --needed --noconfirm f2fs-tools dosfstools ntfs-3g alsa-lib alsa-utils file-roller p7zip unrar gvfs aspell-ru pulseaudio 
-
+# f2fs-tools - SSD support
 # dosfstools - The dosfstools package includes the mkfs.fat and fsck.fat utilities, which respectively make and check MS-DOS FAT filesystems
+sudo pacman -S --needed --noconfirm f2fs-tools dosfstools ntfs-3g alsa-lib alsa-utils file-roller p7zip unrar gvfs aspell-ru pulseaudio 
 
 echo "Continue:"
 echo " - reboot"

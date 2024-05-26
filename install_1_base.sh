@@ -15,6 +15,7 @@ timedatectl set-ntp true
 
 # Разметка диска
 # fdisk -l
+fdisk /dev/sda
 
 # Форматирование дисков
 mkswap      /dev/sda1 -L swap

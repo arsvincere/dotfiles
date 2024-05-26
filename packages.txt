@@ -37,6 +37,4 @@ wl-clipboard
 wl-clip-persist
 wofi
 yandex-disk
-yay
-yay-debug
 zsh
