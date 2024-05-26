@@ -41,7 +41,7 @@ rsync -a ~/.config/waybar                       "$DIR"
 # yandex
 echo ":: copy yandex-disk config"
 mkdir -p "$CFG/yandex-disk"
-cp ~/.config/yandex-disk/config.cfg             "$CFG/yandex-disk/config.cfg"
+cp ~/.config/yandex-disk/config.cfg             "$DIR/yandex-disk/config.cfg"
 
 # git commit & push
 echo ":: git add"
