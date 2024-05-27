@@ -2,8 +2,11 @@ alacritty
 btop
 ctags
 deluge-gtk
+evince
 google-chrome
 grimshot
+gruvbox-material-gtk-theme-git
+gruvbox-material-icon-theme-git
 hyprland
 hyprlock
 hyprpicker
@@ -36,5 +39,6 @@ waybar
 wl-clipboard
 wl-clip-persist
 wofi
+xsel
 yandex-disk
 zsh

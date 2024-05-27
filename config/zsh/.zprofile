@@ -3,7 +3,7 @@
 export PATH="$PATH:/home/alex/.local/bin"
 
 # Start DE
-Hyprland
+# Hyprland
 
 # Start Yandex-disk
 yandex-disk start
