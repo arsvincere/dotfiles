@@ -13,8 +13,8 @@
         "custom/calculator",
         "custom/english",
         "hyprland/workspaces"
-        // "hyprland/mode",
-        // "hyprland/scratchpad",
+        // "hyprland/mode"
+        // "hyprland/scratchpad"
         // "custom/media"
     ],
     "modules-center": [
@@ -67,8 +67,8 @@
             "6": "read",
             "7": "file",
             "8": "dir",
-            "9": "xmind",
-            "10": "telegram",
+            "9": "note",
+            "10": "message",
             "11": "pinta",
             "12": "inkscape",
             "13": "calc",
