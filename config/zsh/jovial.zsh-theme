@@ -54,17 +54,13 @@ typeset -gA JOVIAL_SYMBOL=(
     corner.top    '╭─'
     corner.bottom '╰─'
 
-    git.dirty '   '
-    git.clean ' '
+    git.dirty '  '
+    git.clean '  '
 
     ## preset arrows
-    # arrow '─>'
-    # arrow '─▶'
     arrow '─➤'
-    # arrow.git-clean '(๑˃̵ᴗ˂̵)و'
-    arrow.git-clean '─ '
-    # arrow.git-dirty '(ﾉ˚Д˚)ﾉ'
-    arrow.git-dirty '─ '
+    arrow.git-clean '─➤'
+    arrow.git-dirty '─ '
 )
 
 # jovial theme colors mapping
@@ -156,12 +152,12 @@ typeset -gA JOVIAL_AFFIXES=(
 
     path.prefix            '${JOVIAL_PALETTE[conj.]}  '
     current-dir            '%~'
-    path.suffix            ''
+    path.suffix            ' '
 
     dev-env.prefix         ' '
     dev-env.suffix         ''
-
-    git-info.prefix        '${JOVIAL_PALETTE[normal]}   '
+#     
+    git-info.prefix        '${JOVIAL_PALETTE[conj.]}   '
     git-info.suffix        '${JOVIAL_PALETTE[normal]}'
 
     venv.prefix            ' ${JOVIAL_PALETTE[normal]}('
@@ -599,7 +595,7 @@ typeset -gA jovial_affix_lengths=()
 @jov.prompt-node-version() {
     if @jov.rev-parse-find "package.json"; then
         if @jov.iscommand node; then
-            local node_prompt_prefix="${JOVIAL_PALETTE[conj.]}using "
+            local node_prompt_prefix="${JOVIAL_PALETTE[conj.]} "
             local node_prompt="%F{120}node `\node -v`"
         else
             local node_prompt_prefix="${JOVIAL_PALETTE[normal]}[${JOVIAL_PALETTE[error]}need "
@@ -612,7 +608,7 @@ typeset -gA jovial_affix_lengths=()
 @jov.prompt-golang-version() {
     if @jov.rev-parse-find "go.mod"; then
         if @jov.iscommand go; then
-            local go_prompt_prefix="${JOVIAL_PALETTE[conj.]}using "
+            local go_prompt_prefix="${JOVIAL_PALETTE[conj.]} "
             # go version go1.7.4 linux/amd64
             local go_version=`go version`
             if [[ ${go_version} =~ ' go([0-9]+\.[0-9]+\.[0-9]+) ' ]]; then
@@ -622,7 +618,7 @@ typeset -gA jovial_affix_lengths=()
             fi
             local go_prompt="%F{086}Golang ${go_version}"
         else
-            local go_prompt_prefix="${JOVIAL_PALETTE[normal]}[${JOVIAL_PALETTE[error]}need "
+            local go_prompt_prefix="${JOVIAL_PALETTE[normal]}[${JOVIAL_PALETTE[error]} "
             local go_prompt="Golang${JOVIAL_PALETTE[normal]}]"
         fi
         echo "${go_prompt_prefix}${go_prompt}"
@@ -633,7 +629,7 @@ typeset -gA jovial_affix_lengths=()
 @jov.prompt-php-version() {
     if @jov.rev-parse-find "composer.json"; then
         if @jov.iscommand php; then
-            local php_prompt_prefix="${JOVIAL_PALETTE[conj.]}using "
+            local php_prompt_prefix="${JOVIAL_PALETTE[conj.]} "
             local php_prompt="%F{105}php `\php -r 'echo PHP_MAJOR_VERSION . "." . PHP_MINOR_VERSION . "." . PHP_RELEASE_VERSION . "\n";'`"
         else
             local php_prompt_prefix="${JOVIAL_PALETTE[normal]}[${JOVIAL_PALETTE[error]}need "
@@ -644,7 +640,7 @@ typeset -gA jovial_affix_lengths=()
 }
 
 @jov.prompt-python-version() {
-    local python_prompt_prefix="${JOVIAL_PALETTE[conj.]}using "
+    local python_prompt_prefix="${JOVIAL_PALETTE[conj.]} "
 
     if [[ -n ${VIRTUAL_ENV} ]] && @jov.rev-parse-find "venv"; then
         local python_prompt="%F{123}`$(@jov.rev-parse-find venv '' true)/venv/bin/python --version 2>&1`"
