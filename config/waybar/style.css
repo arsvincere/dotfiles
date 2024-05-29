@@ -30,13 +30,19 @@ window#waybar {
 	margin: 4px 0px 0px 0px;
     padding: 0px 2px;
 }
+#custom-english {
+    background: transparent;
+    color: #76946A;
+	margin: 4px 0px 0px 0px;
+    padding: 0px 2px;
+}
 #custom-calculator {
     background: transparent;
     color: #76946A;
 	margin: 4px 0px 0px 0px;
     padding: 0px 2px;
 }
-#custom-english {
+#custom-note {
     background: transparent;
     color: #76946A;
 	margin: 4px 0px 0px 0px;

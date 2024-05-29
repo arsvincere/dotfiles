@@ -11,6 +11,7 @@
         "custom/diary",
         "custom/book",
         "custom/calculator",
+        "custom/note",
         "custom/english",
         "hyprland/workspaces"
         // "hyprland/mode"
@@ -43,14 +44,19 @@
       "on-click": "fbreader",
       "tooltip": false
     },
-    "custom/english": {
-      "format": "󱙼 ",
-      "on-click": "alacritty -T english -e nvim ~/ya/english.md ",
-      "tooltip": false
-    },
     "custom/calculator": {
       "format": " ",
       "on-click": "speedcrunch",
+      "tooltip": false
+    },
+    "custom/english": {
+      "format": "󰬰 ",
+      "on-click": "alacritty -T english -e nvim ~/ya/english.md ",
+      "tooltip": false
+    },
+    "custom/note": {
+      "format": " ",
+      "on-click": "alacritty -T note -e nvim ~/ya/note.md ",
       "tooltip": false
     },
     "hyprland/workspaces": {
