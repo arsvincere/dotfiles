@@ -43,3 +43,12 @@ wofi
 xsel
 yandex-disk
 zsh
+
+zathura
+zathura-pdf-poppler
+zathura-djvu
+zathura-ps
+texlive-latex
+latex-mk
+
+e1000e-dkms
