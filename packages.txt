@@ -34,7 +34,6 @@ ttf-nerd-fonts-symbols
 ttf-nerd-fonts-symbols-mono
 ttf-hack-nerd
 ttf-sourcecodepro-nerd
-ttf-dejavu
 vifm
 waybar
 wl-clipboard
@@ -44,6 +43,9 @@ xsel
 yandex-disk
 zsh
 
+telegram-desktop
+ttf-dejavu
+
 zathura
 zathura-pdf-poppler
 zathura-djvu
@@ -51,4 +53,6 @@ zathura-ps
 texlive-latex
 latex-mk
 
-e1000e-dkms
+xplr
+
+

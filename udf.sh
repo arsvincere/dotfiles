@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "== Backup start"
 
-DIR=~/ya/dotfiles/config/
+DIR=~/ya/conf/config/
 
 # echo ":: copy bashrc"
 # mkdir -p "$DIR/bash"
