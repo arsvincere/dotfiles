@@ -108,6 +108,6 @@ fi
 
 # ----------------------------------------------------------------------------
 
-export PYTHONPATH="$PYTHONPATH:/home/alex/ya/arsvincere"
-export PYTHONPATH="$PYTHONPATH:/home/alex/ya/arsvincere/env/lib/python3.12/site-packages"
+export PYTHONPATH="$PYTHONPATH:/home/alex/AVIN"
+export PYTHONPATH="$PYTHONPATH:/home/alex/AVIN/env/lib/python3.12/site-packages"
 
