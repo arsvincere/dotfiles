@@ -55,4 +55,9 @@ latex-mk
 
 xplr
 
+hellix
+zellij
+marksman
+python-lsp-server
+
 

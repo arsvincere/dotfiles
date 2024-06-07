@@ -73,6 +73,11 @@ map('n', '<esc>f', '@f', opts)
 map('n', '<esc>c', '@c', opts)
 map('n', '<esc>m', '@m', opts)
 
+-- Split
+map('n', '<leader>h', ':sp<CR>', opts)
+map('n', '<leader>v', ':vs<CR>', opts)
+map('n', '<leader><Esc>', ':x<CR>', opts)
+
 -- <F1> .. <F12> -------------------------------------------------------------
 
 -- По F1 очищаем последний поиск с подсветкой
