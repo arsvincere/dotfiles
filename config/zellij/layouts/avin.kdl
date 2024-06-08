@@ -1,0 +1,27 @@
+layout {
+    default_tab_template {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+            }
+        children
+//        pane size=2 borderless=true {
+//            plugin location="zellij:status-bar"
+//            }
+        }
+    tab name="dev" focus=true {
+        pane cwd="/home/alex/AVIN" command="helix" size="80%" borderless=true
+        pane split_direction="vertical" size="20%"{
+            pane cwd="/home/alex/AVIN" size="60%"
+            pane cwd="/home/alex/AVIN/test" size="40%"
+            }
+        }
+    tab name="file" {
+        pane cwd="/home/alex/AVIN" command="vifm" borderless=true
+        }
+    tab name="xplr" {
+        pane cwd="/home/alex/AVIN" command="xplr" borderless=true
+        }
+    tab name="git" {
+        pane cwd="/home/alex/AVIN" command="lazygit" borderless=true
+        }
+    }
