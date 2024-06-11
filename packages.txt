@@ -44,12 +44,15 @@ wofi
 xplr
 xsel
 yandex-disk
+zsh
+
+
+zellij
+
 zathura
 zathura-pdf-poppler
 zathura-djvu
 zathura-ps
-zellij
-zsh
 
 texlive-latex
 texlive-binextra
@@ -59,4 +62,5 @@ hellix
 python-lsp-server
 marksman
 
+qutebrowser
 
