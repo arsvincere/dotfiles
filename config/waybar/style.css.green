@@ -19,31 +19,32 @@ window#waybar {
 
 #custom-diary {
     background: transparent;
-    color: #658594;
+    color: #76946A;
 	margin: 4px 0px 0px 8px;
     padding: 0px 2px;
 }
+
 #custom-book {
     background: transparent;
-    color: #658594;
+    color: #76946A;
 	margin: 4px 0px 0px 0px;
     padding: 0px 2px;
 }
 #custom-english {
     background: transparent;
-    color: #658594;
+    color: #76946A;
 	margin: 4px 0px 0px 0px;
     padding: 0px 2px;
 }
 #custom-calculator {
     background: transparent;
-    color: #658594;
+    color: #76946A;
 	margin: 4px 0px 0px 0px;
     padding: 0px 2px;
 }
 #custom-note {
     background: transparent;
-    color: #658594;
+    color: #76946A;
 	margin: 4px 0px 0px 0px;
     padding: 0px 2px;
 }
@@ -126,25 +127,25 @@ window#waybar {
 /* Right angle **************************************************************/
 #cpu {
     background: transparent;
-    color: #658594;
+    color: #76946A;
 	margin: 4px 0px 0px 0px;
     padding: 0px 8px 0px 150px;
 }
 #memory {
     background: transparent;
-    color: #658594;
+    color: #76946A;
 	margin: 4px 0px 0px 0px;
     padding: 0px 8px;
 }
 #disk {
     background: transparent;
-    color: #658594;
+    color: #76946A;
 	margin: 4px 0px 0px 0px;
     padding: 0px 8px;
 }
 #temperature {
     background: transparent;
-    color: #658594;
+    color: #76946A;
 	margin: 4px 4px 0px 0px;
     padding: 0px 8px;
 }

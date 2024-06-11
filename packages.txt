@@ -28,8 +28,10 @@ snapd
 speedcrunch
 swaybg
 syncthing
+telegram-desktop
 thunar
 timeshift
+ttf-dejavu
 ttf-nerd-fonts-symbols
 ttf-nerd-fonts-symbols-mono
 ttf-hack-nerd
@@ -39,25 +41,22 @@ waybar
 wl-clipboard
 wl-clip-persist
 wofi
+xplr
 xsel
 yandex-disk
-zsh
-
-telegram-desktop
-ttf-dejavu
-
 zathura
 zathura-pdf-poppler
 zathura-djvu
 zathura-ps
+zellij
+zsh
+
 texlive-latex
+texlive-binextra
 latex-mk
 
-xplr
-
 hellix
-zellij
-marksman
 python-lsp-server
+marksman
 
 

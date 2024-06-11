@@ -27,12 +27,13 @@
         "network",
         "cpu",
         "memory",
-        "disk",
-        "temperature"
+        "disk"
+        // "temperature"
         // "power-profiles-daemon",
         // "keyboard-state",
         // "mpd",
     ],
+
     // Modules configuration -------------------------------------------------
     "custom/diary": {
       "format": " ",
@@ -78,7 +79,7 @@
             "11": "pinta",
             "12": "inkscape",
             "13": "drawio",
-            "14": "v",
+            "14": "math",
             "15": "b",
             "urgent": " ",
             "focused": " ",
