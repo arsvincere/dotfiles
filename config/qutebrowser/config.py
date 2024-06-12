@@ -1934,7 +1934,8 @@ c.statusbar.show = 'in-mode'
 ##   - startpage: Load the start page.
 ##   - default-page: Load the default page.
 ##   - close: Close the window.
-# c.tabs.last_close = 'ignore'
+c.tabs.last_close = 'default-page'
+# c.tabs.last_close = 'startpage'
 
 ## Maximum width (in pixels) of tabs (-1 for no maximum). This setting
 ## only applies when tabs are horizontal. This setting does not apply to
@@ -2106,7 +2107,8 @@ c.tabs.title.format = '{index}: {current_title}'
 ## Page to open if :open -t/-b/-w is used without URL. Use `about:blank`
 ## for a blank page.
 ## Type: FuzzyUrl
-# c.url.default_page = 'https://start.duckduckgo.com/'
+c.url.default_page = 'https://start.duckduckgo.com/'
+# c.url.default_page = 'alexavin.blog'
 
 ## URL segments where `:navigate increment/decrement` will search for a
 ## number.

@@ -95,7 +95,7 @@ else
 fi
 
 # Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+export ARCHFLAGS="-arch x86_64"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -110,4 +110,11 @@ fi
 
 export PYTHONPATH="$PYTHONPATH:/home/alex/AVIN"
 export PYTHONPATH="$PYTHONPATH:/home/alex/AVIN/env/lib/python3.12/site-packages"
+export PYTHONPATH="$PYTHONPATH:/usr/lib/qt6"
+
+
+# qutebrowser 
+# export QTWEBENGINE_RESOURCES_PATH="/usr/lib/qt6"
+# export QTWEBENGINEPROCESS_PATH="/usr/lib/qt6"
+
 

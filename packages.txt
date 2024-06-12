@@ -22,6 +22,7 @@ neovim
 networkmanager
 obsidian
 pinta-gtk3-git
+qutebrowser
 ripgrep
 ristretto
 snapd
@@ -29,9 +30,12 @@ speedcrunch
 swaybg
 syncthing
 telegram-desktop
+texlive-latex
+texlive-binextra
 thunar
 timeshift
 ttf-dejavu
+ttf-hack
 ttf-nerd-fonts-symbols
 ttf-nerd-fonts-symbols-mono
 ttf-hack-nerd
@@ -44,23 +48,26 @@ wofi
 xplr
 xsel
 yandex-disk
-zsh
-
-
-zellij
-
 zathura
 zathura-pdf-poppler
 zathura-djvu
-zathura-ps
-
-texlive-latex
-texlive-binextra
-latex-mk
+zellij
+zsh
 
 hellix
 python-lsp-server
 marksman
 
-qutebrowser
+yazi
+ffmpegthumbnailer
+unarchiver
+jq
+poppler
+fd
+ripgrep
+fzf
+zoxide
+
+latex-mk
+
 

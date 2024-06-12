@@ -6,35 +6,5 @@
 
 config_version: 2
 settings:
-  auto_save.session:
-    global: true
-  colors.tooltip.fg:
-    global: null
-  colors.webpage.bg:
-    global: white
-  colors.webpage.darkmode.algorithm:
-    global: lightness-cielab
-  colors.webpage.darkmode.contrast:
-    global: 0.0
-  colors.webpage.darkmode.enabled:
-    global: true
-  content.mute:
-    global: false
-  content.notifications.enabled:
-    https://www.youtube.com: false
-  spellcheck.languages:
-    global: null
-  statusbar.show:
-    global: in-mode
-  tabs.close_mouse_button:
-    global: middle
-  tabs.favicons.show:
-    global: never
-  tabs.max_width:
-    global: 150
-  tabs.min_width:
-    global: -1
-  tabs.show:
-    global: switching
-  tabs.title.format:
-    global: '{audio}{index}: {current_title}'
+  backend:
+    global: webengine
