@@ -1,29 +1,9 @@
 version = '0.21.8'
 xplr = xplr
 
--- xplr.config.layouts.builtin.default = {
---   Horizontal = {
---     config = {
---       margin = 1,
---       horizontal_margin = 1,
---       vertical_margin = 1,
---       constraints = {
---         { Percentage = 40 },
---         { Percentage = 40 },
---         { Percentage = 20 },
---       }
---     },
---     -- `Nothing`, `Table`, `InputAndLogs`, `Selection`, `HelpMenu`, `SortAndFilter`, `Static`, `Dynamic`, `Horizontal`, `Vertical`, `CustomContent`
---     splits = {
---       "Table",
---       "Table",
---       "HelpMenu",
---     }
---   }
--- }
-
--- icon ----------------------------------------------------------------------{{{
-xplr.config.node_types.directory = {
+-- Icons
+-- =====
+xplr.config.node_types.directory = { -- {{{
   meta = {
     icon = "",
   }
@@ -55,8 +35,10 @@ xplr.config.node_types.mime_essence = {
 xplr.config.node_types.special["Cargo.toml"] = { meta = { icon = "" } }
 xplr.config.node_types.special["Downloads"] = { meta = { icon = "󰇚" }, style = { fg = "Blue" } }
 -- }}}
--- fzf -----------------------------------------------------------------------{{{
-xplr.config.modes.builtin.default.key_bindings.on_key["F"] = {
+
+-- Fzf mode
+-- ========
+xplr.config.modes.builtin.default.key_bindings.on_key["F"] = { -- {{{
   help = "fzf mode",
   messages = {
     { SwitchModeCustom = "fzxplr" },
@@ -92,7 +74,8 @@ xplr.config.modes.custom.fzxplr = {
 }
 -- }}}
 
--- Plugins -------------------------------------------------------------------
+-- Plugins
+-- =======
 -- https://github.com/dtomvan/xpm.xplr{{{
 local home = os.getenv("HOME")
 local xpm_path = home .. "/.local/share/xplr/dtomvan/xpm.xplr"
@@ -216,8 +199,9 @@ require("nuke").setup{
 }
 -- }}}
 
--- binding -------------------------------------------------------------------
-local key = xplr.config.modes.builtin.default.key_bindings.on_key
+-- Binding
+-- =======
+local key = xplr.config.modes.builtin.default.key_bindings.on_key -- {{{
 
 -- xplr.config.modes.builtin.default.key_bindings.on_key["e"] = {
 --   help = "fzf mode",
@@ -226,20 +210,38 @@ local key = xplr.config.modes.builtin.default.key_bindings.on_key
 --   },
 -- }
 
-key.v = {
-help = "nuke",
-messages = {"PopMode", {SwitchModeCustom = "nuke"}}
-}
+-- edit file in $EDITOR
 key["e"] = xplr.config.modes.builtin.action.key_bindings.on_key.e
-key["n"] = xplr.config.modes.builtin.action.key_bindings.on_key.c
+
+-- open
+key["enter"] = xplr.config.modes.custom.nuke.key_bindings.on_key.o
+
+-- xdg-open
 key["x"] = xplr.config.modes.builtin.go_to.key_bindings.on_key.x
+
+-- open as
+key.O = {
+  help = "nuke",
+  messages = {"PopMode", {SwitchModeCustom = "nuke"}}
+}
+
+-- new FILE | DIR
+key["n"] = xplr.config.modes.builtin.action.key_bindings.on_key.c
+
+-- switch panel
 key["tab"] = xplr.config.modes.builtin.switch_layout.key_bindings.on_key.w
+
+-- right panel
 key["ctrl-l"] = xplr.config.modes.builtin.switch_layout.key_bindings.on_key.l
+
+-- left panel
 key["ctrl-h"] = xplr.config.modes.builtin.switch_layout.key_bindings.on_key.h
 
+-- fzf
 key["F"] = xplr.config.modes.custom.fzxplr.key_bindings.on_key.F
+
+-- view
 key["f3"] = xplr.config.modes.custom.nuke.key_bindings.on_key.v
-key["enter"] = xplr.config.modes.custom.nuke.key_bindings.on_key.o
 
 
 -- xplr.config.modes.builtin.default.key_bindings.on_key["X"] = {
@@ -252,15 +254,80 @@ key["enter"] = xplr.config.modes.custom.nuke.key_bindings.on_key.o
 --     },
 --   },
 -- }
+-- }}}
 
-
-
-
-
-
-
-
-
+-- Bookmark
+-- ========
+-- With `export XPLR_BOOKMARK_FILE="$HOME/.config/xplr/bookmarks"`{{{
+-- Bookmark: mode binding
+xplr.config.modes.builtin.default.key_bindings.on_key["b"] = {
+  help = "bookmark mode",
+  messages = {
+    { SwitchModeCustom = "bookmark" },
+  },
+}
+xplr.config.modes.custom.bookmark = {
+  name = "bookmark",
+  key_bindings = {
+    on_key = {
+      m = {
+        help = "bookmark dir",
+        messages = {
+          {
+            BashExecSilently0 = [[
+              PTH="${XPLR_FOCUS_PATH:?}"
+              if [ -d "${PTH}" ]; then
+                PTH="${PTH}"
+              elif [ -f "${PTH}" ]; then
+                PTH=$(dirname "${PTH}")
+              fi
+              PTH_ESC=$(printf %q "$PTH")
+              if echo "${PTH:?}" >> "${XPLR_BOOKMARK_FILE:?}"; then
+                "$XPLR" -m 'LogSuccess: %q' "$PTH_ESC added to bookmarks"
+              else
+                "$XPLR" -m 'LogError: %q' "Failed to bookmark $PTH_ESC"
+              fi
+            ]],
+          },
+          "PopMode",
+        },
+      },
+      g = {
+        help = "go to bookmark",
+        messages = {
+          {
+            BashExec0 = [===[
+              PTH=$(cat "${XPLR_BOOKMARK_FILE:?}" | fzf --no-sort)
+              if [ "$PTH" ]; then
+                "$XPLR" -m 'FocusPath: %q' "$PTH"
+              fi
+            ]===],
+          },
+          "PopMode",
+        },
+      },
+      d = {
+        help = "delete bookmark",
+        messages = {
+          {
+            BashExec0 = [[
+              PTH=$(cat "${XPLR_BOOKMARK_FILE:?}" | fzf --no-sort)
+              sd "$PTH\n" "" "${XPLR_BOOKMARK_FILE:?}"
+            ]],
+          },
+          "PopMode",
+        },
+      },
+      esc = {
+        help = "cancel",
+        messages = {
+          "PopMode",
+        },
+      },
+    },
+  },
+}
+-- }}}
 
 
 

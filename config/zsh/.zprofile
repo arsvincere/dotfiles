@@ -1,7 +1,7 @@
 # Execute once on start up
 
 # Start DE
-Hyprland
+# Hyprland
 
 # Start Yandex-disk
 yandex-disk start
