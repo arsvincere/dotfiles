@@ -3,8 +3,9 @@
 
 # Mod4 - Super
 # Mod1 - Alt
-set $mod Mod4
-floating_modifier $mod
+set $win Mod4
+set $alt Mod1
+floating_modifier $win
 tiling_drag modifier titlebar
 # Убрать рамки и строку заголовка окон
 new_window pixel 0
@@ -13,17 +14,17 @@ new_window pixel 0
 # use 'xmodmap -pke' for show all key codes
 
 # start a terminal
-bindsym $mod+space exec i3-sensible-terminal
+bindsym $win+space exec i3-sensible-terminal
 
 # start rofi menu
 # run in terminal 'rofi-theme-selector' for choose theme
-bindsym $mod+Tab exec --no-startup-id rofi -show run
+bindsym $win+Tab exec --no-startup-id rofi -show run
 
 # betterlockscreen
 # https://github.com/betterlockscreen/betterlockscreen
 # yay -S betterlockscreen
 exec --no-startup-id betterlockscreen -w blur 
-bindsym $mod+Alt+l exec betterlockscreen -l blur
+bindsym $alt+Ctrl+l exec betterlockscreen -l blur
 
 # Screenshoot (yay -S flameshot)
 bindsym Print exec --no-startup-id flameshot full
@@ -35,13 +36,13 @@ bindsym Shift+Print exec --no-startup-id flameshot gui
 exec --no-startup-id setxkbmap -model pc105 -layout us,ru -option grp:alt_shift_toggle
 
 # kill focused window
-bindsym $mod+Escape kill
+bindsym $win+Escape kill
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Ctrl+u restart
+bindsym $win+Ctrl+u restart
 
 # exit i3 (logs you out of your X session)
-bindsym $mod+Ctrl+Escape exec "i3-msg exit"
+bindsym $win+Ctrl+Escape exec "i3-msg exit"
 
 # lxappearange 
 # Тема для thunar - меняется утилитой lxappearance
@@ -50,8 +51,8 @@ bindsym $mod+Ctrl+Escape exec "i3-msg exit"
 
 # # Gaps
 # gaps outer|horizontal|vertical|top|left|bottom|right 8[px]
-# gaps left 10px
-# gaps inner 10px
+# gaps inner 8px
+# gaps outer 4px
 # # Overwrite gaps to 0, I need all the space I can get on workspace 3.
 # workspace 0 gaps left 0
 # workspace 0 gaps inner 0
@@ -64,7 +65,7 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 # Wallpaper
 # yay -S nitrogen
 # run in terminal 'nitrogen' for choose image
-exec "--no-startup-id nitrogen --restore &"
+exec --no-startup-id nitrogen --restore; sleep 1;
 
 # Transparent and other visual effect
 # yay -S picom
@@ -79,109 +80,77 @@ exec --no-startup-id dex --autostart --environment i3
 
 # Switch ---------------------------------------------------------------------
 
-# Define names for default workspaces for key bindings later
-set $ws1 "avin"
-set $ws2 "sh"
-set $ws3 "web"
-set $ws4 "dev"
-set $ws5 "file"
-set $ws6 "dir"
-set $ws7 "write"
-set $ws8 "read"
-set $ws9 "xmind"
-set $ws10 "telegram"
-set $ws11 "pinta"
-set $ws12 "inkscape"
-set $ws13 "calc"
-set $ws14 "v"
-set $ws15 "b"
 # switch to workspace
-bindsym $mod+q      workspace "xmind"
-bindsym $mod+w      workspace "web"
-bindsym $mod+e      workspace "write"
-bindsym $mod+r      workspace "read"
-bindsym $mod+t      workspace "telegram"
-bindsym $mod+a      workspace "avin"
-bindsym $mod+s      workspace "sh"
-bindsym $mod+d      workspace "dev"
-bindsym $mod+f      workspace "file"
-bindsym $mod+g      workspace "dir"
-bindsym $mod+z      workspace "pinta"
-bindsym $mod+x      workspace "inkscape"
-bindsym $mod+c      workspace "calc"
-bindsym $mod+v      workspace "v"
-bindsym $mod+b      workspace "b"
-bindsym $mod+less   workspace prev
-bindsym $mod+greater  workspace next
+bindsym $win+q        workspace "note"
+bindsym $win+w        workspace "web"
+bindsym $win+e        workspace "edit"
+bindsym $win+r        workspace "read"
+bindsym $win+t        workspace "msg"
+bindsym $win+a        workspace "avin"
+bindsym $win+s        workspace "sh"
+bindsym $win+d        workspace "dev"
+bindsym $win+f        workspace "file"
+bindsym $win+g        workspace "dir"
+bindsym $win+z        workspace "pinta"
+bindsym $win+x        workspace "inkscape"
+bindsym $win+c        workspace "drawio"
+bindsym $win+v        workspace "math"
+bindsym $win+b        workspace "other"
+bindsym $win+less     workspace prev
+bindsym $win+greater  workspace next
 
 # Bind program ---------------------------------------------------------------
 
-bindsym $mod+Shift+q exec "i3-msg 'exec xmind'"
-bindsym $mod+Shift+w exec "i3-msg 'exec google-chrome-stable'"
-bindsym $mod+Shift+e exec "i3-msg 'exec obsidian'"
-bindsym $mod+Shift+r exec "i3-msg 'exec evince'"
-bindsym $mod+Shift+t exec "i3-msg 'exec telegram-desktop'"
+bindsym $win+Shift+q exec "i3-msg 'workspace note; exec alacritty -e nvim ya/db/note.md'"
+bindsym $win+Shift+w exec "i3-msg 'workspace web; exec google-chrome-stable'"
+bindsym $win+Shift+e exec "i3-msg 'workspace edit; exec obsidian'"
+bindsym $win+Shift+r exec "i3-msg 'workspace read; exec evince'"
+bindsym $win+Shift+t exec "i3-msg 'workspace msg; exec telegram-desktop'"
 
-bindsym $mod+Shift+a exec "i3-msg 'exec ya/avin-dev/main.py'"
-bindsym $mod+Shift+s exec "i3-msg 'exec alacritty'"
-bindsym $mod+Shift+d exec "i3-msg 'exec alacritty -e nvim'"
-bindsym $mod+Shift+f exec "i3-msg 'exec alacritty -e vifm'"
-bindsym $mod+Shift+g exec "i3-msg 'exec thunar'"
+bindsym $win+Shift+a exec "i3-msg 'workspace avin; exec ya/avin-dev/main.py'"
+bindsym $win+Shift+s exec "i3-msg 'workspace sh; exec alacritty'"
+bindsym $win+Shift+d exec "i3-msg 'workspace dev; exec alacritty -e nvim'"
+bindsym $win+Shift+f exec "i3-msg 'workspace file; exec alacritty -e vifm'"
+bindsym $win+Shift+g exec "i3-msg 'workspace dir; exec thunar'"
 
-bindsym $mod+Shift+z exec "i3-msg 'exec pinta'"
-bindsym $mod+Shift+x exec "i3-msg 'exec inkscape'"
-bindsym $mod+Shift+c exec "i3-msg 'exec mate-calc'"
+bindsym $win+Shift+z exec "i3-msg 'workspace pinta; exec pinta'"
+bindsym $win+Shift+x exec "i3-msg 'workspace inkscape; exec inkscape'"
+bindsym $win+Shift+c exec "i3-msg 'workspace drawio; exec drawio'"
 
-bindsym $mod+Alt+q exec "i3-msg 'workspace xmind; exec xmind'"
-bindsym $mod+Alt+w exec "i3-msg 'workspace web; exec google-chrome-stable'"
-bindsym $mod+Alt+e exec "i3-msg 'workspace write; exec obsidian'"
-bindsym $mod+Alt+r exec "i3-msg 'workspace read; exec evince'"
-bindsym $mod+Alt+t exec "i3-msg 'workspace telegram; exec telegram-desktop'"
-
-bindsym $mod+Alt+a exec "i3-msg 'workspace avin; exec ya/avin-dev/main.py'"
-bindsym $mod+Alt+s exec "i3-msg 'workspace sh; exec alacritty'"
-bindsym $mod+Alt+d exec "i3-msg 'workspace dev; exec alacritty -e nvim'"
-bindsym $mod+Alt+f exec "i3-msg 'workspace file; exec alacritty -e vifm'"
-bindsym $mod+Alt+g exec "i3-msg 'workspace thunar; exec thunar'"
-
-bindsym $mod+Alt+z exec "i3-msg 'workspace pinta; exec pinta'"
-bindsym $mod+Alt+x exec "i3-msg 'workspace inkscape; exec inkscape'"
-bindsym $mod+Alt+c exec "i3-msg 'exec mate-calc'"
-# bindsym $mod+Shift+v exec "i3-msg 'workspace inkscape; exec inkscape'"
-# bindsym $mod+Shift+b exec "i3-msg 'workspace inkscape; exec inkscape'"
+bindsym $win+Shift+b exec "i3-msg 'exec speedcrunch'"
 
 # Split ----------------------------------------------------------------------
 
-bindsym $mod+slash split h
-bindsym $mod+m split v
-bindsym $mod+y layout stacking
-bindsym $mod+u layout tabbed
-bindsym $mod+i layout toggle split
-bindsym $mod+o floating toggle
-bindsym $mod+p focus mode_toggle
-bindsym $mod+braceleft mode "resize"
+bindsym $win+slash split h
+bindsym $win+m split v
+bindsym $win+y layout stacking
+bindsym $win+u layout tabbed
+bindsym $win+i layout toggle split
+bindsym $win+o floating toggle
+bindsym $win+p focus mode_toggle
+bindsym $win+braceleft mode "resize"
 mode "resize" {
         bindsym h resize shrink width 1 px or 1 ppt
         bindsym j resize shrink height 1 px or 1 ppt
         bindsym k resize grow height 1 px or 1 ppt
         bindsym l resize grow width 1 px or 1 ppt
-        # back to normal: Enter or Escape or $mod+r
+        # back to normal: Enter or Escape or $win+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
 
 # Focus ----------------------------------------------------------------------
 
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
-bindsym $mod+Ctrl+h move left
-bindsym $mod+Ctrl+j move down
-bindsym $mod+Ctrl+k move up
-bindsym $mod+Ctrl+l move right
-bindsym $mod+Ctrl+o focus parent
-bindsym $mod+Ctrl+i focus child
+bindsym $win+h focus left
+bindsym $win+j focus down
+bindsym $win+k focus up
+bindsym $win+l focus right
+bindsym $win+Shift+h move left
+bindsym $win+Shift+j move down
+bindsym $win+Shift+k move up
+bindsym $win+Shift+l move right
+bindsym $win+Ctrl+o focus parent
+bindsym $win+Ctrl+i focus child
 
 # Sound ----------------------------------------------------------------------
 

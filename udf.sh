@@ -3,28 +3,29 @@ echo "== Backup start"
 
 DIR=~/ya/conf/config/
 
-# echo ":: copy bashrc"
-# mkdir -p "$DIR/bash"
-# cp ~/.bashrc                                    "$DIR/bash/.bashrc"
+echo ":: copy grub cfg"
+mkdir -p "$DIR/grub"
+cp /boot/grub/grub.cfg                          "$DIR/grub/grub.cfg"
+
 echo ":: copy xinitrc"
 mkdir -p "$DIR/xinit"
 cp ~/.xinitrc                                   "$DIR/xinit/.xinitrc"
+
 echo ":: copy zsh"
 mkdir -p "$DIR/zsh"
 cp ~/.zshrc                                     "$DIR/zsh/.zshrc"
 cp ~/.zprofile                                  "$DIR/zsh/.zprofile"
 cp ~/.oh-my-zsh/custom/themes/jovial.zsh-theme  "$DIR/zsh/jovial.zsh-theme"
 
+echo ":: copy yandex-disk config"
+mkdir -p "$DIR/yandex-disk"
+cp ~/.config/yandex-disk/config.cfg             "$DIR/yandex-disk/config.cfg"
+
 echo ":: copy latex"
 mkdir -p "$DIR/latex"
 cp ~/.latexmkrc                                 "$DIR/latex/.latexmkrc"
-# sys
-echo ":: copy system cfg"
-mkdir -p "$DIR/grub"
-cp /boot/grub/grub.cfg                          "$DIR/grub/grub.cfg"
 
-# cfg
-echo ":: rsync dotfiles"
+echo ":: rsync ~/.config"
 rsync -a ~/.config/Mousepad                     "$DIR" 
 rsync -a ~/.config/Pinta                        "$DIR" 
 rsync -a ~/.config/SpeedCrunch                  "$DIR" 
@@ -43,15 +44,10 @@ rsync -a ~/.config/waybar                       "$DIR"
 rsync -a ~/.config/xplr                         "$DIR" 
 rsync -a ~/.config/zellij                       "$DIR" 
 
-# rsync -a ~/.config/i3                           "$DIR" 
-# rsync -a ~/.config/polybar                      "$DIR" 
-# rsync -a ~/.config/rofi                         "$DIR" 
+rsync -a ~/.config/i3                           "$DIR" 
+rsync -a ~/.config/polybar                      "$DIR" 
+rsync -a ~/.config/rofi                         "$DIR" 
 # rsync -a ~/.config/picom                        "$DIR" 
-
-# yandex
-echo ":: copy yandex-disk config"
-mkdir -p "$DIR/yandex-disk"
-cp ~/.config/yandex-disk/config.cfg             "$DIR/yandex-disk/config.cfg"
 
 # git commit & push
 echo ":: git add"

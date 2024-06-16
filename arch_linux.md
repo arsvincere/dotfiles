@@ -305,7 +305,7 @@ Include = /etc/pacman.d/mirrorlist
 pacman -Syy
 
 # Установим Х и свободные драйвера
-pacman -S xorg-server xorg-drivers
+pacman -S xorg-server xorg-drivers xorg-xinit
 
 # Ставим Xfce, lxdm (или sddm)
 pacman -S xfce4 xfce4-goodies lxdm
@@ -320,7 +320,6 @@ pacman -S network-manager-applet ppp
 systemctl enable lxdm NetworkManager
 
 # Настройка авто входа без DМ
-> sudo pacman -S xorg-xinit
 Копируем файл .xserverrc в каталог пользователя
 > cp /etc/X11/xinit/xserverrc ~/.xserverrc
 Создаем в домашнем каталоге файл .xinitrc с заданным текстом

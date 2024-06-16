@@ -32,23 +32,34 @@ mod = "mod4"
 terminal = guess_terminal()
 
 keys = [
-    # https://docs.qtile.org/en/latest/manual/config/lazy.html
-    # Switch between windows
-    Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
-    Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
-    Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
-    Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
-    # Moving out of range in Columns layout will create new column.
-    Key([mod, "shift"], "h", lazy.layout.shuffle_left(), desc="Move window to the left"),
-    Key([mod, "shift"], "l", lazy.layout.shuffle_right(), desc="Move window to the right"),
-    Key([mod, "shift"], "j", lazy.layout.shuffle_down(), desc="Move window down"),
-    Key([mod, "shift"], "k", lazy.layout.shuffle_up(), desc="Move window up"),
-    # Grow windows. If current window is on the edge of screen and direction
-    # will be to screen edge - window would shrink.
-    Key([mod, "control"], "h", lazy.layout.grow_left(), desc="Grow window to the left"),
-    Key([mod, "control"], "l", lazy.layout.grow_right(), desc="Grow window to the right"),
-    Key([mod, "control"], "j", lazy.layout.grow_down(), desc="Grow window down"),
-    Key([mod, "control"], "k", lazy.layout.grow_up(), desc="Grow window up"),
+    # general
+    Key([mod, "control"],   "u",        lazy.reload_config()),
+    Key([mod, "control"],   "Escape",   lazy.shutdown()),
+    Key([mod],              "Escape",   lazy.window.kill()),
+    Key([mod],              "Space",    lazy.spawn(terminal)),
+    Key([mod, "shift"],     "Return",   lazy.window.toggle_fullscreen()),
+    Key([mod],              "Return",   lazy.next_layout()),
+    Key([mod],              "Tab",      lazy.spawncmd()),
+    Key([mod],              "u",        lazy.window.toggle_floating()),
+
+    # switch
+    Key([mod],              "h",        lazy.layout.left()),
+    Key([mod],              "l",        lazy.layout.right()),
+    Key([mod],              "j",        lazy.layout.down()),
+    Key([mod],              "k",        lazy.layout.up()),
+
+    # move
+    Key([mod, "shift"],     "h",        lazy.layout.shuffle_left()),
+    Key([mod, "shift"],     "l",        lazy.layout.shuffle_right()),
+    Key([mod, "shift"],     "j",        lazy.layout.shuffle_down()),
+    Key([mod, "shift"],     "k",        lazy.layout.shuffle_up()),
+
+    # resize
+    Key([mod, "control"],   "h",        lazy.layout.grow_left()),
+    Key([mod, "control"],   "l",        lazy.layout.grow_right()),
+    Key([mod, "control"],   "j",        lazy.layout.grow_down()),
+    Key([mod, "control"],   "k",        lazy.layout.grow_up()),
+
     Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
     # Toggle between split and unsplit sides of stack.
     # Split = all windows displayed
@@ -60,170 +71,28 @@ keys = [
     #     lazy.layout.toggle_split(),
     #     desc="Toggle between split and unsplit sides of stack",
     # ),
-    Key([mod, "control"], "u", lazy.reload_config(), desc="Reload the config"),
-    Key([mod, "control"], "Escape", lazy.shutdown(), desc="Shutdown Qtile"),
-    Key([mod], "Escape", lazy.window.kill(), desc="Kill focused window"),
-    Key([mod], "Space", lazy.spawn(terminal), desc="Launch terminal"),
-    Key([mod], "Return", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen"),
-    Key([mod], "Tab", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
-    Key([mod], "u", lazy.window.toggle_floating(), desc="Toggle floating"),
-    Key([mod], "z", lazy.next_layout(), desc="Toggle between layouts"),
 ]
 
-# Add key bindings to switch VTs in Wayland.
-# We can't check qtile.core.name in default config as it is loaded before qtile is started
-# We therefore defer the check until the key binding is run by using .when(func=...)
-# for vt in range(1, 8):
-#     keys.append(
-#         Key(
-#             ["control", "mod1"],
-#             f"f{vt}",
-#             lazy.core.change_vt(vt).when(func=lambda: qtile.core.name == "wayland"),
-#             desc=f"Switch to VT{vt}",
-#         )
-#     )
-
-
-# groups = [Group(i) for i in "123456789"]
-
-group_names = [
-    "note",
-    "web",
-    "edit",
-    "read",
-    "tmsg",
-    "avin",
-    "sh",
-    "dev",
-    "file",
-    "git",
-    "z",
-    "x",
-    "c",
-    "v",
-    "b",
-    ]
-groups = [Group(i) for i in group_names]
-
-# Key([mod], "q", lazy.group("note").toscreen(), desc="Switch"),
-# Key([mod], "w", lazy.group("web").toscreen(),  desc="Switch"),
-# Key([mod], "e", lazy.group("edit").toscreen(), desc="Switch"),
-# Key([mod], "r", lazy.group("read").toscreen(), desc="Switch"),
-# Key([mod], "t", lazy.group("msg").toscreen(),  desc="Switch"),
-# Key([mod], "a", lazy.group("avin").toscreen(), desc="Switch"),
-# Key([mod], "s", lazy.group("sh").toscreen(),   desc="Switch"),
-# Key([mod], "d", lazy.group("def").toscreen(),  desc="Switch"),
-# Key([mod], "f", lazy.group("file").toscreen(), desc="Switch"),
-# Key([mod], "g", lazy.group("git").toscreen(),  desc="Switch"),
-# Key([mod], "z", lazy.group("z").toscreen(),    desc="Switch"),
-# Key([mod], "x", lazy.group("x").toscreen(),    desc="Switch"),
-# Key([mod], "c", lazy.group("c").toscreen(),    desc="Switch"),
-# Key([mod], "v", lazy.group("v").toscreen(),    desc="Switch"),
-# Key([mod], "b", lazy.group("b").toscreen(),    desc="Switch"),
-
-# keys.extend([
-#     Key([mod],          "q", lazy.group["note"].toscreen(), desc="Switch to group"),
-#     Key([mod, "shift"], "q", lazy.window.togroup("note", switch_group=True), desc="Move to group"),
-#     ])
-#
-# keys.extend([
-#     Key([mod],          "w", lazy.group["note"].toscreen(), desc="Switch to group"),
-#     Key([mod, "shift"], "w", lazy.window.togroup("note", switch_group=True), desc="Move to group"),
-#     ])
-#
-# keys.extend([
-#     Key([mod],          "e", lazy.group["note"].toscreen(), desc="Switch to group"),
-#     Key([mod, "shift"], "e", lazy.window.togroup("note", switch_group=True), desc="Move to group"),
-#     ])
-
-keys.extend( [
-    Key( [mod], "q", lazy.group["note"].toscreen(), desc="Switch",),
-    Key( [mod, "shift"], "q", lazy.window.togroup("note", switch_group=True), desc="Move",
-    ), ])
-
-keys.extend( [
-    Key( [mod], "w", lazy.group["web"].toscreen(), desc="Switch",),
-    Key( [mod, "shift"], "w", lazy.window.togroup("web", switch_group=True), desc="Move",
-    ), ])
-
-keys.extend( [
-    Key( [mod], "e", lazy.group["edit"].toscreen(), desc="Switch",),
-    Key( [mod, "shift"], "e", lazy.window.togroup("edit", switch_group=True), desc="Move",
-    ), ])
-
-
-# Key( [mod], "w", lazy.group["web"].toscreen(), desc="Switch")
-# Key( [mod, "shift"], "w", lazy.window.togroup("web", switch_group=True), desc="Move")
-# Key( [mod], "e", lazy.group["edit"].toscreen(), desc="Switch")
-# Key( [mod, "shift"], "e", lazy.window.togroup("edit", switch_group=True), desc="Move")
-
-# for i in groeps:
-#     keys.extend(
-#         [
-#             # mod + group number = switch to group
-#             Key(
-#                 [mod],
-#                 i.name[0],
-#                 lazy.group[i.name].toscreen(),
-#                 desc="Switch",
-#             ),
-#             # mod + shift + group number = switch to & move focused window to group
-#             Key(
-#                 [mod, "shift"],
-#                 i.name[0],
-#                 lazy.window.togroup(i.name, switch_group=True),
-#                 desc="Move",
-#             ),
-#             # Or, use below if you prefer not to switch to that group.
-#             # # mod + shift + group number = move focused window to group
-#             # Key([mod, "shift"], i.name, lazy.window.togroup(i.name),
-#             #     desc="move focused window to group {}".format(i.name)),
-#         ]
-#     )
-
-layouts = [
-    layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=1),
-    layout.Max(),
-    # Try more layouts by unleashing below layouts.
-    layout.Stack(num_stacks=2),
-    layout.Bsp(),
-    layout.Matrix(),
-    layout.MonadTall(),
-    layout.MonadWide(),
-    layout.RatioTile(),
-    layout.Tile(),
-    layout.TreeTab(),
-    layout.VerticalTile(),
-    layout.Zoomy(),
-]
-
-widget_defaults = dict(
-    font="hack",
-    fontsize=12,
-    padding=2,
-)
-extension_defaults = widget_defaults.copy()
-
+# -- Bar ---------------------------------------------------------------------{{{
 screens = [
     Screen(
-        bottom=bar.Bar(
-            [
-                widget.CurrentLayout(),
+        top=bar.Bar([
                 widget.GroupBox(),
                 widget.Prompt(),
                 widget.WindowName(),
                 widget.Chord(
                     chords_colors={
-                        "launch": ("#ff0000", "#ffffff"),
+                        "launch": ("#ff000", "#ffffff"),
                     },
                     name_transform=lambda name: name.upper(),
                 ),
-                widget.TextBox("default config", name="default"),
-                widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
+                # widget.TextBox("default config", name="default"),
+                # widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
                 # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
                 # widget.StatusNotifier(),
                 widget.Systray(),
                 widget.Clock(format="%Y-%m-%d %a %H:%M"),
+                widget.CurrentLayout(),
                 widget.QuickExit(),
             ],
             18,
@@ -236,14 +105,99 @@ screens = [
         # x11_drag_polling_rate = 60,
     ),
 ]
+widget_defaults = dict(
+    font="hack",
+    fontsize=12,
+    padding=2,
+)
+extension_defaults = widget_defaults.copy()
+# }}}
+# -- Groups ------------------------------------------------------------------{{{
+group_names = [
+    "note", "web", "edit", "read", "msg",
+    "avin", "sh", "dev", "file", "git",
+    "z", "x", "c", "v", "b",
+    ]
+groups = [Group(i) for i in group_names]
 
-# Drag floating layouts.
+keys.extend([Key( [mod], "q", lazy.group["note"].toscreen(), desc="Switch",),
+    Key( [mod, "shift"], "q", lazy.window.togroup("note", switch_group=True), desc="Move")
+    ])
+keys.extend([Key( [mod], "w", lazy.group["web"].toscreen(), desc="Switch",),
+    Key( [mod, "shift"], "w", lazy.window.togroup("web", switch_group=True), desc="Move")
+    ])
+keys.extend([Key( [mod], "e", lazy.group["edit"].toscreen(), desc="Switch",),
+    Key( [mod, "shift"], "e", lazy.window.togroup("edit", switch_group=True), desc="Move")
+    ])
+keys.extend([Key( [mod], "r", lazy.group["read"].toscreen(), desc="Switch",),
+    Key( [mod, "shift"], "r", lazy.window.togroup("read", switch_group=True), desc="Move")
+    ])
+keys.extend([Key( [mod], "t", lazy.group["msg"].toscreen(), desc="Switch",),
+    Key( [mod, "shift"], "t", lazy.window.togroup("msg", switch_group=True), desc="Move")
+    ])
+keys.extend([Key( [mod], "a", lazy.group["avin"].toscreen(), desc="Switch",),
+    Key( [mod, "shift"], "a", lazy.window.togroup("avin", switch_group=True), desc="Move")
+    ])
+keys.extend([Key( [mod], "s", lazy.group["sh"].toscreen(), desc="Switch",),
+    Key( [mod, "shift"], "s", lazy.window.togroup("sh", switch_group=True), desc="Move")
+    ])
+keys.extend([Key( [mod], "d", lazy.group["dev"].toscreen(), desc="Switch",),
+    Key( [mod, "shift"], "d", lazy.window.togroup("dev", switch_group=True), desc="Move")
+    ])
+keys.extend([Key( [mod], "f", lazy.group["file"].toscreen(), desc="Switch",),
+    Key( [mod, "shift"], "f", lazy.window.togroup("file", switch_group=True), desc="Move")
+    ])
+keys.extend([Key( [mod], "g", lazy.group["git"].toscreen(), desc="Switch",),
+    Key( [mod, "shift"], "g", lazy.window.togroup("git", switch_group=True), desc="Move")
+    ])
+keys.extend([Key( [mod], "z", lazy.group["z"].toscreen(), desc="Switch",),
+    Key( [mod, "shift"], "z", lazy.window.togroup("z", switch_group=True), desc="Move")
+    ])
+keys.extend([Key( [mod], "x", lazy.group["x"].toscreen(), desc="Switch",),
+    Key( [mod, "shift"], "x", lazy.window.togroup("x", switch_group=True), desc="Move")
+    ])
+keys.extend([Key( [mod], "c", lazy.group["c"].toscreen(), desc="Switch",),
+    Key( [mod, "shift"], "c", lazy.window.togroup("c", switch_group=True), desc="Move")
+    ])
+keys.extend([Key( [mod], "v", lazy.group["v"].toscreen(), desc="Switch",),
+    Key( [mod, "shift"], "v", lazy.window.togroup("v", switch_group=True), desc="Move")
+    ])
+keys.extend([Key( [mod], "b", lazy.group["b"].toscreen(), desc="Switch",),
+    Key( [mod, "shift"], "b", lazy.window.togroup("b", switch_group=True), desc="Move")
+    ])
+layouts = [
+    layout.Columns(
+        border_width=1,
+        border_focus="#ffffff",
+        border_focus_stack="#ffffff",
+        border_normal="#000000",
+        border_normal_stack="#000000",
+        ),
+    layout.Max(
+        border_width=2,
+        border_focus="999900",
+        ),
+    # Try more layouts by unleashing below layouts.
+    # layout.Stack(num_stacks=5),
+    # layout.Bsp(),
+    # layout.Matrix(),
+    # layout.MonadTall(),
+    # layout.MonadWide(),
+    # layout.RatioTile(),
+    # layout.Tile(),
+    # layout.TreeTab(),
+    # layout.VerticalTile(),
+    # layout.Zoomy(),
+]
+# }}}
+# -- Mouse -------------------------------------------------------------------{{{
 mouse = [
     Drag([mod], "Button1", lazy.window.set_position_floating(), start=lazy.window.get_position()),
     Drag([mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()),
     Click([mod], "Button2", lazy.window.bring_to_front()),
 ]
-
+# }}}
+# -- Other -------------------------------------------------------------------# {{{
 dgroups_key_binder = None
 dgroups_app_rules = []  # type: list
 follow_mouse_focus = True
@@ -286,3 +240,18 @@ wl_xcursor_size = 24
 # We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
 # java that happens to be on java's whitelist.
 wmname = "LG3D"
+# }}}
+
+# Add key bindings to switch VTs in Wayland.
+# We can't check qtile.core.name in default config as it is loaded before qtile is started
+# We therefore defer the check until the key binding is run by using .when(func=...)
+# for vt in range(1, 8):
+#     keys.append(
+#         Key(
+#             ["control", "mod1"],
+#             f"f{vt}",
+#             lazy.core.change_vt(vt).when(func=lambda: qtile.core.name == "wayland"),
+#             desc=f"Switch to VT{vt}",
+#         )
+#     )
+

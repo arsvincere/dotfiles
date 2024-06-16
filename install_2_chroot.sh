@@ -38,4 +38,5 @@ echo ">>>---> Continue:"
 echo "- exit"
 echo "- reboot"
 echo "- login as root"
+echo "- install 3 user"
 

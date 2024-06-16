@@ -4,6 +4,6 @@ fi
 
 # export DRI_PRIME=1
 # exec i3
-# exec awesome
+exec awesome
 # exec dwm
-exec qtile start
+# exec qtile start

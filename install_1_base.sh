@@ -15,7 +15,7 @@ timedatectl set-ntp true
 
 # Разметка диска
 # fdisk -l
-fdisk /dev/sda
+# fdisk /dev/sda
 
 # Форматирование дисков
 mkswap      /dev/sda1 -L swap
@@ -28,7 +28,7 @@ swapon /dev/sda1
 # Установка основных пакетов
 pacman -Syy
 pacman -Sy archlinux-keyring
-pacstrap /mnt base base-devel linux linux-firmware netctl dhcpcd neovim networkmanager
+pacstrap /mnt base base-devel linux linux-firmware dhcpcd neovim networkmanager
 
 # Генерируем fstab
 genfstab -pU /mnt >> /mnt/etc/fstab
