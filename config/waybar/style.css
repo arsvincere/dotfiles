@@ -3,7 +3,7 @@
     border-radius: 0;
     border-bottom: none;
     font-family: Hack;
-    font-size: 11pt;
+    font-size: 10pt;
     min-height: 0;
     min-width: 0;
 }
@@ -61,7 +61,7 @@ window#waybar {
     color: #C8C093;
     box-shadow: inset 0 0px red;
     margin: 0px 0px 0px 0px;
-    padding: 2px 8px;
+    padding: 1px 8px;
 	border-radius: 8px;
 }
 #workspaces button.active {
@@ -89,7 +89,7 @@ window#waybar {
     background: #363646;
     color: #C8C093;
 	margin: 4px 0px 0px 0px;
-    padding: 2px 8px;
+    padding: 1px 8px;
 	border-radius: 8px;
     border: solid 1px #54546D;
 }
@@ -100,7 +100,7 @@ window#waybar {
     background: #363646;
     color: #C8C093;
 	margin: 4px 4px 0px 4px;
-    padding: 2px 8px;
+    padding: 1px 8px;
 	border-radius: 8px;
     border: solid 1px #54546D;
 }
@@ -108,7 +108,7 @@ window#waybar {
     background: #DCA561;
     color: #363646;
 	margin: 4px 4px 0px 4px;
-    padding: 2px 8px;
+    padding: 1px 8px;
 	border-radius: 8px;
     border: solid 1px #54546D;
 }
@@ -116,7 +116,7 @@ window#waybar {
     background: #DCA561;
     color: #363646;
 	margin: 4px 4px 0px 4px;
-    padding: 2px 8px;
+    padding: 1px 8px;
 	border-radius: 8px;
     border: solid 1px #54546D;
 }

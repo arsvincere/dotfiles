@@ -27,8 +27,8 @@
         "network",
         "cpu",
         "memory",
-        "disk"
-        // "temperature"
+        "disk",
+        "temperature"
         // "power-profiles-daemon",
         // "keyboard-state",
         // "mpd",
@@ -68,22 +68,22 @@
         "format-icons": {
             "1": "avin",
             "2": "sh",
-            "3": "web",
-            "4": "dev",
-            "5": "edit",
-            "6": "read",
-            "7": "file",
-            "8": "dir",
-            "9": "note",
-            "10": "message",
-            "11": "pinta",
-            "12": "inkscape",
-            "13": "drawio",
-            "14": "math",
+            "3": "dev",
+            "4": "file",
+            "5": "git",
+            "6": "msg",
+            "7": "web",
+            "8": "edit",
+            "9": "read",
+            "10": "math",
+            "11": "draw",
+            "12": "tmp",
+            "13": "c",
+            "14": "v",
             "15": "b",
             "urgent": " ",
             "focused": " ",
-            "default": ""
+            "default": " "
         }
     },
     "clock": {
@@ -103,30 +103,28 @@
         "on-click": "mute"
     },
     "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
-        // "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "  80",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "format-wifi": "  {signalStrength}",
+        // "format-ethernet": "  80",
+        "format-alt": "{essid} - {ifname}: {ipaddr}/{cidr}",
         "format-disconnected": "󰖪 Disconnected",
-        "format-linked": "{ifname} (No IP)",
-        "tooltip-format": "{ifname} via {gwaddr}"
+        "tooltip-format": "{ifname}: {essid} {ipaddr}/{cidr}"
     },
     "cpu": {
-        "format": " {usage}%",
+        "format": " {usage}",
         "tooltip": false
     },
     "memory": {
-        "format": " {used} GB"
+        "format": " {used}"
     },
     "disk": {
         "interval": 30,
-        "format": " {specific_used:0.2f} GB",
+        "format": " {specific_used:0.2f}",
         "unit": "GB",
         "tooltip-format": "used: {used} free: {free} total: {total}"
     },
     "temperature": {
         "critical-threshold": 80,
-        "format": "{icon} {temperatureC}°C",
+        "format": "{icon} {temperatureC}°",
         "format-critical": "{icon} {temperatureC}°C critical!",
         "format-icons": ["", "", ""]
     }

@@ -9,7 +9,7 @@
     size = 10
 
 [colors.primary]
-    background = "#323232"
+    background = "#000000"
 
 [colors.vi_mode_cursor]
     cursor = "#DCA561"

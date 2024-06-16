@@ -1,5 +1,4 @@
 alacritty
-awesome
 aspell-ru
 base
 base-devel
@@ -8,7 +7,6 @@ ctags
 deluge-gtk
 drawio-desktop-bin
 file-roller
-flameshot
 fzf
 github-cli
 google-chrome
@@ -18,7 +16,6 @@ idle
 inkscape
 lazygit
 libreoffice-still
-lxappearance
 marksman
 mousepad
 mpv
@@ -41,13 +38,8 @@ timeshift
 ttf-dejavu
 ttf-hack
 ttf-hack-nerd
-ttf-nerd-fonts-symbols
-ttf-nerd-fonts-symbols-mono
 ttf-sourcecodepro-nerd
 vifm
-xorg-drivers
-xorg-server
-xorg-xinit
 xplr
 yandex-disk
 zathura

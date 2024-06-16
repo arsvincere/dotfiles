@@ -23,7 +23,7 @@ vim.opt.termguicolors = true
 require("nvim-tree").setup({
   sort_by = "case_sensitive",
   view = {
-    width = 30, -- ширина окна
+    width = 28, -- ширина окна
   },
   renderer = {
     add_trailing = false,
