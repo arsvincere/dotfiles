@@ -52,7 +52,7 @@ rsync -a ~/.config/zellij                       "$DIR"
 
 
 NVIM_PLUGS="$HOME/.local/share/nvim/plugged/"
-mkdir -p "$DIR/nvim_custom/pretty-fold"
+mkdir -p "$DIR/nvim_custom"
 pretty_fold="$NVIM_PLUGS/pretty-fold.nvim/lua/pretty-fold/init.lua"
 cp pretty_fold                                  "$DIR/nvim_custom/pretty_fold/init.lua"
 
