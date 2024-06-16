@@ -50,6 +50,12 @@ rsync -a ~/.config/zellij                       "$DIR"
 # rsync -a ~/.config/rofi                         "$DIR" 
 # rsync -a ~/.config/picom                        "$DIR" 
 
+
+NVIM_PLUGS="$HOME/.local/share/nvim/plugged/"
+mkdir -p "$DIR/nvim_custom/pretty-fold"
+pretty_fold="$NVIM_PLUGS/pretty-fold.nvim/lua/pretty-fold/init.lua"
+cp pretty_fold                                  "$DIR/nvim_custom/pretty_fold/init.lua"
+
 # git commit & push
 echo ":: git add"
 cd $DIR && git add .
