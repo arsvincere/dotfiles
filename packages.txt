@@ -1,8 +1,8 @@
 alacritty
+awesome
 aspell-ru
 base
 base-devel
-betterlockscreen
 btop
 ctags
 deluge-gtk
@@ -27,7 +27,6 @@ neovim
 networkmanager
 obsidian
 pinta-gtk3-git
-polybar
 qutebrowser
 ripgrep
 ristretto
