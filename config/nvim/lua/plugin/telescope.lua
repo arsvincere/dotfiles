@@ -25,10 +25,10 @@ require('telescope').setup{
 
 -- Список открытых буферов: en - ',,'  |  ru - 'бб'
 map('n', '<leader>,',
-    [[ <cmd>lua require('telescope.builtin').buffers()<CR><Esc>]],
+    [[ <cmd>lua require('telescope.builtin').buffers()<CR>]],
     opts)
 map('n', 'бб',
-    [[ <cmd>lua require('telescope.builtin').buffers()<CR><Esc>]],
+    [[ <cmd>lua require('telescope.builtin').buffers()<CR>]],
     opts)
 
 -- Открыть поиск по имени файла ,f

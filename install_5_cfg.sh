@@ -5,7 +5,7 @@ echo ":: restore grub.cfg"
 sudo cp config/grub/grub.cfg        /boot/grub/grub.cfg
 
 echo ":: restore .xinitrc"
-cp xinit/.xinitrc                   ~/.xinitrc
+cp config/xinit/.xinitrc                   ~/.xinitrc
 
 echo ":: restore zsh"
 cp config/zsh/.zshrc                ~/.zshrc
@@ -16,8 +16,8 @@ echo ":: restore yandex-disk"
 mkdir -p ~/.config/yandex-disk
 cp "config/yandex-disk/config.cfg"  ~/.config/yandex-disk/config.cfg  
 
-echo ":: latex"
-cp latex/.latexmkrc                 ~/.latexmkrc
+echo ":: restor latex"
+cp config/latex/.latexmkrc                 ~/.latexmkrc
 
 echo ":: restore .config dir"
 rsync -a config/Mousepad            ~/.config
@@ -41,7 +41,8 @@ rsync -a config/vifm                ~/.config
 rsync -a config/waybar              ~/.config
 rsync -a config/xplr                ~/.config
 rsync -a config/zellij              ~/.config
-chmod +x ~/.config/polybar/launch.sh
+
+# chmod +x ~/.config/polybar/launch.sh
 
 echo "== Restore complete!"
 exit 0

@@ -1,7 +1,5 @@
-/home/alex/.config/hypr
-/home/alex/.config/nvim/lua
-/home/alex/.config/xplr/plugins
-/home/alex/ya
-/home/alex/AVIN
-/home/alex/.config/qtile/__pycache__
-/home/alex/.config/polybar
+/home/alex/.config/nvim/lua/core.lua
+/home/alex/.config/hypr/hyprland.conf
+/home/alex/.config/xplr/init.lua
+/home/alex/ya/conf
+/home/alex/AVIN/avin

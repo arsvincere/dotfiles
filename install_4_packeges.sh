@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Установим Х и свободные драйвера
-pacman -S xorg-server xorg-drivers xorg-xinit
+# pacman -S xorg-server xorg-drivers xorg-xinit
 
 # Установка Git
-pacman -S git
+sudo pacman -S git
 git config --global user.name "Alex Avin"
 git config --global user.email "mr.alexavin@gmail.com"
 

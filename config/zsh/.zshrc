@@ -107,21 +107,15 @@ alias zshconfig="nvim ~/.zshrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
 
 # ----------------------------------------------------------------------------
-  
+
+# nvim
+export EDITOR=nvim
+
 # python
 export PYTHONPATH="$PYTHONPATH:/home/alex/AVIN"
 export PYTHONPATH="$PYTHONPATH:/home/alex/env/lib/python3.12/site-packages"
 export PYTHONPATH="$PYTHONPATH:/usr/lib/python3.12/site-packages"
 
-# qutebrowser 
-# export QTWEBENGINE_RESOURCES_PATH="/usr/lib/qt6"
-# export QTWEBENGINEPROCESS_PATH="/usr/lib/qt6"
-
 # xplr
 export XPLR_BOOKMARK_FILE="$HOME/.config/xplr/bookmarks"
-
-
-
-
-
 

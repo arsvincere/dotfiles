@@ -121,7 +121,7 @@ map('n', '<PageUp>',
     ':source /home/alex/AVIN/dev/Session_avin.vim<CR>\
     :NvimTreeRefresh<CR>:NvimTreeToggle<CR>\
     <C-w><C-l><C-w><C-l><C-w><C-j>icd AVIN<CR>\
-    source ~/AVIN/env/bin/activate<CR><C-\\><C-n>\
+    source ~/env/bin/activate<CR><C-\\><C-n>\
     :set nonu<CR><C-w><C-h>\
     ', opts)
     -- source ~/ve/bin/activate<CR>\

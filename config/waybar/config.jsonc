@@ -103,10 +103,10 @@
         "on-click": "mute"
     },
     "network": {
-        "format-wifi": "  {signalStrength}",
-        // "format-ethernet": "  80",
+        // "format-wifi": "  {signalStrength}",
+        "format-ethernet": "  80",
+        "format-disconnected": "󰖪 ",
         "format-alt": "{essid} - {ifname}: {ipaddr}/{cidr}",
-        "format-disconnected": "󰖪 Disconnected",
         "tooltip-format": "{ifname}: {essid} {ipaddr}/{cidr}"
     },
     "cpu": {
