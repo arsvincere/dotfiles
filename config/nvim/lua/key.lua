@@ -116,7 +116,7 @@ map('n', '<F12>', '\
     :e ~/.config/nvim/todo.md<CR>\
     ', { noremap = true })
 
--- Arsvincere session -------------------------------------------------------
+-- AVIN session --------------------------------------------------------------
 map('n', '<PageUp>',
     ':source /home/alex/AVIN/dev/Session_avin.vim<CR>\
     :NvimTreeRefresh<CR>:NvimTreeToggle<CR>\
@@ -124,7 +124,6 @@ map('n', '<PageUp>',
     source ~/env/bin/activate<CR><C-\\><C-n>\
     :set nonu<CR><C-w><C-h>\
     ', opts)
-    -- source ~/ve/bin/activate<CR>\
 
 -- Blog session --------------------------------------------------------------
 map('n', '<PageDown>',
