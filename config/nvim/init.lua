@@ -7,11 +7,14 @@ require('plugin._plug')             -- install plugins
 -- Import plugin settings  ---------------------------------------------------
 
 -- Theme
-require('plugin.gruvbox-material')  -- color scheme
+-- require('plugin.gruvbox-material')  -- color scheme
+-- require('plugin.nordic')            -- color scheme
+-- require('plugin.kanagawa')          -- color scheme
+-- require('plugin.kanagawa-paper')    -- color scheme
+require('plugin.kanagawa-again')    -- color scheme
 require('plugin.lualine')           -- status line
 require('plugin.indent-blankline')  -- hightlight code blocks
 -- require('plugin.bufferline')        -- tabs at the top
--- require('plugin.transparent')       -- transparent any theme
 
 -- Navigation
 require('plugin.nvim-tree')         -- file manager

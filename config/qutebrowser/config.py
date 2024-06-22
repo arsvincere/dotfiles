@@ -1213,7 +1213,7 @@ c.editor.command = ['alacritty', '-e', 'nvim', '-f', '{file}', '-c', 'normal {li
 
 ## Encoding to use for the editor.
 ## Type: Encoding
-# c.editor.encoding = 'utf-8'
+c.editor.encoding = 'utf-8'
 
 ## Delete the temporary file upon closing the editor.
 ## Type: Bool
@@ -1599,7 +1599,7 @@ c.editor.command = ['alacritty', '-e', 'nvim', '-f', '{file}', '-c', 'normal {li
 ##   - tab-bg-silent: Open a new background tab in the existing window without activating the window.
 ##   - window: Open in a new window.
 ##   - private-window: Open in a new private window.
-# c.new_instance_open_target = 'tab'
+c.new_instance_open_target = 'tab'
 
 ## Which window to choose when opening links as new tabs. When
 ## `new_instance_open_target` is set to `window`, this is ignored.
@@ -1878,7 +1878,7 @@ c.statusbar.show = 'in-mode'
 
 ## Open new tabs (middleclick/ctrl+click) in the background.
 ## Type: Bool
-# c.tabs.background = True
+c.tabs.background = False
 
 ## Mouse button with which to close tabs.
 ## Type: String
@@ -2009,7 +2009,7 @@ c.tabs.max_width = 100
 ##   - bottom
 ##   - left
 ##   - right
-# c.tabs.position = 'top'
+c.tabs.position = 'left'
 
 ## Which tab to select when the focused tab is removed.
 ## Type: SelectOnRemove
@@ -2026,12 +2026,12 @@ c.tabs.max_width = 100
 ##   - never: Always hide the tab bar.
 ##   - multiple: Hide the tab bar if only one tab is open.
 ##   - switching: Show the tab bar when switching tabs.
-c.tabs.show = 'never'
+c.tabs.show = 'switching'
 
 ## Duration (in milliseconds) to show the tab bar before hiding it when
 ## tabs.show is set to 'switching'.
 ## Type: Int
-c.tabs.show_switching_delay = 800
+c.tabs.show_switching_delay = 2000
 
 ## Open a new window for every tab.
 ## Type: Bool
@@ -2107,8 +2107,8 @@ c.tabs.title.format = '{index}: {current_title}'
 ## Page to open if :open -t/-b/-w is used without URL. Use `about:blank`
 ## for a blank page.
 ## Type: FuzzyUrl
-c.url.default_page = 'https://start.duckduckgo.com/'
-# c.url.default_page = 'alexavin.blog'
+# c.url.default_page = 'https://start.duckduckgo.com/'
+c.url.default_page = 'arsvincere.com'
 
 ## URL segments where `:navigate increment/decrement` will search for a
 ## number.
@@ -2153,7 +2153,7 @@ c.url.searchengines = {
     '!dd':      'https://thefreedictionary.com/{}',
     '!e':       'https://www.ebay.com/sch/i.html?_nkw={}',
     '!fb':      'https://www.facebook.com/s.php?q={}',
-    '!g':      'https://github.com/search?o=desc&q={}&s=stars',
+    '!g':       'https://github.com/search?o=desc&q={}&s=stars',
     '!gist':    'https://gist.github.com/search?q={}',
     '!gi':      'https://www.google.com/search?tbm=isch&q={}&tbs=imgo:1',
     '!gn':      'https://news.google.com/search?q={}',

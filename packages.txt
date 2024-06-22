@@ -29,6 +29,7 @@ neovim
 netctl
 networkmanager
 obsidian
+pavucontrol
 pinta-gtk3-git
 python-virtualenv
 qutebrowser

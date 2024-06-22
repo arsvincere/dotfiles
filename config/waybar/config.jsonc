@@ -88,7 +88,7 @@
     },
     "clock": {
         "interval": 1,
-        // "timezone": "America/New_York",
+        "timezone": "Europe/Moscow",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format": " {:%H:%M   %a %e %B}",
         "format-alt": "  {:%H:%M:%S   %a %Y-%m-%d}"
@@ -100,12 +100,12 @@
         "scroll-step": 10,
         "format": "  {volume}",
         "format-muted": " mute",
-        "on-click": "mute"
+        "on-click": "pavucontrol"
     },
     "network": {
         // "format-wifi": "  {signalStrength}",
         "format-ethernet": "  80",
-        "format-disconnected": "󰖪 ",
+        "format-disconnected": "󰖪 --",
         "format-alt": "{essid} - {ifname}: {ipaddr}/{cidr}",
         "tooltip-format": "{ifname}: {essid} {ipaddr}/{cidr}"
     },

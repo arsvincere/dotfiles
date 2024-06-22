@@ -209,21 +209,23 @@ endif
 if !exists("python_no_builtin_highlight")
   " built-in constants
   " 'False', 'True', and 'None' are also reserved words in Python 3
-  syn keyword pythonBuiltin	False True None
   syn keyword pythonBuiltin	NotImplemented Ellipsis __debug__
   " constants added by the `site` module
   syn keyword pythonBuiltin	quit exit copyright credits license
   " built-in functions
-  syn keyword pythonBuiltin	abs all any ascii bin bool breakpoint bytearray
+  syn keyword pythonBuiltin	abs all any ascii bin breakpoint bytearray
   syn keyword pythonBuiltin	bytes callable chr classmethod compile complex
-  syn keyword pythonBuiltin	delattr dict dir divmod enumerate eval exec
-  syn keyword pythonBuiltin	filter float format frozenset getattr globals
-  syn keyword pythonBuiltin	hasattr hash help hex id input int isinstance
-  syn keyword pythonBuiltin	issubclass iter len list locals map max
-  syn keyword pythonBuiltin	memoryview min next object oct open ord pow
-  syn keyword pythonBuiltin	print property range repr reversed round set
-  syn keyword pythonBuiltin	setattr slice sorted staticmethod str sum super
+  syn keyword pythonBuiltin	delattr dir divmod enumerate eval exec
+  syn keyword pythonBuiltin	filter format getattr globals
+  syn keyword pythonBuiltin	hasattr hash help hex id input isinstance
+  syn keyword pythonBuiltin	issubclass iter len locals map max
+  syn keyword pythonBuiltin	memoryview min next oct open ord pow
+  syn keyword pythonBuiltin	print property range repr reversed round 
+  syn keyword pythonBuiltin	setattr slice sorted staticmethod sum super
   syn keyword pythonBuiltin	tuple type vars zip __import__
+
+  syn keyword pythonType	bool dict float frozenset int list object set
+  syn keyword pythonType	str tuple False True None
   " avoid highlighting attributes as builtins
   syn match   pythonAttribute	/\.\h\w*/hs=s+1
 	\ contains=ALLBUT,pythonBuiltin,pythonFunction,pythonAsync
@@ -298,6 +300,7 @@ endif
 syn sync match pythonSync grouphere NONE "^\%(def\|class\)\s\+\h\w*\s*[(:]"
 
 " The default highlight links.  Can be overridden later.
+hi def link pythonType		        Type
 hi def link pythonStatement		Statement
 hi def link pythonConditional		Conditional
 hi def link pythonRepeat		Repeat

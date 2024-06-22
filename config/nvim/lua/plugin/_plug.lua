@@ -4,11 +4,16 @@ local Plug = vim.fn['plug#']
 vim.call('plug#begin')
 
     -- Theme -----------------------------------------------------------------
-    Plug 'sainnhe/gruvbox-material'
+    Plug 'norcalli/nvim-colorizer.lua'
+    Plug 'arsvincere/kanagawa-again.nvim'
+    -- Plug 'sainnhe/gruvbox-material'
+    -- Plug "rebelot/kanagawa.nvim"
+    -- Plug 'AlexvZyl/nordic.nvim'
+    -- Plug 'sho-87/kanagawa-paper.nvim'
+
     Plug 'nvim-lualine/lualine.nvim'
     Plug 'lukas-reineke/indent-blankline.nvim'
     -- Plug 'akinsho/bufferline.nvim'
-    -- Plug 'xiyaowong/transparent.nvim'
 
     -- Navigation ------------------------------------------------------------
     Plug 'nvim-tree/nvim-tree.lua'

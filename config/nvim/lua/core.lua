@@ -22,8 +22,10 @@ opt.linebreak = true            -- Переносить по словам
 opt.clipboard = 'unnamedplus'   -- Используем системный буфер обмена
                                 -- install xsel чтобы заработало
 
-autocmd('BufRead', { pattern = '*.un', command = 'set filetype=un' })
-autocmd('BufNewFile', { pattern = '*.un', command = 'set filetype=un' })
+autocmd('BufRead',    { pattern = '*.un',    command = 'set filetype=un' })
+autocmd('BufNewFile', { pattern = '*.un',    command = 'set filetype=un' })
+autocmd('BufRead',    { pattern = '*.color', command = 'set filetype=color' })
+autocmd('BufNewFile', { pattern = '*.color', command = 'set filetype=color' })
 
 -- Autosave
 ------------------------------------------------------------------------------
