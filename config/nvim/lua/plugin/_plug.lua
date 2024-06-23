@@ -4,12 +4,11 @@ local Plug = vim.fn['plug#']
 vim.call('plug#begin')
 
     -- Theme -----------------------------------------------------------------
-    Plug 'norcalli/nvim-colorizer.lua'
     Plug 'arsvincere/kanagawa-again.nvim'
-    -- Plug 'sainnhe/gruvbox-material'
-    -- Plug "rebelot/kanagawa.nvim"
-    -- Plug 'AlexvZyl/nordic.nvim'
-    -- Plug 'sho-87/kanagawa-paper.nvim'
+    Plug 'sainnhe/gruvbox-material'
+    Plug "rebelot/kanagawa.nvim"
+    Plug 'AlexvZyl/nordic.nvim'
+    Plug 'sho-87/kanagawa-paper.nvim'
 
     Plug 'nvim-lualine/lualine.nvim'
     Plug 'lukas-reineke/indent-blankline.nvim'
@@ -53,6 +52,7 @@ vim.call('plug#begin')
     -- Other -----------------------------------------------------------------
     Plug 'powerman/vim-plugin-ruscmd'
     Plug 'wakatime/vim-wakatime'
+    Plug 'norcalli/nvim-colorizer.lua'
 
 vim.call('plug#end')
 

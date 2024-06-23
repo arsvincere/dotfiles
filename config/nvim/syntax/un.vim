@@ -49,7 +49,8 @@ syn keyword unKeyword GIT BRIEF DRAFT ISSUE DEPRECATED VERSION LICENSE
 
 "_____________________________________________________________________________
 
-hi unHeader1 guifg=#990000 gui=bold
+" hi unHeader1 guifg=#990000 gui=bold
+hi def link unHeader1 Red
 hi def link unHeader2 Orange
 hi def link unHeader3 Yellow
 hi def link unHeader4 Green

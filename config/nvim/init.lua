@@ -7,11 +7,11 @@ require('plugin._plug')             -- install plugins
 -- Import plugin settings  ---------------------------------------------------
 
 -- Theme
--- require('plugin.gruvbox-material')  -- color scheme
+require('plugin.kanagawa-again')    -- color scheme
+require('plugin.gruvbox-material')  -- color scheme
 -- require('plugin.nordic')            -- color scheme
 -- require('plugin.kanagawa')          -- color scheme
 -- require('plugin.kanagawa-paper')    -- color scheme
-require('plugin.kanagawa-again')    -- color scheme
 require('plugin.lualine')           -- status line
 require('plugin.indent-blankline')  -- hightlight code blocks
 -- require('plugin.bufferline')        -- tabs at the top
@@ -36,4 +36,5 @@ require('plugin.nvim-cmp')          -- autocomplete
 -- Other
 require('plugin.vim-plugin-ruscmd') -- support commands on RU-layot
 require('plugin.wakatime')          -- timer, statistic, dashboard
+require('plugin.nvim-colorizer')    -- color view utility
 

@@ -2031,7 +2031,7 @@ c.tabs.show = 'switching'
 ## Duration (in milliseconds) to show the tab bar before hiding it when
 ## tabs.show is set to 'switching'.
 ## Type: Int
-c.tabs.show_switching_delay = 2000
+c.tabs.show_switching_delay = 1000
 
 ## Open a new window for every tab.
 ## Type: Bool

@@ -12,18 +12,14 @@ vim.g.gruvbox_material_background = 'hard'
 vim.g.gruvbox_material_transparent_background = 0
 
 -- Note: the configuration options should be placed before
-vim.cmd 'colorscheme gruvbox-material'
-
+-- vim.cmd 'colorscheme gruvbox-material'
 
 
 -- path theme ----------------------------------------------------------------
-
 -- File:
 -- /home/alex/.local/share/nvim/plugged/gruvbox-material/autoload/gruvbox_material.vim
-
 -- добавить цвет 'fg_fold' #938056  223
-
---   if a:foreground ==# 'material' "{{{
+--   if a:foreground ==# 'material' "
 --     if &background ==# 'dark'
 --       let palette2 = {
 --             \ 'fg0':              ['#d4be98',   '223'],
