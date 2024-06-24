@@ -7,10 +7,14 @@ btop
 ctags
 deluge-gtk
 drawio-desktop-bin
+evince
+f2fs-tools
 file-roller
 fzf
 github-cli
+gvfs 
 google-chrome
+dosfstools
 grub
 helix
 hyprland
@@ -28,9 +32,12 @@ neofetch
 neovim
 netctl
 networkmanager
+ntfs-3g
 obsidian
+p7zip
 pavucontrol
 pinta-gtk3-git
+pulseaudio
 python-virtualenv
 qutebrowser
 ripgrep
@@ -48,6 +55,7 @@ timeshift
 ttf-hack
 ttf-hack-nerd
 ttf-sourcecodepro-nerd
+unrar 
 vifm
 waybar
 wl-clipboard

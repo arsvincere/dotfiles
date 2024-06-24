@@ -1,11 +1,5 @@
 // -*- mode: jsonc -*-
 {
-    // "layer": "top", // Waybar at top layer
-    // "position": "bottom", // Waybar position (top|bottom|left|right)
-    // "height": 16, // Waybar height (to be removed for auto height)
-    // "width": 1280, // Waybar width
-    // "spacing": 8, // Gaps between modules (4px)
-
     // Modules order ---------------------------------------------------------
     "modules-left": [
         "custom/diary",
@@ -14,9 +8,6 @@
         "custom/note",
         "custom/english",
         "hyprland/workspaces"
-        // "hyprland/mode"
-        // "hyprland/scratchpad"
-        // "custom/media"
     ],
     "modules-center": [
         "clock"
@@ -29,9 +20,6 @@
         "memory",
         "disk",
         "temperature"
-        // "power-profiles-daemon",
-        // "keyboard-state",
-        // "mpd",
     ],
 
     // Modules configuration -------------------------------------------------
@@ -77,10 +65,10 @@
             "9": "read",
             "10": "draw",
             "11": "zsh",
-            "12": "tmp",
+            "12": "x",
             "13": "c",
-            "14": "v",
-            "15": "b",
+            "14": "dir",
+            "15": "tmp",
             "urgent": " ",
             "focused": " ",
             "default": " "
@@ -110,8 +98,7 @@
         "tooltip-format": "{ifname}: {essid} {ipaddr}/{cidr}"
     },
     "cpu": {
-        "format": " {usage}",
-        "tooltip": false
+        "format": " {usage}"
     },
     "memory": {
         "format": " {used}"
