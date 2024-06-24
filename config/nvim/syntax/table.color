@@ -1,4 +1,59 @@
 
+Kanagawa
+********
+	fujiWhite	    #DCD7BA	Default foreground
+	oldWhite	    #C8C093	Dark foreground (statuslines)
+
+	sumiInk0	    #16161D	Dark background (statuslines and floating windows)
+	sumiInk1	    #1F1F28	Default background
+	sumiInk2	    #2A2A37	Lighter background (colorcolumn, folds)
+	sumiInk3	    #363646	Lighter background (cursorline)
+	sumiInk4	    #54546D	Darker foreground (line numbers, fold column, non-text characters), float borders
+
+	winterRed	    #43242B	Diff Deleted (background)
+	autumnRed	    #C34043	Git Delete
+	waveRed	        #E46876	Standout specials 1 (builtin variables)
+	peachRed	    #FF5D62	Standout specials 2 (exception handling, return)
+	samuraiRed	    #E82424	Diagnostic Error
+
+	surimiOrange	#FFA066	Constants, imports, booleans
+
+	winterYellow	#49443C	Diff Change (background)
+	boatYellow1	    #938056	Not used
+	boatYellow2	    #C0A36E	Operators, RegEx
+	carpYellow	    #E6C384	Identifiers
+	autumnYellow	#DCA561	Git Change
+	roninYellow	    #FF9E3B	Diagnostic Warning
+
+	winterGreen	    #2B3328	Diff Add (background)
+	springGreen	    #98BB6C	Strings
+	autumnGreen	    #76946A	Git Add
+
+	dragonBlue	    #658594	Diagnostic Hint
+	springBlue	    #7FB4CA	Specials and builtin functions
+	crystalBlue	    #7E9CD8	Functions and Titles
+
+	winterBlue	    #252535	Diff Line (background)
+	waveBlue1	    #223249	Popup background, visual selection background
+	waveBlue2	    #2D4F67	Popup selection background, search background
+
+	oniViolet	    #957FB8	Statements and Keywords
+	springViolet1	#938AA9	Light foreground
+	springViolet2	#9CABCA	Brackets and punctuation
+
+
+	waveAqua1	    #6A9589	Diagnostic Info
+	waveAqua2	    #7AA89F	Types
+	lightBlue	    #A3D4D5	Not used
+
+	sakuraPink	    #D27E99	Numbers
+
+	katanaGray	    #717C7C	Deprecated
+	fujiGray	    #727169	Comments
+
+Kanagawa-paper
+**************
+
 -- Bg Shades
 	sumiInk0 = "#16161D"
 	sumiInk1 = "#181820"

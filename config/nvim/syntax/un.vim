@@ -49,25 +49,32 @@ syn keyword unKeyword GIT BRIEF DRAFT ISSUE DEPRECATED VERSION LICENSE
 
 "_____________________________________________________________________________
 
-" hi unHeader1 guifg=#990000 gui=bold
-hi def link unHeader1 Red
-hi def link unHeader2 Orange
-hi def link unHeader3 Yellow
-hi def link unHeader4 Green
-hi def link unHeader5 Blue
-hi def link unHeader6 Purple
+hi unHeader1 guifg=#FF5D62 gui=bold
+hi unHeader2 guifg=#FFA066 gui=bold
+hi unHeader3 guifg=#DCA561 gui=bold
+hi unHeader4 guifg=#76946A gui=bold
+hi unHeader5 guifg=#658594 gui=bold
+hi unHeader6 guifg=#2D4F67 gui=bold
 
-hi def link unListBullet Red
-hi def link unListNumber Red
 
-hi def link unBold Blue
-hi def link unItalic Blue
-hi def link unUnderline Blue
-hi def link unCross Blue
-
-hi def link unLink Function
-hi def link unQuote String
-hi def link unKeyword PreProc
+" hi def link unHeader1 Red
+" hi def link unHeader2 Orange
+" hi def link unHeader3 Yellow
+" hi def link unHeader4 Green
+" hi def link unHeader5 Blue
+" hi def link unHeader6 Purple
+"
+" hi def link unListBullet Red
+" hi def link unListNumber Red
+"
+" hi def link unBold Blue
+" hi def link unItalic Blue
+" hi def link unUnderline Blue
+" hi def link unCross Blue
+"
+" hi def link unLink Function
+" hi def link unQuote String
+" hi def link unKeyword PreProc
 
 
 

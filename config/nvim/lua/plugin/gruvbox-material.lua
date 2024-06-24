@@ -12,7 +12,7 @@ vim.g.gruvbox_material_background = 'hard'
 vim.g.gruvbox_material_transparent_background = 0
 
 -- Note: the configuration options should be placed before
--- vim.cmd 'colorscheme gruvbox-material'
+vim.cmd 'colorscheme gruvbox-material'
 
 
 -- path theme ----------------------------------------------------------------

@@ -21,5 +21,5 @@ require('kanagawa-again').setup({
 })
 
 -- setup must be called before loading
-vim.cmd("colorscheme kanagawa-again")
+-- vim.cmd("colorscheme kanagawa-again")
 

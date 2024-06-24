@@ -14,16 +14,6 @@
 ## Remove it to not load settings done via the GUI.
 config.load_autoconfig(False)
 
-## Aliases for commands. The keys of the given dictionary are the
-## aliases, while the values are the commands they map to.
-## Type: Dict
-# c.aliases = {'w': 'session-save', 'q': 'close', 'qa': 'quit', 'wq': 'quit --save', 'wqa': 'quit --save'}
-
-## Time interval (in milliseconds) between auto-saves of
-## config/cookies/etc.
-## Type: Int
-# c.auto_save.interval = 15000
-
 ## Always restore open sites when qutebrowser is reopened. Without this
 ## option set, `:wq` (`:quit --save`) needs to be used to save open tabs
 ## (and restore them), while quitting qutebrowser in any other way will
@@ -54,6 +44,180 @@ c.auto_save.session = True
 ##   - webengine: Use QtWebEngine (based on Chromium - recommended).
 ##   - webkit: Use QtWebKit (based on WebKit, similar to Safari - many known security issues!).
 c.backend = 'webengine'
+
+## Require a confirmation before quitting the application.
+## Type: ConfirmQuit
+## Valid values:
+##   - always: Always show a confirmation.
+##   - multiple-tabs: Show a confirmation if multiple tabs are opened.
+##   - downloads: Show a confirmation if downloads are running
+##   - never: Never show a confirmation.
+c.confirm_quit = ['downloads']
+
+## Editor (and arguments) to use for the `edit-*` commands. The following
+## placeholders are defined:  * `{file}`: Filename of the file to be
+## edited. * `{line}`: Line in which the caret is found in the text. *
+## `{column}`: Column in which the caret is found in the text. *
+## `{line0}`: Same as `{line}`, but starting from index 0. * `{column0}`:
+## Same as `{column}`, but starting from index 0.
+## Type: ShellCommand
+c.editor.command = ['alacritty', '-e', 'nvim', '-f', '{file}', '-c', 'normal {line}G{column0}l']
+
+## Encoding to use for the editor.
+## Type: Encoding
+c.editor.encoding = 'utf-8'
+
+## How to open links in an existing instance if a new one is launched.
+## This happens when e.g. opening a link from a terminal. See
+## `new_instance_open_target_window` to customize in which window the
+## link is opened in.
+## Type: String
+## Valid values:
+##   - tab: Open a new tab in the existing window and activate the window.
+##   - tab-bg: Open a new background tab in the existing window and activate the window.
+##   - tab-silent: Open a new tab in the existing window without activating the window.
+##   - tab-bg-silent: Open a new background tab in the existing window without activating the window.
+##   - window: Open in a new window.
+##   - private-window: Open in a new private window.
+c.new_instance_open_target = 'tab'
+
+## Load a restored tab as soon as it takes focus.
+## Type: Bool
+c.session.lazy_restore = True
+
+## When to show the statusbar.
+## Type: String
+## Valid values:
+##   - always: Always show the statusbar.
+##   - never: Always hide the statusbar.
+##   - in-mode: Show the statusbar when in modes other than normal mode.
+c.statusbar.show = 'in-mode'
+
+## Open new tabs (middleclick/ctrl+click) in the background.
+## Type: Bool
+c.tabs.background = False
+
+## How to behave when the last tab is closed. If the
+## `tabs.tabs_are_windows` setting is set, this is ignored and the
+## behavior is always identical to the `close` value.
+## Type: String
+## Valid values:
+##   - ignore: Don't do anything.
+##   - blank: Load a blank page.
+##   - startpage: Load the start page.
+##   - default-page: Load the default page.
+##   - close: Close the window.
+# c.tabs.last_close = 'default-page'
+c.tabs.last_close = 'blank'
+
+## Maximum width (in pixels) of tabs (-1 for no maximum). This setting
+## only applies when tabs are horizontal. This setting does not apply to
+## pinned tabs, unless `tabs.pinned.shrink` is False. This setting may
+## not apply properly if max_width is smaller than the minimum size of
+## tab contents, or smaller than tabs.min_width.
+## Type: Int
+c.tabs.max_width = 100
+
+## Position of the tab bar.
+## Type: Position
+## Valid values:
+##   - top
+##   - bottom
+##   - left
+##   - right
+c.tabs.position = 'top'
+
+## When to show the tab bar.
+## Type: String
+## Valid values:
+##   - always: Always show the tab bar.
+##   - never: Always hide the tab bar.
+##   - multiple: Hide the tab bar if only one tab is open.
+##   - switching: Show the tab bar when switching tabs.
+c.tabs.show = 'always'
+
+## Duration (in milliseconds) to show the tab bar before hiding it when
+## tabs.show is set to 'switching'.
+## Type: Int
+c.tabs.show_switching_delay = 1000
+
+## Format to use for the tab title. The following placeholders are
+## defined:  * `{perc}`: Percentage as a string like `[10%]`. *
+## `{perc_raw}`: Raw percentage, e.g. `10`. * `{current_title}`: Title of
+## the current web page. * `{title_sep}`: The string `" - "` if a title
+## is set, empty otherwise. * `{index}`: Index of this tab. *
+## `{aligned_index}`: Index of this tab padded with spaces to have the
+## same   width. * `{relative_index}`: Index of this tab relative to the
+## current tab. * `{id}`: Internal tab ID of this tab. * `{scroll_pos}`:
+## Page scroll position. * `{host}`: Host of the current web page. *
+## `{backend}`: Either `webkit` or `webengine` * `{private}`: Indicates
+## when private mode is enabled. * `{current_url}`: URL of the current
+## web page. * `{protocol}`: Protocol (http/https/...) of the current web
+## page. * `{audio}`: Indicator for audio/mute status.
+## Type: FormatString
+# c.tabs.title.format = '{audio}{index}: {current_title}'
+c.tabs.title.format = '{index}: {current_title}'
+
+## Page to open if :open -t/-b/-w is used without URL. Use `about:blank`
+## for a blank page.
+## Type: FuzzyUrl
+# c.url.default_page = 'https://start.duckduckgo.com/'
+c.url.default_page = 'arsvincere.com'
+
+## Search engines which can be used via the address bar.  Maps a search
+## engine name (such as `DEFAULT`, or `ddg`) to a URL with a `{}`
+## placeholder. The placeholder will be replaced by the search term, use
+## `{{` and `}}` for literal `{`/`}` braces.  The following further
+## placeholds are defined to configure how special characters in the
+## search terms are replaced by safe characters (called 'quoting'):  *
+## `{}` and `{semiquoted}` quote everything except slashes; this is the
+## most   sensible choice for almost all search engines (for the search
+## term   `slash/and&amp` this placeholder expands to `slash/and%26amp`).
+## * `{quoted}` quotes all characters (for `slash/and&amp` this
+## placeholder   expands to `slash%2Fand%26amp`). * `{unquoted}` quotes
+## nothing (for `slash/and&amp` this placeholder   expands to
+## `slash/and&amp`). * `{0}` means the same as `{}`, but can be used
+## multiple times.  The search engine named `DEFAULT` is used when
+## `url.auto_search` is turned on and something else than a URL was
+## entered to be opened. Other search engines can be used by prepending
+## the search engine name to the search term, e.g. `:open google
+## qutebrowser`.
+## Type: Dict
+# c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}'}
+c.url.searchengines = {
+    'DEFAULT':  'https://google.com/search?hl=en&q={}',
+    '!a':       'https://www.amazon.com/s?k={}',
+    '!d':       'https://duckduckgo.com/?ia=web&q={}',
+    '!dd':      'https://thefreedictionary.com/{}',
+    '!e':       'https://www.ebay.com/sch/i.html?_nkw={}',
+    '!fb':      'https://www.facebook.com/s.php?q={}',
+    '!g':       'https://github.com/search?o=desc&q={}&s=stars',
+    '!gist':    'https://gist.github.com/search?q={}',
+    '!gi':      'https://www.google.com/search?tbm=isch&q={}&tbs=imgo:1',
+    '!gn':      'https://news.google.com/search?q={}',
+    '!ig':      'https://www.instagram.com/explore/tags/{}',
+    '!m':       'https://www.google.com/maps/search/{}',
+    '!p':       'https://pry.sh/{}',
+    '!r':       'https://www.reddit.com/search?q={}',
+    '!sd':      'https://slickdeals.net/newsearch.php?q={}&searcharea=deals&searchin=first',
+    '!t':       'https://www.thesaurus.com/browse/{}',
+    '!tw':      'https://twitter.com/search?q={}',
+    '!w':       'https://en.wikipedia.org/wiki/{}',
+    '!yelp':    'https://www.yelp.com/search?find_desc={}',
+    '!yt':      'https://www.youtube.com/results?search_query={}'
+}
+
+#-----------------------------------------------------------------------------
+
+## Aliases for commands. The keys of the given dictionary are the
+## aliases, while the values are the commands they map to.
+## Type: Dict
+# c.aliases = {'w': 'session-save', 'q': 'close', 'qa': 'quit', 'wq': 'quit --save', 'wqa': 'quit --save'}
+
+## Time interval (in milliseconds) between auto-saves of
+## config/cookies/etc.
+## Type: Int
+# c.auto_save.interval = 15000
 
 ## Map keys to other keys, so that they are equivalent in all modes. When
 ## the key used as dictionary-key is pressed, the binding for the key
@@ -650,15 +814,6 @@ c.colors.webpage.darkmode.enabled = True
 ## Type: Int
 # c.completion.web_history.max_items = -1
 
-## Require a confirmation before quitting the application.
-## Type: ConfirmQuit
-## Valid values:
-##   - always: Always show a confirmation.
-##   - multiple-tabs: Show a confirmation if multiple tabs are opened.
-##   - downloads: Show a confirmation if downloads are running
-##   - never: Never show a confirmation.
-c.confirm_quit = ['downloads']
-
 ## Automatically start playing `<video>` elements.
 ## Type: Bool
 # c.content.autoplay = True
@@ -1202,19 +1357,6 @@ c.confirm_quit = ['downloads']
 ## Type: Int
 # c.downloads.remove_finished = -1
 
-## Editor (and arguments) to use for the `edit-*` commands. The following
-## placeholders are defined:  * `{file}`: Filename of the file to be
-## edited. * `{line}`: Line in which the caret is found in the text. *
-## `{column}`: Column in which the caret is found in the text. *
-## `{line0}`: Same as `{line}`, but starting from index 0. * `{column0}`:
-## Same as `{column}`, but starting from index 0.
-## Type: ShellCommand
-c.editor.command = ['alacritty', '-e', 'nvim', '-f', '{file}', '-c', 'normal {line}G{column0}l']
-
-## Encoding to use for the editor.
-## Type: Encoding
-c.editor.encoding = 'utf-8'
-
 ## Delete the temporary file upon closing the editor.
 ## Type: Bool
 # c.editor.remove_file = True
@@ -1587,20 +1729,6 @@ c.editor.encoding = 'utf-8'
 ## Type: Int
 # c.messages.timeout = 3000
 
-## How to open links in an existing instance if a new one is launched.
-## This happens when e.g. opening a link from a terminal. See
-## `new_instance_open_target_window` to customize in which window the
-## link is opened in.
-## Type: String
-## Valid values:
-##   - tab: Open a new tab in the existing window and activate the window.
-##   - tab-bg: Open a new background tab in the existing window and activate the window.
-##   - tab-silent: Open a new tab in the existing window without activating the window.
-##   - tab-bg-silent: Open a new background tab in the existing window without activating the window.
-##   - window: Open in a new window.
-##   - private-window: Open in a new private window.
-c.new_instance_open_target = 'tab'
-
 ## Which window to choose when opening links as new tabs. When
 ## `new_instance_open_target` is set to `window`, this is ignored.
 ## Type: String
@@ -1788,10 +1916,6 @@ c.new_instance_open_target = 'tab'
 ## Type: SessionName
 # c.session.default_name = None
 
-## Load a restored tab as soon as it takes focus.
-## Type: Bool
-c.session.lazy_restore = True
-
 ## Languages to use for spell checking. You can check for available
 ## languages and install dictionaries using scripts/dictcli.py. Run the
 ## script with -h/--help for instructions.
@@ -1853,14 +1977,6 @@ c.session.lazy_restore = True
 ##   - bottom
 # c.statusbar.position = 'bottom'
 
-## When to show the statusbar.
-## Type: String
-## Valid values:
-##   - always: Always show the statusbar.
-##   - never: Always hide the statusbar.
-##   - in-mode: Show the statusbar when in modes other than normal mode.
-c.statusbar.show = 'in-mode'
-
 ## List of widgets displayed in the statusbar.
 ## Type: List of StatusbarWidget
 ## Valid values:
@@ -1875,10 +1991,6 @@ c.statusbar.show = 'in-mode'
 ##   - text:foo: Display the static text after the colon, `foo` in the example.
 ##   - clock: Display current time. The format can be changed by adding a format string via `clock:...`. For supported format strings, see https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes[the Python datetime documentation].
 # c.statusbar.widgets = ['keypress', 'search_match', 'url', 'scroll', 'history', 'tabs', 'progress']
-
-## Open new tabs (middleclick/ctrl+click) in the background.
-## Type: Bool
-c.tabs.background = False
 
 ## Mouse button with which to close tabs.
 ## Type: String
@@ -1923,27 +2035,6 @@ c.tabs.background = False
 ## Width (in pixels) of the progress indicator (0 to disable).
 ## Type: Int
 # c.tabs.indicator.width = 3
-
-## How to behave when the last tab is closed. If the
-## `tabs.tabs_are_windows` setting is set, this is ignored and the
-## behavior is always identical to the `close` value.
-## Type: String
-## Valid values:
-##   - ignore: Don't do anything.
-##   - blank: Load a blank page.
-##   - startpage: Load the start page.
-##   - default-page: Load the default page.
-##   - close: Close the window.
-# c.tabs.last_close = 'default-page'
-c.tabs.last_close = 'blank'
-
-## Maximum width (in pixels) of tabs (-1 for no maximum). This setting
-## only applies when tabs are horizontal. This setting does not apply to
-## pinned tabs, unless `tabs.pinned.shrink` is False. This setting may
-## not apply properly if max_width is smaller than the minimum size of
-## tab contents, or smaller than tabs.min_width.
-## Type: Int
-c.tabs.max_width = 100
 
 ## Minimum width (in pixels) of tabs (-1 for the default minimum size
 ## behavior). This setting only applies when tabs are horizontal. This
@@ -2002,15 +2093,6 @@ c.tabs.max_width = 100
 ## Type: Bool
 # c.tabs.pinned.shrink = True
 
-## Position of the tab bar.
-## Type: Position
-## Valid values:
-##   - top
-##   - bottom
-##   - left
-##   - right
-c.tabs.position = 'left'
-
 ## Which tab to select when the focused tab is removed.
 ## Type: SelectOnRemove
 ## Valid values:
@@ -2018,20 +2100,6 @@ c.tabs.position = 'left'
 ##   - next: Select the tab which came after the closed one (right in horizontal, below in vertical).
 ##   - last-used: Select the previously selected tab.
 # c.tabs.select_on_remove = 'next'
-
-## When to show the tab bar.
-## Type: String
-## Valid values:
-##   - always: Always show the tab bar.
-##   - never: Always hide the tab bar.
-##   - multiple: Hide the tab bar if only one tab is open.
-##   - switching: Show the tab bar when switching tabs.
-c.tabs.show = 'switching'
-
-## Duration (in milliseconds) to show the tab bar before hiding it when
-## tabs.show is set to 'switching'.
-## Type: Int
-c.tabs.show_switching_delay = 1000
 
 ## Open a new window for every tab.
 ## Type: Bool
@@ -2053,23 +2121,6 @@ c.tabs.show_switching_delay = 1000
 ##   - middle
 ##   - none
 # c.tabs.title.elide = 'right'
-
-## Format to use for the tab title. The following placeholders are
-## defined:  * `{perc}`: Percentage as a string like `[10%]`. *
-## `{perc_raw}`: Raw percentage, e.g. `10`. * `{current_title}`: Title of
-## the current web page. * `{title_sep}`: The string `" - "` if a title
-## is set, empty otherwise. * `{index}`: Index of this tab. *
-## `{aligned_index}`: Index of this tab padded with spaces to have the
-## same   width. * `{relative_index}`: Index of this tab relative to the
-## current tab. * `{id}`: Internal tab ID of this tab. * `{scroll_pos}`:
-## Page scroll position. * `{host}`: Host of the current web page. *
-## `{backend}`: Either `webkit` or `webengine` * `{private}`: Indicates
-## when private mode is enabled. * `{current_url}`: URL of the current
-## web page. * `{protocol}`: Protocol (http/https/...) of the current web
-## page. * `{audio}`: Indicator for audio/mute status.
-## Type: FormatString
-# c.tabs.title.format = '{audio}{index}: {current_title}'
-c.tabs.title.format = '{index}: {current_title}'
 
 ## Format to use for the tab title for pinned tabs. The same placeholders
 ## like for `tabs.title.format` are defined.
@@ -2104,12 +2155,6 @@ c.tabs.title.format = '{index}: {current_title}'
 ##   - schemeless: Always search automatically unless URL explicitly contains a scheme.
 # c.url.auto_search = 'naive'
 
-## Page to open if :open -t/-b/-w is used without URL. Use `about:blank`
-## for a blank page.
-## Type: FuzzyUrl
-# c.url.default_page = 'https://start.duckduckgo.com/'
-c.url.default_page = 'arsvincere.com'
-
 ## URL segments where `:navigate increment/decrement` will search for a
 ## number.
 ## Type: FlagList
@@ -2125,49 +2170,6 @@ c.url.default_page = 'arsvincere.com'
 ## invoked without parameters.
 ## Type: Bool
 # c.url.open_base_url = False
-
-## Search engines which can be used via the address bar.  Maps a search
-## engine name (such as `DEFAULT`, or `ddg`) to a URL with a `{}`
-## placeholder. The placeholder will be replaced by the search term, use
-## `{{` and `}}` for literal `{`/`}` braces.  The following further
-## placeholds are defined to configure how special characters in the
-## search terms are replaced by safe characters (called 'quoting'):  *
-## `{}` and `{semiquoted}` quote everything except slashes; this is the
-## most   sensible choice for almost all search engines (for the search
-## term   `slash/and&amp` this placeholder expands to `slash/and%26amp`).
-## * `{quoted}` quotes all characters (for `slash/and&amp` this
-## placeholder   expands to `slash%2Fand%26amp`). * `{unquoted}` quotes
-## nothing (for `slash/and&amp` this placeholder   expands to
-## `slash/and&amp`). * `{0}` means the same as `{}`, but can be used
-## multiple times.  The search engine named `DEFAULT` is used when
-## `url.auto_search` is turned on and something else than a URL was
-## entered to be opened. Other search engines can be used by prepending
-## the search engine name to the search term, e.g. `:open google
-## qutebrowser`.
-## Type: Dict
-# c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}'}
-c.url.searchengines = {
-    'DEFAULT':  'https://google.com/search?hl=en&q={}',
-    '!a':       'https://www.amazon.com/s?k={}',
-    '!d':       'https://duckduckgo.com/?ia=web&q={}',
-    '!dd':      'https://thefreedictionary.com/{}',
-    '!e':       'https://www.ebay.com/sch/i.html?_nkw={}',
-    '!fb':      'https://www.facebook.com/s.php?q={}',
-    '!g':       'https://github.com/search?o=desc&q={}&s=stars',
-    '!gist':    'https://gist.github.com/search?q={}',
-    '!gi':      'https://www.google.com/search?tbm=isch&q={}&tbs=imgo:1',
-    '!gn':      'https://news.google.com/search?q={}',
-    '!ig':      'https://www.instagram.com/explore/tags/{}',
-    '!m':       'https://www.google.com/maps/search/{}',
-    '!p':       'https://pry.sh/{}',
-    '!r':       'https://www.reddit.com/search?q={}',
-    '!sd':      'https://slickdeals.net/newsearch.php?q={}&searcharea=deals&searchin=first',
-    '!t':       'https://www.thesaurus.com/browse/{}',
-    '!tw':      'https://twitter.com/search?q={}',
-    '!w':       'https://en.wikipedia.org/wiki/{}',
-    '!yelp':    'https://www.yelp.com/search?find_desc={}',
-    '!yt':      'https://www.youtube.com/results?search_query={}'
-}
 
 ## Page(s) to open at the start.
 ## Type: List of FuzzyUrl, or FuzzyUrl
