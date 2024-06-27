@@ -9,8 +9,13 @@
 -- Use `background` for everything else.
 require 'colorizer'.setup {
   'css';
+  'color';
   'javascript';
+  'bg';
   html = {
+    mode = 'foreground';
+  },
+  fg = {
     mode = 'foreground';
   }
 }

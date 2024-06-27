@@ -10,19 +10,6 @@
 ##   qute://help/configuring.html
 ##   qute://help/settings.html
 
-## This is here so configs done via the GUI are still loaded.
-## Remove it to not load settings done via the GUI.
-config.load_autoconfig(False)
-
-## Always restore open sites when qutebrowser is reopened. Without this
-## option set, `:wq` (`:quit --save`) needs to be used to save open tabs
-## (and restore them), while quitting qutebrowser in any other way will
-## not save/restore the session. By default, this will save to the
-## session which was last loaded. This behavior can be customized via the
-## `session.default_name` setting.
-## Type: Bool
-c.auto_save.session = True
-
 ## Backend to use to display websites. qutebrowser supports two different
 ## web rendering engines / backends, QtWebEngine and QtWebKit (not
 ## recommended). QtWebEngine is Qt's official successor to QtWebKit, and
@@ -44,6 +31,29 @@ c.auto_save.session = True
 ##   - webengine: Use QtWebEngine (based on Chromium - recommended).
 ##   - webkit: Use QtWebKit (based on WebKit, similar to Safari - many known security issues!).
 c.backend = 'webengine'
+
+## This is here so configs done via the GUI are still loaded.
+## Remove it to not load settings done via the GUI.
+config.load_autoconfig(False)
+
+## Always restore open sites when qutebrowser is reopened. Without this
+## option set, `:wq` (`:quit --save`) needs to be used to save open tabs
+## (and restore them), while quitting qutebrowser in any other way will
+## not save/restore the session. By default, this will save to the
+## session which was last loaded. This behavior can be customized via the
+## `session.default_name` setting.
+## Type: Bool
+c.auto_save.session = True
+
+## Render all web contents using a dark theme. On QtWebEngine < 6.7, this
+## setting requires a restart and does not support URL patterns, only the
+## global setting is applied. Example configurations from Chromium's
+## `chrome://flags`: - "With simple HSL/CIELAB/RGB-based inversion": Set
+## `colors.webpage.darkmode.algorithm` accordingly, and   set
+## `colors.webpage.darkmode.policy.images` to `never`.  - "With selective
+## image inversion": qutebrowser default settings.
+## Type: Bool
+c.colors.webpage.darkmode.enabled = True
 
 ## Require a confirmation before quitting the application.
 ## Type: ConfirmQuit
@@ -116,7 +126,14 @@ c.tabs.last_close = 'blank'
 ## not apply properly if max_width is smaller than the minimum size of
 ## tab contents, or smaller than tabs.min_width.
 ## Type: Int
-c.tabs.max_width = 100
+# c.tabs.max_width = 128
+
+## Minimum width (in pixels) of tabs (-1 for the default minimum size
+## behavior). This setting only applies when tabs are horizontal. This
+## setting does not apply to pinned tabs, unless `tabs.pinned.shrink` is
+## False.
+## Type: Int
+# c.tabs.min_width = -1
 
 ## Position of the tab bar.
 ## Type: Position
@@ -156,7 +173,8 @@ c.tabs.show_switching_delay = 1000
 ## page. * `{audio}`: Indicator for audio/mute status.
 ## Type: FormatString
 # c.tabs.title.format = '{audio}{index}: {current_title}'
-c.tabs.title.format = '{index}: {current_title}'
+# c.tabs.title.format = '{current_title}'
+c.tabs.title.format = ''
 
 ## Page to open if :open -t/-b/-w is used without URL. Use `about:blank`
 ## for a blank page.
@@ -206,6 +224,106 @@ c.url.searchengines = {
     '!yelp':    'https://www.yelp.com/search?find_desc={}',
     '!yt':      'https://www.youtube.com/results?search_query={}'
 }
+
+## Default font families to use. Whenever "default_family" is used in a
+## font setting, it's replaced with the fonts listed here. If set to an
+## empty value, a system-specific monospace default is used.
+## Type: List of Font, or Font
+c.fonts.default_family = ["hack"]
+# c.fonts.default_family = ["sourcecodepro"]
+
+## Default font size to use. Whenever "default_size" is used in a font
+## setting, it's replaced with the size listed here. Valid values are
+## either a float value with a "pt" suffix, or an integer value with a
+## "px" suffix.
+## Type: String
+c.fonts.default_size = '14px'
+
+## Height (in pixels or as percentage of the window) of the completion.
+## Type: PercOrInt
+c.completion.height = '30%'
+
+## Width (in pixels) of the progress indicator (0 to disable).
+## Type: Int
+c.tabs.indicator.width = 0
+
+## Scaling factor for favicons in the tab bar. The tab size is unchanged,
+## so big favicons also require extra `tabs.padding`.
+## Type: Float
+c.tabs.favicons.scale = 0.8
+
+## Color tab bar -----------------------------------------------------{{{
+## Background color of the tab bar.
+## Type: QssColor
+c.colors.tabs.bar.bg = '#1F1F28'
+
+## Background color of unselected even tabs.
+## Type: QtColor
+c.colors.tabs.even.bg = '#363646'
+c.colors.tabs.odd.bg = '#363646'
+c.colors.tabs.even.fg = '#DCD7BA'
+c.colors.tabs.odd.fg = '#DCD7BA'
+
+## Background color of selected even tabs.
+## Type: QtColor
+c.colors.tabs.selected.even.bg = '#658594'
+c.colors.tabs.selected.odd.bg = '#658594'
+c.colors.tabs.selected.even.fg = '#FFFFFF'
+c.colors.tabs.selected.odd.fg = '#FFFFFF'
+
+## Color for the tab indicator on errors.
+## Type: QtColor
+# c.colors.tabs.indicator.error = '#ff0000'
+
+## Color gradient start for the tab indicator.
+## Type: QtColor
+# c.colors.tabs.indicator.start = '#0000aa'
+
+## Color gradient end for the tab indicator.
+## Type: QtColor
+# c.colors.tabs.indicator.stop = '#00aa00'
+
+## Color gradient interpolation system for the tab indicator.
+## Type: ColorSystem
+## Valid values:
+##   - rgb: Interpolate in the RGB color system.
+##   - hsv: Interpolate in the HSV color system.
+##   - hsl: Interpolate in the HSL color system.
+##   - none: Don't show a gradient.
+# c.colors.tabs.indicator.system = 'rgb'
+
+## Background color of pinned unselected even tabs.
+## Type: QtColor
+# c.colors.tabs.pinned.even.bg = 'darkseagreen'
+
+## Foreground color of pinned unselected even tabs.
+## Type: QtColor
+# c.colors.tabs.pinned.even.fg = 'white'
+
+## Background color of pinned unselected odd tabs.
+## Type: QtColor
+# c.colors.tabs.pinned.odd.bg = 'seagreen'
+
+## Foreground color of pinned unselected odd tabs.
+## Type: QtColor
+# c.colors.tabs.pinned.odd.fg = 'white'
+
+## Background color of pinned selected even tabs.
+## Type: QtColor
+# c.colors.tabs.pinned.selected.even.bg = 'black'
+
+## Foreground color of pinned selected even tabs.
+## Type: QtColor
+# c.colors.tabs.pinned.selected.even.fg = 'white'
+
+## Background color of pinned selected odd tabs.
+## Type: QtColor
+# c.colors.tabs.pinned.selected.odd.bg = 'black'
+
+## Foreground color of pinned selected odd tabs.
+## Type: QtColor
+# c.colors.tabs.pinned.selected.odd.fg = 'white'
+# }}}
 
 #-----------------------------------------------------------------------------
 
@@ -555,95 +673,6 @@ c.url.searchengines = {
 ## Type: QssColor
 # c.colors.statusbar.url.warn.fg = 'yellow'
 
-## Background color of the tab bar.
-## Type: QssColor
-# c.colors.tabs.bar.bg = '#555555'
-
-## Background color of unselected even tabs.
-## Type: QtColor
-# c.colors.tabs.even.bg = 'darkgrey'
-
-## Foreground color of unselected even tabs.
-## Type: QtColor
-# c.colors.tabs.even.fg = 'white'
-
-## Color for the tab indicator on errors.
-## Type: QtColor
-# c.colors.tabs.indicator.error = '#ff0000'
-
-## Color gradient start for the tab indicator.
-## Type: QtColor
-# c.colors.tabs.indicator.start = '#0000aa'
-
-## Color gradient end for the tab indicator.
-## Type: QtColor
-# c.colors.tabs.indicator.stop = '#00aa00'
-
-## Color gradient interpolation system for the tab indicator.
-## Type: ColorSystem
-## Valid values:
-##   - rgb: Interpolate in the RGB color system.
-##   - hsv: Interpolate in the HSV color system.
-##   - hsl: Interpolate in the HSL color system.
-##   - none: Don't show a gradient.
-# c.colors.tabs.indicator.system = 'rgb'
-
-## Background color of unselected odd tabs.
-## Type: QtColor
-# c.colors.tabs.odd.bg = 'grey'
-
-## Foreground color of unselected odd tabs.
-## Type: QtColor
-# c.colors.tabs.odd.fg = 'white'
-
-## Background color of pinned unselected even tabs.
-## Type: QtColor
-# c.colors.tabs.pinned.even.bg = 'darkseagreen'
-
-## Foreground color of pinned unselected even tabs.
-## Type: QtColor
-# c.colors.tabs.pinned.even.fg = 'white'
-
-## Background color of pinned unselected odd tabs.
-## Type: QtColor
-# c.colors.tabs.pinned.odd.bg = 'seagreen'
-
-## Foreground color of pinned unselected odd tabs.
-## Type: QtColor
-# c.colors.tabs.pinned.odd.fg = 'white'
-
-## Background color of pinned selected even tabs.
-## Type: QtColor
-# c.colors.tabs.pinned.selected.even.bg = 'black'
-
-## Foreground color of pinned selected even tabs.
-## Type: QtColor
-# c.colors.tabs.pinned.selected.even.fg = 'white'
-
-## Background color of pinned selected odd tabs.
-## Type: QtColor
-# c.colors.tabs.pinned.selected.odd.bg = 'black'
-
-## Foreground color of pinned selected odd tabs.
-## Type: QtColor
-# c.colors.tabs.pinned.selected.odd.fg = 'white'
-
-## Background color of selected even tabs.
-## Type: QtColor
-# c.colors.tabs.selected.even.bg = 'black'
-
-## Foreground color of selected even tabs.
-## Type: QtColor
-# c.colors.tabs.selected.even.fg = 'white'
-
-## Background color of selected odd tabs.
-## Type: QtColor
-# c.colors.tabs.selected.odd.bg = 'black'
-
-## Foreground color of selected odd tabs.
-## Type: QtColor
-# c.colors.tabs.selected.odd.fg = 'white'
-
 ## Background color of tooltips. If set to null, the Qt default is used.
 ## Type: QssColor
 # c.colors.tooltip.bg = None
@@ -672,16 +701,6 @@ c.url.searchengines = {
 ## `brightness-rgb`.
 ## Type: Float
 # c.colors.webpage.darkmode.contrast = 0.0
-
-## Render all web contents using a dark theme. On QtWebEngine < 6.7, this
-## setting requires a restart and does not support URL patterns, only the
-## global setting is applied. Example configurations from Chromium's
-## `chrome://flags`: - "With simple HSL/CIELAB/RGB-based inversion": Set
-## `colors.webpage.darkmode.algorithm` accordingly, and   set
-## `colors.webpage.darkmode.policy.images` to `never`.  - "With selective
-## image inversion": qutebrowser default settings.
-## Type: Bool
-c.colors.webpage.darkmode.enabled = True
 
 ## Which images to apply dark mode to.
 ## Type: String
@@ -744,10 +763,6 @@ c.colors.webpage.darkmode.enabled = True
 ## category when the command line contains `:open` but no argument.
 ## Type: List of String
 # c.completion.favorite_paths = []
-
-## Height (in pixels or as percentage of the window) of the completion.
-## Type: PercOrInt
-# c.completion.height = '50%'
 
 ## Minimum amount of characters needed to update completions.
 ## Type: Int
@@ -1414,19 +1429,6 @@ c.colors.webpage.darkmode.enabled = True
 ## Type: Font
 # c.fonts.debug_console = 'default_size default_family'
 
-## Default font families to use. Whenever "default_family" is used in a
-## font setting, it's replaced with the fonts listed here. If set to an
-## empty value, a system-specific monospace default is used.
-## Type: List of Font, or Font
-# c.fonts.default_family = []
-
-## Default font size to use. Whenever "default_size" is used in a font
-## setting, it's replaced with the size listed here. Valid values are
-## either a float value with a "pt" suffix, or an integer value with a
-## "px" suffix.
-## Type: String
-# c.fonts.default_size = '10pt'
-
 ## Font used for the downloadbar.
 ## Type: Font
 # c.fonts.downloads = 'default_size default_family'
@@ -2009,11 +2011,6 @@ c.colors.webpage.darkmode.enabled = True
 ##   - ignore: Don't do anything.
 # c.tabs.close_mouse_button_on_bar = 'new-tab'
 
-## Scaling factor for favicons in the tab bar. The tab size is unchanged,
-## so big favicons also require extra `tabs.padding`.
-## Type: Float
-# c.tabs.favicons.scale = 1.0
-
 ## When to show favicons in the tab bar. When switching this from never
 ## to always/pinned, note that favicons might not be loaded yet, thus
 ## tabs might require a reload to display them.
@@ -2031,17 +2028,6 @@ c.colors.webpage.darkmode.enabled = True
 ## Padding (in pixels) for tab indicators.
 ## Type: Padding
 # c.tabs.indicator.padding = {'top': 2, 'bottom': 2, 'left': 0, 'right': 4}
-
-## Width (in pixels) of the progress indicator (0 to disable).
-## Type: Int
-# c.tabs.indicator.width = 3
-
-## Minimum width (in pixels) of tabs (-1 for the default minimum size
-## behavior). This setting only applies when tabs are horizontal. This
-## setting does not apply to pinned tabs, unless `tabs.pinned.shrink` is
-## False.
-## Type: Int
-# c.tabs.min_width = -1
 
 ## When switching tabs, what input mode is applied.
 ## Type: String
@@ -2282,10 +2268,10 @@ c.colors.webpage.darkmode.enabled = True
 # config.bind('D', 'tab-close -o')
 # config.bind('F', 'hint all tab')
 # config.bind('G', 'scroll-to-perc')
-# config.bind('H', 'back')
-# config.bind('J', 'tab-next')
-# config.bind('K', 'tab-prev')
-# config.bind('L', 'forward')
+config.bind('H', 'back')
+config.bind('l', 'tab-next')
+config.bind('h', 'tab-prev')
+config.bind('L', 'forward')
 # config.bind('M', 'bookmark-add')
 # config.bind('N', 'search-prev')
 # config.bind('O', 'cmd-set-text -s :open -t')
