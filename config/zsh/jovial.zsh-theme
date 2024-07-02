@@ -52,14 +52,14 @@ typeset -g sgr_reset="%{\e[00m%}"
 # more `typeset` syntax see https://zsh.sourceforge.io/Doc/Release/Shell-Builtin-Commands.html
 typeset -gA JOVIAL_SYMBOL=(
     corner.top    '╭─'
-    corner.bottom '╰─'
+    corner.bottom '╰──'
 
     git.dirty '  '
     git.clean '  '
 
     ## preset arrows
-    arrow '─➤'
-    arrow.git-clean '─➤'
+    arrow '─➤ '
+    arrow.git-clean '─➤ '
     arrow.git-dirty '─ '
 )
 

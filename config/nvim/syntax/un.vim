@@ -10,37 +10,31 @@ if exists("b:current_syntax")
   finish
 endif
 
-syn match unHeader1 /^[^. +/].*[^.]\n[*]\{3,}$/ 
-syn match unHeader2 /^[^. +/].*[^.]\n[=]\{3,}$/ 
-syn match unHeader3 /^[^. +/].*[^.]\n[-]\{3,}$/ 
-syn match unHeader4 /^[^. +/].*[^.]\n[:]\{3,}$/ 
-syn match unHeader5 /^[^. +/].*[^.]\n[.]\{3,}$/ 
-syn match unHeader6 /^[^. +/].*[^.]\n[,]\{3,}$/ 
+syn match   unHeader1 /^[^. +/].*[^.]\n[*]\{3,}$/ 
+syn match   unHeader2 /^[^. +/].*[^.]\n[=]\{3,}$/ 
+syn match   unHeader3 /^[^. +/].*[^.]\n[-]\{3,}$/ 
+syn match   unHeader4 /^[^. +/].*[^.]\n[:]\{3,}$/ 
+syn match   unHeader5 /^[^. +/].*[^.]\n[.]\{3,}$/ 
+syn match   unHeader6 /^[^. +/].*[^.]\n[,]\{3,}$/ 
 
-syn match unHeader1 /^=\{1}\s\+\S.*$/ 
-syn match unHeader2 /^=\{2}\s\+\S.*$/ 
-syn match unHeader3 /^=\{3}\s\+\S.*$/ 
-syn match unHeader4 /^=\{4}\s\+\S.*$/ 
-syn match unHeader5 /^=\{5}\s\+\S.*$/ 
-syn match unHeader6 /^=\{6}\s\+\S.*$/ 
+syn match   unHeader1 /^=\{1}\s\+\S.*$/ 
+syn match   unHeader2 /^=\{2}\s\+\S.*$/ 
+syn match   unHeader3 /^=\{3}\s\+\S.*$/ 
+syn match   unHeader4 /^=\{4}\s\+\S.*$/ 
+syn match   unHeader5 /^=\{5}\s\+\S.*$/ 
+syn match   unHeader6 /^=\{6}\s\+\S.*$/ 
 
-syn match unListBullet /^\s*\zs\(-\+\|\*\{1,5}\)\ze\s/
-syn match unListNumber /^\s*\zs\(\(\d\+\.\)\|\.\{1,5}\|\(\a\.\)\|\([ivxIVX]\+)\)\)\ze\s\+/
+" syn match unListBullet /^\s*\zs\(-\+\|\*\{1,5}\)\ze\s/
+syn match   unListBullet /^\s*\zs\(-\|\*\{1,5}\)\ze\s/
+syn match   unListNumber /^\s*\zs\(\(\d\+\.\)\|\.\{1,5}\|\(\a\.\)\|\([ivxIVX]\+)\)\)\ze\s\+/
 
-syn match unBold /\\\@<!\*\*\S\_.\{-}\(\*\*\|\n\s*\n\)/
-syn match unItalic /\\\@<!\/\/\S\_.\{-}\(\/\/\|\n\s*\n\)/
-syn match unUnderline /\\\@<!__\S\_.\{-}\(__\|\n\s*\n\)/
-syn match unCross /\\\@<!\-\-\S[^-]\_.\{-}\(\-\-\|\n\s*\n\)/
+syn match   unBold /\\\@<!\*\*\S\_.\{-}\(\*\*\|\n\s*\n\)/
+syn match   unItalic /\\\@<!\/\/\S\_.\{-}\(\/\/\|\n\s*\n\)/
+syn match   unUnderline /\\\@<!__\S\_.\{-}\(__\|\n\s*\n\)/
+syn match   unCross /\\\@<!\-\-\S[^-]\_.\{-}\(\-\-\|\n\s*\n\)/
 
-syn match unLink /:: img:/
-syn match unLink /:: http:/
-syn match unLink /:: ftp:/
-syn match unLink /:: mailto:/
-syn match unLink /:: file:/
-syn match unLink /:: dir:/
-syn match unLink /:: toc:/
-
-syn region unQuote start=/"""/ skip=/\\"""/ end=/"""/
+syn match   unLink /\\\@<!::\S\_.\{-}\(::\|\n\s*\n\)/
+syn region  unQuote start=/"""/ skip=/\\"""/ end=/"""/
 
 syn keyword unKeyword TITLE AUTHOR CREATED DATE TIME LOCATION FILE URL EMAIL
 syn keyword unKeyword PROJECT TARGET TASK DO
@@ -49,32 +43,25 @@ syn keyword unKeyword GIT BRIEF DRAFT ISSUE DEPRECATED VERSION LICENSE
 
 "_____________________________________________________________________________
 
-hi unHeader1 guifg=#FF5D62 gui=bold
-hi unHeader2 guifg=#FFA066 gui=bold
-hi unHeader3 guifg=#DCA561 gui=bold
-hi unHeader4 guifg=#76946A gui=bold
-hi unHeader5 guifg=#658594 gui=bold
-hi unHeader6 guifg=#2D4F67 gui=bold
+hi unHeader1    guifg=#FF5D62 gui=bold
+hi unHeader2    guifg=#FFA066 gui=bold
+hi unHeader3    guifg=#DCA561 gui=bold
+hi unHeader4    guifg=#76946A gui=bold
+hi unHeader5    guifg=#658594 gui=bold
+hi unHeader6    guifg=#2D4F67 gui=bold
 
+hi unListBullet guifg=#FF9E3B
+hi unListNumber guifg=#FF9E3B
 
-" hi def link unHeader1 Red
-" hi def link unHeader2 Orange
-" hi def link unHeader3 Yellow
-" hi def link unHeader4 Green
-" hi def link unHeader5 Blue
-" hi def link unHeader6 Purple
-"
-" hi def link unListBullet Red
-" hi def link unListNumber Red
-"
-" hi def link unBold Blue
-" hi def link unItalic Blue
-" hi def link unUnderline Blue
-" hi def link unCross Blue
-"
-" hi def link unLink Function
-" hi def link unQuote String
-" hi def link unKeyword PreProc
+hi unBold       guifg=#938056 gui=none
+hi unItalic     guifg=#938056 gui=none
+hi unUnderline  guifg=#938056 gui=none
+hi unCross      guifg=#938056 
+
+hi unLink       guifg=#957FB8
+hi unQuote      guifg=#6A9589
+
+hi unKeyword    guifg=#D27E99
 
 
 
@@ -95,4 +82,3 @@ hi unHeader6 guifg=#2D4F67 gui=bold
 
 let b:current_syntax = "un"
 
-" vim: wrap et sw=2 sts=2:
