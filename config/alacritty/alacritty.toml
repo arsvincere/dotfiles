@@ -21,7 +21,7 @@
 [[keyboard.bindings]]
     action = "ToggleViMode"
     key = "Escape"
-    mods = "Control"
+    mods = "Shift"
 
 # [[keyboard.bindings]]
 # action = "Paste"

@@ -45,6 +45,7 @@ map('t', '<Esc>', '<C-\\><C-n>', opts)
 
 -- Highlight word on cursor
 map('n', '*', '*N', opts)
+map('n', '#', '*N', opts)
 
 -- Search & replace
 map('v', '<leader>s', ':s//', {noremap = true, silent = false})

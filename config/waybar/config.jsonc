@@ -19,10 +19,17 @@
         "cpu",
         "memory",
         "disk",
-        "temperature"
+        "temperature",
+        "custom/power"
     ],
 
     // Modules configuration -------------------------------------------------
+
+    "custom/power": {
+      "format": " ",
+      "on-click": "alacritty -e shutdown now",
+      "tooltip": false
+    },
     "custom/diary": {
       "format": " ",
       "on-click": "alacritty -T diary -e nvim ~/ya/diary",

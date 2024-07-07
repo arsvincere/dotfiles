@@ -12,7 +12,6 @@ window#waybar {
     background: transparent;
     /* background: #323232; */
     color: #DCD7BA;
-    color: red;
 }
 
 /* Left angle ***************************************************************/
@@ -125,32 +124,38 @@ window#waybar {
 #cpu {
     background: transparent;
     color: #658594;
-	margin: 2px 0px 0px 0px;
-    padding: 0px 8px 0px 150px;
+	margin: 2px 0px 0px 150px;
+    padding: 0px 6px;
 }
 #memory {
     background: transparent;
     color: #658594;
 	margin: 2px 0px 0px 0px;
-    padding: 0px 8px;
+    padding: 0px 6px;
 }
 #disk {
     background: transparent;
     color: #658594;
 	margin: 2px 0px 0px 0px;
-    padding: 0px 8px;
+    padding: 0px 6px;
 }
 #temperature {
     background: transparent;
     color: #658594;
-	margin: 2px 4px 0px 0px;
-    padding: 0px 8px;
+	margin: 2px 0px 0px 0px;
+    padding: 0px 6px;
 }
 #temperature.critical {
     background: #C34043;
     color: #16161D;
 	margin: 2px 0px 0px 0px;
-    padding: 0px 8px;
+    padding: 0px 6px;
+}
+#custom-power {
+    background: transparent;
+    color: #C34043;
+	margin: 2px 0px 0px 0px;
+    padding: 0px 2px;
 }
 
 /* Tooltip ******************************************************************/

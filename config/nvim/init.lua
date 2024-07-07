@@ -32,6 +32,7 @@ require('plugin.nvim-surround')     -- powerful replace '' "" () [] {} etc.
 require('plugin.mason')             -- manage language server
 require('plugin.lspconfig')         -- config language server
 require('plugin.nvim-cmp')          -- autocomplete
+-- require('plugin.coc')               -- autocomplete
 
 -- Other
 require('plugin.vim-plugin-ruscmd') -- support commands on RU-layot
