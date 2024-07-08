@@ -106,6 +106,7 @@ export ARCHFLAGS="-arch x86_64"
 alias zshconfig="nvim ~/.zshrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
 
+
 # ----------------------------------------------------------------------------
 
 # nvim
@@ -118,4 +119,6 @@ export PYTHONPATH="$PYTHONPATH:/usr/lib/python3.12/site-packages"
 
 # xplr
 export XPLR_BOOKMARK_FILE="$HOME/.config/xplr/bookmarks"
+
+alias pgadmin="python /home/alex/env/lib/python3.12/site-packages/pgadmin4/pgAdmin4.py"
 

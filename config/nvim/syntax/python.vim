@@ -339,6 +339,7 @@ endif
 syn match   pythonFoldMarker	/# {{{/
 syn match   pythonFoldMarker	/# }}}/
 hi pythonFoldMarker		guifg=#1D2021 gui=italic
+
 " AVIN -----------------------------------------------------------------------
 
 let b:current_syntax = "python"

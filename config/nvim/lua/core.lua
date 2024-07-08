@@ -46,13 +46,6 @@ autocmd('BufLeave', { pattern = '*.adoc', command = 'w!' })
 -- Folding -------------------------------------------------------------------{{{
 opt.foldenable = true            -- При открытии файла скрывать блоки
 opt.foldmethod = 'marker'        -- Группировка по маркерам
-
--- au BufRead,BufNewfile * syn match fmrkr '"*{{{\|"*}}}' |
---   \ syn cluster vimCommentGroup contains=fmrkr |
---   \ hi fmrkr term=NONE guibg=black guifg=black
---   \ ctermbg=black ctermfg=black
---
--- BufNewfile
 -- }}}
 -- Tab -----------------------------------------------------------------------{{{
 opt.expandtab = true            -- use spaces instead of tabs

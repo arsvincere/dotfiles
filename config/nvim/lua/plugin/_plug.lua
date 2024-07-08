@@ -24,7 +24,10 @@ vim.call('plug#begin')
 
     -- IDE -------------------------------------------------------------------
     Plug 'numToStr/Comment.nvim'
-    Plug 'anuvyklack/pretty-fold.nvim'
+    -- Plug 'anuvyklack/pretty-fold.nvim'
+    Plug 'kevinhwang91/nvim-ufo'
+        Plug 'kevinhwang91/promise-async'
+
     Plug 'preservim/tagbar'
     Plug 'cohama/lexima.vim'
     Plug 'kylechui/nvim-surround'

@@ -32,6 +32,7 @@ neofetch
 neovim
 netctl
 networkmanager
+nordzy-cursors
 ntfs-3g
 obsidian
 p7zip

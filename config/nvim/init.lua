@@ -23,7 +23,8 @@ require('plugin.bufdelete')         -- delete buffer without close window
 
 -- IDE
 require('plugin.comment')           -- comment any language
-require('plugin.pretty-fold')       -- good folding labels
+-- require('plugin.pretty-fold')       -- good folding labels
+require('plugin.nvim-ufo')          -- very good folding
 require('plugin.tagbar')            -- navigation: class, func, const...
 require('plugin.lexima')            -- auto insert pairs () [] {}
 require('plugin.nvim-surround')     -- powerful replace '' "" () [] {} etc.
