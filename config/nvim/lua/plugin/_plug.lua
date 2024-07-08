@@ -7,12 +7,12 @@ vim.call('plug#begin')
     Plug 'arsvincere/kanagawa-again.nvim'
     Plug 'sainnhe/gruvbox-material'
     Plug "rebelot/kanagawa.nvim"
-    Plug 'AlexvZyl/nordic.nvim'
     Plug 'sho-87/kanagawa-paper.nvim'
 
+    -- Plug 'akinsho/bufferline.nvim'
     Plug 'nvim-lualine/lualine.nvim'
     Plug 'lukas-reineke/indent-blankline.nvim'
-    -- Plug 'akinsho/bufferline.nvim'
+    Plug 'nvimdev/dashboard-nvim'
 
     -- Navigation ------------------------------------------------------------
     Plug 'nvim-tree/nvim-tree.lua'
@@ -46,7 +46,6 @@ vim.call('plug#begin')
     -- Plug 'neoclide/coc.nvim'
 
     -- git -------------------------------------------------------------------
-
 
     -- LaTex -----------------------------------------------------------------
     Plug 'lervag/vimtex'

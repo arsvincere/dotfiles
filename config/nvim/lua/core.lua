@@ -18,7 +18,7 @@ opt.history = 200               -- Количество команд history
 opt.splitright = true           -- Vertical split вправо
 opt.splitbelow = true           -- Horizontal split вниз
 opt.cursorline = false          -- Подсветка строки с курсором откл.
-opt.so=10                       -- 10 строк перед скоролом экрана
+opt.so=20                       -- 20 строк перед скоролом экрана
 opt.linebreak = true            -- Переносить по словам
 opt.clipboard = 'unnamedplus'   -- Используем системный буфер обмена
                                 -- install xsel чтобы заработало
@@ -46,6 +46,13 @@ autocmd('BufLeave', { pattern = '*.adoc', command = 'w!' })
 -- Folding -------------------------------------------------------------------{{{
 opt.foldenable = true            -- При открытии файла скрывать блоки
 opt.foldmethod = 'marker'        -- Группировка по маркерам
+
+-- au BufRead,BufNewfile * syn match fmrkr '"*{{{\|"*}}}' |
+--   \ syn cluster vimCommentGroup contains=fmrkr |
+--   \ hi fmrkr term=NONE guibg=black guifg=black
+--   \ ctermbg=black ctermfg=black
+--
+-- BufNewfile
 -- }}}
 -- Tab -----------------------------------------------------------------------{{{
 opt.expandtab = true            -- use spaces instead of tabs
@@ -73,7 +80,9 @@ autocmd('BufWritePre', { pattern = '*.adoc', command = [[%s/\s\+$//e]], })
 autocmd('BufWritePre', { pattern = '*.un', command = [[%s/\s\+$//e]], })
 
 -- Remove line lenght marker for selected filetypes
-cmd [[autocmd FileType html,xhtml,javascript setlocal cc=0]]
+cmd ([[
+autocmd FileType html,xhtml,javascript,markdown,adoc,un,text setlocal cc=0
+]])
 
 -- Запоминает где nvim последний раз редактировал файл
 cmd [[
@@ -84,7 +93,7 @@ autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "norm
 exec([[
 augroup YankHighlight
 autocmd!
-autocmd TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=500}
+autocmd TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=300}
 augroup end
 ]], false)
 -- }}}

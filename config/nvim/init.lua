@@ -9,12 +9,12 @@ require('plugin._plug')             -- install plugins
 -- Theme
 require('plugin.kanagawa-again')    -- color scheme
 require('plugin.gruvbox-material')  -- color scheme
--- require('plugin.nordic')            -- color scheme
 -- require('plugin.kanagawa')          -- color scheme
 -- require('plugin.kanagawa-paper')    -- color scheme
+-- require('plugin.bufferline')        -- tabs at the top
 require('plugin.lualine')           -- status line
 require('plugin.indent-blankline')  -- hightlight code blocks
--- require('plugin.bufferline')        -- tabs at the top
+require('plugin.dashboard')         -- startup screen
 
 -- Navigation
 require('plugin.nvim-tree')         -- file manager

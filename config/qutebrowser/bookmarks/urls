@@ -7,3 +7,8 @@ https://www.reddit.com/r/neovim/comments/azyn3v/best_python_plugins/ Best Python
 https://github.com/CabbageDevelopment/qasync CabbageDevelopment/qasync: Python library for using asyncio in Qt-based applications.
 https://pypi.org/project/qt-material/#custom-colors qt-material · PyPI
 https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html#example-google Example Google Style Python Docstrings — napoleon 0.7 documentation
+https://github.com/ahmedkhalf/project.nvim ahmedkhalf/project.nvim: The superior project management solution for neovim.
+https://github.com/Mr-LLLLL/lualine-ext.nvim Mr-LLLLL/lualine-ext.nvim: Show more information on lualine
+https://github.com/adelarsq/image_preview.nvim adelarsq/image_preview.nvim: Image Preview for Neovim 🖼
+https://github.com/m4xshen/smartcolumn.nvim m4xshen/smartcolumn.nvim: A Neovim plugin hiding your colorcolumn when unneeded.
+https://github.com/Shatur/neovim-session-manager Shatur/neovim-session-manager: A simple wrapper around :mksession.

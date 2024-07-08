@@ -335,6 +335,12 @@ if !exists("python_no_doctest_highlight")
   hi def link pythonDoctestValue	Define
 endif
 
+" AVIN - hide fold markers ---------------------------------------------------
+syn match   pythonFoldMarker	/# {{{/
+syn match   pythonFoldMarker	/# }}}/
+hi pythonFoldMarker		guifg=#1D2021 gui=italic
+" AVIN -----------------------------------------------------------------------
+
 let b:current_syntax = "python"
 
 let &cpo = s:cpo_save
