@@ -12,4 +12,29 @@ https://github.com/Mr-LLLLL/lualine-ext.nvim Mr-LLLLL/lualine-ext.nvim: Show mor
 https://github.com/adelarsq/image_preview.nvim adelarsq/image_preview.nvim: Image Preview for Neovim 🖼
 https://github.com/m4xshen/smartcolumn.nvim m4xshen/smartcolumn.nvim: A Neovim plugin hiding your colorcolumn when unneeded.
 https://github.com/Shatur/neovim-session-manager Shatur/neovim-session-manager: A simple wrapper around :mksession.
-https://github.com/kevinhwang91/nvim-ufo kevinhwang91/nvim-ufo: Not UFO in the sky, but an ultra fold in Neovim.
+https://github.com/rockerBOO/awesome-neovim rockerBOO/awesome-neovim: Collections of awesome neovim plugins.
+https://github.com/nvim-lualine/lualine.nvim nvim-lualine/lualine.nvim: A blazing fast and easy to configure neovim statusline plugin written in pure lua.
+https://github.com/mfussenegger/nvim-lint mfussenegger/nvim-lint: An asynchronous linter plugin for Neovim complementary to the built-in Language Server Protocol support.
+https://github.com/stevearc/conform.nvim stevearc/conform.nvim: Lightweight yet powerful formatter plugin for Neovim
+https://github.com/NeogitOrg/neogit NeogitOrg/neogit: An interactive and powerful Git interface for Neovim, inspired by Magit
+https://github.com/sindrets/diffview.nvim sindrets/diffview.nvim: Single tabpage interface for easily cycling through diffs for all modified files for any git rev.
+https://github.com/lewis6991/gitsigns.nvim lewis6991/gitsigns.nvim: Git integration for buffers
+https://github.com/MunifTanjim/nui.nvim MunifTanjim/nui.nvim: UI Component Library for Neovim.
+https://github.com/folke/which-key.nvim folke/which-key.nvim: 💥 Create key bindings that stick. WhichKey is a lua plugin for Neovim 0.5 that displays a popup with possible keybindings of the command you started typing.
+https://github.com/rafamadriz/friendly-snippets rafamadriz/friendly-snippets: Set of preconfigured snippets for different languages.
+https://github.com/windwp/nvim-autopairs windwp/nvim-autopairs: autopairs for neovim written in lua
+https://github.com/numToStr/Comment.nvim numToStr/Comment.nvim: :brain: // Smart and powerful comment plugin for neovim. Supports treesitter, dot repeat, left-right/up-down motions, hooks, and more
+https://github.com/folke/trouble.nvim folke/trouble.nvim: 🚦 A pretty diagnostics, references, telescope results, quickfix and location list to help you solve all the trouble your code is causing.
+https://github.com/mfussenegger/nvim-dap mfussenegger/nvim-dap: Debug Adapter Protocol client implementation for Neovim
+https://github.com/rcarriga/nvim-notify rcarriga/nvim-notify: A fancy, configurable, notification manager for NeoVim
+https://github.com/rcarriga/nvim-dap-ui rcarriga/nvim-dap-ui: A UI for nvim-dap
+https://github.com/folke/todo-comments.nvim folke/todo-comments.nvim: ✅ Highlight, list and search todo comments in your projects
+https://github.com/folke/lazydev.nvim folke/lazydev.nvim: Faster LuaLS setup for Neovim
+https://github.com/stevearc/oil.nvim stevearc/oil.nvim: Neovim file explorer: edit your filesystem like a buffer
+https://github.com/nvim-neo-tree/neo-tree.nvim nvim-neo-tree/neo-tree.nvim: Neovim plugin to manage the file system and other tree like structures.
+https://github.com/nvim-tree/nvim-tree.lua nvim-tree/nvim-tree.lua: A file explorer tree for neovim written in lua
+https://github.com/yamatsum/nvim-cursorline yamatsum/nvim-cursorline: A plugin for neovim that highlights cursor words and lines
+https://github.com/sontungexpt/stcursorword sontungexpt/stcursorword: A concise, precise, and high-performance cursor word highlighting plugin for Neovim, implemented in Lua.
+https://github.com/RRethy/vim-illuminate RRethy/vim-illuminate: illuminate.vim - (Neo)Vim plugin for automatically highlighting other uses of the word under the cursor using either LSP, Tree-sitter, or regex matching.
+https://github.com/elihunter173/dirbuf.nvim elihunter173/dirbuf.nvim: A file manager for Neovim which lets you edit your filesystem like you edit text
+https://github.com/rockerBOO/awesome-neovim?tab=readme-ov-file#cursorline rockerBOO/awesome-neovim: Collections of awesome neovim plugins.
