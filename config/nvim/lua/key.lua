@@ -89,6 +89,14 @@ map('n', '<leader>h', ':sp<CR>', opts)
 map('n', '<leader>v', ':vs<CR>', opts)
 map('n', '<leader><Esc>', ':x<CR>', opts)
 
+-- Jump python functions
+map('n', '<esc>j', ':/def <CR>:nohls<CR>', opts)
+map('n', '<esc>k', ':?def <CR>:nohls<CR>', opts)
+
+-- Jump python class
+map('n', '<esc>l', ':/class <CR>:nohls<CR>', opts)
+map('n', '<esc>h', ':?class <CR>:nohls<CR>', opts)
+
 -- <F1> .. <F12> -------------------------------------------------------------
 
 -- По F1 очищаем последний поиск с подсветкой
