@@ -3,15 +3,15 @@
 layer=overlay
 
 # STYLE
-# font=Noto Sans Regular 11
-font=Hack 10
-width=220
+# font=Hack 10
+font=Source Code Pro 10
+width=256
 margin=5,18,0
 padding=7
 border-size=1
-border-radius=10
+border-radius=8
 progress-color=#ffffff
-max-icon-size=36
+max-icon-size=32
 # icon-path=/usr/share/icons/WhiteSur-dark:/usr/share/icons/WhiteSur:/usr/share/icons/Adwaita:/usr/share/icons/hicolor
 icon-path=/usr/share/icons/Kanagawa:/usr/share/icons/Adwaita:/usr/share/icons/hicolor
 icon-location=right
