@@ -256,6 +256,10 @@ c.completion.height = "30%"
 ## Type: Int
 c.tabs.indicator.width = 2
 
+## Padding (in pixels) for tab indicators.
+## Type: Padding
+c.tabs.indicator.padding = {"top": 2, "bottom": 2, "left": 0, "right": 8}
+
 ## Scaling factor for favicons in the tab bar. The tab size is unchanged,
 ## so big favicons also require extra `tabs.padding`.
 ## Type: Float
@@ -282,15 +286,15 @@ c.colors.tabs.selected.odd.fg = "#FFFFFF"
 
 ## Color for the tab indicator on errors.
 ## Type: QtColor
-# c.colors.tabs.indicator.error = '#ff0000'
+c.colors.tabs.indicator.error = "#ff0000"
 
 ## Color gradient start for the tab indicator.
 ## Type: QtColor
-# c.colors.tabs.indicator.start = '#0000aa'
+c.colors.tabs.indicator.start = "#0000aa"
 
 ## Color gradient end for the tab indicator.
 ## Type: QtColor
-# c.colors.tabs.indicator.stop = '#00aa00'
+c.colors.tabs.indicator.stop = "#aaaa00"
 
 ## Color gradient interpolation system for the tab indicator.
 ## Type: ColorSystem
@@ -2033,10 +2037,6 @@ c.colors.tabs.selected.odd.fg = "#FFFFFF"
 ## Maximum stack size to remember for tab switches (-1 for no maximum).
 ## Type: Int
 # c.tabs.focus_stack_size = 10
-
-## Padding (in pixels) for tab indicators.
-## Type: Padding
-# c.tabs.indicator.padding = {'top': 2, 'bottom': 2, 'left': 0, 'right': 4}
 
 ## When switching tabs, what input mode is applied.
 ## Type: String
