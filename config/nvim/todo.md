@@ -1,13 +1,26 @@
 # nvim configure
 
-- [ ] lua, Moonlight?
-    - [ ] Folding func сделать?
+
+# создание команды, может проекты на команды повесить? Може еще где понадобится
+vim.api.nvim_create_user_command("Format", function(args)
+  local range = nil
+  if args.count ~= -1 then
+    local end_line = vim.api.nvim_buf_get_lines(0, args.line2 - 1, args.line2, true)[1]
+    range = {
+      start = { args.line1, 0 },
+      ["end"] = { args.line2, end_line:len() },
+    }
+  end
+  require("conform").format({ async = true, lsp_format = "fallback", range = range })
+end, { range = true })
+
+
+
 - [ ] засовывание в скобки, https://habr.com/ru/articles/585222/, surround.vim
-- [ ] вим команды забиндить разобраться как их писать
 
 ------------------------------------------------------------------------------
 
-- [x] цветовые схемы посмотри, как они работают как их настраивать...  
+- [x] цветовые схемы посмотри, как они работают как их настраивать...
 - [x] F5 - запуск скрипта питоновского в соседнем буфере.
 - [x] автосохранение файла при потере фокуса
 - [x] что то сделать с фолдингом, либо автокмд либо expression писать
