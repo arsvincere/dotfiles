@@ -4,7 +4,7 @@ layer=overlay
 
 # STYLE
 # font=Noto Sans Regular 11
-font=Hack 11
+font=Hack 8
 width=220
 margin=5,18,0
 padding=7
