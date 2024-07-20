@@ -3,7 +3,8 @@
 layer=overlay
 
 # STYLE
-font=Noto Sans Regular 11
+# font=Noto Sans Regular 11
+font=Hack 11
 width=220
 margin=5,18,0
 padding=7
@@ -11,7 +12,8 @@ border-size=1
 border-radius=10
 progress-color=#ffffff
 max-icon-size=36
-icon-path=/usr/share/icons/WhiteSur-dark:/usr/share/icons/WhiteSur:/usr/share/icons/Adwaita:/usr/share/icons/hicolor
+# icon-path=/usr/share/icons/WhiteSur-dark:/usr/share/icons/WhiteSur:/usr/share/icons/Adwaita:/usr/share/icons/hicolor
+icon-path=/home/alex/AVIN/res/icon/info.svg
 icon-location=right
 format=<b>%s</b>\n%b
 text-alignment=left
