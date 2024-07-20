@@ -30,7 +30,7 @@
 ## Valid values:
 ##   - webengine: Use QtWebEngine (based on Chromium - recommended).
 ##   - webkit: Use QtWebKit (based on WebKit, similar to Safari - many known security issues!).
-c.backend = 'webengine'
+c.backend = "webengine"
 
 ## This is here so configs done via the GUI are still loaded.
 ## Remove it to not load settings done via the GUI.
@@ -62,7 +62,7 @@ c.colors.webpage.darkmode.enabled = True
 ##   - multiple-tabs: Show a confirmation if multiple tabs are opened.
 ##   - downloads: Show a confirmation if downloads are running
 ##   - never: Never show a confirmation.
-c.confirm_quit = ['downloads']
+c.confirm_quit = ["downloads"]
 
 ## Editor (and arguments) to use for the `edit-*` commands. The following
 ## placeholders are defined:  * `{file}`: Filename of the file to be
@@ -71,11 +71,19 @@ c.confirm_quit = ['downloads']
 ## `{line0}`: Same as `{line}`, but starting from index 0. * `{column0}`:
 ## Same as `{column}`, but starting from index 0.
 ## Type: ShellCommand
-c.editor.command = ['alacritty', '-e', 'nvim', '-f', '{file}', '-c', 'normal {line}G{column0}l']
+c.editor.command = [
+    "alacritty",
+    "-e",
+    "nvim",
+    "-f",
+    "{file}",
+    "-c",
+    "normal {line}G{column0}l",
+]
 
 ## Encoding to use for the editor.
 ## Type: Encoding
-c.editor.encoding = 'utf-8'
+c.editor.encoding = "utf-8"
 
 ## How to open links in an existing instance if a new one is launched.
 ## This happens when e.g. opening a link from a terminal. See
@@ -89,7 +97,7 @@ c.editor.encoding = 'utf-8'
 ##   - tab-bg-silent: Open a new background tab in the existing window without activating the window.
 ##   - window: Open in a new window.
 ##   - private-window: Open in a new private window.
-c.new_instance_open_target = 'tab'
+c.new_instance_open_target = "tab"
 
 ## Load a restored tab as soon as it takes focus.
 ## Type: Bool
@@ -101,11 +109,14 @@ c.session.lazy_restore = True
 ##   - always: Always show the statusbar.
 ##   - never: Always hide the statusbar.
 ##   - in-mode: Show the statusbar when in modes other than normal mode.
-c.statusbar.show = 'in-mode'
+c.statusbar.show = "in-mode"
 
-## Open new tabs (middleclick/ctrl+click) in the background.
-## Type: Bool
-c.tabs.background = False
+## Page to open if :open -t/-b/-w is used without URL. Use `about:blank`
+## for a blank page.
+## Type: FuzzyUrl
+# c.url.default_page = 'https://start.duckduckgo.com/'
+# c.url.default_page = "https://arsvincere.com"
+c.url.default_page = "https://google.ru"
 
 ## How to behave when the last tab is closed. If the
 ## `tabs.tabs_are_windows` setting is set, this is ignored and the
@@ -118,7 +129,12 @@ c.tabs.background = False
 ##   - default-page: Load the default page.
 ##   - close: Close the window.
 # c.tabs.last_close = 'default-page'
-c.tabs.last_close = 'blank'
+# c.tabs.last_close = 'blank'
+c.tabs.last_close = "default-page"
+
+## Open new tabs (middleclick/ctrl+click) in the background.
+## Type: Bool
+c.tabs.background = True
 
 ## Maximum width (in pixels) of tabs (-1 for no maximum). This setting
 ## only applies when tabs are horizontal. This setting does not apply to
@@ -142,7 +158,7 @@ c.tabs.last_close = 'blank'
 ##   - bottom
 ##   - left
 ##   - right
-c.tabs.position = 'top'
+c.tabs.position = "top"
 
 ## When to show the tab bar.
 ## Type: String
@@ -151,7 +167,7 @@ c.tabs.position = 'top'
 ##   - never: Always hide the tab bar.
 ##   - multiple: Hide the tab bar if only one tab is open.
 ##   - switching: Show the tab bar when switching tabs.
-c.tabs.show = 'always'
+c.tabs.show = "always"
 
 ## Duration (in milliseconds) to show the tab bar before hiding it when
 ## tabs.show is set to 'switching'.
@@ -173,14 +189,7 @@ c.tabs.show_switching_delay = 1000
 ## page. * `{audio}`: Indicator for audio/mute status.
 ## Type: FormatString
 # c.tabs.title.format = '{audio}{index}: {current_title}'
-# c.tabs.title.format = '{current_title}'
-c.tabs.title.format = ''
-
-## Page to open if :open -t/-b/-w is used without URL. Use `about:blank`
-## for a blank page.
-## Type: FuzzyUrl
-# c.url.default_page = 'https://start.duckduckgo.com/'
-c.url.default_page = 'arsvincere.com'
+c.tabs.title.format = "{perc} {current_title}"
 
 ## Search engines which can be used via the address bar.  Maps a search
 ## engine name (such as `DEFAULT`, or `ddg`) to a URL with a `{}`
@@ -203,26 +212,26 @@ c.url.default_page = 'arsvincere.com'
 ## Type: Dict
 # c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}'}
 c.url.searchengines = {
-    'DEFAULT':  'https://google.com/search?hl=en&q={}',
-    '!a':       'https://www.amazon.com/s?k={}',
-    '!d':       'https://duckduckgo.com/?ia=web&q={}',
-    '!dd':      'https://thefreedictionary.com/{}',
-    '!e':       'https://www.ebay.com/sch/i.html?_nkw={}',
-    '!fb':      'https://www.facebook.com/s.php?q={}',
-    '!g':       'https://github.com/search?o=desc&q={}&s=stars',
-    '!gist':    'https://gist.github.com/search?q={}',
-    '!gi':      'https://www.google.com/search?tbm=isch&q={}&tbs=imgo:1',
-    '!gn':      'https://news.google.com/search?q={}',
-    '!ig':      'https://www.instagram.com/explore/tags/{}',
-    '!m':       'https://www.google.com/maps/search/{}',
-    '!p':       'https://pry.sh/{}',
-    '!r':       'https://www.reddit.com/search?q={}',
-    '!sd':      'https://slickdeals.net/newsearch.php?q={}&searcharea=deals&searchin=first',
-    '!t':       'https://www.thesaurus.com/browse/{}',
-    '!tw':      'https://twitter.com/search?q={}',
-    '!w':       'https://en.wikipedia.org/wiki/{}',
-    '!yelp':    'https://www.yelp.com/search?find_desc={}',
-    '!yt':      'https://www.youtube.com/results?search_query={}'
+    "DEFAULT": "https://google.com/search?hl=en&q={}",
+    "!a": "https://www.amazon.com/s?k={}",
+    "!d": "https://duckduckgo.com/?ia=web&q={}",
+    "!dd": "https://thefreedictionary.com/{}",
+    "!e": "https://www.ebay.com/sch/i.html?_nkw={}",
+    "!fb": "https://www.facebook.com/s.php?q={}",
+    "!g": "https://github.com/search?o=desc&q={}&s=stars",
+    "!gist": "https://gist.github.com/search?q={}",
+    "!gi": "https://www.google.com/search?tbm=isch&q={}&tbs=imgo:1",
+    "!gn": "https://news.google.com/search?q={}",
+    "!ig": "https://www.instagram.com/explore/tags/{}",
+    "!m": "https://www.google.com/maps/search/{}",
+    "!p": "https://pry.sh/{}",
+    "!r": "https://www.reddit.com/search?q={}",
+    "!sd": "https://slickdeals.net/newsearch.php?q={}&searcharea=deals&searchin=first",
+    "!t": "https://www.thesaurus.com/browse/{}",
+    "!tw": "https://twitter.com/search?q={}",
+    "!w": "https://en.wikipedia.org/wiki/{}",
+    "!yelp": "https://www.yelp.com/search?find_desc={}",
+    "!yt": "https://www.youtube.com/results?search_query={}",
 }
 
 ## Default font families to use. Whenever "default_family" is used in a
@@ -237,15 +246,15 @@ c.fonts.default_family = ["hack"]
 ## either a float value with a "pt" suffix, or an integer value with a
 ## "px" suffix.
 ## Type: String
-c.fonts.default_size = '14px'
+c.fonts.default_size = "14px"
 
 ## Height (in pixels or as percentage of the window) of the completion.
 ## Type: PercOrInt
-c.completion.height = '30%'
+c.completion.height = "30%"
 
 ## Width (in pixels) of the progress indicator (0 to disable).
 ## Type: Int
-c.tabs.indicator.width = 0
+c.tabs.indicator.width = 2
 
 ## Scaling factor for favicons in the tab bar. The tab size is unchanged,
 ## so big favicons also require extra `tabs.padding`.
@@ -255,21 +264,21 @@ c.tabs.favicons.scale = 0.8
 ## Color tab bar -----------------------------------------------------{{{
 ## Background color of the tab bar.
 ## Type: QssColor
-c.colors.tabs.bar.bg = '#1F1F28'
+c.colors.tabs.bar.bg = "#1F1F28"
 
 ## Background color of unselected even tabs.
 ## Type: QtColor
-c.colors.tabs.even.bg = '#363646'
-c.colors.tabs.odd.bg = '#363646'
-c.colors.tabs.even.fg = '#DCD7BA'
-c.colors.tabs.odd.fg = '#DCD7BA'
+c.colors.tabs.even.bg = "#363646"
+c.colors.tabs.odd.bg = "#363646"
+c.colors.tabs.even.fg = "#DCD7BA"
+c.colors.tabs.odd.fg = "#DCD7BA"
 
 ## Background color of selected even tabs.
 ## Type: QtColor
-c.colors.tabs.selected.even.bg = '#658594'
-c.colors.tabs.selected.odd.bg = '#658594'
-c.colors.tabs.selected.even.fg = '#FFFFFF'
-c.colors.tabs.selected.odd.fg = '#FFFFFF'
+c.colors.tabs.selected.even.bg = "#658594"
+c.colors.tabs.selected.odd.bg = "#658594"
+c.colors.tabs.selected.even.fg = "#FFFFFF"
+c.colors.tabs.selected.odd.fg = "#FFFFFF"
 
 ## Color for the tab indicator on errors.
 ## Type: QtColor
@@ -325,7 +334,7 @@ c.colors.tabs.selected.odd.fg = '#FFFFFF'
 # c.colors.tabs.pinned.selected.odd.fg = 'white'
 # }}}
 
-#-----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
 ## Aliases for commands. The keys of the given dictionary are the
 ## aliases, while the values are the commands they map to.
@@ -2268,10 +2277,10 @@ c.colors.tabs.selected.odd.fg = '#FFFFFF'
 # config.bind('D', 'tab-close -o')
 # config.bind('F', 'hint all tab')
 # config.bind('G', 'scroll-to-perc')
-config.bind('H', 'back')
-config.bind('l', 'tab-next')
-config.bind('h', 'tab-prev')
-config.bind('L', 'forward')
+config.bind("H", "back")
+config.bind("l", "tab-next")
+config.bind("h", "tab-prev")
+config.bind("L", "forward")
 # config.bind('M', 'bookmark-add')
 # config.bind('N', 'search-prev')
 # config.bind('O', 'cmd-set-text -s :open -t')
@@ -2512,4 +2521,3 @@ config.bind('L', 'forward')
 # config.bind('Y', 'prompt-accept --save yes', mode='yesno')
 # config.bind('n', 'prompt-accept no', mode='yesno')
 # config.bind('y', 'prompt-accept yes', mode='yesno')
-
