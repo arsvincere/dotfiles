@@ -114,7 +114,7 @@
     "temperature": {
         "critical-threshold": 80,
         "format": "{icon} {temperatureC}°",
-        "format-critical": "{icon} {temperatureC}°C critical!",
+        "format-critical": "{icon} {temperatureC}°",
         "format-icons": ["", "", ""]
     },
     "custom/power": {
