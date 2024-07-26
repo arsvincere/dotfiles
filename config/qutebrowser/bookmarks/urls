@@ -39,3 +39,6 @@ https://github.com/RRethy/vim-illuminate RRethy/vim-illuminate: illuminate.vim -
 https://github.com/elihunter173/dirbuf.nvim elihunter173/dirbuf.nvim: A file manager for Neovim which lets you edit your filesystem like you edit text
 https://github.com/rockerBOO/awesome-neovim?tab=readme-ov-file#cursorline rockerBOO/awesome-neovim: Collections of awesome neovim plugins.
 https://github.com/romgrk/barbar.nvim romgrk/barbar.nvim: The neovim tabline plugin.
+https://github.com/vysheng/tg vysheng/tg: telegram-cli
+https://github.com/d99kris/nchat d99kris/nchat: Terminal-based Telegram / WhatsApp client for Linux and macOS
+https://github.com/paul-nameless/tg paul-nameless/tg: terminal telegram client

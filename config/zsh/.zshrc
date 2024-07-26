@@ -112,6 +112,11 @@ alias ohmyzsh="nvim ~/.oh-my-zsh"
 # nvim
 export EDITOR=nvim
 
+# alias
+alias pgadmin="python /home/alex/env/lib/python3.12/site-packages/pgadmin4/pgAdmin4.py"
+alias vim="nvim"
+alias vi="nvim"
+
 # python
 export PYTHONPATH="$PYTHONPATH:/home/alex/AVIN"
 export PYTHONPATH="$PYTHONPATH:/home/alex/env/lib/python3.12/site-packages"
@@ -119,6 +124,4 @@ export PYTHONPATH="$PYTHONPATH:/usr/lib/python3.12/site-packages"
 
 # xplr
 export XPLR_BOOKMARK_FILE="$HOME/.config/xplr/bookmarks"
-
-alias pgadmin="python /home/alex/env/lib/python3.12/site-packages/pgadmin4/pgAdmin4.py"
 
