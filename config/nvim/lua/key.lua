@@ -65,11 +65,11 @@ map('v', '$', 'g$', opts)
 map('v', '^', 'g^', opts)
 
 -- Fast activate macro
-map('n', '<esc>q', '@q', opts)
-map('n', '<esc>w', '@w', opts)
-map('n', '<esc>e', '@e', opts)
-map('n', '<esc>r', '@r', opts)
-map('n', '<esc>t', '@t', opts)
+-- map('n', '<esc>q', '@q', opts)
+-- map('n', '<esc>w', '@w', opts)
+-- map('n', '<esc>e', '@e', opts)
+-- map('n', '<esc>r', '@r', opts)
+-- map('n', '<esc>t', '@t', opts)
 
 map('n', '<esc>a', '@a', opts)
 map('n', '<esc>s', '@s', opts)
@@ -77,11 +77,12 @@ map('n', '<esc>d', '@d', opts)
 map('n', '<esc>f', '@f', opts)
 map('n', '<esc>g', '@g', opts)
 
-map('n', '<esc>z', '@z', opts)
-map('n', '<esc>x', '@x', opts)
-map('n', '<esc>c', '@c', opts)
-map('n', '<esc>v', '@v', opts)
-map('n', '<esc>b', '@b', opts)
+-- map('n', '<esc>z', '@z', opts)
+-- map('n', '<esc>x', '@x', opts)
+-- map('n', '<esc>c', '@c', opts)
+-- map('n', '<esc>v', '@v', opts)
+-- map('n', '<esc>b', '@b', opts)
+
 map('n', '<esc>m', '@m', opts)
 
 -- Split
@@ -94,8 +95,18 @@ map('n', '<esc>j', ':/def <CR>:nohls<CR>', opts)
 map('n', '<esc>k', ':?def <CR>:nohls<CR>', opts)
 
 -- Jump python class
-map('n', '<esc>l', ':/class <CR>:nohls<CR>', opts)
-map('n', '<esc>h', ':?class <CR>:nohls<CR>', opts)
+-- map('n', '<esc>l', ':/class <CR>:nohls<CR>', opts)
+-- map('n', '<esc>h', ':?class <CR>:nohls<CR>', opts)
+
+-- Tab navigation [ru-en]
+map('n', '<esc>t', ':tabnew<CR>', opts)
+map('n', '<esc>е', ':tabnew<CR>', opts)
+map('n', '<esc>h', ':tabprevious<CR>', opts)
+map('n', '<esc>р', ':tabprevious<CR>', opts)
+map('n', '<esc>l', ':tabnext<CR>', opts)
+map('n', '<esc>д', ':tabnext<CR>', opts)
+map('n', '<esc>x', ':tabclose<CR>', opts)
+map('n', '<esc>ч', ':tabclose<CR>', opts)
 
 -- <F1> .. <F12> -------------------------------------------------------------
 
