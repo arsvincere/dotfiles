@@ -65,10 +65,10 @@ map('v', '$', 'g$', opts)
 map('v', '^', 'g^', opts)
 
 -- Fast activate macro
--- map('n', '<esc>q', '@q', opts)
--- map('n', '<esc>w', '@w', opts)
--- map('n', '<esc>e', '@e', opts)
--- map('n', '<esc>r', '@r', opts)
+map('n', '<esc>q', '@q', opts)
+map('n', '<esc>w', '@w', opts)
+map('n', '<esc>e', '@e', opts)
+map('n', '<esc>r', '@r', opts)
 -- map('n', '<esc>t', '@t', opts)
 
 map('n', '<esc>a', '@a', opts)
