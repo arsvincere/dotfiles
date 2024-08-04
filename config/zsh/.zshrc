@@ -116,6 +116,7 @@ export EDITOR=nvim
 alias pgadmin="python /home/alex/env/lib/python3.12/site-packages/pgadmin4/pgAdmin4.py"
 alias vim="nvim"
 alias vi="nvim"
+alias dev="zellij -l dev"
 
 # python
 export PYTHONPATH="$PYTHONPATH:/home/alex/AVIN"

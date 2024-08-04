@@ -8,13 +8,16 @@ layout {
 //            plugin location="zellij:status-bar"
 //            }
         }
-    tab name="xplr" {
-        pane cwd="/home/alex/AVIN" borderless=true command="xplr"
+    tab name="zsh" {
+        pane cwd="/home/alex/AVIN" borderless=true
+        }
+    tab name="dev" focus=true {
+        pane cwd="/home/alex/AVIN" borderless=true command="nvim"
         }
     tab name="git" {
         pane cwd="/home/alex/AVIN" borderless=true command="lazygit"
         }
-    tab name="zsh" {
-        pane cwd="/home/alex/AVIN" borderless=true
+    tab name="xplr" {
+        pane cwd="/home/alex/AVIN" borderless=true command="xplr"
         }
     }
