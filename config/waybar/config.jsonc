@@ -27,7 +27,7 @@
 
     "custom/diary": {
       "format": " ",
-      "on-click": "alacritty -T diary -e nvim ~/ya/diary",
+      "on-click": "alacritty -T diary -e nvim ~/ya/db/diary",
       "tooltip": false
     },
     "custom/book": {
@@ -42,12 +42,12 @@
     },
     "custom/english": {
       "format": "󰬰 ",
-      "on-click": "alacritty -T english -e nvim ~/ya/english.un ",
+      "on-click": "alacritty -T english -e nvim ~/ya/db/english.un ",
       "tooltip": false
     },
     "custom/note": {
       "format": " ",
-      "on-click": "alacritty -T note -e nvim ~/ya/note.un ",
+      "on-click": "alacritty -T note -e nvim ~/ya/db/note.un ",
       "tooltip": false
     },
     "hyprland/workspaces": {

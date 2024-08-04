@@ -100,12 +100,12 @@ map('n', '<esc>k', ':?def <CR>:nohls<CR>', opts)
 
 -- Tab navigation [ru-en]
 map('n', '<esc>t', ':tabnew<CR>', opts)
-map('n', '<esc>е', ':tabnew<CR>', opts)
 map('n', '<esc>h', ':tabprevious<CR>', opts)
-map('n', '<esc>р', ':tabprevious<CR>', opts)
 map('n', '<esc>l', ':tabnext<CR>', opts)
-map('n', '<esc>д', ':tabnext<CR>', opts)
 map('n', '<esc>x', ':tabclose<CR>', opts)
+map('n', '<esc>е', ':tabnew<CR>', opts)
+map('n', '<esc>р', ':tabprevious<CR>', opts)
+map('n', '<esc>д', ':tabnext<CR>', opts)
 map('n', '<esc>ч', ':tabclose<CR>', opts)
 
 -- <F1> .. <F12> -------------------------------------------------------------
