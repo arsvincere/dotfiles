@@ -11,7 +11,7 @@ layout {
     tab name="zsh" {
         pane cwd="/home/alex/AVIN" borderless=true
         }
-    tab name="dev" focus=true {
+    tab name="vim" focus=true {
         pane cwd="/home/alex/AVIN" borderless=true command="nvim"
         }
     tab name="git" {

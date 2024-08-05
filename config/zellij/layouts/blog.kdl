@@ -9,11 +9,8 @@ layout {
 //            }
         }
     tab name="blog" focus=true {
-        pane cwd="/home/alex/ya/blog" command="helix" size="80%" borderless=true
+        pane cwd="/home/alex/ya/blog" command="nvim" size="80%" borderless=true
         pane cwd="/home/alex/ya/blog" size="20%"
-        }
-    tab name="file" {
-        pane cwd="/home/alex/ya/blog" command="vifm" borderless=true
         }
     tab name="xplr" {
         pane cwd="/home/alex/ya/blog" command="xplr" borderless=true
