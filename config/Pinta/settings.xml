@@ -18,4 +18,5 @@
   <setting name="paintbrushtool-brush-width" type="System.Int32">2</setting>
   <setting name="paint-brush-brush" type="System.Int32">0</setting>
   <setting name="color-picker-sample-size" type="System.Int32">0</setting>
+  <setting name="jpg-quality" type="System.Int32">100</setting>
 </settings>
