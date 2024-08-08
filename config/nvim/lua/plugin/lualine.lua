@@ -11,16 +11,15 @@ local function wordcount_readingtime()
         'w  ' ..
         math.ceil(vim.fn.wordcount().words / 200.0) ..
         'm'
-        )
+    )
 end
 
 local function is_text()
-    local path = vim.api.nvim_buf_get_name(0)
     local check =
         vim.bo.filetype == "markdown" or
         vim.bo.filetype == "asciidoc" or
         vim.bo.filetype == "text" or
-        string.find(path, ".un") ~= nil
+        vim.bo.filetype == "un"
     return check
 end
 
@@ -29,47 +28,61 @@ require('lualine').setup {
         icons_enabled = true,
         theme = 'auto',
         -- component_separators = { left = '', right = ''},
-        component_separators = { left = '', right = ''},
-        section_separators = { left = '', right = ''},
+        -- component_separators = { left = '', right = '' },
+        -- section_separators = { left = '', right = '' },
+        component_separators = '',
+        -- section_separators = { left = '', right = '' },
+        section_separators = '',
+
         disabled_filetypes = {
             statusline = {},
             winbar = {},
         },
         ignore_focus = {},
         always_divide_middle = true,
-        globalstatus = false,
+        globalstatus = true,
         refresh = {
             statusline = 1000,
             tabline = 1000,
             winbar = 1000,
         }
     },
+    -- searchcount (number of search matches when hlsearch is active)
+    -- selectioncount (number of selected characters or lines)
     sections = {
-        lualine_a = {'mode'},
-        lualine_b = {'branch', 'diff', 'diagnostics'},
-        lualine_c = {'filename'},
+        lualine_a = { { 'mode', separator = { left = '' } } },
+        lualine_b = { { 'branch', 'diff', 'diagnostics', separator = { right = '' } } },
+        lualine_c = { 'filename' },
         lualine_x = {
             { wordcount_readingtime, cond = is_text },
             'encoding',
             -- 'fileformat',
+            --
+            { icon = '', 'filesize' },
             'filetype'
         },
-        lualine_y = {'progress'},
-        lualine_z = {'location'}
+        lualine_y = {
+            { 'searchcount', 'progress', separator = { left = '' } }
+        },
+        lualine_z = { { 'location', separator = { right = '' } } },
     },
-    inactive_sections = {
-        lualine_a = {},
+    -- inactive_sections = {
+    --     lualine_a = {},
+    --     lualine_b = {},
+    --     lualine_c = { 'filename' },
+    --     lualine_x = { 'location' },
+    --     lualine_y = {},
+    --     lualine_z = {}
+    -- },
+    tabline = {
+        lualine_a = { { 'buffers', separator = { left = '', right = '' } } },
         lualine_b = {},
-        lualine_c = {'filename'},
-        lualine_x = {'location'},
+        lualine_c = {},
+        lualine_x = {},
         lualine_y = {},
-        lualine_z = {}
+        lualine_z = { { icon = '󰓩 ', 'tabs', separator = { left = '', right = '' } } }
     },
-    tabline = {},
-    winbar = {},
-    inactive_winbar = {},
-    extensions = {}
+    -- winbar = {},
+    -- inactive_winbar = {},
+    -- extensions = {}
 }
-
-
-

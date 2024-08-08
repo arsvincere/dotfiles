@@ -1,10 +1,17 @@
-// If you'd like to override the default keybindings completely, be sure to change "keybinds" to "keybinds clear-defaults=true"
+// If you'd like to override the default keybindings completely,
+// be sure to change "keybinds" to "keybinds clear-defaults=true"
 keybinds clear-defaults=true {  // {{{ 
     normal {
         // keybindings available in normal mode
-        bind "Alt q" { Quit; }
+        // bind "Alt q" { Quit; }
+        // bind "Alt x" { CloseTab; }
+        bind "Alt c" { CloseFocus; }
+
         bind "Alt p" { NewPane; }
-        bind "Alt t" { NewTab; }
+        bind "Alt y" { NewTab; }
+        // bind "Alt ," { GoToPreviousTab; }
+        // bind "Alt ." { GoToNextTab; }
+
         bind "Alt h" { MoveFocusOrTab "Left"; }
         bind "Alt l" { MoveFocusOrTab "Right"; }
         bind "Alt j" { MoveFocus "Down"; }

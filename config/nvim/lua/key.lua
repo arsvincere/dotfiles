@@ -1,5 +1,5 @@
 local map = vim.api.nvim_set_keymap
-local opts = {noremap = true, silent = true}
+local opts = { noremap = true, silent = true }
 
 -- Keymap --------------------------------------------------------------------
 
@@ -14,10 +14,11 @@ map('n', '<C-a>', 'ggVG', opts)
 map('n', '<C-ф>', 'ggVG', opts)
 
 -- <Ctrl-c> [ru-en]
-map('v', '<C-c>', 'y', opts)    -- английская 'с'
-map('v', '<C-с>', 'y', opts)    -- русская 'с'
+map('v', '<C-c>', 'y', opts) -- английская 'с'
+map('v', '<C-с>', 'y', opts) -- русская 'с'
 
 -- Window navigation Ctrl+h, Ctrl+j, Ctrl+k, Ctrl+l [ru-en]
+map('n', '<C-Esc>', ':x<CR>', opts)
 map('n', '<C-h>', '<C-w><C-h>', opts)
 map('n', '<C-р>', '<C-w><C-h>', opts)
 map('n', '<C-j>', '<C-w><C-j>', opts)
@@ -37,19 +38,21 @@ map('n', '<Down>', '<C-w>-', opts)
 map('n', '<CR>', 'o<Esc>', opts)
 map('n', '<Space>', 'i<Space><Esc>', opts)
 
--- Copy string before by <C-y> in insert mode, [ru]-bind
+-- <C-y> in insert mode [ru]-bind
 map('i', '<C-н>', '<C-y>', opts)
 
--- Exit terminal mode
+-- Terminal mode
 map('t', '<Esc>', '<C-\\><C-n>', opts)
+map('t', '<F5>', '<C-\\><C-n>@r', opts)
+map('t', '<F6>', '<C-\\><C-n>@R', opts)
 
 -- Highlight word on cursor
 map('n', '*', '*N', opts)
 map('n', '#', '*N', opts)
 
 -- Search & replace
-map('v', '<leader>s', ':s//', {noremap = true, silent = false})
-map('n', '<leader>s', ':%s///g<Left><Left>', {noremap = true, silent = false})
+map('v', '<leader>s', ':s//', { noremap = true, silent = false })
+map('n', '<leader>s', ':%s///g<Left><Left>', { noremap = true, silent = false })
 
 -- Soft wrap navigation
 -- http://vimcasts.org/episodes/soft-wrapping-text/
@@ -65,17 +68,17 @@ map('v', '$', 'g$', opts)
 map('v', '^', 'g^', opts)
 
 -- Fast activate macro
-map('n', '<esc>q', '@q', opts)
-map('n', '<esc>w', '@w', opts)
-map('n', '<esc>e', '@e', opts)
-map('n', '<esc>r', '@r', opts)
+-- map('n', '<esc>q', '@q', opts)
+-- map('n', '<esc>w', '@w', opts)
+-- map('n', '<esc>e', '@e', opts)
+-- map('n', '<esc>r', '@r', opts)
 -- map('n', '<esc>t', '@t', opts)
 
-map('n', '<esc>a', '@a', opts)
+-- map('n', '<esc>a', '@a', opts)
 map('n', '<esc>s', '@s', opts)
 map('n', '<esc>d', '@d', opts)
 map('n', '<esc>f', '@f', opts)
-map('n', '<esc>g', '@g', opts)
+-- map('n', '<esc>g', '@g', opts)
 
 -- map('n', '<esc>z', '@z', opts)
 -- map('n', '<esc>x', '@x', opts)
@@ -99,14 +102,14 @@ map('n', '<esc>k', ':?def <CR>:nohls<CR>', opts)
 -- map('n', '<esc>h', ':?class <CR>:nohls<CR>', opts)
 
 -- Tab navigation [ru-en]
+-- map('n', '<esc>t', ':tabnew<CR>', opts)
 map('n', '<esc>t', ':tabnew<CR>', opts)
-map('n', '<esc>h', ':tabprevious<CR>', opts)
-map('n', '<esc>l', ':tabnext<CR>', opts)
-map('n', '<esc>x', ':tabclose<CR>', opts)
-map('n', '<esc>е', ':tabnew<CR>', opts)
-map('n', '<esc>р', ':tabprevious<CR>', opts)
-map('n', '<esc>д', ':tabnext<CR>', opts)
-map('n', '<esc>ч', ':tabclose<CR>', opts)
+map('n', '<esc>q', ':tabclose<CR>', opts)
+map('n', '<esc>,', ':tabprevious<CR>', opts)
+map('n', '<esc>.', ':tabnext<CR>', opts)
+map('n', '<C-,>', ':tabprevious<CR>', opts)
+map('n', '<C-.>', ':tabnext<CR>', opts)
+
 
 -- <F1> .. <F12> -------------------------------------------------------------
 
@@ -128,6 +131,9 @@ map('n', '<F4>', ':TagbarToggle<CR>', opts)
 -- <F5> run in terminal
 map('n', '<F5>', ':wa!<CR>@r', opts)
 
+-- <F6> run in terminal, in tab2
+map('n', '<F6>', ':wa!<CR>@t', opts)
+
 -- <F12> Открыть всю nvim конфигурацию для редактирования
 map('n', '<F12>', '\
     :e ~/.config/nvim/init.lua<CR>\
@@ -140,7 +146,7 @@ map('n', '<F12>', '\
 map('n', '<PageUp>',
     ':source /home/alex/AVIN/dev/Session_avin.vim<CR>\
     :NvimTreeRefresh<CR>:NvimTreeToggle<CR>\
-    <C-w><C-l><C-w><C-l><C-w><C-j>icd AVIN<CR>\
+    <C-w><C-l><C-w><C-l><C-w><C-j>i\
     source ~/env/bin/activate<CR><C-\\><C-n>\
     :set nonu<CR><C-w><C-h>\
     ', opts)
@@ -151,7 +157,7 @@ map('n', '<PageDown>',
     :NvimTreeToggle<CR><C-w><C-l><C-w><C-l>\
     :b3<CR>\
     <C-w><C-h>\
-    ' , opts)
+    ', opts)
 
 -- Diary session -------------------------------------------------------------
 map('n', '<Home>',
@@ -159,5 +165,5 @@ map('n', '<Home>',
     :NvimTreeRefresh<CR>:NvimTreeToggle<CR>\
     ', opts)
 
-    -- :NvimTreeToggle<CR>\
-    -- :NvimTreeRefresh<CR>:NvimTreeToggle<CR>\
+-- :NvimTreeToggle<CR>\
+-- :NvimTreeRefresh<CR>:NvimTreeToggle<CR>\
