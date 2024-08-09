@@ -1,5 +1,5 @@
 -- https://github.com/stevearc/conform.nvim
--- Formatter
+-- Launch the formatters
 ------------------------------------------------------------------------------
 vim = vim
 
@@ -17,15 +17,17 @@ require("conform").setup({
     -- -- If this is set, Conform will run the formatter on save.
     -- -- It will pass the table to conform.format().
     -- -- This can also be a function that returns the table.
-    -- format_on_save = {
-    --   -- I recommend these options. See :help conform.format for details.
-    --   lsp_format = "fallback",
-    --   timeout_ms = 500,
-    -- },
+    format_on_save = {
+        -- I recommend these options. See :help conform.format for details.
+        lsp_format = "fallback",
+        timeout_ms = 500,
+    },
 
     -- If this is set, Conform will run the formatter asynchronously after save.
     -- It will pass the table to conform.format().
     -- This can also be a function that returns the table.
+    -- если перед сохранением не успел форматтер отработать за 500мс таймаут
+    -- будет запущен после сохранения, асинхронно
     format_after_save = {
         lsp_format = "fallback",
     },

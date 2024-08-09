@@ -22,7 +22,6 @@ Plug 'famiu/bufdelete.nvim'
 
 -- IDE -------------------------------------------------------------------
 Plug 'numToStr/Comment.nvim'
--- Plug 'anuvyklack/pretty-fold.nvim'
 Plug 'kevinhwang91/nvim-ufo'
 Plug 'kevinhwang91/promise-async'
 Plug 'preservim/tagbar'
@@ -66,6 +65,7 @@ vim.call('plug#end')
 require('plugin.kanagawa-again')    -- color scheme
 require('plugin.gruvbox-material')  -- color scheme
 require('plugin.lualine')           -- status line
+require('plugin.bufferline')        -- buffers & tabs line
 require('plugin.indent-blankline')  -- hightlight code blocks
 require('plugin.dashboard')         -- startup screen
 require('plugin.nvim-tree')         -- file manager

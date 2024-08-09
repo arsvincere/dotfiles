@@ -144,11 +144,18 @@ map('n', '<F12>', '\
 
 -- AVIN session --------------------------------------------------------------
 map('n', '<PageUp>',
-    ':source /home/alex/AVIN/dev/Session_avin.vim<CR>\
-    :NvimTreeRefresh<CR>:NvimTreeToggle<CR>\
-    <C-w><C-l><C-w><C-l><C-w><C-j>i\
-    source ~/env/bin/activate<CR><C-\\><C-n>\
+    ':source ~/AVIN/Session.vim<CR>\
+    :NvimTreeToggle<CR>\
+    <C-w><C-l><C-w><C-l><C-w><C-j>i source ~/env/bin/activate<CR><C-\\><C-n>\
     :set nonu<CR><C-w><C-h>\
+    :BufferLineTabRename 󱃖 code<CR>\
+    :tabnext<CR>\
+    :BufferLineTabRename  tmp<CR>\
+    :tabnext<CR>\
+    :BufferLineTabRename  exec<CR>\
+    :tabnext<CR>\
+    :BufferLineTabRename  plan<CR>\
+    :tabnext<CR>\
     ', opts)
 
 -- Blog session --------------------------------------------------------------
