@@ -83,6 +83,8 @@ if exists("python_highlight_all")
   let python_space_error_highlight = 1
 endif
 
+
+
 " Keep Python keywords in alphabetical order inside groups for easy
 " comparison with the table in the 'Python Language Reference'
 " https://docs.python.org/reference/lexical_analysis.html#keywords.
@@ -94,14 +96,14 @@ endif
 " python3 -c 'import keyword, pprint; pprint.pprint(keyword.kwlist + keyword.softkwlist, compact=True)'
 "
 syn keyword pythonStatement	False None True
-syn keyword pythonStatement	as assert break continue del global
+syn keyword pythonStatement	assert break continue del global
 syn keyword pythonStatement	lambda nonlocal pass return with yield
 syn keyword pythonStatement	class def nextgroup=pythonFunction skipwhite
 syn keyword pythonConditional	elif else if
 syn keyword pythonRepeat	for while
 syn keyword pythonOperator	and in is not or
 syn keyword pythonException	except finally raise try
-syn keyword pythonInclude	from import
+syn keyword pythonInclude	from import as
 syn keyword pythonAsync		async await
 
 " Soft keywords
@@ -335,12 +337,14 @@ if !exists("python_no_doctest_highlight")
   hi def link pythonDoctestValue	Define
 endif
 
+
 " AVIN - hide fold markers ---------------------------------------------------
 syn match   pythonFoldMarker	/# {{{/
 syn match   pythonFoldMarker	/# }}}/
 hi pythonFoldMarker		guifg=#1D2021 gui=italic
 
 " AVIN -----------------------------------------------------------------------
+
 
 let b:current_syntax = "python"
 

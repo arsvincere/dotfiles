@@ -70,18 +70,18 @@ require('lualine').setup {
             { 'location', icon = { '', align = 'right' }, separator = { right = ' ' } }
         },
     },
-    tabline = {
-        lualine_a = {},
-        lualine_b = { 'buffers' },
-        lualine_c = {},
-        lualine_x = {},
-        lualine_y = {
-            { 'tabs', separator = { left = '' } },
-            { 'os.date("  %H:%M   %a %e %B")', separator = { right = '' } }
-        },
-        lualine_z = {
-        }
-    },
+    -- tabline = {
+    --     lualine_a = {},
+    --     lualine_b = { 'buffers' },
+    --     lualine_c = {},
+    --     lualine_x = {},
+    --     lualine_y = {
+    --         { 'tabs', separator = { left = '' }, show_modified_status = false },
+    --         { 'os.date("  %H:%M   %a %e %B")', separator = { right = '' } }
+    --     },
+    --     lualine_z = {
+    --     }
+    -- },
     -- winbar = {},
     -- inactive_winbar = {},
     -- extensions = {}

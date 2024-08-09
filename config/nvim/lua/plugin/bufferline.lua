@@ -1,3 +1,7 @@
 -- https://github.com/akinsho/bufferline.nvim
--- Табы открытых буферов вверху
+-- Bufferline
 ------------------------------------------------------------------------------
+vim = vim
+
+vim.opt.termguicolors = true
+require("bufferline").setup {}
