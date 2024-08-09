@@ -76,10 +76,10 @@ require('lualine').setup {
         lualine_c = {},
         lualine_x = {},
         lualine_y = {
-            { 'tabs', separator = { left = '' } }
+            { 'tabs', separator = { left = '' } },
+            { 'os.date("  %H:%M   %a %e %B")', separator = { right = '' } }
         },
         lualine_z = {
-            { 'os.date("  %H:%M   %a %e %B")', separator = { right = '' } }
         }
     },
     -- winbar = {},

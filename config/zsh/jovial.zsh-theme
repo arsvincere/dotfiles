@@ -150,7 +150,7 @@ typeset -gA JOVIAL_AFFIXES=(
     username               '${(%):-%n}'
     user.suffix            ' ${JOVIAL_PALETTE[conj.]}'
 
-    path.prefix            '${JOVIAL_PALETTE[conj.]}  '
+    path.prefix            '${JOVIAL_PALETTE[conj.]}  '
     current-dir            '%~'
     path.suffix            ' '
 
