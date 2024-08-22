@@ -4,7 +4,7 @@
 
 
 vim.o.foldcolumn = '0' -- '0' is not bad
-vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+vim.o.foldlevel = 99   -- Using ufo provider need a large value, feel free to decrease the value
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
 
@@ -100,7 +100,7 @@ end
 -- Customize configuration ---------------------------------------------------
 local ftMap = {
     vim = 'indent',
-    python = {'indent'},
+    python = { 'indent' },
     git = ''
 }
 
@@ -116,15 +116,16 @@ require('ufo').setup({
     -- local bufnr = vim.api.nvim_get_current_buf()
     -- require('ufo').setFoldVirtTextHandler(bufnr, handler)
 
-    open_fold_hl_timeout = 300,
+    open_fold_hl_timeout = 0,
+
     close_fold_kinds_for_ft = {
-        default = {'imports', 'comment'},
-        json = {'array'},
-        c = {'comment', 'region'}
+        default = { 'imports', 'comment' },
+        json = { 'array' },
+        c = { 'comment', 'region' }
     },
     preview = {
         win_config = {
-            border = {'', '─', '', '', '', '─', '', ''},
+            border = { '', '─', '', '', '', '─', '', '' },
             winhighlight = 'Normal:Folded',
             winblend = 0
         },
@@ -143,4 +144,3 @@ require('ufo').setup({
         -- refer to ./doc/example.lua for detail
     end,
 })
-

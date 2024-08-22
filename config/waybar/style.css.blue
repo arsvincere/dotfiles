@@ -3,7 +3,7 @@
     border-radius: 0;
     border-bottom: none;
     font-family: Hack;
-    font-size: 11pt;
+    font-size: 10pt;
     min-height: 0;
     min-width: 0;
 }
@@ -12,7 +12,6 @@ window#waybar {
     background: transparent;
     /* background: #323232; */
     color: #DCD7BA;
-    color: red;
 }
 
 /* Left angle ***************************************************************/
@@ -20,26 +19,31 @@ window#waybar {
 #custom-diary {
     background: transparent;
     color: #658594;
-	margin: 4px 0px 0px 8px;
+	margin: 0px 0px 0px 8px;
     padding: 0px 2px;
 }
-
 #custom-book {
     background: transparent;
     color: #658594;
-	margin: 4px 0px 0px 0px;
-    padding: 0px 2px;
-}
-#custom-calculator {
-    background: transparent;
-    color: #658594;
-	margin: 4px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
     padding: 0px 2px;
 }
 #custom-english {
     background: transparent;
     color: #658594;
-	margin: 4px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
+    padding: 0px 2px;
+}
+#custom-calculator {
+    background: transparent;
+    color: #658594;
+	margin: 0px 0px 0px 0px;
+    padding: 0px 2px;
+}
+#custom-note {
+    background: transparent;
+    color: #658594;
+	margin: 0px 0px 0px 0px;
     padding: 0px 2px;
 }
 
@@ -47,29 +51,27 @@ window#waybar {
 
 #workspaces {
     background: #363646;
-	margin: 4px 0px 0px 200px;
+	margin: 2px 0px 0px 200px;
     border: solid 1px #54546D;
 	border-radius: 8px;
 }
 #workspaces button {
     background: #363646;
-    color: #658594;
+    color: #C8C093;
     box-shadow: inset 0 0px red;
     margin: 0px 0px 0px 0px;
-    padding: 2px 8px;
+    padding: 1px 8px;
 	border-radius: 8px;
 }
 #workspaces button.active {
-    background: #658594;
-    /* box-shadow: inset 0 -2px #76946A; */
+    background: #C8C093;
     color: #363646;
     border: solid 1px #54546D;
 	border-radius: 8px;
 }
 #workspaces button:hover {
-    background: #658594;
+    background: #C8C093;
     color: #363646;
-    /* box-shadow: inset 0 -2px #658594; */
     border: solid 1px #54546D;
 	border-radius: 8px;
 }
@@ -77,16 +79,16 @@ window#waybar {
     background: #FF0000;
 }
 #workspaces button.urgent {
-    background: #DCA561;
+    background: #FF9E3B;
 }
 
 /* Center *******************************************************************/
 
 #clock {
     background: #363646;
-    color: #658594;
-	margin: 4px 0px 0px 0px;
-    padding: 2px 8px;
+    color: #C8C093;
+	margin: 2px 0px 0px 0px;
+    padding: 1px 8px;
 	border-radius: 8px;
     border: solid 1px #54546D;
 }
@@ -95,25 +97,25 @@ window#waybar {
 
 #language, #pulseaudio, #network {
     background: #363646;
-    color: #658594;
-	margin: 4px 4px 0px 4px;
-    padding: 2px 8px;
+    color: #C8C093;
+	margin: 2px 4px 0px 4px;
+    padding: 1px 8px;
 	border-radius: 8px;
     border: solid 1px #54546D;
 }
 #pulseaudio.muted {
     background: #DCA561;
     color: #363646;
-	margin: 4px 4px 0px 4px;
-    padding: 2px 8px;
+	margin: 2px 4px 0px 4px;
+    padding: 1px 8px;
 	border-radius: 8px;
     border: solid 1px #54546D;
 }
 #network.disconnected {
     background: #DCA561;
     color: #363646;
-	margin: 4px 4px 0px 4px;
-    padding: 2px 8px;
+	margin: 2px 4px 0px 4px;
+    padding: 1px 8px;
 	border-radius: 8px;
     border: solid 1px #54546D;
 }
@@ -122,32 +124,38 @@ window#waybar {
 #cpu {
     background: transparent;
     color: #658594;
-	margin: 4px 0px 0px 0px;
-    padding: 0px 8px 0px 150px;
+	margin: 2px 0px 0px 150px;
+    padding: 0px 6px;
 }
 #memory {
     background: transparent;
     color: #658594;
-	margin: 4px 0px 0px 0px;
-    padding: 0px 8px;
+	margin: 2px 0px 0px 0px;
+    padding: 0px 6px;
 }
 #disk {
     background: transparent;
     color: #658594;
-	margin: 4px 0px 0px 0px;
-    padding: 0px 8px;
+	margin: 2px 0px 0px 0px;
+    padding: 0px 6px;
 }
 #temperature {
     background: transparent;
     color: #658594;
-	margin: 4px 4px 0px 0px;
-    padding: 0px 8px;
+	margin: 2px 0px 0px 0px;
+    padding: 0px 6px;
 }
 #temperature.critical {
     background: #C34043;
     color: #16161D;
-	margin: 4px 0px 0px 0px;
-    padding: 0px 8px;
+	margin: 2px 0px 0px 0px;
+    padding: 0px 6px;
+}
+#custom-power {
+    background: transparent;
+    color: #C34043;
+	margin: 2px 0px 0px 0px;
+    padding: 0px 2px;
 }
 
 /* Tooltip ******************************************************************/

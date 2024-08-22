@@ -43,8 +43,7 @@ map('i', '<C-н>', '<C-y>', opts)
 
 -- Terminal mode
 map('t', '<Esc>', '<C-\\><C-n>', opts)
-map('t', '<F5>', '<C-\\><C-n>@r', opts)
-map('t', '<F6>', '<C-\\><C-n>@R', opts)
+map('t', '<F5>', '<C-\\><C-n>:wa<CR>@r', opts)
 
 -- Highlight word on cursor
 map('n', '*', '*N', opts)
@@ -67,7 +66,9 @@ map('v', '0', 'g0', opts)
 map('v', '$', 'g$', opts)
 map('v', '^', 'g^', opts)
 
--- Fast activate macro
+-- Fast activate macros
+map('n', '<M-m>', '@m', opts)
+
 -- map('n', '<esc>q', '@q', opts)
 -- map('n', '<esc>w', '@w', opts)
 -- map('n', '<esc>e', '@e', opts)
@@ -75,9 +76,9 @@ map('v', '^', 'g^', opts)
 -- map('n', '<esc>t', '@t', opts)
 
 -- map('n', '<esc>a', '@a', opts)
-map('n', '<esc>s', '@s', opts)
-map('n', '<esc>d', '@d', opts)
-map('n', '<esc>f', '@f', opts)
+-- map('n', '<esc>s', '@s', opts)
+-- map('n', '<esc>d', '@d', opts)
+-- map('n', '<esc>f', '@f', opts)
 -- map('n', '<esc>g', '@g', opts)
 
 -- map('n', '<esc>z', '@z', opts)
@@ -86,29 +87,29 @@ map('n', '<esc>f', '@f', opts)
 -- map('n', '<esc>v', '@v', opts)
 -- map('n', '<esc>b', '@b', opts)
 
-map('n', '<esc>m', '@m', opts)
 
 -- Split
-map('n', '<leader>h', ':sp<CR>', opts)
-map('n', '<leader>v', ':vs<CR>', opts)
-map('n', '<leader><Esc>', ':x<CR>', opts)
+map('n', '<M-h>', ':sp<CR>', opts)
+map('n', '<M-v>', ':vs<CR>', opts)
+map('n', '<M-x>', ':x<CR>', opts)
 
 -- Jump python functions
-map('n', '<esc>j', ':/def <CR>:nohls<CR>', opts)
-map('n', '<esc>k', ':?def <CR>:nohls<CR>', opts)
+map('n', '<M-j>', ':/def <CR>:nohls<CR>', opts)
+map('n', '<M-k>', ':?def <CR>:nohls<CR>', opts)
 
 -- Jump python class
 -- map('n', '<esc>l', ':/class <CR>:nohls<CR>', opts)
 -- map('n', '<esc>h', ':?class <CR>:nohls<CR>', opts)
 
 -- Tab navigation [ru-en]
--- map('n', '<esc>t', ':tabnew<CR>', opts)
-map('n', '<esc>t', ':tabnew<CR>', opts)
-map('n', '<esc>q', ':tabclose<CR>', opts)
-map('n', '<esc>,', ':tabprevious<CR>', opts)
-map('n', '<esc>.', ':tabnext<CR>', opts)
+map('n', '<C-t>', ':tabnew<CR>', opts)
+map('n', '<C-q>', ':tabclose<CR>', opts)
 map('n', '<C-,>', ':tabprevious<CR>', opts)
 map('n', '<C-.>', ':tabnext<CR>', opts)
+map('n', '<C-е>', ':tabnew<CR>', opts)
+map('n', '<C-й>', ':tabclose<CR>', opts)
+map('n', '<C-б>', ':tabprevious<CR>', opts)
+map('n', '<C-ю>', ':tabnext<CR>', opts)
 
 
 -- <F1> .. <F12> -------------------------------------------------------------
@@ -120,7 +121,7 @@ map('n', '<F1>', ':nohl<CR>', opts)
 map('n', '<F2>', ':so ~/.config/nvim/init.lua<CR>\
     :so ~/.config/nvim/lua/core.lua<CR>\
     :so ~/.config/nvim/lua/key.lua<CR>\
-    ', { noremap = true })
+    ', { noremap = true, silent = false })
 
 -- <F3> Дерево файлов.
 map('n', '<F3>', ':NvimTreeRefresh<CR>:NvimTreeToggle<CR>', opts)
@@ -129,10 +130,10 @@ map('n', '<F3>', ':NvimTreeRefresh<CR>:NvimTreeToggle<CR>', opts)
 map('n', '<F4>', ':TagbarToggle<CR>', opts)
 
 -- <F5> run in terminal
-map('n', '<F5>', ':wa!<CR>@r', opts)
+map('n', '<F5>', '<esc>:wa!<CR>@r', opts)
 
--- <F6> run in terminal, in tab2
-map('n', '<F6>', ':wa!<CR>@t', opts)
+-- <F6> save all, then open debug tab
+map('n', '<F6>', ':wa!<CR>:tablast<CR>:DapContinue<CR>1<CR>', opts)
 
 -- <F12> Открыть всю nvim конфигурацию для редактирования
 map('n', '<F12>', '\
@@ -151,8 +152,10 @@ map('n', '<PageUp>',
     :BufferLineTabRename 󱃖 code<CR>\
     :tabnext<CR>\
     :BufferLineTabRename  tmp<CR>\
+    :DiffviewOpen<CR>\
+    :BufferLineTabRename  diff<CR>\
     :tabnext<CR>\
-    :BufferLineTabRename  exec<CR>\
+    :BufferLineTabRename  debug<CR>\
     :tabnext<CR>\
     :BufferLineTabRename  plan<CR>\
     :tabnext<CR>\
@@ -171,6 +174,3 @@ map('n', '<Home>',
     ':source /home/alex/ya/diary/Session_diary.vim<CR>\
     :NvimTreeRefresh<CR>:NvimTreeToggle<CR>\
     ', opts)
-
--- :NvimTreeToggle<CR>\
--- :NvimTreeRefresh<CR>:NvimTreeToggle<CR>\

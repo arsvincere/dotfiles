@@ -3,9 +3,8 @@
 ------------------------------------------------------------------------------
 
 local map = vim.api.nvim_set_keymap
-local opt = {noremap = true, silent = true}
+local opt = { noremap = true, silent = true }
 
 -- Close buffer
-map('n', '<leader>d',':Bdelete<CR>', opt)
-map('n', 'бв',':Bdelete<CR>', opt)
-
+map('n', '<leader>d', ':Bdelete<CR>', opt)
+map('n', 'бв', ':Bdelete<CR>', opt)

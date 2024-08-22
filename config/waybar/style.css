@@ -10,7 +10,7 @@
 
 window#waybar {
     background: transparent;
-    /* background: #323232; */
+    /* background: #2A2A37; */
     color: #DCD7BA;
 }
 
@@ -125,37 +125,28 @@ window#waybar {
     background: transparent;
     color: #658594;
 	margin: 2px 0px 0px 150px;
-    padding: 0px 6px;
+    padding: 1px 8px;
+    border: solid 0px #54546D;
+	border-radius: 0px;
+    opacity: 1.0;
 }
-#memory {
+
+#memory, #disk, #temperature, #custom-power {
     background: transparent;
     color: #658594;
 	margin: 2px 0px 0px 0px;
-    padding: 0px 6px;
-}
-#disk {
-    background: transparent;
-    color: #658594;
-	margin: 2px 0px 0px 0px;
-    padding: 0px 6px;
-}
-#temperature {
-    background: transparent;
-    color: #658594;
-	margin: 2px 0px 0px 0px;
-    padding: 0px 6px;
+    padding: 1px 8px;
+    border: solid 0px #54546D;
+	border-radius: 0px;
+    opacity: 1.0;
 }
 #temperature.critical {
     background: #C34043;
     color: #16161D;
-	margin: 2px 0px 0px 0px;
-    padding: 0px 6px;
-}
-#custom-power {
-    background: transparent;
-    color: #C34043;
-	margin: 2px 0px 0px 0px;
-    padding: 0px 2px;
+	margin: 2px 4px 0px 0px;
+    padding: 1px 8px;
+    border: solid 1px #54546D;
+	border-radius: 0px;
 }
 
 /* Tooltip ******************************************************************/

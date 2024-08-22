@@ -10,10 +10,10 @@ require("bufferline").setup {
         offsets = {
             {
                 filetype = "NvimTree",
-                text = "[  󱏒  Project  ]",
+                text = "󱏒  Project files:",
                 highlight = "Directory",
                 separator = true,
-                text_align = "center",
+                text_align = "left",
             }
         },
         color_icons = true,

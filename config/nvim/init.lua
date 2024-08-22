@@ -1,6 +1,6 @@
 -- Import general settings  --------------------------------------------------
 
-require('core')                     -- vim settings
-require('key')                      -- keybindings
-require('plugin._plug')             -- install plugins
-
+require('auto') -- autocomands
+require('core') -- vim settings
+require('key')  -- keybindings
+require('plug') -- install plugins

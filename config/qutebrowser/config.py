@@ -167,7 +167,7 @@ c.tabs.position = "top"
 ##   - never: Always hide the tab bar.
 ##   - multiple: Hide the tab bar if only one tab is open.
 ##   - switching: Show the tab bar when switching tabs.
-c.tabs.show = "switching"
+c.tabs.show = "always"
 
 ## Duration (in milliseconds) to show the tab bar before hiding it when
 ## tabs.show is set to 'switching'.
@@ -337,6 +337,15 @@ c.colors.tabs.indicator.stop = "#aaaa00"
 ## Type: QtColor
 # c.colors.tabs.pinned.selected.odd.fg = 'white'
 # }}}
+
+## Mouse button with which to close tabs.
+## Type: String
+## Valid values:
+##   - right: Close tabs on right-click.
+##   - middle: Close tabs on middle-click.
+##   - none: Don't close tabs using the mouse.
+c.tabs.close_mouse_button = "middle"
+
 
 # -----------------------------------------------------------------------------
 
@@ -2007,14 +2016,6 @@ c.colors.tabs.indicator.stop = "#aaaa00"
 ##   - clock: Display current time. The format can be changed by adding a format string via `clock:...`. For supported format strings, see https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes[the Python datetime documentation].
 # c.statusbar.widgets = ['keypress', 'search_match', 'url', 'scroll', 'history', 'tabs', 'progress']
 
-## Mouse button with which to close tabs.
-## Type: String
-## Valid values:
-##   - right: Close tabs on right-click.
-##   - middle: Close tabs on middle-click.
-##   - none: Don't close tabs using the mouse.
-# c.tabs.close_mouse_button = 'middle'
-
 ## How to behave when the close mouse button is pressed on the tab bar.
 ## Type: String
 ## Valid values:
@@ -2172,7 +2173,15 @@ c.colors.tabs.indicator.stop = "#aaaa00"
 
 ## URL parameters to strip with `:yank url`.
 ## Type: List of String
-# c.url.yank_ignored_parameters = ['ref', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'utm_name']
+# c.url.yank_ignored_parameters = [
+#     "ref",
+#     "utm_source",
+#     "utm_medium",
+#     "utm_campaign",
+#     "utm_term",
+#     "utm_content",
+#     "utm_name",
+# ]
 
 ## Hide the window decoration.  This setting requires a restart on
 ## Wayland.
@@ -2199,7 +2208,24 @@ c.colors.tabs.indicator.stop = "#aaaa00"
 
 ## Available zoom levels.
 ## Type: List of Perc
-# c.zoom.levels = ['25%', '33%', '50%', '67%', '75%', '90%', '100%', '110%', '125%', '150%', '175%', '200%', '250%', '300%', '400%', '500%']
+# c.zoom.levels = [
+#     "25%",
+#     "33%",
+#     "50%",
+#     "67%",
+#     "75%",
+#     "90%",
+#     "100%",
+#     "110%",
+#     "125%",
+#     "150%",
+#     "175%",
+#     "200%",
+#     "250%",
+#     "300%",
+#     "400%",
+#     "500%",
+# ]
 
 ## Number of zoom increments to divide the mouse wheel movements to.
 ## Type: Int
@@ -2209,7 +2235,7 @@ c.colors.tabs.indicator.stop = "#aaaa00"
 ## Type: Bool
 # c.zoom.text_only = False
 
-## Bindings for normal mode
+## Bindings for normal mode --------------------------------------------------
 # config.bind("'", 'mode-enter jump_mark')
 # config.bind('+', 'zoom-in')
 # config.bind('-', 'zoom-out')
@@ -2275,6 +2301,7 @@ c.colors.tabs.indicator.stop = "#aaaa00"
 # config.bind('@', 'macro-run')
 # config.bind('B', 'cmd-set-text -s :quickmark-load -t')
 # config.bind('D', 'tab-close -o')
+config.bind("D", "clear-keychain ;; search ;; fullscreen --leave")
 # config.bind('F', 'hint all tab')
 # config.bind('G', 'scroll-to-perc')
 config.bind("H", "back")
@@ -2304,6 +2331,7 @@ config.bind("L", "forward")
 # config.bind('cd', 'download-clear')
 # config.bind('co', 'tab-only')
 # config.bind('d', 'tab-close')
+config.bind("d", "clear-keychain ;; search ;; fullscreen --leave")
 # config.bind('f', 'hint')
 # config.bind('g$', 'tab-focus -1')
 # config.bind('g0', 'tab-focus 1')
@@ -2387,6 +2415,8 @@ config.bind("L", "forward")
 # config.bind('wp', 'open -w -- {clipboard}')
 # config.bind('xO', 'cmd-set-text :open -b -r {url:pretty}')
 # config.bind('xo', 'cmd-set-text -s :open -b')
+config.bind("X", "tab-close -o")
+config.bind("x", "tab-close")
 # config.bind('yD', 'yank domain -s')
 # config.bind('yM', 'yank inline [{title}]({url}) -s')
 # config.bind('yP', 'yank pretty-url -s')

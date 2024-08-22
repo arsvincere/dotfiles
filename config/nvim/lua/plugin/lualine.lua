@@ -26,7 +26,7 @@ end
 require('lualine').setup {
     options = {
         icons_enabled = true,
-        theme = 'auto',
+        theme = 'kanagawa-paper',
         -- component_separators = { left = '', right = '' },
         -- section_separators = { left = '', right = '' },
         -- section_separators = { left = '', right = '' },
@@ -47,25 +47,55 @@ require('lualine').setup {
     },
     sections = {
         lualine_a = {
-            { 'mode', icon = '', separator = { left = ' ' } }
+            { 'mode', icon = '', separator = { left = '' } }
         },
         lualine_b = {
-            { 'branch', 'diff', 'diagnostics', separator = { right = '' } }
+            {
+                'filename',
+                icon = ' ',
+                path = 1,
+                separator = { right = '' },
+                symbols = {
+                    modified = '[+]',      -- Text to show when the file is modified.
+                    readonly = '[-]',      -- Text to show when the file is non-modifiable or readonly.
+                    unnamed = '[No Name]', -- Text to show for unnamed buffers.
+                    newfile = '[New]',     -- Text to show for newly created file before first write
+                }
+            }
         },
         lualine_c = {
-            { 'filename', icon = ' ', path = 1 }
+            { 'branch', icon = '  ' },
+            { 'diff', colored = false, symbols = { added = ' ', modified = ' ', removed = ' ' } },
+            {
+                'diagnostics',
+                icon = '  ruff:',
+                -- Table of diagnostic sources, available sources are:
+                --   'nvim_lsp', 'nvim_diagnostic', 'nvim_workspace_diagnostic', 'coc', 'ale', 'vim_lsp'.
+                -- or a function that returns a table as such:
+                --   { error=error_cnt, warn=warn_cnt, info=info_cnt, hint=hint_cnt }
+                sources = { 'nvim_diagnostic', 'nvim_lsp' },
+                sections = { 'error', 'warn', 'info', 'hint' },
+                diagnostics_color = {
+                    error = 'DiagnosticLuaLineError',
+                    warn  = 'DiagnosticLuaLineWarn',
+                    info  = 'DiagnosticLuaLineInfo',
+                    hint  = 'DiagnosticLuaLineHint',
+                },
+                -- symbols = { error = 'E', warn = 'W', info = 'I', hint = 'H' },
+                colored = true,
+            },
         },
         lualine_x = {
             { wordcount_readingtime, cond = is_text },
+            { 'filetype', colored = false },
             { 'encoding', icon = '' },
             { 'filesize', icon = '' },
-            { 'filetype', colored = false }
         },
         lualine_y = {
             { icon = '󰉸', 'progress', separator = { left = '' } }
         },
         lualine_z = {
-            { 'location', icon = { '', align = 'right' }, separator = { right = ' ' } }
+            { 'location', icon = { '', align = 'right' }, separator = { right = '' } }
         },
     },
     -- tabline = {

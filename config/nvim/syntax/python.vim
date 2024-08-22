@@ -141,7 +141,7 @@ syn match   pythonMatrixMultiply
 syn match   pythonFunction	"\h\w*" display contained
 
 syn match   pythonComment	"#.*$" contains=pythonTodo,@Spell
-syn keyword pythonTodo		FIXME NOTE NOTES TODO XXX contained
+" syn keyword pythonTodo		FIXME NOTE NOTES TODO XXX contained
 
 " Triple-quoted strings can contain doctests.
 syn region  pythonString matchgroup=pythonQuotes
@@ -314,7 +314,7 @@ hi def link pythonDecorator		Define
 hi def link pythonDecoratorName		Function
 hi def link pythonFunction		Function
 hi def link pythonComment		Comment
-hi def link pythonTodo			Todo
+" hi def link pythonTodo			Todo
 hi def link pythonString		String
 hi def link pythonRawString		String
 hi def link pythonQuotes		String

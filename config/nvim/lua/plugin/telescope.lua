@@ -3,25 +3,31 @@
 ------------------------------------------------------------------------------
 
 local map = vim.api.nvim_set_keymap
-local opts = {noremap = true, silent = true}
+local opts = { noremap = true, silent = true }
 
--- Удаление буферов из списка по Ctrl+d
-require('telescope').setup{
-  defaults = {
-    -- Default configuration for telescope goes here:
-    -- config_key = value,
-    mappings = {
-      n = {
-    	  ['<C-d>'] = require('telescope.actions').delete_buffer,
-          ['<d>'] = require('telescope.actions').delete_buffer
-      }, -- n
-      i = {
-        ["<C-h>"] = "which_key",
-        ['<C-d>'] = require('telescope.actions').delete_buffer
-      } -- i
-    }
-  },
+-- todo-comments
+local open_with_trouble = require("trouble.sources.telescope").open
+
+-- telescope config
+require('telescope').setup {
+    defaults = {
+        mappings = {
+            n = {
+                ['<C-d>'] = require('telescope.actions').delete_buffer,
+                ['<d>'] = require('telescope.actions').delete_buffer,
+                ["<C-t>"] = open_with_trouble
+            }, -- n
+            i = {
+                ["<C-h>"] = "which_key",
+                ['<C-d>'] = require('telescope.actions').delete_buffer,
+                ["<C-t>"] = open_with_trouble
+            } -- i
+        }
+    },
 }
+
+
+-- telescope bind -----------------------------------------------------------
 
 -- Список открытых буферов: en - ',,'  |  ru - 'бб'
 map('n', '<leader>,',
@@ -45,4 +51,3 @@ map('n', '<leader>g',
 map('n', '<leader>G',
     [[<cmd>lua require('telescope.builtin').grep_string()<CR><Esc>]],
     opts)
-

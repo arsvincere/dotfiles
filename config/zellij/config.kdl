@@ -5,17 +5,18 @@ keybinds clear-defaults=true {  // {{{
         // keybindings available in normal mode
         // bind "Alt q" { Quit; }
         // bind "Alt x" { CloseTab; }
-        bind "Alt c" { CloseFocus; }
+        bind "Alt q" { CloseFocus; }
 
         bind "Alt p" { NewPane; }
-        bind "Alt y" { NewTab; }
-        // bind "Alt ," { GoToPreviousTab; }
-        // bind "Alt ." { GoToNextTab; }
+        bind "Alt t" { NewTab; }
+        bind "Alt ," { GoToPreviousTab; }
+        bind "Alt ." { GoToNextTab; }
 
         bind "Alt h" { MoveFocusOrTab "Left"; }
         bind "Alt l" { MoveFocusOrTab "Right"; }
         bind "Alt j" { MoveFocus "Down"; }
         bind "Alt k" { MoveFocus "Up"; }
+
     }
 }
 // }}}

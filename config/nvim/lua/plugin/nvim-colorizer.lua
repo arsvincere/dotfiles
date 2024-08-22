@@ -8,14 +8,18 @@
 -- Attach to certain Filetypes, add special configuration for `html`
 -- Use `background` for everything else.
 require 'colorizer'.setup {
-  'css';
-  'color';
-  'javascript';
-  'bg';
-  html = {
-    mode = 'foreground';
-  },
-  fg = {
-    mode = 'foreground';
-  }
+    'css',
+    'color',
+    'javascript',
+    'bg',
+
+    lua = {
+        mode = 'foreground',
+    },
+    html = {
+        mode = 'foreground',
+    },
+    fg = {
+        mode = 'foreground',
+    }
 }

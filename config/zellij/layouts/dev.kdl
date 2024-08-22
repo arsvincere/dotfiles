@@ -4,20 +4,28 @@ layout {
             plugin location="zellij:tab-bar"
             }
         children
-//        pane size=2 borderless=true {
-//            plugin location="zellij:status-bar"
-//            }
-        }
-    tab name="zsh" {
-        pane cwd="/home/alex/AVIN" borderless=true
-        }
-    tab name="vim" focus=true {
-        pane cwd="/home/alex/AVIN" borderless=true command="nvim"
-        }
-    tab name="git" {
-        pane cwd="/home/alex/AVIN" borderless=true command="lazygit"
-        }
-    tab name="xplr" {
-        pane cwd="/home/alex/AVIN" borderless=true command="xplr"
+        //  pane size=2 borderless=true {
+        //  plugin location="zellij:status-bar"
+        // }
+    }
+    tab name="pgadmin" {
+        pane {
+            cwd "/home/alex/AVIN"
+            command "python"
+            args "/home/alex/env/lib/python3.12/site-packages/pgadmin4/pgAdmin4.py"
+            borderless true
         }
     }
+    tab name="nvim" focus=true {
+        pane cwd="/home/alex/AVIN" borderless=true command="nvim"
+    }
+    tab name="git" {
+        pane cwd="/home/alex/AVIN" borderless=true command="lazygit"
+    }
+    tab name="xplr" {
+        pane cwd="/home/alex/AVIN" borderless=true command="xplr"
+    }
+}
+
+
+
