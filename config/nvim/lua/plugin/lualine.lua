@@ -2,8 +2,6 @@
 -- Информационная строка внизу
 ------------------------------------------------------------------------------
 
--- require('lualine').setup()
-
 local function wordcount_readingtime()
     return tostring(
         '  ' .. vim.fn.wordcount().words .. 'w ' ..

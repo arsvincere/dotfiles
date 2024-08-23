@@ -101,7 +101,7 @@ require('plugin.treesitter')
 require('plugin.trouble')
 require('plugin.todo-comments')
 require('plugin.vim-plugin-ruscmd')
--- require('plugin.vimtex')
+require('plugin.vimtex')
 require('plugin.wakatime')
 
 

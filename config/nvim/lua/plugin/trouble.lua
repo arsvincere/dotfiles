@@ -2,10 +2,7 @@
 -- A pretty list for showing diagnostics, references, telescope results...
 ------------------------------------------------------------------------------
 
-local map = vim.api.nvim_set_keymap
-local opts = { noremap = true, silent = true }
-
-require('trouble').setup {}
+require('trouble').setup()
 
 -- Hide diagnostics virtual_text
 vim.diagnostic.config({
@@ -19,45 +16,6 @@ vim.diagnostic.open_float()
 
 -- disable diagnostics view on startup
 vim.diagnostic.enable(false)
-
-
-
-
--- Bind ----------------------------------------------------------------------
-
--- toggle diagnostics view
-vim.keymap.set('n', '<leader>D',
-    function()
-        vim.diagnostic.enable(not vim.diagnostic.is_enabled())
-    end,
-    { silent = true, noremap = true })
-
--- diag
-map('n', '<leader>z',
-    ':Trouble diagnostics toggle focus=true filter.buf=0<CR>', opts)
-map('n', '<leader>Z',
-    ':Trouble diagnostics toggle focus=true <CR>', opts)
-
--- quickfix
-map('n', '<leader>x',
-    ':TodoQuickFix<CR>:sleep 200m<CR>:x<CR>\
-    :Trouble quickfix toggle focus=true filter.buf=0<CR>', opts)
-map('n', '<leader>X',
-    ':Trouble todo toggle focus=true<CR>', opts)
-
--- lsp
-map('n', '<leader>c',
-    ':Trouble lsp toggle focus=true<CR>', opts)
-
--- sympbols (right panel)
-map('n', '<leader>v',
-    ':Trouble symbols toggle focus=true<CR>', opts)
-
-
--- Telescope bind ------------------------------------------------------------
--- moved to: plugin/telescope.lua
--- ['C-t'] - open with trouble
-
 
 
 -- Default settings ----------------------------------------------------------

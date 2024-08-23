@@ -12,13 +12,6 @@
 -- /usr/share/fonts/
 ------------------------------------------------------------------------------
 
-local map = vim.keymap.set
-local opt = { noremap = true, silent = true }
-
--- Bind
-map('n', '<F3>', ':NvimTreeRefresh<CR>:NvimTreeToggle<CR>', opt)
-
-
 -- disable netrw at the very start of your init.lua
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
@@ -66,7 +59,7 @@ require("nvim-tree").setup({
                     color = true,
                 },
             },
-            git_placement = "after", -- расположение иконок git после filename
+            git_placement = "after", -- git icons after filename
             diagnostics_placement = "signcolumn",
             modified_placement = "after",
             padding = " ",
@@ -108,7 +101,7 @@ require("nvim-tree").setup({
     },
     filters = {
         dotfiles = true,     -- скрывать .dotfiles при запуске
-        git_ignored = false, -- скрывать .git_ignored файлы\папки
+        git_ignored = false, -- не скрывать .git_ignored файлы\папки
     },
 }
 )

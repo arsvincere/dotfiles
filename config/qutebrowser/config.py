@@ -109,7 +109,7 @@ c.session.lazy_restore = True
 ##   - always: Always show the statusbar.
 ##   - never: Always hide the statusbar.
 ##   - in-mode: Show the statusbar when in modes other than normal mode.
-c.statusbar.show = "in-mode"
+c.statusbar.show = "always"
 
 ## Page to open if :open -t/-b/-w is used without URL. Use `about:blank`
 ## for a blank page.
