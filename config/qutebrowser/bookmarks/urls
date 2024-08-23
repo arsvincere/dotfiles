@@ -20,3 +20,17 @@ https://github.com/roobert/f-string-toggle.nvim roobert/f-string-toggle.nvim: :y
 https://github.com/mfussenegger/nvim-lint mfussenegger/nvim-lint: An asynchronous linter plugin for Neovim complementary to the built-in Language Server Protocol support.
 https://github.com/NvChad/NvChad?tab=readme-ov-file NvChad/NvChad: Blazing fast Neovim config providing solid defaults and a beautiful UI, enhancing your neovim experience.
 https://github.com/folke/lazydev.nvim folke/lazydev.nvim: Faster LuaLS setup for Neovim
+https://github.com/sainnhe/everforest sainnhe/everforest: 🌲 Comfortable & Pleasant Color Scheme for Vim
+https://github.com/ThePrimeagen/refactoring.nvim ThePrimeagen/refactoring.nvim: The Refactoring library based off the Refactoring book by Martin Fowler
+https://github.com/nvim-orgmode/orgmode nvim-orgmode/orgmode: Orgmode clone written in Lua for Neovim 0.9+.
+https://github.com/nvimdev/lspsaga.nvim nvimdev/lspsaga.nvim: improve neovim lsp experience
+https://github.com/epwalsh/obsidian.nvim epwalsh/obsidian.nvim: Obsidian 🤝 Neovim
+https://github.com/akinsho/toggleterm.nvim akinsho/toggleterm.nvim: A neovim lua plugin to help easily manage multiple terminal windows
+https://github.com/folke/noice.nvim folke/noice.nvim: 💥 Highly experimental plugin that completely replaces the UI for messages, cmdline and the popupmenu.
+https://github.com/ggandor/leap.nvim ggandor/leap.nvim: Neovim's answer to the mouse 🦘
+https://github.com/echasnovski/mini.nvim echasnovski/mini.nvim: Library of 40+ independent Lua modules improving overall Neovim (version 0.8 and higher) experience with minimal effort
+https://github.com/folke/which-key.nvim folke/which-key.nvim: 💥 Create key bindings that stick. WhichKey helps you remember your Neovim keymaps, by showing available keybindings in a popup as you type.
+https://github.com/nanotee/nvim-lua-guide nanotee/nvim-lua-guide: A guide to using Lua in Neovim
+https://github.com/kuator/nvim-lua-guide-ru kuator/nvim-lua-guide-ru: A guide to using Lua in Neovim
+https://github.com/nvim-neorg/neorg?tab=readme-ov-file nvim-neorg/neorg: Modernity meets insane extensibility. The future of organizing your life in Neovim.
+https://neovimcraft.com/ neovimcraft

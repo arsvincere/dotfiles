@@ -3,7 +3,7 @@
 ------------------------------------------------------------------------------
 vim = vim
 
-vim.opt.termguicolors = true        --  24-bit RGB colors
+vim.opt.termguicolors = true --  24-bit RGB colors
 vim.g.gruvbox_material_better_performance = 1
 vim.g.gruvbox_material_enable_bold = 1
 vim.g.gruvbox_material_enable_italic = 1
@@ -48,5 +48,3 @@ vim.g.gruvbox_material_transparent_background = 0
 
 --   call gruvbox_material#highlight('Folded', s:palette.fg_fold, s:palette.none)
 --   call gruvbox_material#highlight('Folded', s:palette.fg_fold, s:palette.none)
-
-

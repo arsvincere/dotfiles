@@ -2,7 +2,7 @@
 -- Удаление буфера без изменений разбивки окна :vs :split и тп
 ------------------------------------------------------------------------------
 
-local map = vim.api.nvim_set_keymap
+local map = vim.keymap.set
 local opt = { noremap = true, silent = true }
 
 -- Close buffer

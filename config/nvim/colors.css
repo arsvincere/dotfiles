@@ -73,6 +73,7 @@ Kanagawa-paper{{{
 	winterYellow = "#49443C",
 	winterRed = "#43242B",
 	winterBlue = "#252535",
+
 	autumnGreen = "#76946A",
 	autumnRed = "#C34043",
 	autumnYellow = "#DCA561",
@@ -136,7 +137,7 @@ Kanagawa-paper{{{
 	dragonAqua = "#8ea4a2",
 	dragonAsh = "#737c73",
 	dragonTeal = "#949fb5",
-	dragonYellow = "#c4b28a", --"#a99c8b",
+	dragonYellow = "#c4b28a",
 	dragonYellow2 = "#a99c8b",
 	-- "#8a9aa3",
 
@@ -430,7 +431,7 @@ function! gruvbox_material#get_palette(background, foreground, colors_override) 
           \ 'none':             ['NONE',      'NONE']
           \ }
   endif "}}}
-  
+
 }}}
 Nordic {{{
 ******************************************************************************
@@ -508,16 +509,16 @@ Nordic {{{
 }}}}
 ars_vincere {{{{
 ******************************************************************************
-    Idea, filosophy 
-    Это тема для написания книг, блогов, статей... 
-    Она не должна быть такой суровой как темы для кодинга... 
+    Idea, filosophy
+    Это тема для написания книг, блогов, статей...
+    Она не должна быть такой суровой как темы для кодинга...
     Она должна быть мягче и теплее, может быть даже с темно желтым, как старая
     бумага цветом фона.
     Хотя нет... иначе в одном окне откроешь другой файл и bg поплывет...
     может быть лайт мод
 
     В ней должны быть четко выражен синтаксис md adoc un
-    txt - а че тут отображать то? 
+    txt - а че тут отображать то?
 
 
     bg0 dart        #010206
@@ -640,7 +641,7 @@ autumn  orange{{{
 ******************************************************************************
 
 }}}
-annual {{{ 
+annual {{{
     local palette = {
 
         none = 'NONE',
@@ -866,7 +867,7 @@ base    spring = '#BF616A',
 bright  summer = '#C5727A',
 dim     autumn = '#B74E58',
 dark    winter = '#43242B',
- 
+
 black 25
 white
 cold

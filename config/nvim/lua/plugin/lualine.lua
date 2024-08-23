@@ -6,11 +6,8 @@
 
 local function wordcount_readingtime()
     return tostring(
-        '  ' ..
-        vim.fn.wordcount().words ..
-        'w  ' ..
-        math.ceil(vim.fn.wordcount().words / 200.0) ..
-        'm'
+        '  ' .. vim.fn.wordcount().words .. 'w ' ..
+        ' ' .. math.ceil(vim.fn.wordcount().words / 200.0) .. 'm'
     )
 end
 
@@ -18,6 +15,7 @@ local function is_text()
     local check =
         vim.bo.filetype == "markdown" or
         vim.bo.filetype == "asciidoc" or
+        vim.bo.filetype == "help" or
         vim.bo.filetype == "text" or
         vim.bo.filetype == "un"
     return check
@@ -65,10 +63,14 @@ require('lualine').setup {
         },
         lualine_c = {
             { 'branch', icon = '  ' },
-            { 'diff', colored = false, symbols = { added = ' ', modified = ' ', removed = ' ' } },
+            {
+                'diff',
+                colored = false,
+                symbols = { added = ' ', modified = ' ', removed = ' ' }
+            },
             {
                 'diagnostics',
-                icon = '  ruff:',
+                icon = '  diag:',
                 -- Table of diagnostic sources, available sources are:
                 --   'nvim_lsp', 'nvim_diagnostic', 'nvim_workspace_diagnostic', 'coc', 'ale', 'vim_lsp'.
                 -- or a function that returns a table as such:

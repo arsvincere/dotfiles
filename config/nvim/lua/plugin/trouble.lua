@@ -15,24 +15,15 @@ vim.diagnostic.config({
 })
 
 -- open diagnostics in popup
--- vim.diagnostic.open_float()
-
-
--- Bind ----------------------------------------------------------------------
--- trouble & todo-comments
-
-map('n', '<leader>t', ':TodoTelescope<CR>', opts)
-
-map('n', '<leader>z', ':Trouble diagnostics toggle focus=true filter.buf=0<CR>', opts)
-map('n', '<leader>Z', ':Trouble diagnostics toggle focus=true <CR>', opts)
-map('n', '<leader>x', ':TodoQuickFix<CR>:sleep 200m<CR>:x<CR>:Trouble quickfix toggle focus=true filter.buf=0<CR>', opts)
-map('n', '<leader>X', ':Trouble todo toggle focus=true<CR>', opts)
-map('n', '<leader>c', ':Trouble lsp toggle focus=true<CR>', opts)
-map('n', '<leader>v', ':Trouble symbols toggle focus=true<CR>', opts)
-
+vim.diagnostic.open_float()
 
 -- disable diagnostics view on startup
 vim.diagnostic.enable(false)
+
+
+
+
+-- Bind ----------------------------------------------------------------------
 
 -- toggle diagnostics view
 vim.keymap.set('n', '<leader>D',
@@ -41,28 +32,31 @@ vim.keymap.set('n', '<leader>D',
     end,
     { silent = true, noremap = true })
 
+-- diag
+map('n', '<leader>z',
+    ':Trouble diagnostics toggle focus=true filter.buf=0<CR>', opts)
+map('n', '<leader>Z',
+    ':Trouble diagnostics toggle focus=true <CR>', opts)
+
+-- quickfix
+map('n', '<leader>x',
+    ':TodoQuickFix<CR>:sleep 200m<CR>:x<CR>\
+    :Trouble quickfix toggle focus=true filter.buf=0<CR>', opts)
+map('n', '<leader>X',
+    ':Trouble todo toggle focus=true<CR>', opts)
+
+-- lsp
+map('n', '<leader>c',
+    ':Trouble lsp toggle focus=true<CR>', opts)
+
+-- sympbols (right panel)
+map('n', '<leader>v',
+    ':Trouble symbols toggle focus=true<CR>', opts)
+
+
 -- Telescope bind ------------------------------------------------------------
 -- moved to: plugin/telescope.lua
 -- ['C-t'] - open with trouble
-
--- -- Open any search results in Trouble - <Ctrl-t>
--- local actions = require("telescope.actions")
--- local open_with_trouble = require("trouble.sources.telescope").open
-
--- -- Use this to add more results without clearing the trouble list
--- local add_to_trouble = require("trouble.sources.telescope").add
-
--- local telescope = require("telescope")
-
--- telescope.setup({
---     defaults = {
---         mappings = {
---             i = { ["<C-t>"] = open_with_trouble },
---             n = { ["<C-t>"] = open_with_trouble },
---         },
---     },
--- })
-
 
 
 
@@ -103,7 +97,7 @@ local defaults = {
         -- when a buffer is not yet loaded, the preview window will be created
         -- in a scratch buffer with only syntax highlighting enabled.
         -- Set to false, if you want the preview to always be a real loaded buffer.
-        scratch = true,
+        scratch = false,
     },
     -- Throttle/Debounce settings. Should usually not be changed.
     ---@type table<string, number|{ms:number, debounce?:boolean}>

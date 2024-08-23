@@ -13,13 +13,7 @@ require 'colorizer'.setup {
     'javascript',
     'bg',
 
-    lua = {
-        mode = 'foreground',
-    },
-    html = {
-        mode = 'foreground',
-    },
-    fg = {
-        mode = 'foreground',
-    }
+    lua = { mode = 'foreground', },
+    html = { mode = 'foreground', },
+    fg = { mode = 'foreground', }
 }

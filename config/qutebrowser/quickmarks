@@ -1,39 +1,48 @@
 Alex Avin Blog https://alexavin.blog
 Ars Vincere https://arsvincere.com
 github avin https://github.com/arsvincere/AVIN
+habr https://habr.com/ru/feed/
+bitrix https://avin.bitrix24.ru/sites/site/4/?any=site%2F4%2F&current_fieldset=SOCSERV
+pgadmin http://127.0.0.1:5050
+
 google-translate https://translate.google.com/?sl=en&tl=ru&op=translate
 lingvo https://www.lingvolive.com/en-us
-nerd-font cheat-sheet https://www.nerdfonts.com/cheat-sheet
-xplr copy paste https://blog.xplr.dev/post/27231/How-to-manage-files-using-xplr
+
 gmail https://mail.google.com/mail/u/0/?hl=ru#inbox
+google drive https://drive.google.com/drive/my-drive?hl=ru
+yandex disk https://disk.yandex.ru/client/disk
+kinopoisk online https://hd.kinopoisk.ru/?utm_referrer=www.google.com
+интернетометр https://yandex.ru/internet/
+
+tradingview https://ru.tradingview.com/chart/99F7xfE5/?symbol=MOEX%3AIMOEX
+tinkoff terminal https://www.tbank.ru/terminal/
 finam https://trading.finam.ru/profile/MOEX-LKOH
 alor https://astras.alor.ru/dashboard
-habr https://habr.com/ru/feed/
-color sphere https://colorsphere.app/#dot=false&harmony=Five-Tone&hue=0&saturation=78&lightness=63&quantize=0&space=RYB&theme=dark&vision=Normal
-bitrix https://avin.bitrix24.ru/sites/site/4/?any=site%2F4%2F&current_fieldset=SOCSERV
-google drive https://drive.google.com/drive/my-drive?hl=ru
-typing club https://www.typingclub.com/
-дпдг https://www.youtube.com/watch?v=luNnkEHgTgk
-monkey type https://monkeytype.com/
+
+pacman arch wiki https://wiki.archlinux.org/title/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)
+qt pyside doc https://doc.qt.io/qtforpython-6/api.html
 tinkoff api https://tinkoff.github.io/investAPI/
 tinkoff api examples https://tinkoff.github.io/invest-python/examples/
 tinkoff api github https://github.com/Tinkoff/invest-python
-tinkoff terminal https://www.tbank.ru/terminal/
 postgresql wiki ru https://wiki.postgresql.org/wiki/Main_Page/ru
-asyncpg doc en https://magicstack.github.io/asyncpg/current/
-pgadmin http://127.0.0.1:5050
-qt pyside doc https://doc.qt.io/qtforpython-6/api.html
-ascii generator http://www.network-science.de/ascii/
-neovim best plugins github https://github.com/rockerBOO/awesome-neovim
-yandex disk https://disk.yandex.ru/client/disk
-интернетометр https://yandex.ru/internet/
-tradingview https://ru.tradingview.com/chart/99F7xfE5/?symbol=MOEX%3AIMOEX
 pg doc https://postgrespro.ru/docs/postgresql/9.6/index
-kinopoisk online https://hd.kinopoisk.ru/?utm_referrer=www.google.com
-pacman arch wiki https://wiki.archlinux.org/title/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)
+
+nerd-font cheat-sheet https://www.nerdfonts.com/cheat-sheet
+ascii generator http://www.network-science.de/ascii/
+color sphere https://colorsphere.app/#dot=false&harmony=Five-Tone&hue=0&saturation=78&lightness=63&quantize=0&space=RYB&theme=dark&vision=Normal
+
+дпдг https://www.youtube.com/watch?v=luNnkEHgTgk
+typing club https://www.typingclub.com/
+monkey type https://monkeytype.com/
+
+nvim best plugins github https://github.com/rockerBOO/awesome-neovim
+nvim craft https://neovimcraft.com/
+nvim lua guide ru https://github.com/kuator/nvim-lua-guide-ru
 Nord project https://www.nordtheme.com/docs/colors-and-palettes
 nordic https://github.com/AlexvZyl/nordic.nvim
 nordic dotfiles https://github.com/AlexvZyl/.dotfiles
 nordic dotfiles nvim https://github.com/AlexvZyl/nvim/tree/main
 kanagawa dotfiles https://github.com/rebelot/dotfiles/tree/master
 kanagawa paper dotfiles https://github.com/sho-87/dotfiles
+
+xplr copy paste https://blog.xplr.dev/post/27231/How-to-manage-files-using-xplr
