@@ -29,7 +29,7 @@ function diag_toggle()
     vim.diagnostic.enable(not vim.diagnostic.is_enabled())
 end
 
-function diff_toggle()
+function gitdiff_toggle()
     local view = require("diffview.lib").get_current_view()
     print("hell")
     if view then
@@ -39,6 +39,55 @@ function diff_toggle()
         vim.cmd("BufferLineTabRename  diff")
     end
 end
+
+local Terminal = require('toggleterm.terminal').Terminal
+-- local lazygit  = Terminal:new({
+--     cmd = "lazygit",
+--     hidden = true,
+--     display_name = "git", -- the name of the terminal
+--     -- direction = string -- the layout for the terminal, same as the main config options
+--     -- dir = string -- the directory for the terminal
+--     close_on_exit = true, -- close the terminal window when the process exits
+--     -- highlights = table -- a table with highlights
+--     -- env = table -- key:value table with environmental variables passed to jobstart()
+--     -- clear_env = bool -- use only environmental variables from `env`, passed to jobstart()
+--     -- on_open = fun(t: Terminal) -- function to run when the terminal opens
+--     -- on_close = fun(t: Terminal) -- function to run when the terminal closes
+--     -- auto_scroll = boolean -- automatically scroll to the bottom on terminal output
+--     -- callbacks for processing the output
+--     -- on_stdout = fun(t: Terminal, job: number, data: string[], name: string) -- callback for processing output on stdout
+--     -- on_stderr = fun(t: Terminal, job: number, data: string[], name: string) -- callback for processing output on stderr
+--     -- on_exit = fun(t: Terminal, job: number, exit_code: number, name: string) -- function to run when terminal process exits
+--
+-- })
+--
+
+
+local lazygit = Terminal:new({
+    cmd = "lazygit",
+    dir = "git_dir",
+    direction = "float",
+    -- float_opts = {
+    --     border = "double",
+    -- },
+    -- function to run on opening the terminal
+    on_open = function(term)
+        vim.cmd("startinsert!")
+        vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<cmd>close<CR>", { noremap = true, silent = true })
+    end,
+    -- function to run on closing the terminal
+    -- on_close = function(term)
+    --     vim.cmd("startinsert!")
+    -- end,
+})
+
+function lazygit_toggle()
+    lazygit:toggle()
+end
+
+map(n, "<leader>C", lazygit_toggle, { noremap = true, silent = true })
+
+
 
 DAP_UI_ENABLED = false
 local function dap_ui_toggle()
@@ -51,6 +100,7 @@ local function dap_ui_toggle()
     end
     return
 end
+
 
 -- }}}
 -- Keys ----------------------------------------------------------------------{{{
@@ -182,11 +232,12 @@ map(n, '<leader>X',
 -- 'c' lsp
 map(n, '<leader>c', ':Trouble lsp toggle focus=true<CR>', opt)
 
--- 'v'
+-- 'v' toggle term
+map(n, '<leader>v', ':ToggleTerm<CR>', opt)
+map(n, '<leader>V', ':ToggleTermSendVisualSelection<CR>', opt)
 
 -- 'b' breakpoint
 map(n, '<leader>b', ':DapToggleBreakpoint<CR>', opt)
-
 
 -- }}}
 -- <F1>..<F12> ---------------------------------------------------------------{{{
@@ -200,8 +251,10 @@ map(n, '<F2>', ':TagbarToggle<CR>', opt)
 -- <F3> Trouble symbol
 map(n, '<F3>', ':Trouble symbols toggle focus=true<CR>', opt)
 
--- <F4> Git diff
-map(n, '<F4>', diff_toggle, opt)
+-- <F4> git diff
+map(n, '<F4>', gitdiff_toggle, opt)
+-- <F16> lazygit
+map(n, '<F16>', lazygit_toggle, opt)
 
 -- <F5>..<F10> Debug
 map(n, '<F5>', dap_ui_toggle, opt)
@@ -211,7 +264,7 @@ map(n, '<F8>', ':DapStepOver<CR>', opt)
 map(n, '<F9>', ':DapStepOut<CR>', opt)
 map(n, '<F10>', ':DapTerminate<CR>', opt)
 
--- <F11> edit conf
+-- <F11>
 map(n, '<F11>', '\
     :e ~/.config/nvim/lua/auto.lua<CR>\
     :e ~/.config/nvim/lua/core.lua<CR>\
@@ -227,6 +280,15 @@ map(n, '<F12>',
     :so ~/.config/nvim/lua/plug.lua<CR>\
     :so ~/.config/nvim/lua/key.lua<CR>\
     ', opt)
+
+-- -- <F23> edit conf
+-- map(n, '<F11>', '\
+--     :e ~/.config/nvim/lua/auto.lua<CR>\
+--     :e ~/.config/nvim/lua/core.lua<CR>\
+--     :e ~/.config/nvim/lua/key.lua<CR>\
+--     :e ~/.config/nvim/lua/plug.lua<CR>\
+--     ', opt)
+--
 
 -- }}}
 -- Diary session -------------------------------------------------------------{{{
@@ -261,8 +323,7 @@ map(n, '<PageDown>',
     <C-w><C-h>',
     opt)
 -- }}}
-
--- telescope ----------------------------------------------------------------
+-- Telescope ----------------------------------------------------------------{{{
 local open_with_trouble = require("trouble.sources.telescope").open
 require('telescope').setup {
     defaults = {
@@ -280,3 +341,4 @@ require('telescope').setup {
         }
     },
 }
+-- }}}

@@ -1,5 +1,4 @@
 local Plug = vim.fn['plug#']
-
 vim.call('plug#begin')
 
 -- Theme
@@ -37,9 +36,10 @@ Plug 'preservim/tagbar'                            -- panel: class, func...
 Plug 'cohama/lexima.vim'                           -- auto pairs () [] {}
 Plug 'kylechui/nvim-surround'                      -- replace '' "" () [] {}
 Plug 'stevearc/conform.nvim'                       -- formatter
-Plug 'mfussenegger/nvim-lint'                      -- linter  TODO: conf
+Plug 'mfussenegger/nvim-lint'                      -- linter
 Plug 'folke/trouble.nvim'                          -- list diag, fzf, lsp...
 Plug 'folke/todo-comments.nvim'                    -- todo, fix -> trouble
+Plug 'akinsho/toggleterm.nvim'                     -- multiple terminals
 -- Autocomplete
 Plug 'williamboman/mason.nvim'                     -- manage language server
 Plug 'williamboman/mason-lspconfig.nvim'           -- __dependency
@@ -100,14 +100,10 @@ require('plugin.telescope')
 require('plugin.treesitter')
 require('plugin.trouble')
 require('plugin.todo-comments')
+require('plugin.toggleterm')
 require('plugin.vim-plugin-ruscmd')
 require('plugin.vimtex')
 require('plugin.wakatime')
-
-
-
-
-
 
 
 
