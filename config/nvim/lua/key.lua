@@ -7,8 +7,28 @@ local nv = { n, v }
 local niv = { n, i, v }
 
 -- Utils ---------------------------------------------------------------------{{{
+LAST_RUN = false
+DAP_UI_ENABLED = false
 
-function save_file_and_fold()
+local function split(inputstr, sep) -- {{{
+    if sep == nil then
+        sep = "%s"
+    end
+    local t = {}
+    for str in string.gmatch(inputstr, "([^" .. sep .. "]+)") do
+        table.insert(t, str)
+    end
+    return t
+end
+
+-- }}}
+local function file_name(file_path) -- {{{
+    local parts = split(file_path, '/')
+    return parts[#parts]
+end
+
+-- }}}
+local function save_file_and_fold() -- {{{
     if vim.api.nvim_buf_get_option(0, "readonly") then return end
 
     local buftype = vim.api.nvim_buf_get_option(0, "buftype")
@@ -20,16 +40,20 @@ function save_file_and_fold()
     end
 end
 
-function tree_toggle()
+-- }}}
+local function tree_toggle() -- {{{
     local tree = require("nvim-tree.api").tree
-    tree.toggle({ focus = false })
+    -- tree.toggle({ focus = false })
+    tree.toggle({ focus = true })
 end
 
-function diag_toggle()
+-- }}}
+local function diag_toggle() -- {{{
     vim.diagnostic.enable(not vim.diagnostic.is_enabled())
 end
 
-function gitdiff_toggle()
+-- }}}
+local function gitdiff_toggle() -- {{{
     local view = require("diffview.lib").get_current_view()
     print("hell")
     if view then
@@ -40,8 +64,30 @@ function gitdiff_toggle()
     end
 end
 
-DAP_UI_ENABLED = false
-local function run_debug()
+-- }}}
+local function run() -- {{{
+    cmd('wa!')
+    local file_path = vim.api.nvim_buf_get_name(0)
+    local name = file_name(file_path)
+
+    local pytest = string.find(name, "test_")
+    if pytest then
+        LAST_RUN = tostring('TermExec cmd="pytest ' .. file_path .. ' -s"')
+    else
+        LAST_RUN = tostring('TermExec cmd="python3 ' .. file_path .. '"')
+    end
+    cmd(LAST_RUN)
+end
+
+-- }}}
+local function re_run() -- {{{
+    if LAST_RUN then
+        cmd('wa!')
+        cmd(LAST_RUN)
+    end
+end
+-- }}}
+local function run_debug() -- {{{
     if not DAP_UI_ENABLED then
         require("dapui").open()
         require("nvim-tree.api").tree.close()
@@ -53,8 +99,8 @@ local function run_debug()
     end
     return
 end
-
-local function close_degug()
+-- }}}
+local function close_degug() -- {{{
     if DAP_UI_ENABLED then
         cmd("DapTerminate")
         require("dapui").close()
@@ -63,27 +109,41 @@ local function close_degug()
     end
     return
 end
+-- }}}
 
 local Terminal = require('toggleterm.terminal').Terminal
-local lazygit = Terminal:new({
+local lazygit = Terminal:new({ -- {{{
+    count = 10,
     cmd = "lazygit",
     dir = "git_dir",
     direction = "float",
     display_name = "git",
+    start_in_insert = true,
+    close_on_exit = true, -- close the terminal window when the process exits
     on_open = function(term)
         vim.cmd("startinsert!")
-        vim.api.nvim_buf_set_keymap(term.bufnr, n, "q", "<cmd>close<CR>", opt)
+        vim.api.nvim_buf_set_keymap(term.bufnr, 'n', "q", "<cmd>close<CR>", opt)
     end,
     -- function to run on closing the terminal
     -- on_close = function(term)
     --     vim.cmd("startinsert!")
     -- end,
 })
-function lazygit_toggle()
+local function lazygit_toggle()
     lazygit:toggle()
 end
 
 -- }}}
+local pgadmin = Terminal:new({ -- {{{
+    count = 11,
+    cmd = "pgadmin",
+    direction = "float",
+    display_name = "pgadmin",
+    hidden = true,
+})
+
+-- }}}
+
 -- Keys ----------------------------------------------------------------------{{{
 
 -- No highlight search
@@ -92,15 +152,17 @@ map(n, '<Esc>', '<Esc>:nohlsearch<CR>', opt)
 -- Terminal mode exit on escape
 map(t, '<Esc>', '<C-\\><C-n>', opt)
 
--- Insert empty row / space
+-- Insert empty row
 map(n, '<CR>', 'o<Esc>', opt)
+
+-- Insert space
 map(n, '<Space>', 'i<Space><Esc>', opt)
 
 -- Window resize
-map(n, '<Left>', '<C-w><', opt)
-map(n, '<Right>', '<C-w>>', opt)
-map(n, '<Up>', '<C-w>+', opt)
-map(n, '<Down>', '<C-w>-', opt)
+map(n, '<S-Left>', '<C-w><', opt)
+map(n, '<S-Right>', '<C-w>>', opt)
+map(n, '<S-Up>', '<C-w>+', opt)
+map(n, '<S-Down>', '<C-w>-', opt)
 
 -- Highlight word on cursor
 map(n, '*', '*N', opt)
@@ -159,9 +221,10 @@ map(n, '<C-c>', ':tabclose<CR>', opt)
 -- }}}
 -- Alt -----------------------------------------------------------------------{{{
 
--- -- Run
+-- Run
 -- map(n, '<M-r>', ':wa!<CR><C-w>l<C-w>l<C-w>j<C-w>ji<Up><CR><C-\\><C-n>', opt)
 -- map(t, '<M-r>', '<C-\\><C-n>:wa!<CR>i<Up><CR><C-\\><C-n>', opt)
+map(n, '<M-r>', re_run, opt)
 
 -- Quick activate macros 'm'
 map(n, '<M-m>', '@m', opt)
@@ -178,8 +241,10 @@ map(n, 'бб', ":Telescope buffers<CR>", opt) -- [ru]-бб
 -- 'a'
 
 -- 's' search & replace
-map(n, '<leader>s', ':%s///g<Left><Left>', opt)
-map(v, '<leader>s', ':s//', opt)
+-- 'S' print() input("STOP") exit(100500)
+map(n, '<leader>s', ':%s///g<Left><Left>', { noremap = true, silent = false })
+map(v, '<leader>s', ':s//', { noremap = true, silent = false })
+map(n, '<leader>S', 'oprint()<CR>input("STOP")<CR>exit(100500)<Esc>', opt)
 
 -- 'd' close buffer without close window
 -- 'D' toggle diagnostics view
@@ -204,11 +269,8 @@ map(n, '<leader>Z', ':Trouble diagnostics toggle focus=true <CR>', opt)
 
 -- 'x' quickfix buffer
 -- 'X' quickfix all
-map(n, '<leader>x',
-    ':TodoQuickFix<CR>:sleep 200m<CR>:x<CR>\
-    :Trouble quickfix toggle focus=true filter.buf=0<CR>', opt)
-map(n, '<leader>X',
-    ':Trouble todo toggle focus=true<CR>', opt)
+map(n, '<leader>x', ':Trouble quickfix toggle focus=true filter.buf=0<CR>', opt)
+map(n, '<leader>X', ':Trouble todo toggle focus=true<CR>', opt)
 
 -- 'c' lsp
 map(n, '<leader>c', ':Trouble lsp toggle focus=true<CR>', opt)
@@ -225,20 +287,21 @@ map(n, '<leader>b', ':DapToggleBreakpoint<CR>', opt)
 -- }}}
 -- <F1>..<F12> ---------------------------------------------------------------{{{
 
--- <F1> NvimTree
-map(n, '<F1>', tree_toggle, opt)
+-- <F1> TagBar
+map(n, '<F1>', ':TagbarToggle<CR>', opt)
 
--- <F2> TagBar
-map(n, '<F2>', ':TagbarToggle<CR>', opt)
+-- <F2> Trouble symbol
+map(n, '<F2>', ':Trouble symbols toggle focus=true<CR>', opt)
 
--- <F3> Trouble symbol
-map(n, '<F3>', ':Trouble symbols toggle focus=true<CR>', opt)
+-- <F3> NvimTree
+map(n, '<F3>', tree_toggle, opt)
 
 -- <F4> Git diff
 map(n, '<F4>', gitdiff_toggle, opt)
 
--- <F5> Run
-map(n, '<F5>', ':wa!<CR>:ToggleTerm<CR>i<Up><CR><C-\\><C-n>', opt)
+-- <F5> Run current buf
+map(n, '<F5>', run, opt)
+map(t, '<F5>', re_run, opt)
 
 -- <F6>..<F10> Debug
 map(n, '<F6>', run_debug, opt)
@@ -259,6 +322,10 @@ map(n, '<F12>',
     :so ~/.config/nvim/lua/key.lua<CR>\
     ', opt)
 
+-- <F24> fuck!
+map(n, '<F24>', ':CellularAutomaton make_it_rain<CR>', opt)
+
+
 -- }}}
 -- Diary session -------------------------------------------------------------{{{
 map(n, '<Home>',
@@ -269,20 +336,20 @@ map(n, '<Home>',
 -- AVIN session --------------------------------------------------------------{{{
 map(n, '<End>',
     ':source ~/AVIN/Session.vim<CR>\
-    :NvimTreeToggle<CR>\
-    <C-w><C-l><C-w><C-l><C-w><C-j>i source ~/env/bin/activate<CR><C-\\><C-n>\
-    :set nonu<CR><C-w><C-h>\
     :BufferLineTabRename 󱃖 code<CR>\
     :tabnext<CR>\
     :BufferLineTabRename  tmp<CR>\
     :tabnext<CR>\
-    :BufferLineTabRename  debug<CR>\
-    :tabnext<CR>\
     :BufferLineTabRename  plan<CR>\
-    :tabnext<CR>',
-    opt)
--- :DiffviewOpen<CR>\
--- :BufferLineTabRename  diff<CR>\
+    :tabnext<CR>\
+    :NvimTreeToggle<CR><C-w>l\
+    :1TermExec cmd="source ~/env/bin/activate" name=zsh<CR>\
+    :2TermExec cmd="pgadmin" name=pgadmin\
+    :TodoQuickFix<CR>:sleep 100m<CR>:x<CR><C-w>h\
+    :ToggleTerm<CR>\
+    ', opt)
+--     :BufferLineTabRename  debug<CR>\
+--     :tabnext<CR>\
 -- }}}
 -- Blog session --------------------------------------------------------------{{{
 map(n, '<PageDown>',

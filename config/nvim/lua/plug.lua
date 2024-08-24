@@ -33,7 +33,8 @@ Plug 'numToStr/Comment.nvim'                       -- comment any language
 Plug 'kevinhwang91/nvim-ufo'                       -- very good folding
 Plug 'kevinhwang91/promise-async'                  -- __dependency
 Plug 'preservim/tagbar'                            -- panel: class, func...
-Plug 'cohama/lexima.vim'                           -- auto pairs () [] {}
+-- Plug 'cohama/lexima.vim'                           -- auto pairs () [] {}
+Plug 'windwp/nvim-autopairs'                       -- auto pairs () [] {}
 Plug 'kylechui/nvim-surround'                      -- replace '' "" () [] {}
 Plug 'stevearc/conform.nvim'                       -- formatter
 Plug 'mfussenegger/nvim-lint'                      -- linter
@@ -66,6 +67,7 @@ Plug 'lervag/vimtex'                               -- latex
 Plug 'powerman/vim-plugin-ruscmd'                  -- commands on RU-layot
 Plug 'wakatime/vim-wakatime'                       -- timer, statistic
 Plug 'norcalli/nvim-colorizer.lua'                 -- color view utility
+Plug 'eandrju/cellular-automaton.nvim'             --
 
 vim.call('plug#end')
 
@@ -80,11 +82,12 @@ require('plugin.diffview')
 require('plugin.gruvbox-material')
 require('plugin.indent-blankline')
 require('plugin.kanagawa-again')
-require('plugin.lexima')
+-- require('plugin.lexima')
 require('plugin.lspconfig')
 require('plugin.lualine')
 require('plugin.mason')
 require('plugin.neodev')
+require('plugin.nvim-autopairs')
 require('plugin.nvim-cmp')
 require('plugin.nvim-colorizer')
 require('plugin.nvim-dap-python')
