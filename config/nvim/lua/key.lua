@@ -40,67 +40,48 @@ function gitdiff_toggle()
     end
 end
 
+DAP_UI_ENABLED = false
+local function run_debug()
+    if not DAP_UI_ENABLED then
+        require("dapui").open()
+        require("nvim-tree.api").tree.close()
+        DAP_UI_ENABLED = not DAP_UI_ENABLED
+        cmd("DapContinue")
+        cmd("1")
+    else
+        cmd("DapContinue")
+    end
+    return
+end
+
+local function close_degug()
+    if DAP_UI_ENABLED then
+        cmd("DapTerminate")
+        require("dapui").close()
+        require("nvim-tree.api").tree.open()
+        DAP_UI_ENABLED = not DAP_UI_ENABLED
+    end
+    return
+end
+
 local Terminal = require('toggleterm.terminal').Terminal
--- local lazygit  = Terminal:new({
---     cmd = "lazygit",
---     hidden = true,
---     display_name = "git", -- the name of the terminal
---     -- direction = string -- the layout for the terminal, same as the main config options
---     -- dir = string -- the directory for the terminal
---     close_on_exit = true, -- close the terminal window when the process exits
---     -- highlights = table -- a table with highlights
---     -- env = table -- key:value table with environmental variables passed to jobstart()
---     -- clear_env = bool -- use only environmental variables from `env`, passed to jobstart()
---     -- on_open = fun(t: Terminal) -- function to run when the terminal opens
---     -- on_close = fun(t: Terminal) -- function to run when the terminal closes
---     -- auto_scroll = boolean -- automatically scroll to the bottom on terminal output
---     -- callbacks for processing the output
---     -- on_stdout = fun(t: Terminal, job: number, data: string[], name: string) -- callback for processing output on stdout
---     -- on_stderr = fun(t: Terminal, job: number, data: string[], name: string) -- callback for processing output on stderr
---     -- on_exit = fun(t: Terminal, job: number, exit_code: number, name: string) -- function to run when terminal process exits
---
--- })
---
-
-
 local lazygit = Terminal:new({
     cmd = "lazygit",
     dir = "git_dir",
     direction = "float",
-    -- float_opts = {
-    --     border = "double",
-    -- },
-    -- function to run on opening the terminal
+    display_name = "git",
     on_open = function(term)
         vim.cmd("startinsert!")
-        vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<cmd>close<CR>", { noremap = true, silent = true })
+        vim.api.nvim_buf_set_keymap(term.bufnr, n, "q", "<cmd>close<CR>", opt)
     end,
     -- function to run on closing the terminal
     -- on_close = function(term)
     --     vim.cmd("startinsert!")
     -- end,
 })
-
 function lazygit_toggle()
     lazygit:toggle()
 end
-
-map(n, "<leader>C", lazygit_toggle, { noremap = true, silent = true })
-
-
-
-DAP_UI_ENABLED = false
-local function dap_ui_toggle()
-    require("dapui").toggle()
-    DAP_UI_ENABLED = not DAP_UI_ENABLED
-    if DAP_UI_ENABLED then
-        require("nvim-tree.api").tree.close()
-    else
-        require("nvim-tree.api").tree.open()
-    end
-    return
-end
-
 
 -- }}}
 -- Keys ----------------------------------------------------------------------{{{
@@ -178,9 +159,9 @@ map(n, '<C-c>', ':tabclose<CR>', opt)
 -- }}}
 -- Alt -----------------------------------------------------------------------{{{
 
--- Run
-map(n, '<M-r>', ':wa!<CR><C-w>l<C-w>l<C-w>j<C-w>ji<Up><CR><C-\\><C-n>', opt)
-map(t, '<M-r>', '<C-\\><C-n>:wa!<CR>i<Up><CR><C-\\><C-n>', opt)
+-- -- Run
+-- map(n, '<M-r>', ':wa!<CR><C-w>l<C-w>l<C-w>j<C-w>ji<Up><CR><C-\\><C-n>', opt)
+-- map(t, '<M-r>', '<C-\\><C-n>:wa!<CR>i<Up><CR><C-\\><C-n>', opt)
 
 -- Quick activate macros 'm'
 map(n, '<M-m>', '@m', opt)
@@ -190,8 +171,8 @@ map(n, '<M-m>', '@m', opt)
 -- }}}
 -- Leader --------------------------------------------------------------------{{{
 
--- ',' telescope buffers
-map(n, '<leader>,', ":Telescope buffers<CR>", opt)
+-- ',,' telescope buffers
+map(n, '<leader><leader>', ":Telescope buffers<CR>", opt)
 map(n, 'бб', ":Telescope buffers<CR>", opt) -- [ru]-бб
 
 -- 'a'
@@ -233,8 +214,10 @@ map(n, '<leader>X',
 map(n, '<leader>c', ':Trouble lsp toggle focus=true<CR>', opt)
 
 -- 'v' toggle term
+-- 'V' toggle term send selected
 map(n, '<leader>v', ':ToggleTerm<CR>', opt)
-map(n, '<leader>V', ':ToggleTermSendVisualSelection<CR>', opt)
+map(v, '<leader>v', ':ToggleTermSendVisualSelection<CR>', opt)
+map(v, '<leader>V', ':ToggleTermSendVisualLines<CR>', opt)
 
 -- 'b' breakpoint
 map(n, '<leader>b', ':DapToggleBreakpoint<CR>', opt)
@@ -251,26 +234,21 @@ map(n, '<F2>', ':TagbarToggle<CR>', opt)
 -- <F3> Trouble symbol
 map(n, '<F3>', ':Trouble symbols toggle focus=true<CR>', opt)
 
--- <F4> git diff
+-- <F4> Git diff
 map(n, '<F4>', gitdiff_toggle, opt)
--- <F16> lazygit
-map(n, '<F16>', lazygit_toggle, opt)
 
--- <F5>..<F10> Debug
-map(n, '<F5>', dap_ui_toggle, opt)
-map(n, '<F6>', ':DapContinue<CR>1<CR>', opt)
+-- <F5> Run
+map(n, '<F5>', ':wa!<CR>:ToggleTerm<CR>i<Up><CR><C-\\><C-n>', opt)
+
+-- <F6>..<F10> Debug
+map(n, '<F6>', run_debug, opt)
 map(n, '<F7>', ':DapStepInto<CR>', opt)
 map(n, '<F8>', ':DapStepOver<CR>', opt)
 map(n, '<F9>', ':DapStepOut<CR>', opt)
-map(n, '<F10>', ':DapTerminate<CR>', opt)
+map(n, '<F10>', close_degug, opt)
 
--- <F11>
-map(n, '<F11>', '\
-    :e ~/.config/nvim/lua/auto.lua<CR>\
-    :e ~/.config/nvim/lua/core.lua<CR>\
-    :e ~/.config/nvim/lua/key.lua<CR>\
-    :e ~/.config/nvim/lua/plug.lua<CR>\
-    ', opt)
+-- <F11> Lazygit
+map(n, "<F11>", lazygit_toggle, opt)
 
 -- <F12> source conf
 map(n, '<F12>',
@@ -280,15 +258,6 @@ map(n, '<F12>',
     :so ~/.config/nvim/lua/plug.lua<CR>\
     :so ~/.config/nvim/lua/key.lua<CR>\
     ', opt)
-
--- -- <F23> edit conf
--- map(n, '<F11>', '\
---     :e ~/.config/nvim/lua/auto.lua<CR>\
---     :e ~/.config/nvim/lua/core.lua<CR>\
---     :e ~/.config/nvim/lua/key.lua<CR>\
---     :e ~/.config/nvim/lua/plug.lua<CR>\
---     ', opt)
---
 
 -- }}}
 -- Diary session -------------------------------------------------------------{{{
