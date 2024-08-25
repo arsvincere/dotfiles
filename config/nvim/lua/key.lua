@@ -199,10 +199,10 @@ map(t, '<C-h>', '<C-\\><C-n>:wincmd h<CR>', opt)
 map(t, '<C-j>', '<C-\\><C-n>:wincmd j<CR>', opt)
 map(t, '<C-k>', '<C-\\><C-n>:wincmd k<CR>', opt)
 map(t, '<C-l>', '<C-\\><C-n>:wincmd l<CR>', opt)
-map(n, '<C-р>', ':wincmd h>', opt) -- [ru]
-map(n, '<C-о>', ':wincmd j>', opt) -- [ru]
-map(n, '<C-л>', ':wincmd k>', opt) -- [ru]
-map(n, '<C-д>', ':wincmd l>', opt) -- [ru]
+map(n, '<C-р>', ':wincmd h<CR>', opt) -- [ru]
+map(n, '<C-о>', ':wincmd j<CR>', opt) -- [ru]
+map(n, '<C-л>', ':wincmd k<CR>', opt) -- [ru]
+map(n, '<C-д>', ':wincmd l<CR>', opt) -- [ru]
 
 -- Split / close
 map(n, '<C-m>', ':split<CR>', opt)
@@ -345,7 +345,9 @@ map(n, '<End>',
     :NvimTreeToggle<CR><C-w>l\
     :1TermExec cmd="source ~/env/bin/activate" name=zsh<CR>\
     :2TermExec cmd="pgadmin" name=pgadmin\
+    ::sleep 100m\
     :TodoQuickFix<CR>:sleep 100m<CR>:x<CR><C-w>h\
+    ::sleep 100m\
     :ToggleTerm<CR>\
     ', opt)
 --     :BufferLineTabRename  debug<CR>\

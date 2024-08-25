@@ -120,8 +120,8 @@ alias dev="zellij -l dev"
 
 # python
 export PYTHONPATH="$PYTHONPATH:/home/alex/AVIN"
-export PYTHONPATH="$PYTHONPATH:/home/alex/env/lib/python3.12/site-packages"
-export PYTHONPATH="$PYTHONPATH:/usr/lib/python3.12/site-packages"
+# export PYTHONPATH="$PYTHONPATH:/home/alex/env/lib/python3.12/site-packages"
+# export PYTHONPATH="$PYTHONPATH:/usr/lib/python3.12/site-packages"
 
 # xplr
 export XPLR_BOOKMARK_FILE="$HOME/.config/xplr/bookmarks"
