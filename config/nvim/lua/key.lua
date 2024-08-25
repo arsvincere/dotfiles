@@ -144,6 +144,7 @@ local pgadmin = Terminal:new({ -- {{{
 
 -- }}}
 
+-- }}}
 -- Keys ----------------------------------------------------------------------{{{
 
 -- No highlight search
@@ -175,6 +176,16 @@ map(nv, 'k', 'gk', opt)
 map(nv, '0', 'g0', opt)
 map(nv, '$', 'g$', opt)
 map(nv, '^', 'g^', opt)
+
+-- map(n, "s", function() require("leap").leap({}) end)
+-- map(n, "S", function() require("leap").leap({ backward = true }) end)
+-- vim.keymap.set({ 'n', 'x', 'o' }, 'gs', '<Plug>(leap-from-window)')
+
+require('leap').create_default_mappings()
+-- vim.keymap.set({'n', 'x', 'o'}, 's',  '<Plug>(leap-forward)')
+-- vim.keymap.set({'n', 'x', 'o'}, 'S',  '<Plug>(leap-backward)')
+-- vim.keymap.set({'n', 'x', 'o'}, 'gs', '<Plug>(leap-from-window)')
+require('leap.user').set_repeat_keys('<Enter>', '<Space>')
 
 -- }}}
 -- Ctrl ----------------------------------------------------------------------{{{
@@ -284,6 +295,10 @@ map(v, '<leader>V', ':ToggleTermSendVisualLines<CR>', opt)
 -- 'b' breakpoint
 map(n, '<leader>b', ':DapToggleBreakpoint<CR>', opt)
 
+-- 'i' breakpoint
+map(n, '<leader>i', '::IlluminateToggle<CR>', opt)
+
+
 -- }}}
 -- <F1>..<F12> ---------------------------------------------------------------{{{
 
@@ -361,7 +376,7 @@ map(n, '<PageDown>',
     <C-w><C-h>',
     opt)
 -- }}}
--- Telescope ----------------------------------------------------------------{{{
+-- Telescope -----------------------------------------------------------------{{{
 local open_with_trouble = require("trouble.sources.telescope").open
 require('telescope').setup {
     defaults = {
@@ -380,3 +395,8 @@ require('telescope').setup {
     },
 }
 -- }}}
+-- Toggle f-string -----------------------------------------------------------{{{
+require('f-string-toggle').setup({
+    key_binding = "<leader>t",
+    key_binding_desc = "Toggle f-string"
+}) -- }}}

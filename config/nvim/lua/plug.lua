@@ -26,6 +26,7 @@ Plug 'ryanoasis/vim-devicons'                      -- __dependency
 Plug 'nvim-telescope/telescope.nvim'               -- buff, search, grep...
 Plug 'nvim-lua/plenary.nvim'                       -- __dependency
 Plug 'famiu/bufdelete.nvim'                        -- del buf not close window
+Plug 'ggandor/leap.nvim'                           -- fast text motion
 -- IDE
 Plug 'nvim-treesitter/nvim-treesitter'             -- parsing library
 Plug 'nvim-treesitter/nvim-treesitter-textobjects' -- __dependency
@@ -33,7 +34,6 @@ Plug 'numToStr/Comment.nvim'                       -- comment any language
 Plug 'kevinhwang91/nvim-ufo'                       -- very good folding
 Plug 'kevinhwang91/promise-async'                  -- __dependency
 Plug 'preservim/tagbar'                            -- panel: class, func...
--- Plug 'cohama/lexima.vim'                           -- auto pairs () [] {}
 Plug 'windwp/nvim-autopairs'                       -- auto pairs () [] {}
 Plug 'kylechui/nvim-surround'                      -- replace '' "" () [] {}
 Plug 'stevearc/conform.nvim'                       -- formatter
@@ -41,6 +41,7 @@ Plug 'mfussenegger/nvim-lint'                      -- linter
 Plug 'folke/trouble.nvim'                          -- list diag, fzf, lsp...
 Plug 'folke/todo-comments.nvim'                    -- todo, fix -> trouble
 Plug 'akinsho/toggleterm.nvim'                     -- multiple terminals
+Plug 'RRethy/vim-illuminate'                       -- hightlight cursor word
 -- Autocomplete
 Plug 'williamboman/mason.nvim'                     -- manage language server
 Plug 'williamboman/mason-lspconfig.nvim'           -- __dependency
@@ -61,6 +62,8 @@ Plug 'folke/neodev.nvim'                           -- __dependency
 Plug 'mortepau/codicons.nvim'                      -- debug font icons
 -- git
 Plug 'sindrets/diffview.nvim'                      -- git diff
+-- Python
+Plug 'roobert/f-string-toggle.nvim'                -- f-string toggle
 -- LaTex
 Plug 'lervag/vimtex'                               -- latex
 -- Other
@@ -79,10 +82,11 @@ require('plugin.comment')
 require('plugin.conforn')
 require('plugin.dashboard')
 require('plugin.diffview')
+require('plugin.f-string-toggle')
 require('plugin.gruvbox-material')
 require('plugin.indent-blankline')
 require('plugin.kanagawa-again')
--- require('plugin.lexima')
+require('plugin.leap')
 require('plugin.lspconfig')
 require('plugin.lualine')
 require('plugin.mason')
@@ -102,6 +106,7 @@ require('plugin.tagbar')
 require('plugin.telescope')
 require('plugin.treesitter')
 require('plugin.trouble')
+require('plugin.vim-illuminate')
 require('plugin.todo-comments')
 require('plugin.toggleterm')
 require('plugin.vim-plugin-ruscmd')
