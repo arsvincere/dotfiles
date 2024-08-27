@@ -152,6 +152,7 @@ map(n, '<Esc>', '<Esc>:nohlsearch<CR>', opt)
 
 -- Terminal mode exit on escape
 map(t, '<Esc>', '<C-\\><C-n>', opt)
+-- map(t, '<C-Esc>', '<C-\\><C-n>', opt)
 
 -- Insert empty row
 map(n, '<CR>', 'o<Esc>', opt)
@@ -177,22 +178,24 @@ map(nv, '0', 'g0', opt)
 map(nv, '$', 'g$', opt)
 map(nv, '^', 'g^', opt)
 
--- map(n, "s", function() require("leap").leap({}) end)
--- map(n, "S", function() require("leap").leap({ backward = true }) end)
--- vim.keymap.set({ 'n', 'x', 'o' }, 'gs', '<Plug>(leap-from-window)')
-
-require('leap').create_default_mappings()
+map(n, "f", '<Plug>(leap-forward)', opt)
+map(n, "F", '<Plug>(leap-backward)', opt)
+map(n, 'gf', '<Plug>(leap-from-window)', opt)
+require('leap.user').set_repeat_keys('<C-Enter>', '<M-Space>')
+-- require('leap').create_default_mappings()
 -- vim.keymap.set({'n', 'x', 'o'}, 's',  '<Plug>(leap-forward)')
 -- vim.keymap.set({'n', 'x', 'o'}, 'S',  '<Plug>(leap-backward)')
 -- vim.keymap.set({'n', 'x', 'o'}, 'gs', '<Plug>(leap-from-window)')
-require('leap.user').set_repeat_keys('<Enter>', '<Space>')
 
 -- }}}
 -- Ctrl ----------------------------------------------------------------------{{{
 
 -- save file and folding  [ru-en]
-map(ni, '<C-s>', save_file_and_fold, opt)
-map(ni, '<C-ы>', save_file_and_fold, opt)
+map(n, '<C-s>', save_file_and_fold, opt)
+map(n, '<C-ы>', save_file_and_fold, opt)
+
+-- save all
+map(n, '<C-S-s>', ":wa!<CR>", opt)
 
 -- select all [ru-en]
 map(n, '<C-a>', 'ggVG', opt)
@@ -206,14 +209,14 @@ map(n, '<C-h>', ':wincmd h<CR>', opt)
 map(n, '<C-j>', ':wincmd j<CR>', opt)
 map(n, '<C-k>', ':wincmd k<CR>', opt)
 map(n, '<C-l>', ':wincmd l<CR>', opt)
-map(t, '<C-h>', '<C-\\><C-n>:wincmd h<CR>', opt)
-map(t, '<C-j>', '<C-\\><C-n>:wincmd j<CR>', opt)
-map(t, '<C-k>', '<C-\\><C-n>:wincmd k<CR>', opt)
-map(t, '<C-l>', '<C-\\><C-n>:wincmd l<CR>', opt)
 map(n, '<C-р>', ':wincmd h<CR>', opt) -- [ru]
 map(n, '<C-о>', ':wincmd j<CR>', opt) -- [ru]
 map(n, '<C-л>', ':wincmd k<CR>', opt) -- [ru]
 map(n, '<C-д>', ':wincmd l<CR>', opt) -- [ru]
+-- map(t, '<C-h>', '<C-\\><C-n>:wincmd h<CR>', opt)
+-- map(t, '<C-j>', '<C-\\><C-n>:wincmd j<CR>', opt)
+-- map(t, '<C-k>', '<C-\\><C-n>:wincmd k<CR>', opt)
+-- map(t, '<C-l>', '<C-\\><C-n>:wincmd l<CR>', opt)
 
 -- Split / close
 map(n, '<C-m>', ':split<CR>', opt)
@@ -232,14 +235,11 @@ map(n, '<C-c>', ':tabclose<CR>', opt)
 -- }}}
 -- Alt -----------------------------------------------------------------------{{{
 
--- Run
--- map(n, '<M-r>', ':wa!<CR><C-w>l<C-w>l<C-w>j<C-w>ji<Up><CR><C-\\><C-n>', opt)
--- map(t, '<M-r>', '<C-\\><C-n>:wa!<CR>i<Up><CR><C-\\><C-n>', opt)
+-- Run last
 map(n, '<M-r>', re_run, opt)
 
 -- Quick activate macros 'm'
 map(n, '<M-m>', '@m', opt)
-
 
 
 -- }}}
@@ -295,9 +295,18 @@ map(v, '<leader>V', ':ToggleTermSendVisualLines<CR>', opt)
 -- 'b' breakpoint
 map(n, '<leader>b', ':DapToggleBreakpoint<CR>', opt)
 
--- 'i' breakpoint
-map(n, '<leader>i', '::IlluminateToggle<CR>', opt)
+-- 'r' run ___
+-- 'rp' run pgadmin
+map(n, '<leader>rp', ':9TermExec cmd="pgadmin" name=pgadmin<CR>', opt)
 
+-- 't' toggle f-string
+require('f-string-toggle').setup({
+    key_binding = "<leader>t",
+    key_binding_desc = "Toggle f-string"
+})
+
+-- 'i' illuminate word
+map(n, '<leader>i', ':IlluminateToggle<CR>', opt)
 
 -- }}}
 -- <F1>..<F12> ---------------------------------------------------------------{{{
@@ -358,12 +367,8 @@ map(n, '<End>',
     :BufferLineTabRename  plan<CR>\
     :tabnext<CR>\
     :NvimTreeToggle<CR><C-w>l\
-    :1TermExec cmd="source ~/env/bin/activate" name=zsh<CR>\
-    :2TermExec cmd="pgadmin" name=pgadmin\
-    ::sleep 100m\
+    :TermExec cmd="source ~/env/bin/activate" name=zsh size=1<CR>\
     :TodoQuickFix<CR>:sleep 100m<CR>:x<CR><C-w>h\
-    ::sleep 100m\
-    :ToggleTerm<CR>\
     ', opt)
 --     :BufferLineTabRename  debug<CR>\
 --     :tabnext<CR>\
@@ -395,8 +400,3 @@ require('telescope').setup {
     },
 }
 -- }}}
--- Toggle f-string -----------------------------------------------------------{{{
-require('f-string-toggle').setup({
-    key_binding = "<leader>t",
-    key_binding_desc = "Toggle f-string"
-}) -- }}}

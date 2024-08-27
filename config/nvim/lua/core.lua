@@ -36,9 +36,9 @@ acmd('BufNewFile', { pattern = '*.fg', command = 'set filetype=fg' })
 -- }}}
 -- Autosave ---------------------------------------------------------------{{{
 -- Автосохранение при потере фокуса
-acmd('BufLeave', { pattern = '*.md', command = 'w!' })
-acmd('BufLeave', { pattern = '*.un', command = 'w!' })
-acmd('BufLeave', { pattern = '*.adoc', command = 'w!' })
+acmd('BufLeave', { pattern = '*.md', command = 'silent w!' })
+acmd('BufLeave', { pattern = '*.un', command = 'silent w!' })
+acmd('BufLeave', { pattern = '*.adoc', command = 'silent w!' })
 -- }}}
 -- Folding ----------------------------------------------------------------{{{
 opt.foldenable = true     -- При открытии файла скрывать блоки
