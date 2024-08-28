@@ -3,7 +3,7 @@ if [ -f $HOME/.Xresources ]; then
 fi
 
 # export DRI_PRIME=1
-# exec i3
-exec awesome
+exec i3
+# exec awesome
 # exec dwm
 # exec qtile start

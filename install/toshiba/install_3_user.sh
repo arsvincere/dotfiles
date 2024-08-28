@@ -1,28 +1,27 @@
 #!/bin/bash
 
-# Автозапуск NetworkManager
+echo ":: connecting to internet"
 systemctl start NetworkManager.service
 systemctl enable NetworkManager.service
-
-# Подключаем wifi
 nmcli device wifi list
 nmcli device wifi connect Keenetic-8471 password Q2Wobiko
 
-# Добавляем пользователя
+echo ":: add user 'alex'"
 echo "add user 'alex'"
 useradd -m -g users -G wheel -s /bin/bash alex
 
-# Устанавливаем пароль пользователя
-echo "Enter passwd for alex:"
+echo ">> enter passwd for alex:"
 passwd alex
 
-## Allow members of group wheel to execute any command
+echo ":: add in sudoers"
 sudo echo "%wheel ALL=(ALL:ALL) ALL" >> /etc/sudoers
 
-# Same thing without a password
+echo ":: set 'pacman' without passwd"
 sudo echo "%wheel ALL=(ALL:ALL) NOPASSWD: /usr/bin/pacman" >> /etc/sudoers
 
-echo "Continue:"
+echo "-----------------------------------------------------------------------"
+echo ">>>---> Continue:"
+echo " - unmount flash"
 echo " - reboot"
 echo " - login as alex"
 echo " - run install 4 - packages"

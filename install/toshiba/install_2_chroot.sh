@@ -1,40 +1,41 @@
 #!/bin/bash
 
-# Прописываем имя компьютера.
-echo "pc" > /etc/hostname
+echo ":: set hostname"
+echo "toshiba" > /etc/hostname
 
-# Настроим часы (Для Москвы)
+echo ":: set localtime Moscow"
 ln -sf /usr/share/zoneinfo/Europe/Moscow /etc/localtime
 
-# Добавляем локали
+echo ":: set locales"
 echo -e "en_US.UTF-8 UTF-8\nru_RU.UTF-8 UTF-8" >> /etc/locale.gen
-
-# Обновим текущую локаль системы
 locale-gen
 
-# Указываем язык системы
+echo ":: set locale 'en'"
 echo 'LANG="en_US.UTF-8"' > /etc/locale.conf
 
-# Указываем keymap для console + прописываем шрифт
+echo ":: set keymap & console font"
 echo 'KEYMAP=ru' >> /etc/vconsole.conf
 echo 'FONT=cyr-sun16' >> /etc/vconsole.conf
 
-# Создадим загрузочный RAM диск
+echo ":: mkinitcpio"
 mkinitcpio -p linux
 
 # Изменим пароль root
-echo ">>>---> set root passwd"
+echo ">> set root passwd:"
 passwd
 
-# Установка загрузчика
+echo ":: download grub"
 pacman -S grub
+
+echo ":: install grub"
 grub-install /dev/sda
 
-# Копируем конфиг grub
+echo ":: copy grub.cfg"
 cp config/grub/grub.cfg /boot/grub/grub.cfg
 
 echo "-----------------------------------------------------------------------"
 echo ">>>---> Continue:"
+echo "- unmount flash"
 echo "- exit"
 echo "- reboot"
 echo "- login as root"
