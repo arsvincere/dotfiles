@@ -24,8 +24,7 @@ opt.background = "dark"           -- используется некоторым
 opt.so = 20                       -- 20 строк перед скоролом экрана
 opt.linebreak = true              -- Переносить по словам
 opt.spelllang = { 'en_us', 'ru' } -- Словари рус eng
-opt.clipboard = 'unnamedplus'     -- Используем системный буфер обмена
--- install xsel чтобы заработало
+opt.clipboard = 'unnamedplus'     -- Cистемный буфер обмена (yay -S xsel)
 
 acmd('BufRead', { pattern = '*.un', command = 'set filetype=un' })
 acmd('BufNewFile', { pattern = '*.un', command = 'set filetype=un' })
@@ -62,8 +61,8 @@ opt.smartcase = true  -- Зависимый если есть UppperCase
 
 -- Automatically remove trailing whitespace.
 cmd([[
-    match ExtraWhitespace /\s\+$/
-    autocmd BufWritePre * %s/\s\+$//e
+match ExtraWhitespace /\s\+$/
+autocmd BufWritePre * %s/\s\+$//e
 ]])
 
 -- Remove line lenght marker for selected filetypes

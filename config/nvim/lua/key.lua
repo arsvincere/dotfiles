@@ -249,13 +249,12 @@ map(n, '<M-m>', '@m', opt)
 map(n, '<leader><leader>', ":Telescope buffers<CR>", opt)
 map(n, 'бб', ":Telescope buffers<CR>", opt) -- [ru]-бб
 
--- 'a'
+-- 'a' print() input("STOP") exit(100500)
+map(n, '<leader>a', 'oprint()<CR>input("STOP")<CR>exit(100500)<Esc>', opt)
 
 -- 's' search & replace
--- 'S' print() input("STOP") exit(100500)
 map(n, '<leader>s', ':%s///g<Left><Left>', { noremap = true, silent = false })
 map(v, '<leader>s', ':s//', { noremap = true, silent = false })
-map(n, '<leader>S', 'oprint()<CR>input("STOP")<CR>exit(100500)<Esc>', opt)
 
 -- 'd' close buffer without close window
 -- 'D' toggle diagnostics view
