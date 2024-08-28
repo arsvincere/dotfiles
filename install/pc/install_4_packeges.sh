@@ -11,10 +11,8 @@ git config --global user.email "mr.alexavin@gmail.com"
 
 # Установка AUR
 pacman -Syu
-cd /tmp
 git clone https://aur.archlinux.org/yay.git
 cd yay && makepkg -sir --needed --noconfirm --skippgpcheck
-cd ..
 rm -rf yay
 
 # Install my packages

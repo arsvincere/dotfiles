@@ -3,6 +3,12 @@
 # Установим Х и свободные драйвера
 # pacman -S xorg-server xorg-drivers xorg-xinit
 
+echo ":: connecting to internet"
+systemctl start NetworkManager.service
+systemctl enable NetworkManager.service
+nmcli device wifi list
+nmcli device wifi connect Keenetic-8471 password Q2Wobiko
+
 echo ":: install 'git'"
 sudo pacman -S git
 git config --global user.name "Alex Avin"
@@ -10,14 +16,12 @@ git config --global user.email "mr.alexavin@gmail.com"
 
 echo ":: install 'yay'"
 pacman -Syu
-cd /tmp
 git clone https://aur.archlinux.org/yay.git
 cd yay && makepkg -sir --needed --noconfirm --skippgpcheck
-cd ..
 rm -rf yay
 
 echo ":: install all packages"
-yay -S --needed --noconfirm - < packages.txt
+yay -S --needed --noconfirm - < install/toshiba/packages.txt
 
 echo ":: install nvim plug"
 curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
