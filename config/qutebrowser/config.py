@@ -158,7 +158,8 @@ c.tabs.background = True
 ##   - bottom
 ##   - left
 ##   - right
-c.tabs.position = "top"
+# c.tabs.position = "top"
+c.tabs.position = "left"
 
 ## When to show the tab bar.
 ## Type: String
@@ -2308,6 +2309,8 @@ config.bind("H", "back")
 config.bind("l", "tab-next")
 config.bind("h", "tab-prev")
 config.bind("L", "forward")
+config.bind("J", "tab-next")
+config.bind("K", "tab-prev")
 # config.bind('M', 'bookmark-add')
 # config.bind('N', 'search-prev')
 # config.bind('O', 'cmd-set-text -s :open -t')

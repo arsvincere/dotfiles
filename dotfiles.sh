@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "== Backup conf start"
 
-DIR=~/ya/conf/config/
+DIR=~/conf/config/
 
 echo ":: copy grub cfg"
 mkdir -p "$DIR/grub"
@@ -17,10 +17,10 @@ cp ~/.zshrc                                     "$DIR/zsh/.zshrc"
 cp ~/.zprofile                                  "$DIR/zsh/.zprofile"
 cp ~/.oh-my-zsh/custom/themes/jovial.zsh-theme  "$DIR/zsh/jovial.zsh-theme"
 
-echo ":: copy yandex-disk config"
-mkdir -p "$DIR/yandex-disk"
-cp ~/.config/yandex-disk/config.cfg             "$DIR/yandex-disk/config.cfg"
-
+# echo ":: copy yandex-disk config"
+# mkdir -p "$DIR/yandex-disk"
+# cp ~/.config/yandex-disk/config.cfg             "$DIR/yandex-disk/config.cfg"
+#
 echo ":: copy latex"
 mkdir -p "$DIR/latex"
 cp ~/.latexmkrc                                 "$DIR/latex/.latexmkrc"
