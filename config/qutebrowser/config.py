@@ -115,8 +115,8 @@ c.statusbar.show = "always"
 ## for a blank page.
 ## Type: FuzzyUrl
 # c.url.default_page = 'https://start.duckduckgo.com/'
-# c.url.default_page = "https://arsvincere.com"
-c.url.default_page = "https://google.ru"
+c.url.default_page = "https://arsvincere.com"
+# c.url.default_page = "https://google.ru"
 
 ## How to behave when the last tab is closed. If the
 ## `tabs.tabs_are_windows` setting is set, this is ignored and the
@@ -129,8 +129,7 @@ c.url.default_page = "https://google.ru"
 ##   - default-page: Load the default page.
 ##   - close: Close the window.
 # c.tabs.last_close = 'default-page'
-# c.tabs.last_close = 'blank'
-c.tabs.last_close = "default-page"
+c.tabs.last_close = "blank"
 
 ## Open new tabs (middleclick/ctrl+click) in the background.
 ## Type: Bool

@@ -12,7 +12,7 @@
 # sudo rm -rf ~/.cache/thumbnails/*
 
 case $1 in
-    "upd")
+    "update")
         yay -Syu --noconfirm ;;
     "clear")
         yay -Sc --noconfirm ;;
@@ -21,8 +21,19 @@ case $1 in
         yay -Rsn $(pacman -Qdtq) --noconfirm
         sudo rm -rf ~/.cache/thumbnails/* ;;
     "dotfiles")
-        bash /home/alex/conf/dotfiles.sh ;;
+        bash /home/alex/conf/dotfiles.sh update ;;
     "backup")
         bash /home/alex/conf/backup.sh ;;
+    "archive")
+        bash /home/alex/conf/archive.sh ;;
+    "upd_all")
+        bash /home/alex/conf/archive.sh
+        bash /home/alex/conf/backup.sh
+        bash /home/alex/conf/dotfiles.sh update
+        yay -Syu --noconfirm
+        yay -Scc --noconfirm
+        yay -Rsn $(pacman -Qdtq) --noconfirm
+        sudo rm -rf ~/.cache/thumbnails/*
+        ;;
     *) echo "Unknown command. Try again"
 esac
