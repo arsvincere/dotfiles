@@ -167,12 +167,12 @@ c.tabs.position = "left"
 ##   - never: Always hide the tab bar.
 ##   - multiple: Hide the tab bar if only one tab is open.
 ##   - switching: Show the tab bar when switching tabs.
-c.tabs.show = "always"
+c.tabs.show = "switching"
 
 ## Duration (in milliseconds) to show the tab bar before hiding it when
 ## tabs.show is set to 'switching'.
 ## Type: Int
-c.tabs.show_switching_delay = 1000
+c.tabs.show_switching_delay = 3000
 
 ## Format to use for the tab title. The following placeholders are
 ## defined:  * `{perc}`: Percentage as a string like `[10%]`. *
@@ -2310,6 +2310,8 @@ config.bind("h", "tab-prev")
 config.bind("L", "forward")
 config.bind("J", "tab-next")
 config.bind("K", "tab-prev")
+config.bind("<Down>", "tab-next")
+config.bind("<Up>", "tab-prev")
 # config.bind('M', 'bookmark-add')
 # config.bind('N', 'search-prev')
 # config.bind('O', 'cmd-set-text -s :open -t')

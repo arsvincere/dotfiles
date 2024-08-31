@@ -6,5 +6,5 @@
 
 config_version: 2
 settings:
-  backend:
-    global: webengine
+  tabs.show:
+    global: switching

@@ -9,7 +9,7 @@ lingvo https://www.lingvolive.com/en-us
 gmail https://mail.google.com/mail/u/0/?hl=ru#inbox
 google drive https://drive.google.com/drive/my-drive?hl=ru
 yandex disk https://disk.yandex.ru/client/disk
-kinopoisk online https://hd.kinopoisk.ru/?utm_referrer=www.google.com
+kinopoisk online https://hd.kinopoisk.ru/
 интернетометр https://yandex.ru/internet/
 tradingview https://ru.tradingview.com/chart/99F7xfE5/?symbol=MOEX%3AIMOEX
 tinkoff terminal https://www.tbank.ru/terminal/
@@ -21,7 +21,7 @@ tinkoff api https://tinkoff.github.io/investAPI/
 tinkoff api examples https://tinkoff.github.io/invest-python/examples/
 tinkoff api github https://github.com/Tinkoff/invest-python
 postgresql wiki ru https://wiki.postgresql.org/wiki/Main_Page/ru
-pg doc https://postgrespro.ru/docs/postgresql/9.6/index
+pg doc https://postgrespro.ru/docs/postgresql/16/index
 nerd-font cheat-sheet https://www.nerdfonts.com/cheat-sheet
 ascii generator http://www.network-science.de/ascii/
 color sphere https://colorsphere.app/#dot=false&harmony=Five-Tone&hue=0&saturation=78&lightness=63&quantize=0&space=RYB&theme=dark&vision=Normal
@@ -40,3 +40,4 @@ kanagawa paper dotfiles https://github.com/sho-87/dotfiles
 xplr copy paste https://blog.xplr.dev/post/27231/How-to-manage-files-using-xplr
 whatsapp https://web.whatsapp.com/
 selfhosted https://habr.com/ru/articles/826832/
+algo Nautilus Trader https://nautilustrader.io/
