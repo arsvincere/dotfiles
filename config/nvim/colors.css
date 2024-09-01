@@ -863,15 +863,11 @@ nov            autumn     4   lu                      red     red
 ==============================================================================
 
 
-base    spring = '#BF616A',
+high    summer = '#C5727A',
 bright  summer = '#C5727A',
+base    spring = '#BF616A',
 dim     autumn = '#B74E58',
 dark    winter = '#43242B',
-
-black 25
-white
-cold
-nord
 
 [ ] VIM themes
     21 декабря - зимнее солнце - конец года - даркнесс

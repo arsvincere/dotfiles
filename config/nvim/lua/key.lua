@@ -359,15 +359,16 @@ map(n, '<Home>',
 -- AVIN session --------------------------------------------------------------{{{
 map(n, '<End>',
     ':source ~/AVIN/Session.vim<CR>\
+    :TodoQuickFix<CR>:sleep 100m<CR>:x<CR>\
     :BufferLineTabRename 󱃖 code<CR>\
     :tabnext<CR>\
     :BufferLineTabRename  tmp<CR>\
     :tabnext<CR>\
     :BufferLineTabRename  plan<CR>\
     :tabnext<CR>\
-    :NvimTreeToggle<CR><C-w>l\
-    :TermExec cmd="source ~/env/bin/activate" name=zsh size=1<CR>\
-    :TodoQuickFix<CR>:sleep 100m<CR>:x<CR><C-w>h\
+    :TermExec cmd="source ~/env/bin/activate" name=zsh\
+    :NvimTreeToggle\
+    :wincmd l<CR>\
     ', opt)
 --     :BufferLineTabRename  debug<CR>\
 --     :tabnext<CR>\
