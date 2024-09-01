@@ -2524,7 +2524,7 @@ c.colors.completion.even.bg = base00
 c.colors.completion.category.fg = base0A
 
 # Background color of the completion widget category headers.
-c.colors.completion.category.bg = base01
+c.colors.completion.category.bg = base00
 
 # Top border color of the completion widget category headers.
 c.colors.completion.category.border.top = base00
