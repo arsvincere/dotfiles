@@ -11,14 +11,14 @@ cmp.setup({
             { behavior = cmp.SelectBehavior.Insert }), { 'i' }),
         ['<S-Tab>'] = cmp.mapping(cmp.mapping.select_prev_item(
             { behavior = cmp.SelectBehavior.Insert }), { 'i' }),
-        ['<C-k>'] = cmp.mapping(cmp.mapping.select_prev_item(
+        ['<Down>'] = cmp.mapping(cmp.mapping.select_next_item(
             { behavior = cmp.SelectBehavior.Insert }), { 'i' }),
-        ['<C-j>'] = cmp.mapping(cmp.mapping.select_next_item(
+        ['<Up>'] = cmp.mapping(cmp.mapping.select_prev_item(
             { behavior = cmp.SelectBehavior.Insert }), { 'i' }),
         ['<C-h>'] = cmp.mapping.abort(),
         ['<C-l>'] = cmp.mapping.complete(),
-        ['<Up>'] = cmp.mapping.scroll_docs(-1),
-        ['<Down>'] = cmp.mapping.scroll_docs(1),
+        ['<C-j>'] = cmp.mapping.scroll_docs(1),
+        ['<C-k>'] = cmp.mapping.scroll_docs(-1),
         ['<CR>'] = cmp.mapping.confirm({ select = true }),
     },
 
@@ -36,10 +36,10 @@ cmp.setup({
         -- completion = cmp.config.window.bordered(),
         -- documentation = cmp.config.window.bordered(),
         completion = cmp.config.window.bordered({
-            winhighlight = "Normal:Normal,FloatBorder:BorderBG,CursorLine:PmenuSel,Search:None",
+            winhighlight = "Normal:Normal,FloatBorder:BorderBG,CursorLine:PmenuSel,Search:Search",
         }),
         documentation = cmp.config.window.bordered({
-            winhighlight = "Normal:Normal,FloatBorder:BorderBG,CursorLine:PmenuSel,Search:None",
+            winhighlight = "Normal:Normal,FloatBorder:BorderBG,CursorLine:PmenuSel,Search:Search",
         }),
     },
 
