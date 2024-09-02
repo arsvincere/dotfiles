@@ -126,5 +126,3 @@ export PYTHONPATH="$PYTHONPATH:/home/alex/AVIN"
 # xplr
 export XPLR_BOOKMARK_FILE="$HOME/.config/xplr/bookmarks"
 
-# Start ssh-agent
-eval $(ssh-agent)

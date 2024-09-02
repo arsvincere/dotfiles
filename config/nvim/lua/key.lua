@@ -363,8 +363,10 @@ map(n, '<End>',
     :BufferLineTabRename 󱃖 code<CR>\
     :tabnext<CR>\
     :BufferLineTabRename  tmp<CR>\
+    :NvimTreeToggle\
     :tabnext<CR>\
     :BufferLineTabRename  plan<CR>\
+    :NvimTreeToggle\
     :tabnext<CR>\
     :TermExec cmd="source ~/env/bin/activate" name=zsh\
     :NvimTreeToggle\
