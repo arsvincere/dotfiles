@@ -5,6 +5,7 @@ echo "pc" > /etc/hostname
 
 # Настроим часы (Для Москвы)
 ln -sf /usr/share/zoneinfo/Europe/Moscow /etc/localtime
+timedatectl set-ntp true
 
 # Добавляем локали
 echo -e "en_US.UTF-8 UTF-8\nru_RU.UTF-8 UTF-8" >> /etc/locale.gen
