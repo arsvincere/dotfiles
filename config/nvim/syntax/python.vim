@@ -222,7 +222,7 @@ if !exists("python_no_builtin_highlight")
   syn keyword pythonBuiltin	hasattr hash help hex id input isinstance
   syn keyword pythonBuiltin	issubclass iter len locals map max
   syn keyword pythonBuiltin	memoryview min next oct open ord pow
-  syn keyword pythonBuiltin	print property range repr reversed round 
+  syn keyword pythonBuiltin	print property range repr reversed round
   syn keyword pythonBuiltin	setattr slice sorted staticmethod sum super
   syn keyword pythonBuiltin	tuple type vars zip __import__
 

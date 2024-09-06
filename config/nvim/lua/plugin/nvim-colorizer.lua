@@ -9,11 +9,9 @@
 -- Use `background` for everything else.
 require 'colorizer'.setup {
     'css',
-    'color',
     'javascript',
-    'bg',
 
     lua = { mode = 'foreground', },
+    vim = { mode = 'foreground', },
     html = { mode = 'foreground', },
-    fg = { mode = 'foreground', }
 }
