@@ -87,6 +87,12 @@ local function re_run() -- {{{
     end
 end
 -- }}}
+local function run_pytest() -- {{{
+    cmd('wa!')
+    LAST_RUN = ':8TermExec cmd="pytest test" name=pytest<CR>'
+    cmd(LAST_RUN)
+end
+-- }}}
 local function run_debug() -- {{{
     if not DAP_UI_ENABLED then
         require("dapui").open()
@@ -237,6 +243,7 @@ map(n, '<C-c>', ':tabclose<CR>', opt)
 
 -- Run last
 map(n, '<M-r>', re_run, opt)
+map(t, '<M-r>', re_run, opt)
 
 -- Quick activate macros 'm'
 map(n, '<M-m>', '@m', opt)
@@ -244,10 +251,10 @@ map(n, '<M-m>', '@m', opt)
 
 -- }}}
 -- Leader --------------------------------------------------------------------{{{
-
--- ',,' telescope buffers
-map(n, '<leader><leader>', ":Telescope buffers<CR>", opt)
-map(n, 'бб', ":Telescope buffers<CR>", opt) -- [ru]-бб
+-- ',,'
+map(n, '<leader><leader>', ':ToggleTerm<CR>', opt)
+map(v, '<leader><leader>', ':ToggleTermSendVisualSelection<CR>', opt)
+-- map(v, '<leader>.', ':ToggleTermSendVisualLines<CR>', opt)
 
 -- 'a' print() input("STOP") exit(100500)
 map(n, '<leader>a', 'oprint()<CR>input("STOP")<CR>exit(100500)<Esc>', opt)
@@ -285,17 +292,17 @@ map(n, '<leader>X', ':Trouble todo toggle focus=true<CR>', opt)
 -- 'c' lsp
 map(n, '<leader>c', ':Trouble lsp toggle focus=true<CR>', opt)
 
--- 'v' toggle term
--- 'V' toggle term send selected
-map(n, '<leader>v', ':ToggleTerm<CR>', opt)
-map(v, '<leader>v', ':ToggleTermSendVisualSelection<CR>', opt)
-map(v, '<leader>V', ':ToggleTermSendVisualLines<CR>', opt)
+-- 'v'
 
 -- 'b' breakpoint
 map(n, '<leader>b', ':DapToggleBreakpoint<CR>', opt)
 
--- 'r' run ___
--- 'rp' run pgadmin
+-- 'e' telescope opened buffers
+map(n, '<leader>e', ":Telescope buffers<CR>", opt)
+map(n, 'бу', ":Telescope buffers<CR>", opt) -- [ru]-бб
+
+-- 'r' run ____
+map(n, '<leader>rt', run_pytest, opt)
 map(n, '<leader>rp', ':9TermExec cmd="pgadmin" name=pgadmin<CR>', opt)
 
 -- 't' toggle f-string
@@ -304,7 +311,7 @@ require('f-string-toggle').setup({
     key_binding_desc = "Toggle f-string"
 })
 
--- 'i' illuminate word
+-- 'i' illuminate word on cursor
 map(n, '<leader>i', ':IlluminateToggle<CR>', opt)
 
 -- }}}

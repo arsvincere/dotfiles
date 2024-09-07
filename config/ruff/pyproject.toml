@@ -38,7 +38,7 @@ target-version = "py38"
 
 [tool.ruff.lint]
 select = [
-    # default 
+    # default
     "E4", "E7", "E9", "F",
     # pycodestyle
     "E",
@@ -59,6 +59,7 @@ ignore = [
     "F405", # may be undefined, or defined from star imports
     "F821", # undefine name (не смотря на __future__.annotation)
     "B011", # assert False
+    "UP007", # Optional[int] -> Use `X | Y` for type annotations
 ]
 
 # Allow fix for all enabled rules (when `--fix`) is provided.
