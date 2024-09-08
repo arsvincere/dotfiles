@@ -18,9 +18,10 @@
   "count_boot" : "5",
   "date_format" : "%Y-%m-%d %H:%M:%S",
   "exclude" : [
-    "/root/**",
     "/srv/nfs/**",
-    "/run/media/alex/**"
+    "/run/media/alex/**",
+    "/root/**",
+    "/home/alex/**"
   ],
   "exclude-apps" : []
 }
