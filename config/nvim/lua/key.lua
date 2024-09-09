@@ -6,7 +6,7 @@ local ni = { n, i }
 local nv = { n, v }
 local niv = { n, i, v }
 
--- Utils ---------------------------------------------------------------------{{{
+-- Utils ------------------------------------------------------------------{{{
 LAST_RUN = false
 DAP_UI_ENABLED = false
 
@@ -95,6 +95,7 @@ end
 -- }}}
 local function run_debug() -- {{{
     if not DAP_UI_ENABLED then
+        cmd("tablast")
         require("dapui").open()
         require("nvim-tree.api").tree.close()
         DAP_UI_ENABLED = not DAP_UI_ENABLED
@@ -151,7 +152,7 @@ local pgadmin = Terminal:new({ -- {{{
 -- }}}
 
 -- }}}
--- Keys ----------------------------------------------------------------------{{{
+-- Keys -------------------------------------------------------------------{{{
 
 -- No highlight search
 map(n, '<Esc>', '<Esc>:nohlsearch<CR>', opt)
@@ -194,7 +195,7 @@ require('leap.user').set_repeat_keys('<C-Enter>', '<M-Space>')
 -- vim.keymap.set({'n', 'x', 'o'}, 'gs', '<Plug>(leap-from-window)')
 
 -- }}}
--- Ctrl ----------------------------------------------------------------------{{{
+-- Ctrl -------------------------------------------------------------------{{{
 
 -- save file and folding  [ru-en]
 map(n, '<C-s>', save_file_and_fold, opt)
@@ -239,7 +240,7 @@ map(n, '<C-t>', ':tabnew<CR>', opt)
 map(n, '<C-c>', ':tabclose<CR>', opt)
 
 -- }}}
--- Alt -----------------------------------------------------------------------{{{
+-- Alt --------------------------------------------------------------------{{{
 
 -- Run last
 map(n, '<M-r>', re_run, opt)
@@ -250,7 +251,7 @@ map(n, '<M-m>', '@m', opt)
 
 
 -- }}}
--- Leader --------------------------------------------------------------------{{{
+-- Leader -----------------------------------------------------------------{{{
 -- ',,'
 map(n, '<leader><leader>', ':ToggleTerm<CR>', opt)
 map(v, '<leader><leader>', ':ToggleTermSendVisualSelection<CR>', opt)
@@ -315,7 +316,7 @@ require('f-string-toggle').setup({
 map(n, '<leader>i', ':IlluminateToggle<CR>', opt)
 
 -- }}}
--- <F1>..<F12> ---------------------------------------------------------------{{{
+-- <F1>..<F12> ------------------------------------------------------------{{{
 
 -- <F1> TagBar
 map(n, '<F1>', ':TagbarToggle<CR>', opt)
@@ -357,32 +358,34 @@ map(n, '<F24>', ':CellularAutomaton make_it_rain<CR>', opt)
 
 
 -- }}}
--- Diary session -------------------------------------------------------------{{{
+-- Diary session ----------------------------------------------------------{{{
 map(n, '<Home>',
     ':source /home/alex/ya/diary/Session_diary.vim<CR>\
     :NvimTreeRefresh<CR>:NvimTreeToggle<CR>\
     ', opt)
 -- }}}
--- AVIN session --------------------------------------------------------------{{{
+-- AVIN session -----------------------------------------------------------{{{
 map(n, '<End>',
     ':source ~/AVIN/Session.vim<CR>\
     :TodoQuickFix<CR>:sleep 100m<CR>:x<CR>\
     :BufferLineTabRename 󱃖 code<CR>\
-    :tabnext<CR>\
-    :BufferLineTabRename  tmp<CR>\
+    :DiffviewOpen <CR>\
+    :BufferLineTabRename  diff<CR>\
+    :tabnext <CR>\
+    :BufferLineTabRename  debug<CR>\
+    :tabnext <CR>\
+    :BufferLineTabRename  plan<CR>\
     :NvimTreeToggle\
     :tabnext<CR>\
-    :BufferLineTabRename  plan<CR>\
+    :BufferLineTabRename  tmp<CR>\
     :NvimTreeToggle\
     :tabnext<CR>\
     :TermExec cmd="source ~/env/bin/activate" name=zsh\
     :NvimTreeToggle\
     :wincmd l<CR>\
     ', opt)
---     :BufferLineTabRename  debug<CR>\
---     :tabnext<CR>\
 -- }}}
--- Blog session --------------------------------------------------------------{{{
+-- Blog session -----------------------------------------------------------{{{
 map(n, '<PageDown>',
     ':source /home/alex/ya/blog/Session_blog.vim<CR>\
     :NvimTreeToggle<CR><C-w><C-l><C-w><C-l>\
@@ -390,7 +393,7 @@ map(n, '<PageDown>',
     <C-w><C-h>',
     opt)
 -- }}}
--- Telescope -----------------------------------------------------------------{{{
+-- Telescope --------------------------------------------------------------{{{
 local open_with_trouble = require("trouble.sources.telescope").open
 require('telescope').setup {
     defaults = {
@@ -409,3 +412,26 @@ require('telescope').setup {
     },
 }
 -- }}}
+
+-- which-key --------------------------------------------------------------{{{
+-- local wk = require("which-key")
+-- wk.add({
+--   { "<leader>f", group = "file" }, -- group
+--   { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find File", mode = "n" },
+--   { "<leader>fb", function() print("hello") end, desc = "Foobar" },
+--   { "<leader>fn", desc = "New File" },
+--   { "<leader>f1", hidden = true }, -- hide this keymap
+--   { "<leader>w", proxy = "<c-w>", group = "windows" }, -- proxy to window mappings
+--   { "<leader>b", group = "buffers", expand = function()
+--       return require("which-key.extras").expand.buf()
+--     end
+--   },
+--   {
+--     -- Nested mappings are allowed and can be added in any order
+--     -- Most attributes can be inherited or overridden on any level
+--     -- There's no limit to the depth of nesting
+--     mode = { "n", "v" }, -- NORMAL and VISUAL mode
+--     { "<leader>q", "<cmd>q<cr>", desc = "Quit" }, -- no need to specify mode since it's inherited
+--     { "<leader>w", "<cmd>w<cr>", desc = "Write" },
+--   }
+-- })}}}

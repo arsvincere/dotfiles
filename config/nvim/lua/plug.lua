@@ -19,6 +19,7 @@ Plug 'akinsho/bufferline.nvim'                     -- buffers & tabs line
 Plug 'lukas-reineke/indent-blankline.nvim'         -- hightlight code blocks
 Plug 'nvimdev/dashboard-nvim'                      -- startup screen
 Plug "m4xshen/smartcolumn.nvim"                    -- smart color column
+Plug "folke/which-key.nvim"                        -- view keybinding
 -- Navigation
 Plug 'nvim-tree/nvim-tree.lua'                     -- file manager
 Plug 'nvim-tree/nvim-web-devicons'                 -- __dependency
@@ -70,7 +71,7 @@ Plug 'lervag/vimtex'                               -- latex
 Plug 'powerman/vim-plugin-ruscmd'                  -- commands on RU-layot
 Plug 'wakatime/vim-wakatime'                       -- timer, statistic
 Plug 'norcalli/nvim-colorizer.lua'                 -- color view utility
-Plug 'eandrju/cellular-automaton.nvim'             --
+Plug 'eandrju/cellular-automaton.nvim'             -- fuck them all
 
 vim.call('plug#end')
 
@@ -112,9 +113,7 @@ require('plugin.toggleterm')
 require('plugin.vim-plugin-ruscmd')
 require('plugin.vimtex')
 require('plugin.wakatime')
-
-
-
+require('plugin.which-key')
 
 -- " Language
 -- Plug 'j-hui/fidget.nvim'

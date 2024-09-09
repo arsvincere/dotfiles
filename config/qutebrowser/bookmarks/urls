@@ -17,7 +17,6 @@ https://github.com/nvim-orgmode/orgmode nvim-orgmode/orgmode: Orgmode clone writ
 https://github.com/nvimdev/lspsaga.nvim nvimdev/lspsaga.nvim: improve neovim lsp experience
 https://github.com/folke/noice.nvim folke/noice.nvim: 💥 Highly experimental plugin that completely replaces the UI for messages, cmdline and the popupmenu.
 https://github.com/echasnovski/mini.nvim echasnovski/mini.nvim: Library of 40+ independent Lua modules improving overall Neovim (version 0.8 and higher) experience with minimal effort
-https://github.com/folke/which-key.nvim folke/which-key.nvim: 💥 Create key bindings that stick. WhichKey helps you remember your Neovim keymaps, by showing available keybindings in a popup as you type.
 https://github.com/kuator/nvim-lua-guide-ru kuator/nvim-lua-guide-ru: A guide to using Lua in Neovim
 https://github.com/nvim-neorg/neorg?tab=readme-ov-file nvim-neorg/neorg: Modernity meets insane extensibility. The future of organizing your life in Neovim.
 https://neovimcraft.com/ neovimcraft
@@ -27,3 +26,4 @@ https://www.kinopoisk.ru/film/79905/?utm_referrer=www.google.com 23 фильм, 
 https://github.com/awesome-foss/awesome-sysadmin?tab=readme-ov-file#backups awesome-foss/awesome-sysadmin: A curated list of amazingly awesome open-source sysadmin resources.
 https://github.com/awesome-selfhosted/awesome-selfhosted awesome-selfhosted/awesome-selfhosted: A list of Free Software network services and web applications which can be hosted on your own servers
 https://www.reddit.com/r/selfhosted/ Self-Hosted Alternatives to Popular Services
+https://github.com/nvim-neorocks/rocks.nvim nvim-neorocks/rocks.nvim: 🌒 Neovim plugin management inspired by Cargo, powered by luarocks
