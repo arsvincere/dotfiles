@@ -27,7 +27,7 @@
 
     "custom/diary": {
       "format": " ",
-      "on-click": "alacritty -T diary -e nvim ~/ya/db/diary",
+      "on-click": "alacritty -T diary -e nvim ~/db/diary",
       "tooltip": false
     },
     "custom/book": {
@@ -42,12 +42,12 @@
     },
     "custom/english": {
       "format": "󰬰 ",
-      "on-click": "alacritty -T english -e nvim ~/ya/db/english.un ",
+      "on-click": "alacritty -T english -e nvim ~/db/english.norg ",
       "tooltip": false
     },
     "custom/note": {
       "format": " ",
-      "on-click": "alacritty -T note -e nvim ~/ya/db/note.un ",
+      "on-click": "alacritty -T note -e nvim ~/db/note.norg ",
       "tooltip": false
     },
     "hyprland/workspaces": {
@@ -78,7 +78,8 @@
     },
     "clock": {
         "interval": 1,
-        "timezone": "Europe/Moscow",
+        // "timezone": "Europe/Moscow",
+        "timezone": "",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format": " {:%H:%M   %a %e %B}",
         "format-alt": "  {:%H:%M:%S   %a %Y-%m-%d}"

@@ -72,9 +72,9 @@ local function run() -- {{{
 
     local pytest = string.find(name, "test_")
     if pytest then
-        LAST_RUN = tostring('TermExec cmd="pytest ' .. file_path .. ' -s"')
+        LAST_RUN = tostring(':1TermExec cmd="pytest ' .. file_path .. ' -s"')
     else
-        LAST_RUN = tostring('TermExec cmd="python3 ' .. file_path .. '"')
+        LAST_RUN = tostring(':1TermExec cmd="python3 ' .. file_path .. '"')
     end
     cmd(LAST_RUN)
 end
@@ -94,8 +94,8 @@ local function run_pytest() -- {{{
 end
 -- }}}
 local function run_debug() -- {{{
+    cmd("tablast")
     if not DAP_UI_ENABLED then
-        cmd("tablast")
         require("dapui").open()
         require("nvim-tree.api").tree.close()
         DAP_UI_ENABLED = not DAP_UI_ENABLED
@@ -166,6 +166,9 @@ map(n, '<CR>', 'o<Esc>', opt)
 
 -- Insert space
 map(n, '<Space>', 'i<Space><Esc>', opt)
+
+-- Insert mode from visual
+map(v, 'i', 'I', opt)
 
 -- Window resize
 map(n, '<S-Left>', '<C-w><', opt)
@@ -293,16 +296,20 @@ map(n, '<leader>X', ':Trouble todo toggle focus=true<CR>', opt)
 -- 'c' lsp
 map(n, '<leader>c', ':Trouble lsp toggle focus=true<CR>', opt)
 
+-- 'C'
+
 -- 'v'
+-- 'V'
 
--- 'b' breakpoint
-map(n, '<leader>b', ':DapToggleBreakpoint<CR>', opt)
-
--- 'e' telescope opened buffers
+-- 'b' telescope opened buffers
 map(n, '<leader>e', ":Telescope buffers<CR>", opt)
 map(n, 'бу', ":Telescope buffers<CR>", opt) -- [ru]-бб
 
--- 'r' run ____
+-- 'B' breakpoint
+map(n, '<leader>B', ':DapToggleBreakpoint<CR>', opt)
+
+-- 'r-' run ____
+map(n, '<leader>rd', run_debug, opt)
 map(n, '<leader>rt', run_pytest, opt)
 map(n, '<leader>rp', ':9TermExec cmd="pgadmin" name=pgadmin<CR>', opt)
 
