@@ -1,2 +1,3 @@
 config/ssh-client
 config/ssh-server
+config/rclone
