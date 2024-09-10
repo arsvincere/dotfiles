@@ -188,9 +188,9 @@ map(nv, '0', 'g0', opt)
 map(nv, '$', 'g$', opt)
 map(nv, '^', 'g^', opt)
 
-map(n, "f", '<Plug>(leap-forward)', opt)
-map(n, "F", '<Plug>(leap-backward)', opt)
-map(n, 'gf', '<Plug>(leap-from-window)', opt)
+map(n, "s", '<Plug>(leap-forward)', opt)
+map(n, "S", '<Plug>(leap-backward)', opt)
+map(n, 'gs', '<Plug>(leap-from-window)', opt)
 require('leap.user').set_repeat_keys('<C-Enter>', '<M-Space>')
 -- require('leap').create_default_mappings()
 -- vim.keymap.set({'n', 'x', 'o'}, 's',  '<Plug>(leap-forward)')
@@ -302,7 +302,7 @@ map(n, '<leader>c', ':Trouble lsp toggle focus=true<CR>', opt)
 -- 'V'
 
 -- 'b' telescope opened buffers
-map(n, '<leader>e', ":Telescope buffers<CR>", opt)
+map(n, '<leader>b', ":Telescope buffers<CR>", opt)
 map(n, 'бу', ":Telescope buffers<CR>", opt) -- [ru]-бб
 
 -- 'B' breakpoint
