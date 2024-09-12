@@ -379,19 +379,19 @@ map(n, '<End>',
     ':source ~/AVIN/Session.vim<CR>\
     :TodoQuickFix<CR>:sleep 100m<CR>:x<CR>\
     :BufferLineTabRename 󱃖 code<CR>\
+    :NvimTreeOpen\
     :DiffviewOpen <CR>\
     :BufferLineTabRename  diff<CR>\
     :tabnext <CR>\
     :BufferLineTabRename  debug<CR>\
     :tabnext <CR>\
     :BufferLineTabRename  plan<CR>\
-    :NvimTreeToggle\
+    :NvimTreeOpen\
     :tabnext<CR>\
     :BufferLineTabRename  tmp<CR>\
-    :NvimTreeToggle\
+    :NvimTreeOpen\
     :tabnext<CR>\
     :TermExec cmd="source ~/env/bin/activate" name=zsh\
-    :NvimTreeToggle\
     :wincmd l<CR>\
     ', opt)
 -- }}}

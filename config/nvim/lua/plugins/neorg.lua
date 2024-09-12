@@ -10,11 +10,18 @@ require('neorg').setup {
             config = {
                 icons = {
                     todo = {
-                        -- undone = " ",
+                        undone = {
+                            icon = ' ',
+                        },
+                    },
+                    heading = {
+                        -- icons = { "◉", "◎", "○", "✺", "▶", "⤷" },
+                        icons = { "✺", "◉", "◎", "○", "▶", "⤷" },
                     },
                 },
             },
         },
+        ["core.promo"] = {},
         ["core.itero"] = {},
         ["core.summary"] = {},
         ["core.dirman"] = {

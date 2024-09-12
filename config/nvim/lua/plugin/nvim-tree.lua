@@ -23,7 +23,7 @@ vim.opt.termguicolors = true
 require("nvim-tree").setup({
     sort_by = "case_sensitive",
     view = {
-        width = 28, -- ширина окна
+        width = 30, -- ширина окна
     },
     renderer = {
         add_trailing = false,
@@ -31,7 +31,7 @@ require("nvim-tree").setup({
         full_name = false,
         root_folder_label = ":~:s?$?/..?",
         indent_width = 2,
-        special_files = { "Cargo.toml", "Makefile", "README.md", "readme.md" },
+        special_files = { "LICENSE", "Makefile", "README.md", "readme.md" },
         symlink_destination = true,
         highlight_git = false,
         highlight_diagnostics = false,
