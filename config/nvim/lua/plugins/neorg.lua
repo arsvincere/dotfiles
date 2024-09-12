@@ -6,17 +6,27 @@ require('neorg').setup {
     load = {
         ["core.defaults"] = {},
         ["core.integrations.nvim-cmp"] = {},
-        ["core.concealer"] = {},
+        ["core.concealer"] = {
+            config = {
+                icons = {
+                    todo = {
+                        -- undone = " ",
+                    },
+                },
+            },
+        },
+        ["core.itero"] = {},
+        ["core.summary"] = {},
         ["core.dirman"] = {
             config = {
                 workspaces = {
                     db = "~/db",
-                    diary = "~/db/diary",
                     noetic = "~/db/noetic",
+                    avin = "~/db/avin",
                 },
                 default_workspace = "db",
                 index = "index.norg", -- The name of the main (root) .norg file
             }
-        }
+        },
     }
 }

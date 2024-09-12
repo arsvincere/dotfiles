@@ -81,7 +81,7 @@
         "timezone": "Europe/Moscow",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format": " {:%H:%M   %a %e %B}",
-        "format-alt": "  {:%H:%M:%S   %a %Y-%m-%d}"
+        "format-alt": " {:%H:%M:%S   %a %Y-%m-%d}"
     },
     "hyprland/language": {
         "format": "[{short}]"
@@ -90,8 +90,15 @@
         "scroll-step": 10,
         "format": "  {volume}",
         "format-muted": " mute",
-        "on-click": "pavucontrol"
+        "on-click": "pavucontrol",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "headphone": " ",
+        "format-icons": {
+            "default": ["", " ", " "]
+        },
     },
+
     "network": {
         // "format-wifi": "  {signalStrength}",
         "format-ethernet": "  80",

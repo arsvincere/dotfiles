@@ -200,6 +200,9 @@ require('leap.user').set_repeat_keys('<C-Enter>', '<M-Space>')
 -- }}}
 -- Ctrl -------------------------------------------------------------------{{{
 
+-- Neorg follow link
+map(n, "<C-CR>", "<Plug>(neorg.esupports.hop.hop-link)", opt)
+
 -- save file and folding  [ru-en]
 map(n, '<C-s>', save_file_and_fold, opt)
 map(n, '<C-ы>', save_file_and_fold, opt)

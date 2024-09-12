@@ -27,3 +27,5 @@ https://github.com/awesome-foss/awesome-sysadmin?tab=readme-ov-file#backups awes
 https://github.com/awesome-selfhosted/awesome-selfhosted awesome-selfhosted/awesome-selfhosted: A list of Free Software network services and web applications which can be hosted on your own servers
 https://www.reddit.com/r/selfhosted/ Self-Hosted Alternatives to Popular Services
 https://github.com/nvim-neorocks/rocks.nvim nvim-neorocks/rocks.nvim: 🌒 Neovim plugin management inspired by Cargo, powered by luarocks
+https://github.com/3rd/image.nvim 3rd/image.nvim: 🖼️ Bringing images to Neovim.
+https://github.com/nvim-orgmode/orgmode?tab=readme-ov-file nvim-orgmode/orgmode: Orgmode clone written in Lua for Neovim 0.9+.
