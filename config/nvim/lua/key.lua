@@ -325,6 +325,15 @@ require('f-string-toggle').setup({
 -- 'i' illuminate word on cursor
 map(n, '<leader>i', ':IlluminateToggle<CR>', opt)
 
+-- '.' Neorg index
+map(n, '<leader>.', ':Neorg index<CR>', opt)
+-- 'j' Neorg journal
+map(n, '<leader>j', ':Neorg journal today<CR>', opt)
+-- 'n' Neorg ...
+map(n, '<leader>n', ':Neorg', opt)
+-- 'm' Neorg minimize
+map(n, '<leader>m', ':Neorg return<CR>', opt)
+
 -- }}}
 -- <F1>..<F12> ------------------------------------------------------------{{{
 
@@ -368,10 +377,9 @@ map(n, '<F24>', ':CellularAutomaton make_it_rain<CR>', opt)
 
 
 -- }}}
--- Diary session ----------------------------------------------------------{{{
+-- Journal session ----------------------------------------------------------{{{
 map(n, '<Home>',
-    ':source /home/alex/ya/diary/Session_diary.vim<CR>\
-    :NvimTreeRefresh<CR>:NvimTreeToggle<CR>\
+    ':source /home/alex/!/Session.vim<CR>\
     ', opt)
 -- }}}
 -- AVIN session -----------------------------------------------------------{{{

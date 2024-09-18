@@ -11,7 +11,7 @@ local defaults = {
     -- Delay before showing the popup. Can be a number or a function that returns a number.
     ---@type number | fun(ctx: { keys: string, mode: string, plugin?: string }):number
     delay = function(ctx)
-        return ctx.plugin and 0 or 200
+        return ctx.plugin and 0 or 1000
     end,
     ---@param mapping wk.Mapping
     filter = function(mapping)
@@ -29,7 +29,7 @@ local defaults = {
     -- Check the docs for more info.
     ---@type wk.Spec
     triggers = {
-        { "<auto>", mode = "nxso" },
+        -- { "<auto>", mode = "nxso" },
     },
     -- Start hidden and wait for a key to be pressed before showing the popup
     -- Only used by enabled xo mapping modes.
@@ -43,17 +43,17 @@ local defaults = {
         -- the presets plugin, adds help for a bunch of default keybindings in Neovim
         -- No actual key bindings are created
         spelling = {
-            enabled = true,   -- enabling this will show WhichKey when pressing z= to select spelling suggestions
+            enabled = false,  -- enabling this will show WhichKey when pressing z= to select spelling suggestions
             suggestions = 20, -- how many suggestions should be shown in the list?
         },
         presets = {
-            operators = true,    -- adds help for operators like d, y, ...
-            motions = true,      -- adds help for motions
-            text_objects = true, -- help for text objects triggered after entering an operator
-            windows = true,      -- default bindings on <c-w>
-            nav = true,          -- misc bindings to work with windows
-            z = true,            -- bindings for folds, spelling and others prefixed with z
-            g = true,            -- bindings for prefixed with g
+            operators = false,    -- adds help for operators like d, y, ...
+            motions = false,      -- adds help for motions
+            text_objects = false, -- help for text objects triggered after entering an operator
+            windows = false,      -- default bindings on <c-w>
+            nav = false,          -- misc bindings to work with windows
+            z = false,            -- bindings for folds, spelling and others prefixed with z
+            g = false,            -- bindings for prefixed with g
         },
     },
     ---@type wk.Win.opts

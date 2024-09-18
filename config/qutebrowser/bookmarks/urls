@@ -18,7 +18,6 @@ https://github.com/nvimdev/lspsaga.nvim nvimdev/lspsaga.nvim: improve neovim lsp
 https://github.com/folke/noice.nvim folke/noice.nvim: 💥 Highly experimental plugin that completely replaces the UI for messages, cmdline and the popupmenu.
 https://github.com/echasnovski/mini.nvim echasnovski/mini.nvim: Library of 40+ independent Lua modules improving overall Neovim (version 0.8 and higher) experience with minimal effort
 https://github.com/kuator/nvim-lua-guide-ru kuator/nvim-lua-guide-ru: A guide to using Lua in Neovim
-https://github.com/nvim-neorg/neorg?tab=readme-ov-file nvim-neorg/neorg: Modernity meets insane extensibility. The future of organizing your life in Neovim.
 https://neovimcraft.com/ neovimcraft
 https://apple.stackexchange.com/questions/244930/how-do-i-view-inline-images-in-w3m macbook pro - How do I view inline images in w3m? - Ask Different
 https://events.yandex.ru/events/system_administration/kit_2014 Пятый набор на Курсы информационных технологий
@@ -29,3 +28,4 @@ https://www.reddit.com/r/selfhosted/ Self-Hosted Alternatives to Popular Service
 https://github.com/nvim-neorocks/rocks.nvim nvim-neorocks/rocks.nvim: 🌒 Neovim plugin management inspired by Cargo, powered by luarocks
 https://github.com/3rd/image.nvim 3rd/image.nvim: 🖼️ Bringing images to Neovim.
 https://github.com/nvim-orgmode/orgmode?tab=readme-ov-file nvim-orgmode/orgmode: Orgmode clone written in Lua for Neovim 0.9+.
+https://www.edclub.com/sportal/program-3/3209.play EdClub

@@ -2,7 +2,7 @@
 {
     // Modules order ---------------------------------------------------------
     "modules-left": [
-        "custom/diary",
+        "custom/journal",
         "custom/book",
         "custom/calculator",
         "custom/note",
@@ -25,9 +25,9 @@
 
     // Modules configuration -------------------------------------------------
 
-    "custom/diary": {
+    "custom/journal": {
       "format": " ",
-      "on-click": "alacritty -T diary -e nvim ~/db/diary",
+      "on-click": "alacritty -T journal -e nvim ~/!/journal",
       "tooltip": false
     },
     "custom/book": {
@@ -42,12 +42,12 @@
     },
     "custom/english": {
       "format": "󰬰 ",
-      "on-click": "alacritty -T english -e nvim ~/db/english.norg ",
+      "on-click": "alacritty -T english -e nvim ~/!/english.norg ",
       "tooltip": false
     },
     "custom/note": {
       "format": " ",
-      "on-click": "alacritty -T note -e nvim ~/db/note.norg ",
+      "on-click": "alacritty -T note -e nvim ~/!/note.norg ",
       "tooltip": false
     },
     "hyprland/workspaces": {

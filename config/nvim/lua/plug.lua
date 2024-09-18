@@ -134,16 +134,13 @@ require('plugin.which-key')
 -- Plug 'Mofiqul/vscode.nvim'
 --
 -- " Navigation
--- Plug 'nvim-telescope/telescope-fzf-native.nvim', {'do': 'make'}
+
 -- Plug 'karb94/neoscroll.nvim'
 --
 -- " Git
 -- Plug 'ThePrimeagen/git-worktree.nvim'
 -- Plug 'TimUntersberger/neogit'
 -- Plug 'lewis6991/gitsigns.nvim'
---
--- " Edit
--- Plug 'windwp/nvim-autopairs'
 --
 -- " Misc
 -- Plug 'renerocksai/telekasten.nvim'
