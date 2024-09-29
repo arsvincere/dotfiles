@@ -10,8 +10,8 @@
   <setting name="toolbox-shown" type="System.Boolean">True</setting>
   <setting name="pixel-grid-shown" type="System.Boolean">False</setting>
   <setting name="last-dialog-directory" type="System.String">file:///home/alex/ya/media/wallpaper</setting>
-  <setting name="last-selected-tool" type="System.String">MoveSelectionTool</setting>
-  <setting name="primary-color" type="System.String">FF000407</setting>
+  <setting name="last-selected-tool" type="System.String">TextTool</setting>
+  <setting name="primary-color" type="System.String">FFE5E5E5</setting>
   <setting name="secondary-color" type="System.String">FFFFFFFF</setting>
   <setting name="recently-used-colors" type="System.String">FF000407,00000000,FF000000,FFFF0000,FFE5E5E5,FFE5E5E5,FFE5E5E5,FFE5E5E5,FFE5E5E5,FFE5E5E5</setting>
   <setting name="paintbrushtool-antialias" type="System.Int32">0</setting>
@@ -33,4 +33,11 @@
   <setting name="rectangletool-fill-style" type="System.Int32">0</setting>
   <setting name="rectangletool-shape-type" type="System.Int32">1</setting>
   <setting name="rectangletool-dash-pattern" type="System.String">-</setting>
+  <setting name="text-font" type="System.String">Arial 12</setting>
+  <setting name="text-bold" type="System.Boolean">False</setting>
+  <setting name="text-italic" type="System.Boolean">False</setting>
+  <setting name="text-underline" type="System.Boolean">False</setting>
+  <setting name="text-alignment" type="System.Int32">2</setting>
+  <setting name="text-style" type="System.Int32">0</setting>
+  <setting name="text-outline-width" type="System.Int32">2</setting>
 </settings>

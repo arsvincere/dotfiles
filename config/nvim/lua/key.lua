@@ -179,6 +179,8 @@ map(n, '<S-Down>', '<C-w>-', opt)
 -- Highlight word on cursor
 map(n, '*', '*N', opt)
 map(n, '#', '*N', opt)
+-- map(v, '*', '*N<Esc>', opt)
+-- map(v, '#', '*N<Esc>', opt)
 
 -- Soft wrap navigation
 -- http://vimcasts.org/episodes/soft-wrapping-text/

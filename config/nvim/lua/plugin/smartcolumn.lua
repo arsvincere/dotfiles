@@ -7,7 +7,8 @@ require("smartcolumn").setup({
     disabled_filetypes = {
         "dashboard",
         "help", "text", "markdown", "adoc", "un",
-        "NvimTree", "Trouble", "zsh", "mason", "checkhealth", "lspinfo", "Neorg", "calendar"
+        "NvimTree", "Trouble", "zsh", "mason", "checkhealth", "lspinfo",
+        "Neorg", "calendar"
     },
     scope = "file"
 })
