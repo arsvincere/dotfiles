@@ -11,142 +11,142 @@ LAST_RUN = false
 DAP_UI_ENABLED = false
 
 local function split(inputstr, sep) -- {{{
-    if sep == nil then
-        sep = "%s"
-    end
-    local t = {}
-    for str in string.gmatch(inputstr, "([^" .. sep .. "]+)") do
-        table.insert(t, str)
-    end
-    return t
+  if sep == nil then
+    sep = "%s"
+  end
+  local t = {}
+  for str in string.gmatch(inputstr, "([^" .. sep .. "]+)") do
+    table.insert(t, str)
+  end
+  return t
 end
 
 -- }}}
 local function file_name(file_path) -- {{{
-    local parts = split(file_path, '/')
-    return parts[#parts]
+  local parts = split(file_path, '/')
+  return parts[#parts]
 end
 
 -- }}}
 local function save_file_and_fold() -- {{{
-    if vim.api.nvim_buf_get_option(0, "readonly") then return end
+  if vim.api.nvim_buf_get_option(0, "readonly") then return end
 
-    local buftype = vim.api.nvim_buf_get_option(0, "buftype")
-    if buftype == "nofile" or buftype == "prompt" then return end
+  local buftype = vim.api.nvim_buf_get_option(0, "buftype")
+  if buftype == "nofile" or buftype == "prompt" then return end
 
-    if vim.api.nvim_buf_get_option(0, "modifiable") then
-        cmd("w!")
-        cmd("mkview")
-    end
+  if vim.api.nvim_buf_get_option(0, "modifiable") then
+    cmd("w!")
+    cmd("mkview")
+  end
 end
 
 -- }}}
 local function tree_toggle() -- {{{
-    local tree = require("nvim-tree.api").tree
-    -- tree.toggle({ focus = false })
-    tree.toggle({ focus = true })
+  local tree = require("nvim-tree.api").tree
+  -- tree.toggle({ focus = false })
+  tree.toggle({ focus = true })
 end
 
 -- }}}
 local function diag_toggle() -- {{{
-    vim.diagnostic.enable(not vim.diagnostic.is_enabled())
+  vim.diagnostic.enable(not vim.diagnostic.is_enabled())
 end
 
 -- }}}
 local function gitdiff_toggle() -- {{{
-    local view = require("diffview.lib").get_current_view()
-    print("hell")
-    if view then
-        vim.cmd("DiffviewClose")
-    else
-        vim.cmd("DiffviewOpen")
-        vim.cmd("BufferLineTabRename  diff")
-    end
+  local view = require("diffview.lib").get_current_view()
+  print("hell")
+  if view then
+    cmd("DiffviewClose")
+  else
+    cmd("DiffviewOpen")
+    cmd("BufferLineTabRename  diff")
+  end
 end
 
 -- }}}
 local function run() -- {{{
-    cmd('wa!')
-    local file_path = vim.api.nvim_buf_get_name(0)
-    local name = file_name(file_path)
+  cmd('wa!')
+  local file_path = vim.api.nvim_buf_get_name(0)
+  local name = file_name(file_path)
 
-    local pytest = string.find(name, "test_")
-    if pytest then
-        LAST_RUN = tostring(':1TermExec cmd="pytest ' .. file_path .. ' -s"')
-    else
-        LAST_RUN = tostring(':1TermExec cmd="python3 ' .. file_path .. '"')
-    end
-    cmd(LAST_RUN)
+  local pytest = string.find(name, "test_")
+  if pytest then
+    LAST_RUN = tostring(':1TermExec cmd="pytest ' .. file_path .. ' -s"')
+  else
+    LAST_RUN = tostring(':1TermExec cmd="python3 ' .. file_path .. '"')
+  end
+  cmd(LAST_RUN)
 end
 
 -- }}}
 local function re_run() -- {{{
-    if LAST_RUN then
-        cmd('wa!')
-        cmd(LAST_RUN)
-    end
+  if LAST_RUN then
+    cmd('wa!')
+    cmd(LAST_RUN)
+  end
 end
 -- }}}
 local function run_pytest() -- {{{
-    cmd('wa!')
-    LAST_RUN = ':8TermExec cmd="pytest test" name=pytest<CR>'
-    cmd(LAST_RUN)
+  cmd('wa!')
+  LAST_RUN = ':8TermExec cmd="pytest test" name=pytest<CR>'
+  cmd(LAST_RUN)
 end
 -- }}}
 local function run_debug() -- {{{
-    cmd("tablast")
-    if not DAP_UI_ENABLED then
-        require("dapui").open()
-        require("nvim-tree.api").tree.close()
-        DAP_UI_ENABLED = not DAP_UI_ENABLED
-        cmd("DapContinue")
-        cmd("1")
-    else
-        cmd("DapContinue")
-    end
-    return
+  cmd("tablast")
+  if not DAP_UI_ENABLED then
+    require("dapui").open()
+    require("nvim-tree.api").tree.close()
+    DAP_UI_ENABLED = not DAP_UI_ENABLED
+    cmd("DapContinue")
+    cmd("1")
+  else
+    cmd("DapContinue")
+  end
+  return
 end
 -- }}}
 local function close_degug() -- {{{
-    if DAP_UI_ENABLED then
-        cmd("DapTerminate")
-        require("dapui").close()
-        require("nvim-tree.api").tree.open()
-        DAP_UI_ENABLED = not DAP_UI_ENABLED
-    end
-    return
+  if DAP_UI_ENABLED then
+    cmd("DapTerminate")
+    require("dapui").close()
+    require("nvim-tree.api").tree.open()
+    DAP_UI_ENABLED = not DAP_UI_ENABLED
+  end
+  return
 end
 -- }}}
 
 local Terminal = require('toggleterm.terminal').Terminal
 local lazygit = Terminal:new({ -- {{{
-    count = 10,
-    cmd = "lazygit",
-    dir = "git_dir",
-    direction = "float",
-    display_name = "git",
-    start_in_insert = true,
-    close_on_exit = true, -- close the terminal window when the process exits
-    on_open = function(term)
-        vim.cmd("startinsert!")
-        vim.api.nvim_buf_set_keymap(term.bufnr, 'n', "q", "<cmd>close<CR>", opt)
-    end,
-    -- function to run on closing the terminal
-    -- on_close = function(term)
-    --     vim.cmd("startinsert!")
-    -- end,
+  count = 10,
+  cmd = "lazygit",
+  dir = "git_dir",
+  direction = "float",
+  display_name = "git",
+  start_in_insert = true,
+  close_on_exit = true, -- close the terminal window when the process exits
+  on_open = function(term)
+    cmd("startinsert!")
+    vim.api.nvim_buf_set_keymap(term.bufnr, 'n', "q", "<cmd>close<CR>", opt)
+  end,
+  -- function to run on closing the terminal
+  -- on_close = function(term)
+  --     cmd("startinsert!")
+  -- end,
 })
 local function lazygit_toggle()
-    lazygit:toggle()
+  lazygit:toggle()
 end
 
 -- }}}
 local pgadmin = Terminal:new({ -- {{{
-    count = 11,
-    cmd = "pgadmin",
-    direction = "float",
-    display_name = "pgadmin",
-    hidden = true,
+  count = 11,
+  cmd = "pgadmin",
+  direction = "float",
+  display_name = "pgadmin",
+  hidden = true,
 })
 
 -- }}}
@@ -280,8 +280,8 @@ vim.keymap.set('n', '<leader>D', diag_toggle, opt)
 
 -- 'f' telescope files
 -- 'F' telescope files home
-map(n, "<leader>f", "<Cmd>Telescope find_files<CR>", opt)
-map(n, "<leader>F", "<Cmd>Telescope find_files cwd=~<CR>", opt)
+map(n, "<leader>f", ":Telescope find_files<CR>", opt)
+map(n, "<leader>F", ":Telescope find_files cwd=~<CR>", opt)
 
 -- 'g' telescope grep
 -- 'G' telescope grep word under cursor
@@ -320,8 +320,8 @@ map(n, '<leader>rp', ':9TermExec cmd="pgadmin" name=pgadmin<CR>', opt)
 
 -- 't' toggle f-string
 require('f-string-toggle').setup({
-    key_binding = "<leader>t",
-    key_binding_desc = "Toggle f-string"
+  key_binding = "<leader>t",
+  key_binding_desc = "Toggle f-string"
 })
 
 -- 'i' illuminate word on cursor
@@ -367,7 +367,7 @@ map(n, "<F11>", lazygit_toggle, opt)
 
 -- <F12> source conf
 map(n, '<F12>',
-    ':so ~/.config/nvim/init.lua<CR>\
+  ':so ~/.config/nvim/init.lua<CR>\
     :so ~/.config/nvim/lua/auto.lua<CR>\
     :so ~/.config/nvim/lua/core.lua<CR>\
     :so ~/.config/nvim/lua/plug.lua<CR>\
@@ -379,60 +379,25 @@ map(n, '<F24>', ':CellularAutomaton make_it_rain<CR>', opt)
 
 
 -- }}}
--- Journal session ----------------------------------------------------------{{{
-map(n, '<Home>',
-    ':source /home/alex/!/Session.vim<CR>\
-    ', opt)
--- }}}
--- AVIN session -----------------------------------------------------------{{{
-map(n, '<End>',
-    ':source ~/AVIN/Session.vim<CR>\
-    :TodoQuickFix<CR>:sleep 100m<CR>:x<CR>\
-    :BufferLineTabRename 󱃖 code<CR>\
-    :NvimTreeOpen\
-    :DiffviewOpen <CR>\
-    :BufferLineTabRename  diff<CR>\
-    :tabnext <CR>\
-    :BufferLineTabRename  debug<CR>\
-    :tabnext <CR>\
-    :BufferLineTabRename  plan<CR>\
-    :NvimTreeOpen\
-    :tabnext<CR>\
-    :BufferLineTabRename  tmp<CR>\
-    :NvimTreeOpen\
-    :tabnext<CR>\
-    :TermExec cmd="source ~/env/bin/activate" name=zsh\
-    :wincmd l<CR>\
-    ', opt)
--- }}}
--- Blog session -----------------------------------------------------------{{{
-map(n, '<PageDown>',
-    ':source /home/alex/ya/blog/Session_blog.vim<CR>\
-    :NvimTreeToggle<CR><C-w><C-l><C-w><C-l>\
-    :b3<CR>\
-    <C-w><C-h>',
-    opt)
--- }}}
 -- Telescope --------------------------------------------------------------{{{
 local open_with_trouble = require("trouble.sources.telescope").open
 require('telescope').setup {
-    defaults = {
-        mappings = {
-            n = {
-                ['<C-d>'] = require('telescope.actions').delete_buffer,
-                ['<d>'] = require('telescope.actions').delete_buffer,
-                ["<C-t>"] = open_with_trouble
-            }, -- n
-            i = {
-                ["<C-h>"] = "which_key",
-                ['<C-d>'] = require('telescope.actions').delete_buffer,
-                ["<C-t>"] = open_with_trouble
-            } -- i
-        }
-    },
+  defaults = {
+    mappings = {
+      n = {
+        ['<C-d>'] = require('telescope.actions').delete_buffer,
+        ['<d>'] = require('telescope.actions').delete_buffer,
+        ["<C-t>"] = open_with_trouble
+      }, -- n
+      i = {
+        ["<C-h>"] = "which_key",
+        ['<C-d>'] = require('telescope.actions').delete_buffer,
+        ["<C-t>"] = open_with_trouble
+      } -- i
+    }
+  },
 }
 -- }}}
-
 -- which-key --------------------------------------------------------------{{{
 -- local wk = require("which-key")
 -- wk.add({
@@ -455,3 +420,35 @@ require('telescope').setup {
 --     { "<leader>w", "<cmd>w<cr>", desc = "Write" },
 --   }
 -- })}}}
+-- Journal session --------------------------------------------------------{{{
+map(n, '<Home>',
+  ':source /home/alex/!/Session.vim<CR>\
+    ', opt)
+-- }}}
+-- AVIN session -----------------------------------------------------------{{{
+map(n, '<End>',
+  ':source ~/AVIN/Session.vim<CR>\
+    :TodoQuickFix<CR>:sleep 100m<CR>:x<CR>\
+    :BufferLineTabRename 󱃖 code<CR>\
+    :NvimTreeOpen\
+    :DiffviewOpen <CR>\
+    :BufferLineTabRename  diff<CR>\
+    :tabnext <CR>\
+    :BufferLineTabRename  debug<CR>\
+    :tabnext <CR>\
+    :BufferLineTabRename  plan<CR>\
+    :NvimTreeOpen\
+    :tabnext<CR>\
+    :BufferLineTabRename  tmp<CR>\
+    :NvimTreeOpen\
+    :tabnext<CR>\
+    :TermExec cmd="source ~/env/bin/activate" name=zsh\
+    :wincmd l<CR>\
+    ', opt)
+-- }}}
+-- Blog session -----------------------------------------------------------{{{
+map(n, '<PageDown>', '\
+    :source /home/alex/arsvincere.com/Session.vim<CR>\
+    :NvimTreeToggle<CR><C-w><C-l>\
+    ', opt)
+-- }}}
