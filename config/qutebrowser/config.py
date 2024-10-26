@@ -212,13 +212,14 @@ c.tabs.title.format = "{perc} {current_title}"
 ## Type: Dict
 # c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}'}
 c.url.searchengines = {
-    "DEFAULT": "https://google.com/search?hl=en&q={}",
+    "DEFAULT": "https://google.ru/search?q={}",
+    "!g": "https://google.com/search?hl=en&q={}",
     "!a": "https://www.amazon.com/s?k={}",
     "!d": "https://duckduckgo.com/?ia=web&q={}",
     "!dd": "https://thefreedictionary.com/{}",
     "!e": "https://www.ebay.com/sch/i.html?_nkw={}",
     "!fb": "https://www.facebook.com/s.php?q={}",
-    "!g": "https://github.com/search?o=desc&q={}&s=stars",
+    "!gh": "https://github.com/search?o=desc&q={}&s=stars",
     "!gist": "https://gist.github.com/search?q={}",
     "!gi": "https://www.google.com/search?tbm=isch&q={}&tbs=imgo:1",
     "!gn": "https://news.google.com/search?q={}",

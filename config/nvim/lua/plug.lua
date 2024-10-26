@@ -12,8 +12,6 @@ Plug 'catppuccin/nvim'                             -- color scheme
 Plug "rebelot/kanagawa.nvim"                       -- color scheme
 Plug 'sainnhe/gruvbox-material'                    -- color scheme
 Plug 'sho-87/kanagawa-paper.nvim'                  -- color scheme
-Plug 'arsvincere/kanagawa-again.nvim'              -- color scheme
-Plug 'arsvincere/annual.nvim'                      -- color scheme
 Plug 'nvim-lualine/lualine.nvim'                   -- status line
 Plug 'akinsho/bufferline.nvim'                     -- buffers & tabs line
 Plug 'lukas-reineke/indent-blankline.nvim'         -- hightlight code blocks
