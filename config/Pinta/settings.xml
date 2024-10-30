@@ -9,8 +9,8 @@
   <setting name="statusbar-shown" type="System.Boolean">True</setting>
   <setting name="toolbox-shown" type="System.Boolean">True</setting>
   <setting name="pixel-grid-shown" type="System.Boolean">False</setting>
-  <setting name="last-dialog-directory" type="System.String">file:///home/alex/media/wallpaper</setting>
-  <setting name="last-selected-tool" type="System.String">RectangleSelectTool</setting>
+  <setting name="last-dialog-directory" type="System.String">file:///home/alex/media/avatar</setting>
+  <setting name="last-selected-tool" type="System.String">PaintBucketTool</setting>
   <setting name="primary-color" type="System.String">FF000407</setting>
   <setting name="secondary-color" type="System.String">FFFFFFFF</setting>
   <setting name="recently-used-colors" type="System.String">FF000407,00000000,FF000000,FFFF0000,FFE5E5E5,FFE5E5E5,FFE5E5E5,FFE5E5E5,FFE5E5E5,FFE5E5E5</setting>
