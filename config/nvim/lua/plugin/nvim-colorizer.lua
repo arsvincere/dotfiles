@@ -8,10 +8,11 @@
 -- Attach to certain Filetypes, add special configuration for `html`
 -- Use `background` for everything else.
 require 'colorizer'.setup {
-    'css',
-    'javascript',
+  'css',
+  'javascript',
 
-    lua = { mode = 'foreground', },
-    vim = { mode = 'foreground', },
-    html = { mode = 'foreground', },
+  lua = { mode = 'foreground', },
+  python = { mode = 'foreground', },
+  vim = { mode = 'foreground', },
+  html = { mode = 'foreground', },
 }

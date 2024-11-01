@@ -1,32 +1,19 @@
-https://www.reddit.com/r/commandline/comments/w18wml/demo_easily_organize_files_and_directories_using/ [demo] Easily organize files and directories using xplr with map.xplr : r/commandline
-https://habr.com/ru/articles/349860/ Регулярные выражения в Python от простого к сложному. Подробности, примеры, картинки, упражнения / Хабр
-https://pypi.org/project/qt-material/#custom-colors qt-material · PyPI
 https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html#example-google Example Google Style Python Docstrings — napoleon 0.7 documentation
-https://github.com/ahmedkhalf/project.nvim ahmedkhalf/project.nvim: The superior project management solution for neovim.
 https://github.com/rockerBOO/awesome-neovim rockerBOO/awesome-neovim: Collections of awesome neovim plugins.
 https://github.com/NeogitOrg/neogit NeogitOrg/neogit: An interactive and powerful Git interface for Neovim, inspired by Magit
 https://github.com/lewis6991/gitsigns.nvim lewis6991/gitsigns.nvim: Git integration for buffers
 https://github.com/stevearc/oil.nvim stevearc/oil.nvim: Neovim file explorer: edit your filesystem like a buffer
-https://github.com/rachartier/tiny-inline-diagnostic.nvim rachartier/tiny-inline-diagnostic.nvim: A Neovim plugin that display prettier diagnostic messages. Display one line diagnostic messages where the cursor is, with icons and colors.
-https://github.com/cstrap/python-snippets/tree/master cstrap/python-snippets: Python snippets for Visual Studio Code
 https://github.com/kdheepak/lazygit.nvim kdheepak/lazygit.nvim: Plugin for calling lazygit from within neovim.
-https://github.com/folke/lazydev.nvim folke/lazydev.nvim: Faster LuaLS setup for Neovim
 https://github.com/sainnhe/everforest sainnhe/everforest: 🌲 Comfortable & Pleasant Color Scheme for Vim
 https://github.com/ThePrimeagen/refactoring.nvim ThePrimeagen/refactoring.nvim: The Refactoring library based off the Refactoring book by Martin Fowler
-https://github.com/nvim-orgmode/orgmode nvim-orgmode/orgmode: Orgmode clone written in Lua for Neovim 0.9+.
 https://github.com/nvimdev/lspsaga.nvim nvimdev/lspsaga.nvim: improve neovim lsp experience
-https://github.com/folke/noice.nvim folke/noice.nvim: 💥 Highly experimental plugin that completely replaces the UI for messages, cmdline and the popupmenu.
 https://github.com/echasnovski/mini.nvim echasnovski/mini.nvim: Library of 40+ independent Lua modules improving overall Neovim (version 0.8 and higher) experience with minimal effort
 https://github.com/kuator/nvim-lua-guide-ru kuator/nvim-lua-guide-ru: A guide to using Lua in Neovim
 https://neovimcraft.com/ neovimcraft
 https://apple.stackexchange.com/questions/244930/how-do-i-view-inline-images-in-w3m macbook pro - How do I view inline images in w3m? - Ask Different
-https://events.yandex.ru/events/system_administration/kit_2014 Пятый набор на Курсы информационных технологий
-https://www.kinopoisk.ru/film/79905/?utm_referrer=www.google.com 23 фильм, 1998, дата выхода трейлеры актеры отзывы описание на Кинопоиске
 https://github.com/awesome-foss/awesome-sysadmin?tab=readme-ov-file#backups awesome-foss/awesome-sysadmin: A curated list of amazingly awesome open-source sysadmin resources.
 https://github.com/awesome-selfhosted/awesome-selfhosted awesome-selfhosted/awesome-selfhosted: A list of Free Software network services and web applications which can be hosted on your own servers
 https://www.reddit.com/r/selfhosted/ Self-Hosted Alternatives to Popular Services
 https://github.com/nvim-neorocks/rocks.nvim nvim-neorocks/rocks.nvim: 🌒 Neovim plugin management inspired by Cargo, powered by luarocks
 https://github.com/3rd/image.nvim 3rd/image.nvim: 🖼️ Bringing images to Neovim.
-https://github.com/nvim-orgmode/orgmode?tab=readme-ov-file nvim-orgmode/orgmode: Orgmode clone written in Lua for Neovim 0.9+.
-https://www.edclub.com/sportal/program-3/3209.play EdClub
-https://github.com/emikulic/darkhttpd emikulic/darkhttpd: When you need a web server in a hurry.
+https://github.com/nvim-neotest/neotest GitHub - nvim-neotest/neotest: An extensible framework for interacting with tests within NeoVim.
