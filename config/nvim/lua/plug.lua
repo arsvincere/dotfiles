@@ -3,35 +3,26 @@ vim.call('plug#begin')
 
 -- Theme
 -- https://www.nordtheme.com/ports/vim
-Plug 'shaunsingh/nord.nvim'                        -- color scheme
-Plug 'AlexvZyl/nordic.nvim'                        -- color scheme
-Plug 'rmehri01/onenord.nvim'                       -- color scheme
-Plug 'fcancelinha/nordern.nvim'                    -- color scheme
-Plug 'folke/tokyonight.nvim'                       -- color scheme
-Plug 'catppuccin/nvim'                             -- color scheme
 Plug "rebelot/kanagawa.nvim"                       -- color scheme
-Plug 'sainnhe/gruvbox-material'                    -- color scheme
-Plug 'sho-87/kanagawa-paper.nvim'                  -- color scheme
 Plug 'nvim-lualine/lualine.nvim'                   -- status line
 Plug 'akinsho/bufferline.nvim'                     -- buffers & tabs line
 Plug 'lukas-reineke/indent-blankline.nvim'         -- hightlight code blocks
 Plug 'nvimdev/dashboard-nvim'                      -- startup screen
 Plug "m4xshen/smartcolumn.nvim"                    -- smart color column
-Plug "folke/which-key.nvim"                        -- view keybinding
 -- Navigation
 Plug 'nvim-tree/nvim-tree.lua'                     -- file manager
-Plug 'nvim-tree/nvim-web-devicons'                 -- __dependency
-Plug 'ryanoasis/vim-devicons'                      -- __dependency
+Plug 'nvim-tree/nvim-web-devicons'                 ---- dependency
+Plug 'ryanoasis/vim-devicons'                      ---- dependency
 Plug 'nvim-telescope/telescope.nvim'               -- buff, search, grep...
-Plug 'nvim-lua/plenary.nvim'                       -- __dependency
+Plug 'nvim-lua/plenary.nvim'                       ---- dependency
 Plug 'famiu/bufdelete.nvim'                        -- del buf not close window
 Plug 'ggandor/leap.nvim'                           -- fast text motion
 -- IDE
 Plug 'nvim-treesitter/nvim-treesitter'             -- parsing library
-Plug 'nvim-treesitter/nvim-treesitter-textobjects' -- __dependency
+Plug 'nvim-treesitter/nvim-treesitter-textobjects' ---- dependency
 Plug 'numToStr/Comment.nvim'                       -- comment any language
 Plug 'kevinhwang91/nvim-ufo'                       -- very good folding
-Plug 'kevinhwang91/promise-async'                  -- __dependency
+Plug 'kevinhwang91/promise-async'                  ---- dependency
 Plug 'preservim/tagbar'                            -- panel: class, func...
 Plug 'windwp/nvim-autopairs'                       -- auto pairs () [] {}
 Plug 'kylechui/nvim-surround'                      -- replace '' "" () [] {}
@@ -40,24 +31,23 @@ Plug 'mfussenegger/nvim-lint'                      -- linter
 Plug 'folke/trouble.nvim'                          -- list diag, fzf, lsp...
 Plug 'folke/todo-comments.nvim'                    -- todo, fix -> trouble
 Plug 'akinsho/toggleterm.nvim'                     -- multiple terminals
-Plug 'RRethy/vim-illuminate'                       -- hightlight cursor word
 -- Autocomplete
 Plug 'williamboman/mason.nvim'                     -- manage language server
-Plug 'williamboman/mason-lspconfig.nvim'           -- __dependency
-Plug 'rshkarin/mason-nvim-lint'                    -- __dependency
+Plug 'williamboman/mason-lspconfig.nvim'           ---- dependency
+Plug 'rshkarin/mason-nvim-lint'                    ---- dependency
 Plug 'neovim/nvim-lspconfig'                       -- config language server
 Plug 'hrsh7th/nvim-cmp'                            -- autocomplete
-Plug 'hrsh7th/cmp-nvim-lsp'                        -- __dependency
-Plug 'hrsh7th/cmp-buffer'                          -- __dependency
-Plug 'hrsh7th/cmp-path'                            -- __dependency
-Plug 'hrsh7th/cmp-cmdline'                         -- __dependency
-Plug 'hrsh7th/cmp-nvim-lsp-signature-help'         -- __dependency
+Plug 'hrsh7th/cmp-nvim-lsp'                        ---- dependency
+Plug 'hrsh7th/cmp-buffer'                          ---- dependency
+Plug 'hrsh7th/cmp-path'                            ---- dependency
+Plug 'hrsh7th/cmp-cmdline'                         ---- dependency
+Plug 'hrsh7th/cmp-nvim-lsp-signature-help'         ---- dependency
 -- Debug
 Plug 'mfussenegger/nvim-dap'                       -- debug
 Plug 'mfussenegger/nvim-dap-python'                -- extension for python
 Plug 'rcarriga/nvim-dap-ui'                        -- debug user interface
-Plug 'nvim-neotest/nvim-nio'                       -- __dependency
-Plug 'folke/neodev.nvim'                           -- __dependency
+Plug 'nvim-neotest/nvim-nio'                       ---- dependency
+Plug 'folke/neodev.nvim'                           ---- dependency
 Plug 'mortepau/codicons.nvim'                      -- debug font icons
 -- git
 Plug 'sindrets/diffview.nvim'                      -- git diff
@@ -82,9 +72,7 @@ require('plugin.conforn')
 require('plugin.dashboard')
 require('plugin.diffview')
 require('plugin.f-string-toggle')
-require('plugin.gruvbox-material')
 require('plugin.indent-blankline')
--- require('plugin.kanagawa-again')
 require('plugin.kanagawa')
 require('plugin.leap')
 require('plugin.lspconfig')
@@ -106,13 +94,11 @@ require('plugin.tagbar')
 require('plugin.telescope')
 require('plugin.treesitter')
 require('plugin.trouble')
-require('plugin.vim-illuminate')
 require('plugin.todo-comments')
 require('plugin.toggleterm')
 require('plugin.vim-plugin-ruscmd')
 require('plugin.vimtex')
 require('plugin.wakatime')
-require('plugin.which-key')
 
 -- " Language
 -- Plug 'j-hui/fidget.nvim'
