@@ -12,22 +12,21 @@ require('lspconfig')['lua_ls'].setup { capabilities = capabilities }
 -- Language servers ----------------------------------------------------------
 
 -- Python
-require 'lspconfig'.jedi_language_server.setup {}
+require('lspconfig').jedi_language_server.setup {}
 
 -- С++
-require 'lspconfig'.clangd.setup {}
+require('lspconfig').clangd.setup {}
 
 -- Markdown
-require 'lspconfig'.marksman.setup {}
+require('lspconfig').marksman.setup {}
 
--- Ruff linter/formatter -----------------------------------------------------
-
+-- Ruff linter/formatter
 require('lspconfig').ruff.setup {
-    init_options = {
-        settings = {
-            logLevel = 'debug',
-        }
+  init_options = {
+    settings = {
+      logLevel = 'debug',
     }
+  }
 }
 
 -- Rust

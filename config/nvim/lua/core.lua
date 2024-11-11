@@ -49,9 +49,9 @@ opt.shiftwidth = 4     -- shift 4 spaces when tab
 opt.tabstop = 4        -- 1 tab == 4 spaces
 opt.smartindent = true -- autoindent new lines
 -- 2 spaces for selected filetypes
-cmd [[
-autocmd FileType xml,html,xhtml,css,scss,javascript,lua,yaml,htmljinja setlocal shiftwidth=2 tabstop=2
-]]
+-- cmd [[
+-- autocmd FileType html,css,javascript,lua setlocal shiftwidth=2 tabstop=2
+-- ]]
 cmd([[
 filetype indent plugin on
 syntax enable

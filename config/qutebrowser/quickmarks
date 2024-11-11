@@ -55,3 +55,7 @@ avito https://www.avito.ru/
 css https://www.w3.org/TR/2011/REC-CSS2-20110607/#minitoc
 rust gui Tauri https://tauri.app/
 latex wiki https://ru.wikibooks.org/wiki/%D0%9C%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5_%D1%84%D0%BE%D1%80%D0%BC%D1%83%D0%BB%D1%8B_%D0%B2_LaTeX
+latex 30min https://habr.com/ru/companies/ruvds/articles/574352/
+rust en https://doc.rust-lang.org/book/
+rust ru https://doc.rust-lang.ru/book/
+rust examples https://github.com/rust-lang/book/tree/main/src
