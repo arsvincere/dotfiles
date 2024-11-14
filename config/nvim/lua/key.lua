@@ -263,7 +263,8 @@ map(n, '<C-c>', ':tabclose<CR>', opt)
 map(n, '<M-r>', re_run, opt)
 map(t, '<M-r>', re_run, opt)
 
--- Quick activate macros 'm'
+-- Quick activate macros
+map(n, '<M-n>', '@n', opt)
 map(n, '<M-m>', '@m', opt)
 
 

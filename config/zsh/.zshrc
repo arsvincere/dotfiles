@@ -112,7 +112,6 @@ alias ohmyzsh="nvim ~/.oh-my-zsh"
 # alias
 alias pgadmin="python /home/alex/env/lib/python3.12/site-packages/pgadmin4/pgAdmin4.py"
 alias vim="nvim"
-alias vi="nvim"
 alias dev="zellij -l dev"
 
 # python

@@ -59,4 +59,5 @@ latex 30min https://habr.com/ru/companies/ruvds/articles/574352/
 rust en https://doc.rust-lang.org/book/
 rust ru https://doc.rust-lang.ru/book/
 rust examples https://github.com/rust-lang/book/tree/main/src
-yandex talks  https://yatalks.yandex.ru/en?day=tech&platform=moscow
+yandex talks https://yatalks.yandex.ru/en?day=tech&platform=moscow
+rust cookbook https://doc.rust-lang.ru/rust-cookbook/file/read-write.html
