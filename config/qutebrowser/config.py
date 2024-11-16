@@ -274,6 +274,19 @@ c.tabs.favicons.scale = 0.8
 ##   - none: Don't close tabs using the mouse.
 c.tabs.close_mouse_button = "middle"
 
+## Display PDF files via PDF.js in the browser without showing a download
+## prompt. Note that the files can still be downloaded by clicking the
+## download button in the pdf.js viewer. With this set to `false`, the
+## `:prompt-open-download --pdfjs` command (bound to `<Ctrl-p>` by
+## default) can be used in the download prompt.
+## Type: Bool
+c.content.pdfjs = True
+
+## Directory to save downloads to. If unset, a sensible OS-specific
+## default is used.
+## Type: Directory
+c.downloads.location.directory = "/home/alex/download"
+
 
 # -----------------------------------------------------------------------------{{{
 
@@ -1151,14 +1164,6 @@ c.tabs.close_mouse_button = "middle"
 ## Type: Bool
 # c.content.notifications.show_origin = True
 
-## Display PDF files via PDF.js in the browser without showing a download
-## prompt. Note that the files can still be downloaded by clicking the
-## download button in the pdf.js viewer. With this set to `false`, the
-## `:prompt-open-download --pdfjs` command (bound to `<Ctrl-p>` by
-## default) can be used in the download prompt.
-## Type: Bool
-# c.content.pdfjs = False
-
 ## Allow websites to request persistent storage quota via
 ## `navigator.webkitPersistentStorage.requestQuota`.
 ## Type: BoolAsk
@@ -1274,11 +1279,6 @@ c.tabs.close_mouse_button = "middle"
 ## https://www.chromium.org/developers/design-documents/xss-auditor
 ## Type: Bool
 # c.content.xss_auditing = False
-
-## Directory to save downloads to. If unset, a sensible OS-specific
-## default is used.
-## Type: Directory
-# c.downloads.location.directory = None
 
 ## Prompt the user for the download location. If set to false,
 ## `downloads.location.directory` will be used.
@@ -2232,10 +2232,8 @@ c.tabs.close_mouse_button = "middle"
 config.bind("D", "clear-keychain ;; search ;; fullscreen --leave")
 # config.bind('F', 'hint all tab')
 # config.bind('G', 'scroll-to-perc')
-config.bind("H", "back")
-config.bind("l", "tab-next")
-config.bind("h", "tab-prev")
-config.bind("L", "forward")
+config.bind("h", "back")
+config.bind("l", "forward")
 config.bind("J", "tab-next")
 config.bind("K", "tab-prev")
 config.bind("<Down>", "tab-next")
