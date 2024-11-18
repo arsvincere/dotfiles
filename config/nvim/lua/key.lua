@@ -98,7 +98,19 @@ end
 -- }}}
 local function run_pytest() -- {{{
   cmd('wa!')
-  LAST_RUN = ':8TermExec cmd="pytest test" name=pytest<CR>'
+  local file_path = vim.api.nvim_buf_get_name(0)
+  local name = file_name(file_path)
+
+  local py = string.find(name, ".py")
+  if py then
+    LAST_RUN = ':8TermExec cmd="pytest test" name=pytest<CR>'
+  end
+
+  local rust = string.find(name, ".rs")
+  if rust then
+    LAST_RUN = ':8TermExec cmd="cargo test" name=cargo_test<CR>'
+  end
+
   cmd(LAST_RUN)
 end
 -- }}}
