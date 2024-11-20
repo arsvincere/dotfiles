@@ -64,3 +64,6 @@ rust cookbook https://doc.rust-lang.ru/rust-cookbook/file/read-write.html
 python комбинаторика https://habr.com/ru/articles/479816/
 rust by example https://doc.rust-lang.ru/stable/rust-by-example/index.html
 rust modules - docs.rs https://docs.rs/
+rust crossterm https://docs.rs/crossterm/latest/crossterm/index.html
+rust toml https://docs.rs/toml/latest/toml/
+good design site example https://rsdlt.github.io/archives/

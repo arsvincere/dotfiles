@@ -480,6 +480,14 @@ map(n, '<End>',
     :wincmd l<CR>\
     ', opt)
 -- }}}
+-- Aim session -----------------------------------------------------------{{{
+map(n, '<Home>',
+  ':source ~/aim/Session.vim<CR>\
+    :TodoQuickFix<CR>:sleep 100m<CR>:x<CR>\
+    :NvimTreeOpen\
+    :wincmd l<CR>\
+    ', opt)
+-- }}}
 -- Blog session -----------------------------------------------------------{{{
 map(n, '<PageDown>', '\
     :source /home/alex/arsvincere.com/Session.vim<CR>\

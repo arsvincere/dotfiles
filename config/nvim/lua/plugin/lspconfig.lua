@@ -13,14 +13,7 @@ require('lspconfig')['lua_ls'].setup { capabilities = capabilities }
 
 -- Python
 require('lspconfig').jedi_language_server.setup {}
-
--- С++
-require('lspconfig').clangd.setup {}
-
--- Markdown
-require('lspconfig').marksman.setup {}
-
--- Ruff linter/formatter
+-- Ruff linter/formatter for Python
 require('lspconfig').ruff.setup {
   init_options = {
     settings = {
@@ -29,5 +22,18 @@ require('lspconfig').ruff.setup {
   }
 }
 
+-- С++
+require('lspconfig').clangd.setup {}
+
+-- Markdown
+require('lspconfig').marksman.setup {}
+
 -- Rust
-require("lspconfig").rust_analyzer.setup {}
+require("lspconfig").rust_analyzer.setup({
+  cmd = { "rust-analyzer" },
+})
+
+-- -- $ rustup component add rust-analyzer
+-- require("lspconfig").rust_analyzer.setup({
+--   cmd = { "rust-analyzer" },
+-- })
