@@ -27,13 +27,14 @@ syn match   unHeader4 /^=\{4}\s\+\S.*$/ contains=FoldMarker
 syn match   unHeader5 /^=\{5}\s\+\S.*$/ contains=FoldMarker
 syn match   unHeader6 /^=\{6}\s\+\S.*$/ contains=FoldMarker
 
+" syn match unListBullet /^\s*\zs\(-\+\|\*\{1,5}\)\ze\s/
 syn match   unListBullet /^\s*\zs\(-\|\*\{1,5}\)\ze\s/
 syn match   unListNumber /^\s*\zs\(\(\d\+\.\)\|\.\{1,5}\|\(\a\.\)\|\([ivxIVX]\+)\)\)\ze\s\+/
 
-syn match   unBold /\\\@<!\*\S\_.\{-}\(\*\|\n\s*\n\)/
-syn match   unItalic /\\\@<!\/\S\_.\{-}\(\/\|\n\s*\n\)/
-syn match   unUnderline /\\\@<!_\S\_.\{-}\(_\|\n\s*\n\)/
-syn match   unCross /\\\@<!\-\S[^-]\_.\{-}\(\-\|\n\s*\n\)/
+syn match   unBold /\\\@<!\*\*\S\_.\{-}\(\*\*\|\n\s*\n\)/
+syn match   unItalic /\\\@<!\/\/\S\_.\{-}\(\/\/\|\n\s*\n\)/
+syn match   unUnderline /\\\@<!__\S\_.\{-}\(__\|\n\s*\n\)/
+syn match   unCross /\\\@<!\-\-\S[^-]\_.\{-}\(\-\-\|\n\s*\n\)/
 
 syn match   unLink /\\\@<!::\S\_.\{-}\(::\|\n\s*\n\)/
 syn region  unQuote start=/"""/ skip=/\\"""/ end=/"""/

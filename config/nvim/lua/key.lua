@@ -103,7 +103,7 @@ local function run_pytest() -- {{{
 
   local py = string.find(name, ".py")
   if py then
-    LAST_RUN = ':8TermExec cmd="pytest test" name=pytest<CR>'
+    LAST_RUN = ':8TermExec cmd="pytest tests" name=pytest<CR>'
   end
 
   local rust = string.find(name, ".rs")
