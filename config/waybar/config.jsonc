@@ -87,7 +87,7 @@
         "format": "[{short}]"
     },
     "pulseaudio": {
-        "scroll-step": 10,
+        "scroll-step": 5,
         "format": "  {volume}",
         "format-muted": " mute",
         "on-click": "pavucontrol",
