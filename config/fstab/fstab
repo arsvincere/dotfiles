@@ -1,0 +1,15 @@
+# Static information about the filesystems.
+# See fstab(5) for details.
+
+# <file system> <dir> <type> <options> <dump> <pass>
+# /dev/sda2 LABEL=root
+UUID=eed61a85-8018-463f-9e58-eb23e2c0e9f5	/         	ext4      	rw,relatime	0 1
+
+# /dev/sda1 LABEL=swap
+UUID=7ee92e52-c167-4fa4-8e30-e45d411d78dd	none      	swap      	defaults  	0 0
+
+# /dev/sdb1
+UUID=9daafa54-ccb6-4d84-b9f9-687f02820a43	/run/media/alex/hdd  	ext4      	rw,relatime	0 2
+
+# shared hdd
+/run/media/alex/hdd 				/srv/nfs/hdd	none	bind	0 0

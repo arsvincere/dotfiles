@@ -7,7 +7,8 @@ loadkeys ru
 setfont cyr-sun16
 
 # Подключаем интернет
-wpa_passphrase Keenetic-8471 Q2Wobiko > /etc/wpa_supplicant.conf
+# wpa_passphrase Keenetic-8471 Q2Wobiko > /etc/wpa_supplicant.conf
+wpa_passphrase alexavin 32167321 > /etc/wpa_supplicant.conf
 wpa_supplicant -B -Dwext -i wlan0 -c /etc/wpa_supplicant.conf
 dhcpcd wlan0
 

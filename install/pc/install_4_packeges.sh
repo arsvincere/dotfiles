@@ -30,5 +30,5 @@ sh install.sh
 curl -sSL https://github.com/zthxxx/jovial/raw/master/installer.sh | sudo -E bash -s ${USER:=`whoami`}
 
 # Install snap
-yay -S snapd
-systemctl enable snapd.socket
+# yay -S snapd
+# systemctl enable snapd.socket

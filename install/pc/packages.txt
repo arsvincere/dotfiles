@@ -1,6 +1,4 @@
 alacritty
-alsa-utils
-aspell-ru
 btop
 ctags
 deluge-gtk
@@ -8,10 +6,8 @@ drawio-desktop-bin
 file-roller
 fzf
 github-cli
-google-chrome
 grimshot
 grub
-helix
 hyprland
 hyprlock
 hyprpicker
@@ -20,8 +16,6 @@ inkscape
 kanagawa-gtk-theme-git
 kanagawa-icon-theme-git
 lazygit
-libreoffice-still
-links
 mako
 mousepad
 neofetch
@@ -37,7 +31,6 @@ qutebrowser
 rclone
 ripgrep
 ristretto
-snapd
 speedcrunch
 syncthing
 telegram-desktop
@@ -47,12 +40,11 @@ timeshift
 ttf-hack
 ttf-hack-nerd
 ttf-sourcecodepro-nerd
-vifm
+ttf-dejavu
 waybar
 waypaper
 wev
 wl-clip-persist
 wofi
 xplr
-yandex-disk
 zellij
