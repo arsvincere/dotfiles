@@ -21,7 +21,7 @@ timedatectl set-ntp true
 mkswap      /dev/sda1 -L swap
 mkfs.ext4   /dev/sda2 -L root
 
-# Монтирование дисков 
+# Монтирование дисков
 mount  /dev/sda2 /mnt
 swapon /dev/sda1
 

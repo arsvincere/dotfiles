@@ -128,6 +128,21 @@ local function run_debug() -- {{{
   return
 end
 -- }}}
+local function run_main() -- {{{
+  cmd('wa!')
+  -- local file_path = vim.api.nvim_buf_get_name(0)
+  -- local name = file_name(file_path)
+  --
+  -- local py = string.find(name, ".py")
+  -- if py then
+  --   LAST_RUN = tostring(':1TermExec cmd="python3 main.py"')
+  -- end
+
+  LAST_RUN = tostring(':1TermExec cmd="python3 main.py"')
+  cmd(LAST_RUN)
+end
+
+-- }}}
 local function close_degug() -- {{{
   if DAP_UI_ENABLED then
     cmd("DapTerminate")
@@ -388,6 +403,9 @@ map(n, '<F4>', gitdiff_toggle, opt)
 -- <F5> Run current buf
 map(n, '<F5>', run, opt)
 map(t, '<F5>', re_run, opt)
+-- <Shift+F5> Run main.py
+map(n, '<F17>', run_main, opt)
+map(t, '<F17>', run_main, opt)
 
 -- <F6>..<F10> Debug
 map(n, '<F6>', run_debug, opt)
@@ -407,9 +425,6 @@ map(n, '<F12>',
     :so ~/.config/nvim/lua/plug.lua<CR>\
     :so ~/.config/nvim/lua/key.lua<CR>\
     ', opt)
-
--- <F24> fuck!
-map(n, '<F24>', ':CellularAutomaton make_it_rain<CR>', opt)
 
 
 -- }}}
