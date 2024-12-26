@@ -1,0 +1,167 @@
+* {
+    border: none;
+    border-radius: 0;
+    border-bottom: none;
+    font-family: Hack;
+    font-size: 11pt;
+    min-height: 0;
+    min-width: 0;
+}
+
+window#waybar {
+    background: transparent;
+    /* background: #323232; */
+    color: #DCD7BA;
+    color: red;
+}
+
+/* Left angle ***************************************************************/
+
+#custom-diary {
+    background: transparent;
+    color: #76946A;
+	margin: 4px 0px 0px 8px;
+    padding: 0px 2px;
+}
+
+#custom-book {
+    background: transparent;
+    color: #76946A;
+	margin: 4px 0px 0px 0px;
+    padding: 0px 2px;
+}
+#custom-english {
+    background: transparent;
+    color: #76946A;
+	margin: 4px 0px 0px 0px;
+    padding: 0px 2px;
+}
+#custom-calculator {
+    background: transparent;
+    color: #76946A;
+	margin: 4px 0px 0px 0px;
+    padding: 0px 2px;
+}
+#custom-note {
+    background: transparent;
+    color: #76946A;
+	margin: 4px 0px 0px 0px;
+    padding: 0px 2px;
+}
+
+/* Left *********************************************************************/
+
+#workspaces {
+    background: #363646;
+	margin: 4px 0px 0px 200px;
+    border: solid 1px #54546D;
+	border-radius: 8px;
+}
+#workspaces button {
+    background: #363646;
+    color: #C8C093;
+    box-shadow: inset 0 0px red;
+    margin: 0px 0px 0px 0px;
+    padding: 2px 8px;
+	border-radius: 8px;
+}
+#workspaces button.active {
+    background: #C8C093;
+    /* box-shadow: inset 0 -2px #76946A; */
+    color: #363646;
+    border: solid 1px #54546D;
+	border-radius: 8px;
+}
+#workspaces button:hover {
+    background: #C8C093;
+    color: #363646;
+    /* box-shadow: inset 0 -2px #C8C093; */
+    border: solid 1px #54546D;
+	border-radius: 8px;
+}
+#workspaces button.focused {
+    background: #FF0000;
+}
+#workspaces button.urgent {
+    background: #FF9E3B;
+}
+
+/* Center *******************************************************************/
+
+#clock {
+    background: #363646;
+    color: #C8C093;
+	margin: 4px 0px 0px 0px;
+    padding: 2px 8px;
+	border-radius: 8px;
+    border: solid 1px #54546D;
+}
+
+/* Right ********************************************************************/
+
+#language, #pulseaudio, #network {
+    background: #363646;
+    color: #C8C093;
+	margin: 4px 4px 0px 4px;
+    padding: 2px 8px;
+	border-radius: 8px;
+    border: solid 1px #54546D;
+}
+#pulseaudio.muted {
+    background: #DCA561;
+    color: #363646;
+	margin: 4px 4px 0px 4px;
+    padding: 2px 8px;
+	border-radius: 8px;
+    border: solid 1px #54546D;
+}
+#network.disconnected {
+    background: #DCA561;
+    color: #363646;
+	margin: 4px 4px 0px 4px;
+    padding: 2px 8px;
+	border-radius: 8px;
+    border: solid 1px #54546D;
+}
+
+/* Right angle **************************************************************/
+#cpu {
+    background: transparent;
+    color: #76946A;
+	margin: 4px 0px 0px 0px;
+    padding: 0px 8px 0px 150px;
+}
+#memory {
+    background: transparent;
+    color: #76946A;
+	margin: 4px 0px 0px 0px;
+    padding: 0px 8px;
+}
+#disk {
+    background: transparent;
+    color: #76946A;
+	margin: 4px 0px 0px 0px;
+    padding: 0px 8px;
+}
+#temperature {
+    background: transparent;
+    color: #76946A;
+	margin: 4px 4px 0px 0px;
+    padding: 0px 8px;
+}
+#temperature.critical {
+    background: #C34043;
+    color: #16161D;
+	margin: 4px 0px 0px 0px;
+    padding: 0px 8px;
+}
+
+/* Tooltip ******************************************************************/
+tooltip {
+  background: rgba(43, 48, 59, 0.5);
+  border: 1px solid rgba(100, 114, 125, 0.5);
+}
+tooltip label {
+  color: white;
+}
+

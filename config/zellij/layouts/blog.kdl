@@ -1,0 +1,18 @@
+layout {
+    default_tab_template {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+            }
+        children
+//        pane size=2 borderless=true {
+//            plugin location="zellij:status-bar"
+//            }
+        }
+    tab name="blog" focus=true {
+        pane cwd="/home/alex/ya/blog" command="nvim" size="80%" borderless=true
+        pane cwd="/home/alex/ya/blog" size="20%"
+        }
+    tab name="xplr" {
+        pane cwd="/home/alex/ya/blog" command="xplr" borderless=true
+        }
+    }
