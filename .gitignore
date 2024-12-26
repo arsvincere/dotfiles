@@ -1,0 +1,11 @@
+config/ssh-client
+config/ssh-server
+config/rclone
+config/fstab
+
+archive/**
+pc/**
+toshiba/**
+after.un
+arch_linux.md
+
