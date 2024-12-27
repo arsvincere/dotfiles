@@ -19,15 +19,19 @@
         "cpu",
         "memory",
         "disk",
-        "temperature"
-        // "custom/power"
+        "temperature",
+        "custom/power"
     ],
 
     // Modules configuration -------------------------------------------------
-
+    "custom/power": {
+      "format": " ",
+      "on-click": "alacritty -e shutdown now",
+      "tooltip": false
+    },
     "custom/journal": {
       "format": " ",
-      "on-click": "alacritty -T journal -e nvim ~/!/journal",
+      "on-click": "alacritty -T journal -e nvim ~/diary/journal",
       "tooltip": false
     },
     "custom/book": {
@@ -42,12 +46,12 @@
     },
     "custom/english": {
       "format": "󰬰 ",
-      "on-click": "alacritty -T english -e nvim ~/!/english.norg ",
+      "on-click": "alacritty -T english -e nvim ~/diary/english.un ",
       "tooltip": false
     },
     "custom/note": {
       "format": " ",
-      "on-click": "alacritty -T note -e nvim ~/!/note.norg ",
+      "on-click": "alacritty -T note -e nvim ~/diary/note.un ",
       "tooltip": false
     },
     "hyprland/workspaces": {
@@ -123,11 +127,6 @@
         "format": "{icon} {temperatureC}°",
         "format-critical": "{icon} {temperatureC}°",
         "format-icons": ["", "", ""]
-    },
-    "custom/power": {
-      "format": " ",
-      "on-click": "alacritty -e shutdown now",
-      "tooltip": false
     }
 }
 
