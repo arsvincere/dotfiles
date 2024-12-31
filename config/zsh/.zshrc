@@ -107,7 +107,7 @@ alias dev="zellij -l dev"
 alias aa="/home/alex/sh/aa.sh"
 
 # python
-export PYTHONPATH="$PYTHONPATH:/home/alex/AVIN"
+export PYTHONPATH="$PYTHONPATH:/home/alex/AVIN/"
 export PYTHONPATH="$PYTHONPATH:/home/alex/env/lib/python3.13/site-packages/"
 # calibre
 export CALIBRE_USE_DARK_PALETTE=1

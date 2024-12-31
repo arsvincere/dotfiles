@@ -305,11 +305,14 @@ map(v, '<leader><leader>', ':ToggleTermSendVisualSelection<CR>', opt)
 -- 'a' print() input("STOP") exit(100500)
 map(n, '<leader>a',
   'o\
+####\
 from avin.utils import dbg, dbg_kv, stop\
 dbg()\
 dbg_kv()\
 stop("")\
-exit(100500)<Esc>\
+exit(100500)\
+####\
+<Esc>\
 '
   , opt)
 -- map(n, '<leader>a',
