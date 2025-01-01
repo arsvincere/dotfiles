@@ -18,31 +18,31 @@ window#waybar {
 
 #custom-journal {
     background: transparent;
-    color: #658594;
+    color: #848388;
 	margin: 0px 0px 0px 8px;
     padding: 0px 2px;
 }
 #custom-book {
     background: transparent;
-    color: #658594;
+    color: #848388;
 	margin: 0px 0px 0px 0px;
     padding: 0px 2px;
 }
 #custom-english {
     background: transparent;
-    color: #658594;
+    color: #848388;
 	margin: 0px 0px 0px 0px;
     padding: 0px 2px;
 }
 #custom-calculator {
     background: transparent;
-    color: #658594;
+    color: #848388;
 	margin: 0px 0px 0px 0px;
     padding: 0px 2px;
 }
 #custom-note {
     background: transparent;
-    color: #658594;
+    color: #848388;
 	margin: 0px 0px 0px 0px;
     padding: 0px 2px;
 }
@@ -50,93 +50,90 @@ window#waybar {
 /* Left *********************************************************************/
 
 #workspaces {
-    background: #363646;
+    background: #373737;
 	margin: 2px 0px 0px 200px;
-    border: solid 1px #54546D;
+    border: solid 1px #5D5E60;
 	border-radius: 8px;
 }
 #workspaces button {
-    background: #363646;
-    color: #C8C093;
+    color: #CCCCCC;
     box-shadow: inset 0 0px red;
     margin: 0px 0px 0px 0px;
     padding: 1px 8px;
 	border-radius: 8px;
 }
 #workspaces button.active {
-    background: #C8C093;
-    color: #363646;
-    border: solid 1px #54546D;
+    background: #B7B7AF;
+    color: #0F0F0F;
 	border-radius: 8px;
 }
 #workspaces button:hover {
-    background: #C8C093;
-    color: #363646;
-    border: solid 1px #54546D;
+    background: #B7B7AF;
+    color: #0F0F0F;
 	border-radius: 8px;
 }
 #workspaces button.focused {
-    background: #FF0000;
+    background: #C34043;
 }
 #workspaces button.urgent {
-    background: #FF9E3B;
+    background: #DCA561;
 }
 
-/* Center *******************************************************************/
+/* Center *******************************************************************//*{{{*/
 
 #clock {
-    background: #363646;
-    color: #C8C093;
+    background: #373737;
+    color: #B7B7AF;
 	margin: 2px 0px 0px 0px;
     padding: 1px 8px;
 	border-radius: 8px;
-    border: solid 1px #54546D;
+    border: solid 1px #5D5E60;
 }
-
-/* Right ********************************************************************/
+/*}}}*/
+/* Right ********************************************************************//*{{{*/
 
 #language, #pulseaudio, #network {
-    background: #363646;
-    color: #C8C093;
+    background: #373737;
+    color: #B7B7AF;
 	margin: 2px 4px 0px 4px;
     padding: 1px 8px;
 	border-radius: 8px;
-    border: solid 1px #54546D;
+    border: solid 1px #5D5E60;
 }
 #pulseaudio.muted {
     background: #DCA561;
-    color: #363646;
+    color: #373737;
 	margin: 2px 4px 0px 4px;
     padding: 1px 8px;
 	border-radius: 8px;
-    border: solid 1px #54546D;
+    border: solid 1px #5D5E60;
 }
 #network.disconnected {
     background: #DCA561;
-    color: #363646;
+    color: #373737;
 	margin: 2px 4px 0px 4px;
     padding: 1px 8px;
 	border-radius: 8px;
-    border: solid 1px #54546D;
+    border: solid 1px #5D5E60;
 }
-
-/* Right angle **************************************************************/
+/*}}}*/
+/* Right angle **************************************************************//*{{{*/
 #cpu {
     background: transparent;
-    color: #658594;
+    color: #848388;
 	margin: 2px 0px 0px 150px;
     padding: 1px 8px;
-    border: solid 0px #54546D;
+    border: solid 0px #5D5E60;
 	border-radius: 0px;
     opacity: 1.0;
 }
 
 #memory, #disk, #temperature, #custom-power {
     background: transparent;
-    color: #658594;
+    color: #848388;
 	margin: 2px 0px 0px 0px;
     padding: 1px 8px;
-    border: solid 0px #54546D;
+    border: solid 0px #5D5E60;
 	border-radius: 0px;
     opacity: 1.0;
 }
@@ -145,11 +142,11 @@ window#waybar {
     color: #16161D;
 	margin: 2px 4px 0px 0px;
     padding: 1px 8px;
-    border: solid 1px #54546D;
+    border: solid 1px #5D5E60;
 	border-radius: 0px;
 }
-
-/* Tooltip ******************************************************************/
+/*}}}*/
+/* Tooltip ******************************************************************//*{{{*/
 tooltip {
   background: rgba(43, 48, 59, 0.5);
   border: 1px solid rgba(100, 114, 125, 0.5);
@@ -157,4 +154,4 @@ tooltip {
 tooltip label {
   color: white;
 }
-
+/*}}}*/
