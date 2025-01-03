@@ -18,8 +18,8 @@
   "count_boot" : "5",
   "date_format" : "%Y-%m-%d %H:%M:%S",
   "exclude" : [
-    "/root/**",
-    "/home/alex/**"
+    "/home/alex/**",
+    "/root/**"
   ],
   "exclude-apps" : []
 }

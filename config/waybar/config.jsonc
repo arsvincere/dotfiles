@@ -74,7 +74,7 @@
             "12": "trade",
             "13": "cfg",
             "14": "view",
-            "15": "tmp",
+            "15": "test",
             "urgent": " ",
             "focused": " ",
             "default": " "
@@ -102,10 +102,9 @@
             "default": ["", " ", " "]
         },
     },
-
     "network": {
         "format-wifi": "  {signalStrength}",
-        // "format-ethernet": "  80",
+        "format-ethernet": "󰈀 {ifname}",
         "format-disconnected": "󰖪 --",
         "format-alt": "{ifname}: {essid} [{ipaddr}/{cidr}]",
         "tooltip-format": "{ifname}: {essid} - [{ipaddr}/{cidr}]"

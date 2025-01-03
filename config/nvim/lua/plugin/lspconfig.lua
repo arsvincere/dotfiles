@@ -28,7 +28,7 @@ require("lspconfig").rust_analyzer.setup({
 })
 
 -- С++
-require('lspconfig').clangd.setup {}
+-- require('lspconfig').clangd.setup {}
 
 -- Markdown
-require('lspconfig').marksman.setup {}
+-- require('lspconfig').marksman.setup {}
