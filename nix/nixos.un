@@ -1,0 +1,8 @@
+== Home-manager (standalone)
+nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
+OR
+nix-channel --add https://github.com/nix-community/home-manager/archive/release-24.11.tar.gz home-manager
+
+nix-channel --update
+nix-shell '<home-manager>' -A install
+nvim .config/home-manager/home.nix

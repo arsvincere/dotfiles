@@ -1,0 +1,157 @@
+* {
+    border: none;
+    border-radius: 0;
+    border-bottom: none;
+    font-family: Hack;
+    font-size: 10pt;
+    min-height: 0;
+    min-width: 0;
+}
+
+window#waybar {
+    background: transparent;
+    /* background: #2A2A37; */
+    color: #DCD7BA;
+}
+
+/* Left angle ***************************************************************/
+
+#custom-journal {
+    background: transparent;
+    color: #848388;
+	margin: 0px 0px 0px 8px;
+    padding: 0px 2px;
+}
+#custom-book {
+    background: transparent;
+    color: #848388;
+	margin: 0px 0px 0px 0px;
+    padding: 0px 2px;
+}
+#custom-english {
+    background: transparent;
+    color: #848388;
+	margin: 0px 0px 0px 0px;
+    padding: 0px 2px;
+}
+#custom-calculator {
+    background: transparent;
+    color: #848388;
+	margin: 0px 0px 0px 0px;
+    padding: 0px 2px;
+}
+#custom-note {
+    background: transparent;
+    color: #848388;
+	margin: 0px 0px 0px 0px;
+    padding: 0px 2px;
+}
+
+/* Left *********************************************************************/
+
+#workspaces {
+    background: #373737;
+	margin: 2px 0px 0px 200px;
+    border: solid 1px #5D5E60;
+	border-radius: 8px;
+}
+#workspaces button {
+    color: #CCCCCC;
+    box-shadow: inset 0 0px red;
+    margin: 0px 0px 0px 0px;
+    padding: 1px 8px;
+	border-radius: 8px;
+}
+#workspaces button.active {
+    background: #B7B7AF;
+    color: #0F0F0F;
+	border-radius: 8px;
+}
+#workspaces button:hover {
+    background: #B7B7AF;
+    color: #0F0F0F;
+	border-radius: 8px;
+}
+#workspaces button.focused {
+    background: #C34043;
+}
+#workspaces button.urgent {
+    background: #DCA561;
+}
+
+/* Center *******************************************************************//*{{{*/
+
+#clock {
+    background: #373737;
+    color: #B7B7AF;
+	margin: 2px 0px 0px 0px;
+    padding: 1px 8px;
+	border-radius: 8px;
+    border: solid 1px #5D5E60;
+}
+/*}}}*/
+/* Right ********************************************************************//*{{{*/
+
+#language, #pulseaudio, #network {
+    background: #373737;
+    color: #B7B7AF;
+	margin: 2px 4px 0px 4px;
+    padding: 1px 8px;
+	border-radius: 8px;
+    border: solid 1px #5D5E60;
+}
+#pulseaudio.muted {
+    background: #DCA561;
+    color: #373737;
+	margin: 2px 4px 0px 4px;
+    padding: 1px 8px;
+	border-radius: 8px;
+    border: solid 1px #5D5E60;
+}
+#network.disconnected {
+    background: #DCA561;
+    color: #373737;
+	margin: 2px 4px 0px 4px;
+    padding: 1px 8px;
+	border-radius: 8px;
+    border: solid 1px #5D5E60;
+}
+/*}}}*/
+/* Right angle **************************************************************//*{{{*/
+#cpu {
+    background: transparent;
+    color: #848388;
+	margin: 2px 0px 0px 150px;
+    padding: 1px 8px;
+    border: solid 0px #5D5E60;
+	border-radius: 0px;
+    opacity: 1.0;
+}
+
+#memory, #disk, #temperature, #custom-power {
+    background: transparent;
+    color: #848388;
+	margin: 2px 0px 0px 0px;
+    padding: 1px 8px;
+    border: solid 0px #5D5E60;
+	border-radius: 0px;
+    opacity: 1.0;
+}
+#temperature.critical {
+    background: #C34043;
+    color: #16161D;
+	margin: 2px 4px 0px 0px;
+    padding: 1px 8px;
+    border: solid 1px #5D5E60;
+	border-radius: 0px;
+}
+/*}}}*/
+/* Tooltip ******************************************************************//*{{{*/
+tooltip {
+  background: rgba(43, 48, 59, 0.5);
+  border: 1px solid rgba(100, 114, 125, 0.5);
+}
+tooltip label {
+  color: white;
+}
+/*}}}*/

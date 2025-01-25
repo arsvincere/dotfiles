@@ -1,0 +1,9 @@
+config/ssh-client
+config/ssh-server
+config/rclone
+config/fstab
+config/wakatime
+
+arch/
+archive/
+
