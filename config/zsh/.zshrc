@@ -101,10 +101,12 @@ export ARCHFLAGS="-arch x86_64"
 # ----------------------------------------------------------------------------
 
 # alias
-alias pgadmin="python /home/alex/env/lib/python3.13/site-packages/pgadmin4/pgAdmin4.py"
-alias vim="nvim"
-alias dev="zellij -l dev"
+alias v="nvim"
 alias aa="/home/alex/sh/aa.sh"
+alias se="sudoedit"
+
+# alias pgadmin="python /home/alex/env/lib/python3.13/site-packages/pgadmin4/pgAdmin4.py"
+# alias dev="zellij -l dev"
 
 # python
 export PYTHONPATH="$PYTHONPATH:/home/alex/AVIN/"
