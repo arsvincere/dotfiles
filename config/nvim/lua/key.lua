@@ -483,7 +483,6 @@ map(n, '<End>',
     :BufferLineTabRename  plan<CR>\
     :NvimTreeOpen\
     :tabnext<CR>\
-    :TermExec cmd="source ~/env/bin/activate" name=zsh\
     :wincmd l<CR>\
     ', opt)
 -- }}}

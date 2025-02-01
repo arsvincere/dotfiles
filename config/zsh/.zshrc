@@ -110,7 +110,7 @@ alias se="sudoedit"
 
 # python
 export PYTHONPATH="$PYTHONPATH:/home/alex/AVIN/"
-export PYTHONPATH="$PYTHONPATH:/home/alex/env/lib/python3.13/site-packages/"
+export PYTHONPATH="$PYTHONPATH:/home/alex/AVIN/.venv/lib/python3.13/site-packages/"
 # calibre
 export CALIBRE_USE_DARK_PALETTE=1
 # nvim

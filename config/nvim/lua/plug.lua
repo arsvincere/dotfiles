@@ -83,10 +83,10 @@ vim.call('plug#end')
 -- Import colorscheme --------------------------------------------------------
 -- monochrome
 -- require("plugin.lackluster")
-require("plugin.vague")
+-- require("plugin.vague")
 -- require("plugin.sonokai")
 -- blue
--- require('plugin.kanagawa')
+require('plugin.kanagawa')
 -- require('plugin.nord')
 -- require('plugin.nordic')
 -- require("plugin.onedark")
