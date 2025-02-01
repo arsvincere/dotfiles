@@ -2,45 +2,45 @@
 -- Информационная строка внизу
 ------------------------------------------------------------------------------
 
--- -- kanagawa colors{{{
--- local colors = require("kanagawa.colors").setup()
--- local palette = colors.palette
--- local theme = colors.theme
---
--- -- custom kanagawa lualine theme
--- local custom_kanagawa = require 'lualine.themes.kanagawa'
--- custom_kanagawa.normal = {
---   a = { bg = palette.dragonBlue, fg = theme.ui.bg },
---   b = { bg = palette.dragonBlack5, fg = palette.springBlue },
---   c = { bg = palette.dragonBlack4, fg = palette.fujiGray },
+-- kanagawa colors{{{
+local colors = require("kanagawa.colors").setup()
+local palette = colors.palette
+local theme = colors.theme
+
+-- custom kanagawa lualine theme
+local custom_kanagawa = require 'lualine.themes.kanagawa'
+custom_kanagawa.normal = {
+  a = { bg = palette.dragonBlue, fg = theme.ui.bg },
+  b = { bg = palette.dragonBlack5, fg = palette.springBlue },
+  c = { bg = palette.dragonBlack4, fg = palette.fujiGray },
+}
+custom_kanagawa.insert = {
+  a = { bg = theme.diag.ok, fg = theme.ui.bg },
+  b = { bg = palette.dragonBlack5, fg = theme.diag.ok },
+}
+custom_kanagawa.visual = {
+  a = { bg = palette.oldWhite, fg = theme.ui.bg },
+  b = { bg = palette.dragonBlack5, fg = palette.oldWhite },
+}
+custom_kanagawa.command = {
+  a = { bg = theme.syn.operator, fg = theme.ui.bg },
+  b = { bg = palette.dragonBlack5, fg = theme.syn.operator },
+}
+custom_kanagawa.terminal = {
+  a = { bg = theme.syn.operator, fg = theme.ui.bg },
+  b = { bg = palette.dragonBlack5, fg = theme.syn.operator },
+}
+custom_kanagawa.replace = {
+  a = { bg = theme.syn.constant, fg = theme.ui.bg },
+  b = { bg = palette.dragonBlack5, fg = theme.syn.constant },
+}
+-- custom_kanagawa.inactive = {
+--   a = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
+--   b = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim, gui = "bold" },
+--   c = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
 -- }
--- custom_kanagawa.insert = {
---   a = { bg = theme.diag.ok, fg = theme.ui.bg },
---   b = { bg = palette.dragonBlack5, fg = theme.diag.ok },
--- }
--- custom_kanagawa.visual = {
---   a = { bg = palette.oldWhite, fg = theme.ui.bg },
---   b = { bg = palette.dragonBlack5, fg = palette.oldWhite },
--- }
--- custom_kanagawa.command = {
---   a = { bg = theme.syn.operator, fg = theme.ui.bg },
---   b = { bg = palette.dragonBlack5, fg = theme.syn.operator },
--- }
--- custom_kanagawa.terminal = {
---   a = { bg = theme.syn.operator, fg = theme.ui.bg },
---   b = { bg = palette.dragonBlack5, fg = theme.syn.operator },
--- }
--- custom_kanagawa.replace = {
---   a = { bg = theme.syn.constant, fg = theme.ui.bg },
---   b = { bg = palette.dragonBlack5, fg = theme.syn.constant },
--- }
--- -- custom_kanagawa.inactive = {
--- --   a = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
--- --   b = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim, gui = "bold" },
--- --   c = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
--- -- }
---
--- -- }}}
+
+-- }}}
 local function wordcount_readingtime() -- {{{
   return tostring(
     '  ' .. vim.fn.wordcount().words .. 'w ' ..

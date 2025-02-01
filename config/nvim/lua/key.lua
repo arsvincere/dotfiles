@@ -220,8 +220,8 @@ map(n, '#', '*N', opt)
 
 -- Soft wrap navigation
 -- http://vimcasts.org/episodes/soft-wrapping-text/
-map(nv, 'j', 'gj', opt)
-map(nv, 'k', 'gk', opt)
+-- map(nv, 'j', 'gj', opt)
+-- map(nv, 'k', 'gk', opt)
 map(nv, '0', 'g0', opt)
 map(nv, '$', 'g$', opt)
 map(nv, '^', 'g^', opt)
@@ -483,6 +483,7 @@ map(n, '<End>',
     :BufferLineTabRename  plan<CR>\
     :NvimTreeOpen\
     :tabnext<CR>\
+    :TermExec cmd="source ~/AVIN/.venv/bin/activate" name=zsh\
     :wincmd l<CR>\
     ', opt)
 -- }}}
