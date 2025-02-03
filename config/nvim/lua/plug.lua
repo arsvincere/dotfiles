@@ -7,7 +7,6 @@ Plug "rebelot/kanagawa.nvim" -- color scheme
 Plug "shaunsingh/nord.nvim"
 Plug "AlexvZyl/nordic.nvim"
 Plug "joshdick/onedark.vim"
-Plug "olimorris/onedarkpro.nvim"
 -- green
 Plug "sainnhe/gruvbox-material"
 Plug "sainnhe/everforest"
@@ -37,7 +36,6 @@ Plug 'nvim-treesitter/nvim-treesitter'             -- parsing library
 Plug 'nvim-treesitter/nvim-treesitter-textobjects' ---- dependency
 Plug 'numToStr/Comment.nvim'                       -- comment any language
 Plug 'kevinhwang91/nvim-ufo'                       -- very good folding
-Plug 'anuvyklack/pretty-fold.nvim'                 -- good folding
 Plug 'kevinhwang91/promise-async'                  ---- dependency
 Plug 'preservim/tagbar'                            -- panel: class, func...
 Plug 'windwp/nvim-autopairs'                       -- auto pairs () [] {}
@@ -90,7 +88,6 @@ require('plugin.kanagawa')
 -- require('plugin.nord')
 -- require('plugin.nordic')
 -- require("plugin.onedark")
--- require("plugin.onedarkpro")
 -- green
 -- require('plugin.gruvbox-material')
 -- require("plugin.everforest")
@@ -132,7 +129,6 @@ require('plugin.vim-plugin-ruscmd')
 require('plugin.vimtex')
 require('plugin.wakatime')
 require('plugin.nvim-ufo')
--- require('plugin.pretty-fold')
 
 
 -- " Language
