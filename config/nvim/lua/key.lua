@@ -156,7 +156,7 @@ end
 
 local Terminal = require('toggleterm.terminal').Terminal
 local lazygit = Terminal:new({ -- {{{
-  count = 10,
+  count = 11,
   cmd = "lazygit",
   dir = "git_dir",
   direction = "float",
@@ -195,7 +195,6 @@ map(n, '<Esc>', '<Esc>:nohlsearch<CR>', opt)
 
 -- Terminal mode exit on escape
 map(t, '<Esc>', '<C-\\><C-n>', opt)
--- map(t, '<C-Esc>', '<C-\\><C-n>', opt)
 
 -- Insert empty row
 map(n, '<CR>', 'o<Esc>', opt)
@@ -264,10 +263,10 @@ map(n, '<C-р>', ':wincmd h<CR>', opt) -- [ru]
 map(n, '<C-о>', ':wincmd j<CR>', opt) -- [ru]
 map(n, '<C-л>', ':wincmd k<CR>', opt) -- [ru]
 map(n, '<C-д>', ':wincmd l<CR>', opt) -- [ru]
--- map(t, '<C-h>', '<C-\\><C-n>:wincmd h<CR>', opt)
--- map(t, '<C-j>', '<C-\\><C-n>:wincmd j<CR>', opt)
--- map(t, '<C-k>', '<C-\\><C-n>:wincmd k<CR>', opt)
--- map(t, '<C-l>', '<C-\\><C-n>:wincmd l<CR>', opt)
+map(t, '<C-h>', [[<Cmd>wincmd h<CR>]], opt)
+map(t, '<C-j>', [[<Cmd>wincmd j<CR>]], opt)
+map(t, '<C-k>', [[<Cmd>wincmd k<CR>]], opt)
+map(t, '<C-l>', [[<Cmd>wincmd l<CR>]], opt)
 
 -- Split / close
 map(n, '<C-m>', ':split<CR>', opt)
@@ -285,6 +284,16 @@ map(n, '<C-c>', ':tabclose<CR>', opt)
 
 -- }}}
 -- Alt --------------------------------------------------------------------{{{
+-- :ToggleTerm size=40 dir=~/Desktop direction=horizontal name=desktop
+map(n, '<M-1>', ':1ToggleTerm<CR>', opt)
+map(n, '<M-2>', ':2ToggleTerm<CR>', opt)
+map(n, '<M-3>', ':3ToggleTerm<CR>', opt)
+map(n, '<M-4>', ':4ToggleTerm size=80 direction=vertical<CR> ', opt)
+map(n, '<M-5>', ':5ToggleTerm size=80 direction=vertical<CR> ', opt)
+map(n, '<M-6>', ':6ToggleTerm size=80 direction=vertical<CR> ', opt)
+map(n, '<M-7>', ':7ToggleTerm direction=tab<CR> ', opt)
+map(n, '<M-8>', ':8ToggleTerm direction=tab<CR> ', opt)
+map(n, '<M-9>', ':9ToggleTerm direction=tab<CR> ', opt)
 
 -- Run last
 map(n, '<M-r>', re_run, opt)
@@ -297,10 +306,23 @@ map(n, '<M-m>', '@m', opt)
 
 -- }}}
 -- Leader -----------------------------------------------------------------{{{
--- ',,'
+-- ',,' toggle term
+-- ',1' toggle term 1
+-- ',2' toggle term 2
+-- ...
 map(n, '<leader><leader>', ':ToggleTerm<CR>', opt)
 map(v, '<leader><leader>', ':ToggleTermSendVisualSelection<CR>', opt)
+-- map(n, '<leader>1', ':1ToggleTerm<CR>', opt)
+-- map(n, '<leader>2', ':2ToggleTerm<CR>', opt)
+-- map(n, '<leader>3', ':3ToggleTerm<CR>', opt)
+-- map(n, '<leader>4', ':4ToggleTerm<CR>', opt)
+-- map(n, '<leader>5', ':5ToggleTerm<CR>', opt)
+-- map(n, '<leader>6', ':6ToggleTerm<CR>', opt)
+-- map(n, '<leader>7', ':7ToggleTerm<CR>', opt)
+-- map(n, '<leader>8', ':8ToggleTerm<CR>', opt)
+-- map(n, '<leader>9', ':9ToggleTerm<CR>', opt)
 
+-- 'a' dbg py
 map(n, '<leader>a',
   'o\
 ####\
@@ -362,7 +384,7 @@ map(n, '<leader>B', ':DapToggleBreakpoint<CR>', opt)
 -- 'r-' run ____
 map(n, '<leader>rd', run_debug, opt)
 map(n, '<leader>rt', run_pytest, opt)
-map(n, '<leader>rp', ':9TermExec cmd="pgadmin" name=pgadmin<CR>', opt)
+-- map(n, '<leader>rp', ':12TermExec cmd="pgadmin" name=pgadmin<CR>', opt)
 
 -- 't' toggle f-string
 require('f-string-toggle').setup({
@@ -370,17 +392,17 @@ require('f-string-toggle').setup({
   key_binding_desc = "Toggle f-string"
 })
 
--- 'i' illuminate word on cursor
-map(n, '<leader>i', ':IlluminateToggle<CR>', opt)
+-- -- 'i' illuminate word on cursor
+-- map(n, '<leader>i', ':IlluminateToggle<CR>', opt)
 
--- '.' Neorg index
-map(n, '<leader>.', ':Neorg index<CR>', opt)
--- 'j' Neorg journal
-map(n, '<leader>j', ':Neorg journal today<CR>', opt)
--- 'n' Neorg ...
-map(n, '<leader>n', ':Neorg', opt)
--- 'm' Neorg minimize
-map(n, '<leader>m', ':Neorg return<CR>', opt)
+-- -- '.' Neorg index
+-- map(n, '<leader>.', ':Neorg index<CR>', opt)
+-- -- 'j' Neorg journal
+-- map(n, '<leader>j', ':Neorg journal today<CR>', opt)
+-- -- 'n' Neorg ...
+-- map(n, '<leader>n', ':Neorg', opt)
+-- -- 'm' Neorg minimize
+-- map(n, '<leader>m', ':Neorg return<CR>', opt)
 
 -- }}}
 -- <F1>..<F12> ------------------------------------------------------------{{{
