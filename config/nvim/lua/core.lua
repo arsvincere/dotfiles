@@ -35,13 +35,14 @@ acmd('BufNewFile', { pattern = '*.fg', command = 'set filetype=fg' })
 -- }}}
 -- Autosave ---------------------------------------------------------------{{{
 -- Автосохранение при потере фокуса
+acmd('BufLeave', { pattern = '*.py', command = 'silent w!' })
 acmd('BufLeave', { pattern = '*.md', command = 'silent w!' })
 acmd('BufLeave', { pattern = '*.un', command = 'silent w!' })
 acmd('BufLeave', { pattern = '*.adoc', command = 'silent w!' })
 -- }}}
 -- Folding ----------------------------------------------------------------{{{
 opt.foldenable = true     -- При открытии файла скрывать блоки
-opt.foldmethod = 'marker' -- Группировка по маркерам
+opt.foldmethod = 'marker' -- Фолдинг по маркерам
 -- }}}
 -- Tab --------------------------------------------------------------------{{{
 opt.expandtab = true   -- use spaces instead of tabs
@@ -83,7 +84,7 @@ autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "norm
 exec([[
 augroup YankHighlight
 autocmd!
-autocmd TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=256}
+autocmd TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=128}
 augroup end
 ]], false)
 -- }}}
