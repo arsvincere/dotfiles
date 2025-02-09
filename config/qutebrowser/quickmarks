@@ -78,3 +78,4 @@ os rust translate https://os.phil-opp.com/ru/
 backtrader doc https://www.backtrader.ru/docu/introduction/
 telegram tui https://github.com/paul-nameless/tg
 telegram tui rust https://terminaltrove.com/tgt/
+dataframe doc https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html
