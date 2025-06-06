@@ -1,0 +1,530 @@
+{
+  "basic_metadata_widget_splitter_state": {
+    "__class__": "bytearray",
+    "__value__": "AAAA/wAAAAEAAAADAAABHgAAAbcAAAEKAf////8BAAAAAQA="
+  },
+  "book_list_pin_splitter_state": {
+    "__class__": "bytearray",
+    "__value__": "AAAA/wAAAAEAAAACAAABAAAAAEYA/////wEAAAABAA=="
+  },
+  "choose-merge-cb-merge_formats": false,
+  "choose-merge-dialog-splitter-state": {
+    "__class__": "bytearray",
+    "__value__": "AAAA/wAAAAEAAAACAAABoQAAAQAA/////wEAAAABAA=="
+  },
+  "color_palette": "dark",
+  "cover_grid_background": {
+    "dark": [
+      45,
+      45,
+      45
+    ],
+    "dark_texture": null,
+    "light": [
+      80,
+      80,
+      80
+    ],
+    "light_texture": null,
+    "migrated": true
+  },
+  "custom_colors_for_color_dialog": [
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ]
+  ],
+  "dark_palette_name": "",
+  "dark_palettes": {
+    "__current__": {
+      "AlternateBase": "#2d2d2d",
+      "Base": "#121212",
+      "BrightText": "#ff0000",
+      "BrightText-disabled": "#ff0000",
+      "Button": "#2d2d2d",
+      "ButtonText": "#dddddd",
+      "ButtonText-disabled": "#7f7f7f",
+      "Highlight": "#0b45c4",
+      "HighlightedText": "#dddddd",
+      "HighlightedText-disabled": "#7f7f7f",
+      "Link": "#6cb4ee",
+      "LinkVisited": "#800080",
+      "PlaceholderText": "#7f7f7f",
+      "PlaceholderText-disabled": "#7f7f7f",
+      "Text": "#dddddd",
+      "Text-disabled": "#7f7f7f",
+      "ToolTipBase": "#2d2d2d",
+      "ToolTipText": "#dddddd",
+      "ToolTipText-disabled": "#dddddd",
+      "Window": "#2d2d2d",
+      "WindowText": "#dddddd",
+      "WindowText-disabled": "#dddddd"
+    }
+  },
+  "geometry-of-calibre_main_window_geometry": {
+    "frame_geometry": {
+      "height": 1078,
+      "width": 1918,
+      "x": 0,
+      "y": 0
+    },
+    "full_screened": false,
+    "geometry": {
+      "height": 1078,
+      "width": 1918,
+      "x": 0,
+      "y": 0
+    },
+    "maximized": true,
+    "normal_geometry": {
+      "height": 1078,
+      "width": 1918,
+      "x": 0,
+      "y": 0
+    },
+    "qt": {
+      "__class__": "bytearray",
+      "__value__": "AdnQywADAAAAAAAAAAAAAAAAB30AAAQ1AAAAAAAAAAAAAAd9AAAENQAAAAACAAAAB4AAAAAAAAAAAAAAB30AAAQ1"
+    },
+    "screen": {
+      "depth": 32,
+      "device_pixel_ratio": 1.0,
+      "geometry_in_logical_pixels": {
+        "height": 1080,
+        "width": 1920,
+        "x": 0,
+        "y": 0
+      },
+      "index_in_screens_list": 0,
+      "manufacturer": "Philips Consumer Electronics Company",
+      "model": "Philips 220E",
+      "name": "DP-1",
+      "serial": "",
+      "size_in_logical_pixels": {
+        "height": 1080,
+        "width": 1920
+      },
+      "virtual_geometry": {
+        "height": 1080,
+        "width": 1920,
+        "x": 0,
+        "y": 0
+      }
+    }
+  },
+  "geometry-of-choose-icon-theme-dialog-geometry": {
+    "frame_geometry": {
+      "height": 1005,
+      "width": 900,
+      "x": 0,
+      "y": 0
+    },
+    "full_screened": false,
+    "geometry": {
+      "height": 1005,
+      "width": 900,
+      "x": 0,
+      "y": 0
+    },
+    "maximized": true,
+    "normal_geometry": {
+      "height": 1005,
+      "width": 900,
+      "x": 0,
+      "y": 0
+    },
+    "qt": {
+      "__class__": "bytearray",
+      "__value__": "AdnQywADAAAAAAAAAAAAAAAAA4MAAAPsAAAAAAAAAAAAAAODAAAD7AAAAAACAAAAB4AAAAAAAAAAAAAAA4MAAAPs"
+    },
+    "screen": {
+      "depth": 32,
+      "device_pixel_ratio": 1.0,
+      "geometry_in_logical_pixels": {
+        "height": 1080,
+        "width": 1920,
+        "x": 0,
+        "y": 0
+      },
+      "index_in_screens_list": 0,
+      "manufacturer": "RGT",
+      "model": "0x1352",
+      "name": "DP-1",
+      "serial": "",
+      "size_in_logical_pixels": {
+        "height": 1080,
+        "width": 1920
+      },
+      "virtual_geometry": {
+        "height": 1080,
+        "width": 1920,
+        "x": 0,
+        "y": 0
+      }
+    }
+  },
+  "geometry-of-choose-merge-dialog-geometry": {
+    "frame_geometry": {
+      "height": 352,
+      "width": 695,
+      "x": 598,
+      "y": 307
+    },
+    "full_screened": false,
+    "geometry": {
+      "height": 352,
+      "width": 695,
+      "x": 598,
+      "y": 307
+    },
+    "maximized": true,
+    "normal_geometry": {
+      "height": 352,
+      "width": 695,
+      "x": 598,
+      "y": 307
+    },
+    "qt": {
+      "__class__": "bytearray",
+      "__value__": "AdnQywADAAAAAAJWAAABMwAABQwAAAKSAAACVgAAATMAAAUMAAACkgAAAAACAAAAB4AAAAJWAAABMwAABQwAAAKS"
+    },
+    "screen": {
+      "depth": 32,
+      "device_pixel_ratio": 1.0,
+      "geometry_in_logical_pixels": {
+        "height": 1080,
+        "width": 1920,
+        "x": 0,
+        "y": 0
+      },
+      "index_in_screens_list": 0,
+      "manufacturer": "Philips Consumer Electronics Company",
+      "model": "Philips 220E",
+      "name": "DP-1",
+      "serial": "",
+      "size_in_logical_pixels": {
+        "height": 1080,
+        "width": 1920
+      },
+      "virtual_geometry": {
+        "height": 1080,
+        "width": 1920,
+        "x": 0,
+        "y": 0
+      }
+    }
+  },
+  "geometry-of-customize-palette-geometry": {
+    "frame_geometry": {
+      "height": 555,
+      "width": 826,
+      "x": 42,
+      "y": 43
+    },
+    "full_screened": false,
+    "geometry": {
+      "height": 555,
+      "width": 826,
+      "x": 42,
+      "y": 43
+    },
+    "maximized": true,
+    "normal_geometry": {
+      "height": 555,
+      "width": 826,
+      "x": 42,
+      "y": 43
+    },
+    "qt": {
+      "__class__": "bytearray",
+      "__value__": "AdnQywADAAAAAAAqAAAAKwAAA2MAAAJVAAAAKgAAACsAAANjAAACVQAAAAACAAAAB4AAAAAqAAAAKwAAA2MAAAJV"
+    },
+    "screen": {
+      "depth": 32,
+      "device_pixel_ratio": 1.0,
+      "geometry_in_logical_pixels": {
+        "height": 1080,
+        "width": 1920,
+        "x": 0,
+        "y": 0
+      },
+      "index_in_screens_list": 0,
+      "manufacturer": "RGT",
+      "model": "0x1352",
+      "name": "DP-1",
+      "serial": "",
+      "size_in_logical_pixels": {
+        "height": 1080,
+        "width": 1920
+      },
+      "virtual_geometry": {
+        "height": 1080,
+        "width": 1920,
+        "x": 0,
+        "y": 0
+      }
+    }
+  },
+  "geometry-of-metasingle_window_geometry3": {
+    "frame_geometry": {
+      "height": 1030,
+      "width": 1850,
+      "x": 0,
+      "y": 0
+    },
+    "full_screened": false,
+    "geometry": {
+      "height": 1030,
+      "width": 1850,
+      "x": 0,
+      "y": 0
+    },
+    "maximized": true,
+    "normal_geometry": {
+      "height": 1030,
+      "width": 1850,
+      "x": 0,
+      "y": 0
+    },
+    "qt": {
+      "__class__": "bytearray",
+      "__value__": "AdnQywADAAAAAAAAAAAAAAAABzkAAAQFAAAAAAAAAAAAAAc5AAAEBQAAAAACAAAAB4AAAAAAAAAAAAAABzkAAAQF"
+    },
+    "screen": {
+      "depth": 32,
+      "device_pixel_ratio": 1.0,
+      "geometry_in_logical_pixels": {
+        "height": 1080,
+        "width": 1920,
+        "x": 0,
+        "y": 0
+      },
+      "index_in_screens_list": 0,
+      "manufacturer": "Philips Consumer Electronics Company",
+      "model": "Philips 220E",
+      "name": "DP-1",
+      "serial": "",
+      "size_in_logical_pixels": {
+        "height": 1080,
+        "width": 1920
+      },
+      "virtual_geometry": {
+        "height": 1080,
+        "width": 1920,
+        "x": 0,
+        "y": 0
+      }
+    }
+  },
+  "geometry-of-preferences dialog geometry": {
+    "frame_geometry": {
+      "height": 735,
+      "width": 1358,
+      "x": 0,
+      "y": 0
+    },
+    "full_screened": false,
+    "geometry": {
+      "height": 735,
+      "width": 1358,
+      "x": 0,
+      "y": 0
+    },
+    "maximized": true,
+    "normal_geometry": {
+      "height": 735,
+      "width": 1358,
+      "x": 0,
+      "y": 0
+    },
+    "qt": {
+      "__class__": "bytearray",
+      "__value__": "AdnQywADAAAAAAAAAAAAAAAABU0AAALeAAAAAAAAAAAAAAVNAAAC3gAAAAACAAAAB4AAAAAAAAAAAAAABU0AAALe"
+    },
+    "screen": {
+      "depth": 32,
+      "device_pixel_ratio": 1.0,
+      "geometry_in_logical_pixels": {
+        "height": 1080,
+        "width": 1920,
+        "x": 0,
+        "y": 0
+      },
+      "index_in_screens_list": 0,
+      "manufacturer": "RGT",
+      "model": "0x1352",
+      "name": "DP-1",
+      "serial": "",
+      "size_in_logical_pixels": {
+        "height": 1080,
+        "width": 1920
+      },
+      "virtual_geometry": {
+        "height": 1080,
+        "width": 1920,
+        "x": 0,
+        "y": 0
+      }
+    }
+  },
+  "grid view visible": false,
+  "library_usage_stats": {
+    "/home/alex/elib": 8
+  },
+  "light_palette_name": "",
+  "light_palettes": {
+    "__current__": {
+      "AlternateBase": "#f5f5f5",
+      "Base": "#ffffff",
+      "BrightText": "#ff0000",
+      "BrightText-disabled": "#ff0000",
+      "Button": "#f0f0f0",
+      "ButtonText": "#000000",
+      "ButtonText-disabled": "#787878",
+      "Highlight": "#308cc6",
+      "HighlightedText": "#ffffff",
+      "HighlightedText-disabled": "#787878",
+      "Link": "#0000ff",
+      "LinkVisited": "#ff00ff",
+      "PlaceholderText": "#787878",
+      "PlaceholderText-disabled": "#787878",
+      "Text": "#000000",
+      "Text-disabled": "#787878",
+      "ToolTipBase": "#ffffdc",
+      "ToolTipText": "#000000",
+      "ToolTipText-disabled": "#000000",
+      "Window": "#f0f0f0",
+      "WindowText": "#000000",
+      "WindowText-disabled": "#000000"
+    }
+  },
+  "main_window_central_widget_state": {
+    "layout": "wide",
+    "narrow_desires": {
+      "book_details_height": 0.23042505592841164,
+      "cover_browser_width": 0.34982681840672936,
+      "quick_view_height": 0.25615212527964204,
+      "tag_browser_width": 0.24987629886194954
+    },
+    "narrow_visibility": {
+      "book_details": true,
+      "book_list": true,
+      "cover_browser": false,
+      "quick_view": false,
+      "tag_browser": true
+    },
+    "wide_desires": {
+      "book_details_width": 0.17647058823529413,
+      "cover_browser_height": 0.28556593977154726,
+      "quick_view_height": 0.23779854620976115,
+      "tag_browser_width": 0.1743455497382199
+    },
+    "wide_visibility": {
+      "book_details": true,
+      "book_list": true,
+      "cover_browser": false,
+      "quick_view": false,
+      "tag_browser": true
+    }
+  },
+  "previous_sort_order_BooksView": {
+    "title": true
+  },
+  "quick_start_guide_added": true,
+  "qv_open_at_shutdown": false,
+  "recently_used_languages": [],
+  "search bar visible": true,
+  "tag browser search box visible": false
+}

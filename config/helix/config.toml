@@ -1,0 +1,41 @@
+# theme = "kanagawa-dragon"
+theme = "kanagawa"
+
+[editor]
+line-number = "relative"
+color-modes = true
+mouse = false
+scrolloff = 20
+indent-guides.render = true
+
+[editor.inline-diagnostics]
+# Minimum severity to show a diagnostic on the primary cursor's line.
+# Note that `cursor-line` diagnostics are hidden in insert mode.
+cursor-line = "hint"
+# Minimum severity to show a diagnostic on other lines:
+# other-lines = "error"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.statusline]
+left = ["mode", "spinner", "diagnostics"]
+center = ["file-name"]
+right = ["file-type", "file-encoding", "selections", "position"]
+separator = "│"
+mode.normal = "N"
+mode.insert = "I"
+mode.select = "V"
+
+[editor.auto-save]
+focus-list = true
+
+[keys.normal]
+"*" = ["move_prev_word_start", "move_next_word_end", "search_selection_detect_word_boundaries"]
+"#" = "toggle_comments"
+"D" = ["extend_to_line_bounds", "delete_selection"]
+
+[keys.select]
+"#" = "toggle_comments"

@@ -1,0 +1,183 @@
+
+Kanagawa
+********
+	fujiWhite	    #DCD7BA	Default foreground
+	oldWhite	    #C8C093	Dark foreground (statuslines)
+
+	sumiInk0	    #16161D	Dark background (statuslines and floating windows)
+	sumiInk1	    #1F1F28	Default background
+	sumiInk2	    #2A2A37	Lighter background (colorcolumn, folds)
+	sumiInk3	    #363646	Lighter background (cursorline)
+	sumiInk4	    #54546D	Darker foreground (line numbers, fold column, non-text characters), float borders
+
+	winterRed	    #43242B	Diff Deleted (background)
+	autumnRed	    #C34043	Git Delete
+	waveRed	        #E46876	Standout specials 1 (builtin variables)
+	peachRed	    #FF5D62	Standout specials 2 (exception handling, return)
+	samuraiRed	    #E82424	Diagnostic Error
+
+	surimiOrange	#FFA066	Constants, imports, booleans
+
+	winterYellow	#49443C	Diff Change (background)
+	boatYellow1	    #938056	Not used
+	boatYellow2	    #C0A36E	Operators, RegEx
+	carpYellow	    #E6C384	Identifiers
+	autumnYellow	#DCA561	Git Change
+	roninYellow	    #FF9E3B	Diagnostic Warning
+
+	winterGreen	    #2B3328	Diff Add (background)
+	springGreen	    #98BB6C	Strings
+	autumnGreen	    #76946A	Git Add
+
+	dragonBlue	    #658594	Diagnostic Hint
+	springBlue	    #7FB4CA	Specials and builtin functions
+	crystalBlue	    #7E9CD8	Functions and Titles
+
+	winterBlue	    #252535	Diff Line (background)
+	waveBlue1	    #223249	Popup background, visual selection background
+	waveBlue2	    #2D4F67	Popup selection background, search background
+
+	oniViolet	    #957FB8	Statements and Keywords
+	springViolet1	#938AA9	Light foreground
+	springViolet2	#9CABCA	Brackets and punctuation
+
+
+	waveAqua1	    #6A9589	Diagnostic Info
+	waveAqua2	    #7AA89F	Types
+	lightBlue	    #A3D4D5	Not used
+
+	sakuraPink	    #D27E99	Numbers
+
+	katanaGray	    #717C7C	Deprecated
+	fujiGray	    #727169	Comments
+
+Kanagawa-paper
+**************
+
+-- Bg Shades
+	sumiInk0 = "#16161D"
+	sumiInk1 = "#181820"
+	sumiInk2 = "#1a1a22"
+	sumiInk3 = "#1F1F28"
+	sumiInk4 = "#2A2A37"
+	sumiInk5 = "#363646"
+	sumiInk6 = "#54546D"
+
+-- Fg and Comments
+	oldWhite = "#C8C093",
+	fujiWhite = "#DCD7BA",
+	fujiGray = "#727169",
+
+
+	winterRed = "#43242B",
+	waveRed   = "#E46876",
+	peachRed  = "#FF5D62",
+	autumnRed = "#C34043",
+	samuraiRed = "#E82424",
+	dragonRed = "#c4746e",
+	lotusRed = "#c84053",
+	lotusRed2 = "#d7474b",
+	lotusRed3 = "#e82424",
+	lotusRed4 = "#d9a594",
+
+	surimiOrange = "#FFA066",
+	dragonOrange = "#b6927b",
+	dragonOrange2 = "#b98d7b",
+	lotusOrange = "#cc6d00",
+	lotusOrange2 = "#e98a00",
+
+	winterYellow = "#49443C",
+	dragonYellow = "#c4b28a", --"#a99c8b",
+	autumnYellow = "#DCA561",
+	roninYellow = "#FF9E3B",
+	boatYellow1 = "#938056",
+	boatYellow2 = "#C0A36E",
+	carpYellow = "#E6C384",
+	lotusYellow = "#77713f",
+	lotusYellow2 = "#836f4a",
+	lotusYellow3 = "#de9800",
+	lotusYellow4 = "#f9d791",
+
+	winterGreen = "#2B3328",
+	autumnGreen = "#76946A",
+	springGreen = "#98BB6C",
+	dragonGreen = "#87a987",
+	dragonGreen2 = "#8a9a7b",
+	lotusGreen = "#6f894e",
+	lotusGreen2 = "#6e915f",
+	lotusGreen3 = "#b7d0ae",
+
+	crystalBlue = "#7E9CD8",
+	springBlue = "#7FB4CA",
+	lightBlue = "#A3D4D5", -- unused yet
+
+	winterBlue = "#252535",
+	waveBlue1 = "#223249",
+	waveBlue2 = "#2D4F67",
+	dragonBlue = "#658594",
+
+	oniViolet = "#957FB8",
+	oniViolet2 = "#b8b4d0",
+	springViolet1 = "#938AA9",
+	springViolet2 = "#9CABCA",
+	dragonViolet = "#8992a7",
+	lotusViolet1 = "#a09cac",
+	lotusViolet2 = "#766b90",
+	lotusViolet3 = "#c9cbd1",
+	lotusViolet4 = "#624c83",
+
+	sakuraPink = "#D27E99",
+	dragonPink = "#a292a3",
+
+	waveAqua1 = "#6A9589",
+	waveAqua2 = "#7AA89F", -- improve lightness: desaturated greenish Aqua
+	-- waveAqua2  = "#68AD99",
+	-- waveAqua4  = "#7AA880",
+	-- waveAqua5  = "#6CAF95",
+	-- waveAqua3  = "#68AD99",
+
+
+	katanaGray = "#717C7C",
+
+	dragonBlack0 = "#0d0c0c",
+	dragonBlack1 = "#12120f",
+	dragonBlack2 = "#1D1C19",
+	dragonBlack3 = "#181616",
+	dragonBlack4 = "#282727",
+	dragonBlack5 = "#393836",
+	dragonBlack6 = "#625e5a",
+
+	dragonWhite = "#c5c9c5",
+	dragonGray = "#a6a69c",
+	dragonGray2 = "#9e9b93",
+	dragonGray3 = "#7a8382",
+	dragonBlue2 = "#8ba4b0",
+	dragonAqua = "#8ea4a2",
+	dragonAsh = "#737c73",
+	dragonTeal = "#949fb5",
+	-- "#8a9aa3",
+
+	lotusInk1 = "#545464",
+	lotusInk2 = "#43436c",
+	lotusGray = "#dcd7ba",
+	lotusGray2 = "#716e61",
+	lotusGray3 = "#8a8980",
+	lotusWhite0 = "#d5cea3",
+	lotusWhite1 = "#dcd5ac",
+	lotusWhite2 = "#e5ddb0",
+	lotusWhite3 = "#f2ecbc",
+	lotusWhite4 = "#e7dba0",
+	lotusWhite5 = "#e4d794",
+	lotusBlue1 = "#c7d7e0",
+	lotusBlue2 = "#b5cbd2",
+	lotusBlue3 = "#9fb5c9",
+	lotusBlue4 = "#4d699b",
+	lotusBlue5 = "#5d57a3",
+	lotusPink = "#b35b79",
+	lotusAqua = "#597b75",
+	lotusAqua2 = "#5e857a",
+	lotusTeal1 = "#4e8ca2",
+	lotusTeal2 = "#6693bf",
+	lotusTeal3 = "#5a7785",
+	lotusCyan = "#d7e3d8",
+}

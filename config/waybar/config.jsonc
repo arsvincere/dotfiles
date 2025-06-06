@@ -1,0 +1,217 @@
+// -*- mode: jsonc -*-
+{
+    "mode": "hide",
+    // "mode": "dock",
+    // "start_hidden": true,
+    "position": "top",
+
+    // Modules order ---------------------------------------------------------
+    "modules-left": [
+        "custom/timer",
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "clock",
+    ],
+    "modules-right": [
+        "hyprland/language",
+        "pulseaudio",
+        "network",
+        "cpu",
+        "memory",
+        "disk",
+        "temperature",
+        "custom/power",
+    ],
+
+    // Modules configuration -------------------------------------------------
+    "custom/timer": {
+      "format": "{}",
+      "exec": "python3 /home/alex/.config/waybar/timer.py",
+      "interval": 1,
+      "on-click": "alacritty -e nvim ~/diary/journal/dashboard.txt",
+      "tooltip": false
+    },
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "format": "{icon}",
+        "format-icons": {
+            "1": "avin",
+            "2": "math",
+            "3": "dev",
+            "4": "file",
+            "5": "dir",
+            "6": "msg",
+            "7": "web",
+            "8": "edit",
+            "9": "read",
+            "10": "draw",
+            "11": "zsh",
+            "12": "trade",
+            "13": "cfg",
+            "14": "view",
+            "15": "test",
+            "urgent": " ",
+            "focused": " ",
+            "default": " "
+        }
+    },
+    "clock": {
+        "interval": 1,
+        "timezone": "Europe/Moscow",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": " {:%H:%M   %a %e %B}",
+        "format-alt": " {:%H:%M:%S   %a %Y-%m-%d}"
+    },
+    "hyprland/language": {
+        "format": "[{shortDescription}]",
+        "on-click": "google-chrome-stable https://wooordhunt.ru/edu/start"
+    },
+    "pulseaudio": {
+        "scroll-step": 5,
+        "format": "  {volume}",
+        "format-muted": " mute",
+        "on-click": "pavucontrol",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "headphone": " ",
+        "format-icons": {
+            "default": ["", " ", " "]
+        },
+    },
+    "network": {
+        "format-wifi": "  {signalStrength}",
+        "format-ethernet": "󰈀 {ifname}",
+        "format-disconnected": "󰖪 --",
+        "format-alt": "{ifname}: {essid} [{ipaddr}/{cidr}]",
+        "tooltip-format": "{ifname}: {essid} - [{ipaddr}/{cidr}]"
+    },
+    "custom/power": {
+      "format": "",
+      "on-click": "alacritty -e shutdown now",
+      "tooltip": false
+    },
+    "cpu": {
+        "interval": 1,
+        "format": " {usage:<2}",
+        "on-click": "alacritty -T btop -e btop"
+    },
+    "memory": {
+        "interval": 1,
+        "format": " {used:.2f}"
+    },
+    "disk": {
+        "interval": 30,
+        "format": " {specific_used:.2f}",
+        "unit": "GB",
+        "tooltip-format": "used: {used} free: {free} total: {total}"
+    },
+    "temperature": {
+        "critical-threshold": 80,
+        "format": "{icon} {temperatureC}°",
+        "format-critical": "{icon} {temperatureC}°",
+        "format-icons": ["", "", ""]
+    }
+
+}
+
+//-------------------------------------------------------------------{{{
+    // "custom/media": {
+    //     "format": "{icon} {}",
+    //     "return-type": "json",
+    //     "max-length": 40,
+    //     "format-icons": {
+    //         "spotify": "",
+    //         "default": "🎜"
+    //     },
+    //     "escape": true,
+    //     "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+    //     // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    // },
+    // "tray": {
+    //     // "icon-size": 21,
+    //     "spacing": 10
+    // },
+    // "backlight": {
+    //     // "device": "acpi_video1",
+    //     "format": "{percent}% {icon}",
+    //     "format-icons": ["", "", "", "", "", "", "", "", ""]
+    // },
+    // "power-profiles-daemon": {
+    //   "format": "{icon}",
+    //   "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    //   "tooltip": true,
+    //   "format-icons": {
+    //     "default": "",
+    //     "performance": "",
+    //     "balanced": "",
+    //     "power-saver": ""
+    //   }
+    // },
+    // "hyprland/mode": {
+    //     "format": "<span style=\"italic\">{}</span>"
+    // },
+    // "hyprland/scratchpad": {
+    //     "format": "{icon} {count}",
+    //     "show-empty": false,
+    //     "format-icons": ["", ""],
+    //     "tooltip": true,
+    //     "tooltip-format": "{app}: {title}"
+    // },
+    // "mpd": {
+    //     "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
+    //     "format-disconnected": "Disconnected ",
+    //     "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+    //     "unknown-tag": "N/A",
+    //     "interval": 5,
+    //     "consume-icons": {
+    //         "on": " "
+    //     },
+    //     "random-icons": {
+    //         "off": "<span color=\"#f53c3c\"></span> ",
+    //         "on": " "
+    //     },
+    //     "repeat-icons": {
+    //         "on": " "
+    //     },
+    //     "single-icons": {
+    //         "on": "1 "
+    //     },
+    //     "state-icons": {
+    //         "paused": "",
+    //         "playing": ""
+    //     },
+    //     "tooltip-format": "MPD (connected)",
+    //     "tooltip-format-disconnected": "MPD (disconnected)"
+    // }
+    // "pulseaudio": {
+    //     "scroll-step": 10,
+    //     "format": "  {volume}",
+    //     "format-muted": " mute",
+    //     "on-click": "mute"
+    //     "on-click": "pavucontrol"
+    //     "format-source": "{volume}% ",
+    //     "format-source-muted": "",
+    //     "format-icons": {
+    //         "headphone": "",
+    //         "default": ["", " ", ""]
+    //     },
+    //     "format-bluetooth": "{volume}% {icon} {format_source}",
+    //     "format-bluetooth-muted": " {icon} {format_source}",
+    //     "phone": "",
+    //     "portable": "",
+    //     "car": "",
+    //     "hands-free": "",
+    //     "headset": "",
+    // },
+    // "keyboard-state": {
+    //     "numlock": true,
+    //     "capslock": true,
+    //     "format": "{name}"
+    //     "format-icons": {
+    //         "locked": "",
+    //         "unlocked": ""
+    //     }
+    // },}}}

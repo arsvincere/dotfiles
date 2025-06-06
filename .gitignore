@@ -1,0 +1,10 @@
+config/gh
+config/ssh-client
+config/ssh-server
+config/rclone
+config/fstab
+config/wakatime
+config/yandex-disk
+
+arch/
+archive/

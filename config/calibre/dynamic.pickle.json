@@ -1,0 +1,21 @@
+{
+  "add books dialog dir": "/home/alex",
+  "add books dialog dir-last-used-filter-spec-all-files": false,
+  "database location dialog": "/home/alex/elib",
+  "sort_history": [
+    [
+      "title",
+      true
+    ],
+    [
+      "timestamp",
+      false
+    ],
+    [
+      "timestamp",
+      false
+    ]
+  ],
+  "welcome_wizard_device": "default",
+  "welcome_wizard_was_run": true
+}

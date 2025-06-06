@@ -1,0 +1,3 @@
+-- https://github.com/powerman/vim-plugin-ruscmd
+-- Enter commands using Russian keyboard layout.
+------------------------------------------------------------------------------

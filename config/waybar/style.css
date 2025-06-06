@@ -1,0 +1,86 @@
+* {
+    color: #B7B7AF;
+    border: none;
+    min-height: 0;
+    min-width: 0;
+    font-family: Hack;
+    font-size: 10pt;
+    background: transparent;
+}
+
+/* Widgets ***********************************************************//*{{{*/
+
+#workspaces {
+    background: #373737;
+	margin: 0px 0px 0px 128px;
+    border: solid 1px #5D5E60;
+	border-radius: 8px;
+}
+#workspaces button {
+    background: #373737;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 8px;
+	border-radius: 8px;
+}
+#workspaces button.active {
+    background: #727169;
+	border-radius: 8px;
+}
+#workspaces button:hover {
+    background: #727169;
+}
+#workspaces button.focused {
+    background: #C34043;
+}
+#workspaces button.urgent {
+    background: #DCA561;
+}
+
+#clock, #language, #pulseaudio, #network {
+    background: #373737;
+	margin: 0px 4px;
+    padding: 0px 8px;
+	border-radius: 8px;
+    border: solid 1px #5D5E60;
+}
+#pulseaudio.muted {
+    background: #DCA561;
+}
+#network.disconnected {
+    background: #DCA561;
+}
+/*}}}*/
+/* Icons *************************************************************//*{{{*/
+
+#custom-timer {
+    background: transparent;
+    color: #848388;
+	margin: 0px 0px;
+    padding: 1px 8px;
+}
+
+#cpu {
+    background: transparent;
+    color: #848388;
+	margin: 0px 0px 0px 64px;
+    padding: 1px 8px;
+}
+#custom-power, #memory, #disk, #temperature {
+    background: transparent;
+    color: #848388;
+	margin: 0px 0px 0px 0px;
+    padding: 1px 8px;
+}
+#temperature.critical {
+    background: #C34043;
+}
+/*}}}*/
+/* Tooltip ***********************************************************//*{{{*/
+tooltip {
+  background: rgba(43, 48, 59, 0.5);
+  border: 1px solid rgba(100, 114, 125, 0.5);
+}
+tooltip label {
+  color: white;
+}
+/*}}}*/

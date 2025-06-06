@@ -1,0 +1,24 @@
+[language-server.rust-analyzer.config.cargo]
+command = "clippy"
+features = "all"
+
+# [[language]]
+# name = "rust"
+# scope = "source.rust"
+# injection-regex = "rust"
+# file-types = ["rust", "rs"]
+# comment-tokens = "#"
+# indent = { tab-width = 4, unit = "    " }
+# formatter = { command = "rustfmt" , args = ["--stdin"] }
+# language-servers = [ "rust-analyzer" ]
+# auto-format = true
+
+[language-server.ruff]
+command = "ruff"
+args = ["server"]
+
+# [[language]]
+# name = "python"
+# language-servers = [ "ruff" ]
+# auto-format = true
+
